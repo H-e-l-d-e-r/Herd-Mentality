@@ -8,6 +8,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 0c4a4751e06046946a60a7296ca72888
+  - enabled: 1
+    path: Assets/Scenes/CoffeeScene.unity
+    guid: 1e9297d22fc5cbc47889b29d76f7da01
+  - enabled: 1
+    path: Assets/Scenes/VinyleScene.unity
+    guid: ebdd243f16d455d45bbef3aaccc6c717
+  - enabled: 1
+    path: Assets/Scenes/FriterieScene.unity
+    guid: f373c387358908f4ebe0d072d6a0d0b1
+  - enabled: 1
+    path: Assets/Scenes/ConcertScene.unity
+    guid: 4fb23a283f38a31458ea07cf325f852a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
