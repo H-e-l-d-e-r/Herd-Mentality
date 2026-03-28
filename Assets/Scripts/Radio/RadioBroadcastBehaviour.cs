@@ -3,12 +3,20 @@ using UnityEngine.Audio;
 
 public class RadioBroadcastBehaviour : MonoBehaviour
 {
+    [Header("Audio Parameters")]
     public AudioClip Audio;
     public AudioMixerGroup Group;
 
+    [Range(0f, 1f)]
     public float Volume;
-
     public bool Loop;
+
+    [HideInInspector]
+    public float VolumeMultiplicator = 1.0f;
+
+    [Header("Radio Parameters")]
+    public float Freq;
+    public float Bandwidth;
 
     private AudioSource m_source;
 
@@ -21,7 +29,15 @@ public class RadioBroadcastBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateAudio();
+    }
+
+    void UpdateAudio()
+    {
+        if (m_source != null && m_source.isPlaying)
+        {
+            m_source.volume = Volume * VolumeMultiplicator;
+        }
     }
 
     public void Play()
@@ -50,5 +66,5 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         m_source.Stop();
         Destroy(m_source);
         m_source = null;
-    }
+    } 
 }

@@ -880,6 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136981738}
   - component: {fileID: 1136981737}
+  - component: {fileID: 1136981739}
   - component: {fileID: 1136981736}
   m_Layer: 0
   m_Name: RadioSystem
@@ -910,8 +911,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBehaviour
   Listener: {fileID: 1136981736}
   SelectedFreq: 0
+  NoiseOSC: {fileID: 1136981739}
   Broadcasts:
   - {fileID: 1989143871}
+  - {fileID: 2114410622}
 --- !u!4 &1136981738
 Transform:
   m_ObjectHideFlags: 0
@@ -926,8 +929,27 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1989143872}
+  - {fileID: 2114410621}
+  - {fileID: 1783578998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136981739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136981735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81057bdd152be3c44a6e754d6f7764ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RadioNoiseOSC
+  Volume: 0.3
+  MinimumNoise: 0.05
+  Smoothness: 0.95
+  VolumeMultiplicator: 1
+  m_seed: 33423204
 --- !u!1 &1505992293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1117,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505992293}
   m_CullTransparentMesh: 1
+--- !u!1 &1783578997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783578998}
+  m_Layer: 0
+  m_Name: Noise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783578998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783578997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1136981738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896426962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,10 +1282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Audio: {fileID: 8300000, guid: cd95129fc027428cca0dfa97b458fe83, type: 3}
+  Audio: {fileID: 8300000, guid: 0de849166f2616e4bbfea104562facc6, type: 3}
   Group: {fileID: 24300002, guid: 8299f7b370d295027a54d4afb9f86d34, type: 2}
   Volume: 1
   Loop: 1
+  VolumeMultiplicator: 0
+  Freq: 20
+  Bandwidth: 5
 --- !u!4 &1989143872
 Transform:
   m_ObjectHideFlags: 0
@@ -1323,6 +1379,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040819081}
   m_CullTransparentMesh: 1
+--- !u!1 &2114410620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2114410621}
+  - component: {fileID: 2114410622}
+  m_Layer: 0
+  m_Name: Broadcast (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2114410621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114410620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1136981738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114410622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114410620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
+  Audio: {fileID: 8300000, guid: 2e2982260552b0a46bde0b238e0fbd62, type: 3}
+  Group: {fileID: 24300002, guid: 8299f7b370d295027a54d4afb9f86d34, type: 2}
+  Volume: 1
+  Loop: 1
+  VolumeMultiplicator: 0
+  Freq: 50
+  Bandwidth: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
