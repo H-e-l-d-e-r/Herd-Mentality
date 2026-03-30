@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RadioBehaviour : MonoBehaviour
@@ -15,6 +17,8 @@ public class RadioBehaviour : MonoBehaviour
     public RadioBroadcastBehaviour[] Broadcasts;
 
     private static RadioBehaviour s_instance;
+    
+    private List<RadioBroadcastBehaviour> m_broadcasts;
     private float k_minFreq = 0.0f;
     private float k_maxFreq = 2000.0f;
 
@@ -28,10 +32,20 @@ public class RadioBehaviour : MonoBehaviour
         k_minFreq = MinFreq;
         k_maxFreq = MaxFreq;
 
-        foreach(RadioBroadcastBehaviour be in Broadcasts)
-        {
-            be.Play();
-        }
+        m_broadcasts = new List<RadioBroadcastBehaviour>(Broadcasts);
+
+        FindBroadcast();
+        EnableBroadcasts();
+    }
+
+    private void OnEnable()
+    {
+        EnableBroadcasts();
+    }
+
+    private void OnDisable()
+    {
+        DisableBroadcasts();
     }
 
     void Update()
@@ -44,13 +58,50 @@ public class RadioBehaviour : MonoBehaviour
         m_freq = v;
     }
 
+    void EnableBroadcasts()
+    {
+        if(m_broadcasts == null)
+        {
+            return;
+        }
+
+        foreach (RadioBroadcastBehaviour be in m_broadcasts)
+        {
+            be.Play();
+        }
+    }
+
+    void DisableBroadcasts()
+    {
+        if (m_broadcasts == null)
+        {
+            return;
+        }
+
+        foreach (RadioBroadcastBehaviour be in m_broadcasts)
+        {
+            be.Stop();
+        }
+    }
+
+    void FindBroadcast()
+    {
+        foreach(RadioBroadcastBehaviour be in transform.GetComponentsInChildren<RadioBroadcastBehaviour>())
+        {
+            if (!m_broadcasts.Contains(be))
+            {
+                m_broadcasts.Add(be);
+            }
+        }
+    }
+
     void UpdateSwitchFreq()
     {
         float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
 
         float noiseVolume = 0.0f;
 
-        foreach(RadioBroadcastBehaviour be in Broadcasts)
+        foreach(RadioBroadcastBehaviour be in m_broadcasts)
         {
             // utilisation d'une cloche de gauss :3
             float delta = Mathf.Abs(freq - be.Freq);
