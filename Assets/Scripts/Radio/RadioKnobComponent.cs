@@ -25,6 +25,7 @@ public class RadioKnob : RadioComponentBehaviour<float>, IDragHandler
     {
         NullComponents.ThrowIfNull(Borehole);
         NullComponents.ThrowIfNull(Knob);
+        print(m_value);
 
         m_length = (MaxValue - MinValue) / 2;
 

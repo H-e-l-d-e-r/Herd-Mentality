@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class RadioToggleComponent : RadioComponentBehaviour<bool>
+public class RadioToggleComponent : RadioComponentBehaviour<bool> 
 {
     [Header("Components")]
     public Button Toggle;
-    public Sprite OnSprite;
-    public Sprite OffSprite;
+    public bool truetest = true;
+    public bool falsetest = false;
+
 
     [Header("Events")]
     public UnityEvent OnToggleTrue;
@@ -30,12 +31,14 @@ public class RadioToggleComponent : RadioComponentBehaviour<bool>
         if (m_value)
         {
             OnToggleTrue.Invoke();
-            Toggle.image.sprite = OnSprite;
+            print(truetest);
+            
         }
         else
         {
-            Toggle.image.sprite = OffSprite;
+           
             OnToggleFalse.Invoke();
+            print(falsetest);
         }
     }
 }
