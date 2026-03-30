@@ -22,6 +22,6 @@ public class RadioStateComponent : RadioComponentBehaviour<int>
 
     void UpdateBehaviour()
     {
-        m_value = (m_value + 1) % MaxState;
+        SetValue((Value + 1) % MaxState);
     }
 }

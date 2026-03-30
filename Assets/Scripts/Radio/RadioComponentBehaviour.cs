@@ -1,16 +1,31 @@
+using System;
+using System.Numerics;
+
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class RadioComponentBehaviour<T> : MonoBehaviour
 {
     [SerializeField]
-    public T DefaultValue;
+    [Header("Radio Component Parent")]
+    public T InitialValue;
+    public T StepIncrement;
 
     public T Value => m_value;
 
-    protected T m_value;
+    public UnityEvent<T> OnValueChange;
 
-    protected void CreateBehaviouu()
+    [SerializeField]
+    private T m_value;
+
+    protected void CreateBase()
     {
-        m_value = DefaultValue;
+        m_value = InitialValue;
+    }
+
+    public virtual void SetValue(T value)
+    {
+        m_value = value;
+        OnValueChange.Invoke(m_value);
     }
 }

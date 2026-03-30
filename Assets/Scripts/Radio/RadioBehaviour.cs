@@ -8,8 +8,12 @@ public class RadioBehaviour : MonoBehaviour
 
     public float SelectedFreq;
 
+    [Header("Broadcast")]
     public RadioNoiseOSC NoiseOSC;
     public RadioBroadcastBehaviour[] Broadcasts;
+
+    [Header("Radio Components")]
+    public RadioKnobComponent FrequenceComponent;
 
     private static RadioBehaviour s_instance;
     private const float k_maxVolumeMult = 0.9f;
@@ -28,7 +32,16 @@ public class RadioBehaviour : MonoBehaviour
 
     void Update()
     {
+        UpdateKnobs();
         UpdateSwitchFreq();
+    }
+
+    void UpdateKnobs()
+    {
+        if (FrequenceComponent)
+        {
+            SelectedFreq = FrequenceComponent.Value;
+        }
     }
 
     void UpdateSwitchFreq()

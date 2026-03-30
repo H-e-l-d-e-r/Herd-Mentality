@@ -6,9 +6,6 @@ public class RadioToggleComponent : RadioComponentBehaviour<bool>
 {
     [Header("Components")]
     public Button Toggle;
-    public bool truetest = true;
-    public bool falsetest = false;
-
 
     [Header("Events")]
     public UnityEvent OnToggleTrue;
@@ -25,20 +22,16 @@ public class RadioToggleComponent : RadioComponentBehaviour<bool>
 
     void UpdateBehaviour()
     {
-        m_value = !m_value;
+        SetValue(!Toggle);
 
         // call events
-        if (m_value)
+        if (Value)
         {
             OnToggleTrue.Invoke();
-            print(truetest);
-            
         }
         else
         {
-           
             OnToggleFalse.Invoke();
-            print(falsetest);
         }
     }
 }

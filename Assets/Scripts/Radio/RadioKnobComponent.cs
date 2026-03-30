@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.Rendering.DebugUI;
 
-public class RadioKnob : RadioComponentBehaviour<float>, IDragHandler
+public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     [Header("Parameters")]
+    public bool IsInfinite;
     public float MinValue;
     public float MaxValue;
 
@@ -11,34 +13,83 @@ public class RadioKnob : RadioComponentBehaviour<float>, IDragHandler
     public RectTransform Borehole;
     public RectTransform Knob;
 
-    private float m_length;
+    private const float k_ARC_H = 150f;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        Vector2 direction = eventData.pressPosition - eventData.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        m_value = Mathf.Clamp(angle, MinValue, MaxValue);
-    }
+    private float m_totalAngles;
+    private Vector2 m_lastPointPosition;
 
     private void Start()
     {
         NullComponents.ThrowIfNull(Borehole);
         NullComponents.ThrowIfNull(Knob);
-        print(m_value);
 
-        m_length = (MaxValue - MinValue) / 2;
-
-        UpdateComponents();
+        SetValue(InitialValue);
     }
 
-    private void Update()
+    public void OnDrag(PointerEventData eventData)
     {
-        UpdateComponents();
+        float deltaX = eventData.position.x - m_lastPointPosition.x;
+        m_lastPointPosition = eventData.position;
+
+        float deltaDeg = deltaX * StepIncrement;
+        float value = 0;
+
+        if (IsInfinite)
+        {
+            m_totalAngles += deltaDeg;
+            value += deltaDeg;
+        }
+        else
+        {
+            float newAngle = Mathf.Clamp(m_totalAngles + deltaDeg, -k_ARC_H, k_ARC_H);
+            deltaDeg = newAngle - m_totalAngles;
+            m_totalAngles = newAngle;
+
+            float t = (m_totalAngles + k_ARC_H) / (k_ARC_H * 2.0f);
+            value = Mathf.Lerp(MinValue, MaxValue, t);
+        }
+
+        base.SetValue(value);
+        ApplyRotation();
     }
 
-    void UpdateComponents()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        Knob.eulerAngles = new Vector3(0, 0, m_value);
+        // no-op
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        m_lastPointPosition = eventData.position;
+    }
+
+    public override void SetValue(float _value)
+    {
+        float value;
+
+        if (IsInfinite)
+        {
+            value = _value;
+            m_totalAngles += (_value - Value);
+        
+        }
+        else
+        {
+            value = Mathf.Clamp(_value, MinValue, MaxValue);
+
+            float range = Mathf.Abs(MaxValue - MinValue) < Mathf.Epsilon ? 1f : MaxValue - MinValue;
+            float t = (value - MinValue) / range;
+
+            m_totalAngles = Mathf.Lerp(-k_ARC_H, k_ARC_H, t);
+        }
+
+        base.SetValue(value);
+
+        ApplyRotation();
+    }
+
+    void ApplyRotation()
+    {
+        Knob.localRotation = Quaternion.Euler(0, 0, -m_totalAngles);
     }
 }

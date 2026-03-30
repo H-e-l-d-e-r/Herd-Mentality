@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Table
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Coucou
+  Entries:
+  - Actor: {fileID: 11400000, guid: 76da524b1d1c44949a0b9534c2d56ccc, type: 2}
+    Text: Coucou je suis Ernest
+    Behavior: 0
+  - Actor: {fileID: 11400000, guid: 76da524b1d1c44949a0b9534c2d56ccc, type: 2}
+    Text: Je suis fan de radio :O
+    Behavior: 0
