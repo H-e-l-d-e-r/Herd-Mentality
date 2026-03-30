@@ -678,10 +678,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioKnob
   InitialValue: 0
-  StepIncrement: 1
+  StepIncrement: 0.5
   OnValueChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1375256350}
+        m_TargetAssemblyTypeName: RadioBehaviour, Assembly-CSharp
+        m_MethodName: UpdateFrequenceKnobs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_value: 0
   IsInfinite: 1
   MinValue: 0
@@ -1817,7 +1829,6 @@ MonoBehaviour:
   Broadcasts:
   - {fileID: 941567669}
   - {fileID: 170535066}
-  FrequenceComponent: {fileID: 290501453}
 --- !u!4 &1375256351
 Transform:
   m_ObjectHideFlags: 0
@@ -2191,7 +2202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1880669871}
   - component: {fileID: 1880669870}
-  - component: {fileID: 1880669869}
   - component: {fileID: 1880669872}
   m_Layer: 0
   m_Name: Main Camera
@@ -2200,14 +2210,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1880669869
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880669868}
-  m_Enabled: 1
 --- !u!20 &1880669870
 Camera:
   m_ObjectHideFlags: 0

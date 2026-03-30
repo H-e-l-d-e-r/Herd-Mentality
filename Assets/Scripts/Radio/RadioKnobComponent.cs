@@ -37,7 +37,7 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         if (IsInfinite)
         {
             m_totalAngles += deltaDeg;
-            value += deltaDeg;
+            value = Mathf.Clamp(Value + deltaDeg, MinValue, MaxValue);
         }
         else
         {
