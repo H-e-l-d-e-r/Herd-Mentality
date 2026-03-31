@@ -14,6 +14,7 @@ public abstract class RadioComponentBehaviour<T> : MonoBehaviour
     public T Value => m_value;
 
     public UnityEvent<T> OnValueChange;
+    public UnityEvent<string> OnValueChangeAsString;
 
     [SerializeField]
     private T m_value;
@@ -27,5 +28,6 @@ public abstract class RadioComponentBehaviour<T> : MonoBehaviour
     {
         m_value = value;
         OnValueChange.Invoke(m_value);
+        OnValueChangeAsString.Invoke(m_value.ToString());
     }
 }

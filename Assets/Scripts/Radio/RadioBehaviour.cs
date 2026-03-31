@@ -8,9 +8,12 @@ public class RadioBehaviour : MonoBehaviour
 
     public AudioListener Listener;
 
-    [Header("Frequencies")]
+    [Header("Parameters")]
     public float MinFreq;
     public float MaxFreq;
+
+    [Range(0.0f, 1.0f)]
+    public float GlobalVolume;
 
     [Header("Broadcast")]
     public RadioNoiseOSC NoiseOSC;
@@ -107,10 +110,10 @@ public class RadioBehaviour : MonoBehaviour
             float delta = Mathf.Abs(freq - be.Freq);
             float exp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
 
-            be.VolumeMultiplicator = exp;
+            be.VolumeMultiplicator = exp * GlobalVolume;
             noiseVolume = Mathf.Max(noiseVolume, exp);
         }
 
-        NoiseOSC.VolumeMultiplicator = (1.0f - noiseVolume) * m_maxVolumeMult;
+        NoiseOSC.VolumeMultiplicator = (1.0f - noiseVolume) * m_maxVolumeMult * GlobalVolume;
     }
 }

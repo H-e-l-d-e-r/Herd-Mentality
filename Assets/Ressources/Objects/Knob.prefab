@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioKnob
   InitialValue: 0
-  StepIncrement: 0.5
+  StepIncrement: 0.2
   OnValueChange:
     m_PersistentCalls:
       m_Calls:
