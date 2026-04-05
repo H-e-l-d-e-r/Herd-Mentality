@@ -225,6 +225,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VinylRecord
   Broadcast: {fileID: 830155807884005582}
+  OnPlayMusic:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 207092272}
+        m_TargetAssemblyTypeName: RadioManager, Assembly-CSharp
+        m_MethodName: EnqueueVinyl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &4123343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -554,6 +569,7 @@ MonoBehaviour:
   - {fileID: 1119484169}
   - {fileID: 1996695425}
   - {fileID: 269283530}
+  VinylPlayer: {fileID: 0}
   SwitchCameraInput: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &207092273
 Transform:
@@ -2378,6 +2394,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7fdc686a3e90ca488cbe75240afdf3a, type: 2}
   DragInput: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   PositionInput: {fileID: -8784545083839296357, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  OnSelectVinyl:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragVinyl:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnselectVinyl:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1570945076
 GameObject:
   m_ObjectHideFlags: 0

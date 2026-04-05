@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent (typeof(Collider))]
 [RequireComponent (typeof(Rigidbody))]
@@ -6,7 +7,10 @@ public class VinylRecordPlayer : MonoBehaviour
 {
     public RadioBroadcastBehaviour Broadcast;
 
-    private RadioVinyl m_vinyl;
+    [Header("Events")]
+    public UnityEvent<VinylObject> OnPlayMusic;
+
+    private VinylObject m_vinyl;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,5 +43,7 @@ public class VinylRecordPlayer : MonoBehaviour
     {
         Broadcast.Play(m_vinyl.Clip);
         Broadcast.Volume = m_vinyl.Volume;
+
+        OnPlayMusic.Invoke(m_vinyl);
     }
 }

@@ -31,6 +31,12 @@ public class ObjectGroupBehaviour : MonoBehaviour, ICollection
         UpdateAlign();
     }
 
+    /// <summary>
+    /// Add a game object as a child of the transform.
+    /// This game object will be constraint to the group behaviour.
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <returns>The created game object</returns>
     public GameObject Add(GameObject gameObject)
     {
         GameObject go = Instantiate(gameObject, transform);
@@ -38,12 +44,21 @@ public class ObjectGroupBehaviour : MonoBehaviour, ICollection
         return go;
     }
 
+    /// <summary>
+    /// Remove a child at a specific index from the collection.
+    /// </summary>
+    /// <param name="index"></param>
     public void Remove(int index)
     {
         Destroy(transform.GetChild(index).gameObject);
         UpdateAlign();
     }
 
+    /// <summary>
+    /// Try to remove a child by comparing it with another one.
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <returns>true if the game object has successully been destroyed.</returns>
     public bool TryRemove(GameObject gameObject)
     {
         for (int i = 0; i < Count; i++)
@@ -58,6 +73,7 @@ public class ObjectGroupBehaviour : MonoBehaviour, ICollection
         return false;
     }
 
+    // update constraints
     private void UpdateAlign()
     {
         int order = InvertOrder ? -1 : 1;
@@ -72,20 +88,22 @@ public class ObjectGroupBehaviour : MonoBehaviour, ICollection
         };
 
         Vector3 offset = Vector3.zero;
+        Vector3 objectSize;
         
         foreach(Transform child in transform)
         {
             child.transform.position = transform.position + Position + Vector3.Scale(offset, axis) * order;
-
-            if(child.TryGetComponent<Mesh>(out Mesh component))
+            
+            if(child.TryGetComponent(out Mesh component))
             {
-                offset += Vector3.Scale(component.bounds.size + child.transform.localScale + cOffset, axis);
+                objectSize = component.bounds.size + child.transform.localScale + cOffset;
             }
             else
             {
-                offset += Vector3.Scale(child.transform.localScale + cOffset, axis);
+                objectSize = child.transform.localScale + cOffset;
             }
 
+            offset += Vector3.Scale(objectSize, axis);
         }
     }
 

@@ -5,7 +5,7 @@
 public class VinylRecord : MonoBehaviour
 {
     // ON STOCK LA MARCHANDISE ICI (BEENDO Z EST PAS BETE HEIN)
-    public RadioVinyl Vinyl
+    public VinylObject Vinyl
     {
         get => m_vinyl;
         set
@@ -20,7 +20,7 @@ public class VinylRecord : MonoBehaviour
     [HideInInspector]
     public bool IsDragged;
 
-    private RadioVinyl m_vinyl;
+    private VinylObject m_vinyl;
 
     void OnEnable()
     {
