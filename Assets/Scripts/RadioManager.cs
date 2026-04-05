@@ -7,6 +7,8 @@ public class RadioManager : MonoBehaviour
     public Camera Camera;
     public CameraAnchor ModuleAnchor;
     public CameraAnchor DjingAnchor;
+    public CameraAnchor[] anchors;
+    private int m_currentAnchorIndex = 0;
 
     [Header("Inputs")]
     public InputActionReference SwitchCameraInput;
@@ -34,22 +36,27 @@ public class RadioManager : MonoBehaviour
 
     void UpdateCameraSwitch()
     {
+        // ANCHORS?! Ca fait beaucoup la non? ;)
         if (m_swictCooldown > Mathf.Epsilon)
         {
             m_swictCooldown -= Time.deltaTime;
             return;
         }
 
-        m_swictCooldown = k_switchCooldown;
+        
         if (m_switchCameraInput.ReadValue<float>() > 0.1f)
         {
-            if (!ModuleAnchor.IsCameraAttached)
+            
+            if (anchors.Length > 0)
             {
-                ModuleAnchor.Focus(Camera);
-            }
-            else
-            {
-                DjingAnchor.Focus(Camera);
+                
+                m_currentAnchorIndex = (m_currentAnchorIndex + 1) % anchors.Length;
+
+                
+                anchors[m_currentAnchorIndex].Focus(Camera);
+
+               
+                m_swictCooldown = k_switchCooldown;
             }
         }
     }

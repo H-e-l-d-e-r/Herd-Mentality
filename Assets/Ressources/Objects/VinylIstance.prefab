@@ -154,3 +154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableBehaviour
   IsDragged: 0
+  Vinyl: {fileID: 11400000, guid: 4a0c502f122f6234fa1519c96491f3f3, type: 2}

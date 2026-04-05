@@ -5,9 +5,8 @@
 public class DraggableBehaviour : MonoBehaviour
 {
     public bool IsDragged;
-    public RadioVinyl Vinyl;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public RadioVinyl Vinyl; // ON STOCK LA MARCHANDISE ICI (BEENDO Z EST PAS BETE HEIN)
+    
     void Start()
     {
 
@@ -16,7 +15,7 @@ public class DraggableBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IsDragged = false;
+       // deplacer le IsDragged dans le vinyle storage ma couille
     }
 
     public void SetObjectPosition(Vector3 vector)
@@ -27,6 +26,6 @@ public class DraggableBehaviour : MonoBehaviour
 
     public void DestroyObject()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); // EXPLOOSSSIIOOONNN!!! Megumin la goat, Kazuma le goat Best Ship Best Waifu Best Husbando (Yes i'm cronically online mtfcka)
     }
 }
