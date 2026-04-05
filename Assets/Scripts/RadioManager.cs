@@ -5,28 +5,39 @@ public class RadioManager : MonoBehaviour
 {
     [Header("Camera")]
     public Camera Camera;
-    public CameraAnchor ModuleAnchor;
-    public CameraAnchor DjingAnchor;
-    public CameraAnchor[] anchors;
-    private int m_currentAnchorIndex = 0;
+
+    //public CameraAnchor ModuleAnchor;
+    //public CameraAnchor DjingAnchor;
+
+    public CameraAnchor[] Anchors;
 
     [Header("Inputs")]
     public InputActionReference SwitchCameraInput;
 
-    private float k_switchCooldown = 0.1f;
+    private float k_switchCooldown;
 
     private InputAction m_switchCameraInput;
-    private float m_swictCooldown = 0.0f;
+    private int m_currentAnchorIndex = 0;
+    private float m_switchCooldown = 0.0f;
 
     private void Start()
     {
-        NullComponents.ThrowIfNull(ModuleAnchor);
-        NullComponents.ThrowIfNull(DjingAnchor);
+        //NullComponents.ThrowIfNull(ModuleAnchor);
+        //NullComponents.ThrowIfNull(DjingAnchor);
 
         m_switchCameraInput = InputActionReference.Create(SwitchCameraInput);
-        m_swictCooldown = k_switchCooldown;
+        
+        k_switchCooldown = GlobalGameSettings.Instance.GenericInputCooldown;
+        Debug.Log(k_switchCooldown);
+        
+        m_switchCooldown = k_switchCooldown;
 
-        ModuleAnchor.Focus(Camera);
+        //ModuleAnchor.Focus(Camera);
+        if (Anchors.Length > 0) 
+        {
+            // On se focus sur la first cam
+            Anchors[0].Focus(Camera);
+        }
     }
 
     private void Update()
@@ -37,27 +48,21 @@ public class RadioManager : MonoBehaviour
     void UpdateCameraSwitch()
     {
         // ANCHORS?! Ca fait beaucoup la non? ;)
-        if (m_swictCooldown > Mathf.Epsilon)
+        if (m_switchCooldown > Mathf.Epsilon)
         {
-            m_swictCooldown -= Time.deltaTime;
+            m_switchCooldown -= Time.deltaTime;
             return;
         }
 
         
         if (m_switchCameraInput.ReadValue<float>() > 0.1f)
         {
-            
-            if (anchors.Length > 0)
-            {
-                
-                m_currentAnchorIndex = (m_currentAnchorIndex + 1) % anchors.Length;
+            // On va vers le prochain anchor 
+            m_currentAnchorIndex = (m_currentAnchorIndex + 1) % Anchors.Length;
+            Anchors[m_currentAnchorIndex].Focus(Camera);
 
-                
-                anchors[m_currentAnchorIndex].Focus(Camera);
-
-               
-                m_swictCooldown = k_switchCooldown;
-            }
+            // reset du cooldown
+            m_switchCooldown = k_switchCooldown;
         }
     }
 }
