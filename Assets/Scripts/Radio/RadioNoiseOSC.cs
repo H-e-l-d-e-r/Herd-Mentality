@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO.IsolatedStorage;
 using UnityEngine;
 
 public class RadioNoiseOSC : MonoBehaviour
@@ -17,7 +16,7 @@ public class RadioNoiseOSC : MonoBehaviour
     [Header("Mixer")]
     [Range(0.0f, 1.0f)]
     public float WhiteNoiseVolume = 0.6f;
-    
+
     [Range(0.0f, 1.0f)]
     public float CrakleNoiseVolume = 0.4f;
 
@@ -72,7 +71,9 @@ public class RadioNoiseOSC : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
-        if(!m_canPlay) return;
+        // NOUVEAU Demande si il peut jouer le bruitblanc
+        if (!m_canPlay || RadioBehaviour.Instance == null || !RadioBehaviour.Instance.IsOn)
+            return;
 
         float volume = Mathf.Clamp(VolumeMultiplicator * Volume, MinimumNoise, 0.5f);
         for (int i = 0; i < data.Length; i++)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RadioBehaviour : MonoBehaviour
 {
     public static RadioBehaviour Instance => s_instance;
-
+    [HideInInspector] public float AntennaSignalQuality = 1.0f; // 1 = Son Parfait, 0 = Que du bruit blanc
     public AudioListener Listener;
 
     [Header("Parameters")]
@@ -18,6 +18,9 @@ public class RadioBehaviour : MonoBehaviour
     [Header("Broadcast")]
     public RadioNoiseOSC NoiseOSC;
     public RadioBroadcastBehaviour[] Broadcasts;
+
+    [Header("Power")]
+    public bool IsOn = false; // NOUVEAU MON KIKI
 
     private static RadioBehaviour s_instance;
     
@@ -38,12 +41,15 @@ public class RadioBehaviour : MonoBehaviour
         m_broadcasts = new List<RadioBroadcastBehaviour>(Broadcasts);
 
         FindBroadcast();
-        EnableBroadcasts();
+
+        // On l'allume au démarrage que si la case IsOn est cochée (On vas l'allumer ce fils de pute)
+        if (IsOn) EnableBroadcasts();
+        else DisableBroadcasts();
     }
 
     private void OnEnable()
     {
-        EnableBroadcasts();
+        if (IsOn) EnableBroadcasts();
     }
 
     private void OnDisable()
@@ -54,6 +60,21 @@ public class RadioBehaviour : MonoBehaviour
     void Update()
     {
         UpdateSwitchFreq();
+    }
+
+    
+    public void TogglePower()
+    {
+        IsOn = !IsOn; // Inverse l'état (Mamie branché, mamie débranché, mamie vivante, mamie morte.)
+
+        if (IsOn)
+        {
+            EnableBroadcasts();
+        }
+        else
+        {
+            DisableBroadcasts();
+        }
     }
 
     public void UpdateFrequenceKnobs(float v)
@@ -100,15 +121,29 @@ public class RadioBehaviour : MonoBehaviour
 
     void UpdateSwitchFreq()
     {
+        // SI LA RADIO EST ÉTEINTE, ON COUPE LE VOLUME ET ON S'ARRÊTE LÀ (FBI OPEN UP)
+        if (!IsOn)
+        {
+            foreach(RadioBroadcastBehaviour be in m_broadcasts)
+            {
+                be.VolumeMultiplicator = 0.0f;
+            }
+            if (NoiseOSC != null) NoiseOSC.VolumeMultiplicator = 0.0f;
+            
+            return; 
+        }
+
         float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
 
         float noiseVolume = 0.0f;
 
         foreach(RadioBroadcastBehaviour be in m_broadcasts)
         {
-            // utilisation d'une cloche de gauss :3
+            // utilisation d'une cloche de gauss :3 (T sur qu'il y a rien qui cloche? Moi je pense que si)
             float delta = Mathf.Abs(freq - be.Freq);
             float exp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
+
+            exp *= AntennaSignalQuality;
 
             be.VolumeMultiplicator = exp * GlobalVolume;
             noiseVolume = Mathf.Max(noiseVolume, exp);

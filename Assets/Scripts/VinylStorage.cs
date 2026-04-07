@@ -33,7 +33,7 @@ public class VinylStorage : MonoBehaviour
 
     private VinylRecord m_vinylInstance;
     private VinylRecord m_lastSpawnedVinyl;
-    
+
     void Start()
     {
         NullComponents.ThrowIfNull(Camera);
@@ -59,7 +59,7 @@ public class VinylStorage : MonoBehaviour
         }
     }
 
-    void UpdatePickupVinyl() // On pouvait spawn le vinyle depuis le recorder aussi, Plus mtn! ;) (*0*) <-- ur�tre de Laink
+    void UpdatePickupVinyl() // On pouvait spawn le vinyle depuis le recorder aussi, Plus mtn! ;) (*0*) <-- urètre de Laink
     {
         if (m_dragInput.ReadValue<float>() > 0.1f)
         {
@@ -71,7 +71,7 @@ public class VinylStorage : MonoBehaviour
 
                 if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.TryGetComponent(out VinylRecord record))
                 {
-                    if(hit.transform.tag == "Static Vinyl Record")
+                    if (hit.transform.tag == "Static Vinyl Record")
                     {
                         int index = hit.transform.GetSiblingIndex();
 
@@ -84,11 +84,11 @@ public class VinylStorage : MonoBehaviour
 
                         m_lastSpawnedVinyl = m_vinylInstance;
 
-                        Storage.Remove(index); 
-                        
+                        Storage.Remove(index);
+
                         OnSelectVinyl?.Invoke(record.Vinyl);
                     }
-                    else if(hit.transform.tag == "Dynamic Vinyl Record")
+                    else if (hit.transform.tag == "Dynamic Vinyl Record")
                     {
                         m_isHolding = true;
                         m_distance = hit.distance;
@@ -110,9 +110,12 @@ public class VinylStorage : MonoBehaviour
             if (m_vinylInstance != null)
             {
                 m_vinylInstance.IsDragged = false;
-                m_vinylInstance = null;
 
+                // CORRECTION ICI : On invoque l'événement d'abord !
                 OnUnselectVinyl?.Invoke(m_vinylInstance.Vinyl);
+
+                // Et on oublie la référence APRÈS.
+                m_vinylInstance = null;
             }
         }
     }
@@ -130,11 +133,11 @@ public class VinylStorage : MonoBehaviour
 
     void EnableDisks()
     {
-        
+
     }
 
     // J'ai fait ca pour qu'il puisse se destroy quand il collide avec le storage
-    private void OnTriggerStay(Collider other) 
+    private void OnTriggerStay(Collider other)
     {
         VinylRecord draggable = other.GetComponent<VinylRecord>();
 
