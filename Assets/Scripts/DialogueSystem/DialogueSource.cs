@@ -10,7 +10,7 @@ namespace DialogueSystem
 
         void Start()
         {
-            m_ptr = DialogueSystem.Dialogue.RegisterDialogue(Dialogue);
+            m_ptr = DialogueSystem.Dialogue.RegisterDialogue(Dialogue.Root);
         }
 
         public void PlayDialogue()

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd01e129cccbdd3491ac912ac217a7f, type: 3}
+  m_Name: Dialogue Settings
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueSettings
+  CharacterDelay: 0.1
+  CharacterIncrement: 1
+  DelayHashmap:
+    m_keys: 2c002e00
+    m_values:
+    - 0.2
+    - 0.5
+  EnableRichText: 1
+  EnableCharacterSounds: 1
+  Volume: 1
+  EndDialogueBehaviour: 0
+  InputActionNext: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  InputNextCooldown: 0.5
+  InputActionSkip: {fileID: -4090225696740746782, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  InputSkipCooldown: 0.5

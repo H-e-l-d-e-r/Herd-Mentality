@@ -40,7 +40,8 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Play() => Play(Audio);
+    public void Play(AudioClip clip)
     {
         if(m_source != null)
         {
@@ -48,7 +49,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
 
         m_source = gameObject.AddComponent<AudioSource>();
-        m_source.clip = Audio;
+        m_source.clip = clip;
         m_source.volume = Volume;
         m_source.loop = Loop;
         m_source.outputAudioMixerGroup = Group;

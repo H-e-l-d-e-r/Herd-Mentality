@@ -14,4 +14,16 @@ public static class NullComponents
 
         return null;
     }
+
+    public static Exception ThrowIfNull(GameObject obj)
+    {
+        if (obj == null)
+        {
+            Exception e = new ArgumentNullException(obj.name);
+            Debug.LogException(e);
+            return e;
+        }
+
+        return null;
+    }
 }
