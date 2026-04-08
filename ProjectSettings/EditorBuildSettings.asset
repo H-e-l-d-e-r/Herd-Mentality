@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RadioScene.unity
     guid: 35702859183152e428e8191a66327191
+  - enabled: 1
+    path: Assets/Scenes/Menu/SongScene.unity
+    guid: f631a655360b47646aa2d56358be15c9
+  - enabled: 1
+    path: Assets/Scenes/Menu/NoteScene.unity
+    guid: eb434c27217d13b41bcc089c87e592c4
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 23e9a9a07241396c585a83f5229d172c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
