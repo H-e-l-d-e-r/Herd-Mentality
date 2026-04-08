@@ -1,36 +1,58 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine;
+
 namespace DialogueSystem
 {
-    public class DialogueCommand
+    [Serializable]
+    public class DialogueCommand : IEnumerable<DialogueCommand>, IEquatable<DialogueCommand>
     {
-        public bool IsRoot => Root == this;
+        public bool IsRoot => Parent == this;
         public DialogueState State => m_state;
+        public string GUID => GetHashCode().ToString();
 
+        [HideInInspector]
         public string Name;
+
+        [TextArea]
         public string Text;
         public DialogueActor Actor;
+        public uint ActorSprite;
 
         public DialogueBehavior Behavior; 
 
-        public DialogueCommand Root;
+        public DialogueCommand Parent;
         public DialogueCommand Next;
 
+        private string m_guid;
         private DialogueState m_state;
 
-        private DialogueCommand(DialogueCommand root, DialogueCommand next)
+        private DialogueCommand(DialogueCommand parent, DialogueCommand next)
         {
             Name = string.Empty;
             Text = string.Empty;
             Behavior = DialogueBehavior.None;
 
             Actor = null;
+            ActorSprite = 0;
 
-            Root = root;
+            Parent = parent;
             Next = next;
 
             m_state = DialogueState.Hidden;
+            m_guid = new GUID().ToString();
         }
 
-        public void ProcessCommand(DialogueState newState)
+        public DialogueCommand(string name) : this(null, null)
+        {
+            Name = name;
+            Parent = this;
+        }
+
+        internal void ProcessCommand(DialogueState newState)
         {
             m_state = newState;
         }
@@ -40,15 +62,53 @@ namespace DialogueSystem
         /// </summary>
         /// <param name="entry"></param>
         /// <returns></returns>
-        public DialogueCommand AddChild(DialogueTable.DialogueTableEntry entry)
+        public DialogueCommand AddChild(string name)
         {
-            Next = new DialogueCommand(Root, null);
-            Next.Actor = entry.Actor;
-            Next.Text = entry.Text;
-            Next.Behavior = entry.Behavior;
-            Next.Name = Root.Name;
+            if(Next != null)
+            {
+                DialogueCommand prev = Next;
+                Next = new DialogueCommand(this, null);
+                Next.Name = name;
+                Next.Next = prev;
 
+                return Next;       
+            }
+
+            Next = new DialogueCommand(this, null);
+            Next.Name = name;
             return Next;
+        }
+
+        /// <summary>
+        /// Remove this node.
+        /// </summary>
+        public void Remove()
+        {
+            if(IsRoot)
+            {
+                Next.Parent = Next;
+                return;
+            }
+
+            if(Parent != null)
+            {
+                Parent.Next = Next;            
+            }
+        }
+
+        /// <summary>
+        /// Get the root node of the linked list
+        /// </summary>
+        /// <returns></returns>
+        public DialogueCommand GetRoot()
+        {
+            DialogueCommand root = this;
+            while (!root.IsRoot || root.Parent != null)
+            {
+                root = root.Parent;
+            }
+
+            return root;
         }
 
         /// <summary>
@@ -56,38 +116,34 @@ namespace DialogueSystem
         /// </summary>
         public void Clear()
         {
-            Next.Clear();
-            Next = null;
+            if(Next != null)
+            {
+                Next.Clear();
+                Next = null;  
+            }
         }
 
-        /// <summary>
-        /// Create an empty root command 
-        /// </summary>
-        /// <returns></returns>
-        public static DialogueCommand CreateRoot(string name)
+        public IEnumerator<DialogueCommand> GetEnumerator()
         {
-            DialogueCommand self = new DialogueCommand(null, null);
-            self.Root = self;
-            self.Name = name;
-            
-            return self;
+            List<DialogueCommand> childs = new();
+            DialogueCommand cmd = this;
+            while(cmd != null)
+            {
+                childs.Add(cmd);
+                cmd = cmd.Next;
+            }
+
+            return childs.GetEnumerator();
         }
 
-        /// <summary>
-        /// Create a new command from an entry
-        /// </summary>
-        /// <param name="entry"></param>
-        /// <returns></returns>
-        public static DialogueCommand CreateRoot(string name, DialogueTable.DialogueTableEntry entry)
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            DialogueCommand self = new DialogueCommand(null, null);
-            self.Root = self;
-            self.Name = name;
-            self.Actor = entry.Actor;
-            self.Text = entry.Text;
-            self.Behavior = entry.Behavior;
-            
-            return self;
+            return GetEnumerator();
+        }
+
+        public bool Equals(DialogueCommand other)
+        {
+            return m_guid == other.m_guid;
         }
     }
 }
