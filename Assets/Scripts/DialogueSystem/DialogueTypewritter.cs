@@ -11,11 +11,16 @@ namespace DialogueSystem
     {
         [Header("Components")]
         public CanvasGroup PanelGroup;
-        public Image NextCallToAction;
+        public AudioSource AudioSource;
 
         [Header("Dynamics")]
         public TMP_Text DialogueText; 
         public TMP_Text CharacterNameText;
+
+        [Space]
+        public Image NextCallToAction;
+        public Image ActorLeft;
+        public Image ActorRight;
 
         public string Text
         {
@@ -139,7 +144,16 @@ namespace DialogueSystem
         {
             DialogueText.SetText(string.Empty);
             CharacterNameText.SetText(string.Empty);
-        }
+
+            ActorLeft.sprite = null;
+            ActorRight.sprite = null;
+            ActorLeft.color = new Color(0, 0, 0, 0);
+            ActorRight.color = new Color(0, 0, 0, 0);
+
+            AudioSource.pitch = 1.0f;
+            AudioSource.volume = 1.0f;
+            AudioSource.clip = null;
+        } 
 
         private void ClearTypewritterCooldowns()
         {
@@ -160,6 +174,25 @@ namespace DialogueSystem
                 return;
             }
 
+            if (Dialogue.Instance.Settings.EnableRichText)
+            {
+                int richTextTagStart = value.IndexOfAny("<"); 
+                int richTextTagEnd = value.IndexOfAny(">"); 
+
+                // when there is a rich text tag
+                // and it is inside the insert length
+                // and there is a text tag end
+                if(richTextTagStart > 0 && richTextTagEnd > 0)
+                {
+                }
+
+                if(richTextTagStart > 0 && richTextTagStart <= length && richTextTagEnd > richTextTagStart)
+                {
+                    Debug.Log($"{richTextTagStart} {richTextTagEnd}");
+                    length += richTextTagEnd - richTextTagStart + 1;
+                }
+            }
+            
             m_string.Append(value.Slice(0, length));
             m_lastCharacter = value[0]; 
             m_characterIndex += length;
@@ -174,10 +207,19 @@ namespace DialogueSystem
             // cooldown has exceed.
             if(m_lastTime <= double.Epsilon)
             {
-                CharacterName = m_command.Actor.Name;
+                AddStringToBuffers(
+                    m_command.Text.Substring(m_characterIndex), 
+                    Dialogue.Instance.Settings.CharacterIncrement
+                );
 
-                AddStringToBuffers(m_command.Text.Substring(m_characterIndex), 1);
                 ClearTypewritterCooldowns();
+
+                // update dialogue informations
+                if (m_command.Actor)
+                {
+                    UpdateCharacterUI();
+                    PlayCharacterSound();
+                }
             }
 
             if (IsFinish)
@@ -187,9 +229,53 @@ namespace DialogueSystem
             }
         }
 
-        private void UpdateUI()
+        void UpdateUI()
         {
             NextCallToAction.SetTransparency(Convert.ToSingle(IsFinish));
+        }
+
+        void UpdateCharacterUI()
+        {
+            CharacterName = m_command.Actor.Name;
+            if (m_command.Actor.HasSprites)
+            {
+                uint sprite = (uint)Mathf.Min(m_command.ActorSprite, m_command.Actor.Sprites.Length - 1);
+
+                if (m_command.Actor.SpriteSide == DialogueActor.DialogueActorPosition.Left)
+                {
+                    ActorLeft.sprite = m_command.Actor.Sprites[sprite];
+                    ActorLeft.color = Color.white;
+                }
+                else
+                {
+                    ActorRight.sprite = m_command.Actor.Sprites[sprite];
+                    ActorRight.color = Color.white;
+                }
+            }
+        }
+
+        void PlayCharacterSound()
+        {
+            if (!Dialogue.Instance.Settings.EnableCharacterSounds)
+            {
+                return;
+            }
+
+            if(m_command.Actor.CharacterAudio == null)
+            {
+                return;
+            }
+ 
+            if(UnityEngine.Random.Range(0.0f, 1.0f) <= m_command.Actor.AudioProbability)
+            {
+                float volume = (float)UnityEngine.Random.Range(m_command.Actor.VolumeRandomness.x, m_command.Actor.VolumeRandomness.y);
+                float pitch = (float)UnityEngine.Random.Range(m_command.Actor.PitchRandomness.x, m_command.Actor.PitchRandomness.y);
+                
+                AudioSource.pitch = pitch;
+                AudioSource.volume = volume * Dialogue.Instance.Settings.Volume;
+                AudioSource.PlayOneShot(m_command.Actor.CharacterAudio);
+            }
+            
         }
 
         public override string ToString()

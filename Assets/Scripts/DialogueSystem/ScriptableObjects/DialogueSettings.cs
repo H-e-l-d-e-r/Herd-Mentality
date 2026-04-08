@@ -11,8 +11,21 @@ namespace DialogueSystem
     {
         [Header("Typewritter")]
         [Range(0.0f, 1.0f)]
-        public float CharacterDelay;
-        public SerializableDictionary<char, float> DelayHashmap;
+        public float CharacterDelay = 0.0f;
+        
+        [Range(1, 5)]
+        public int CharacterIncrement = 1;
+        
+        public SerializableDictionary<char, float> DelayHashmap = new();
+
+        [Tooltip("Skip rich text tags. When activate you cannot use less and greater than signs (< and >)")]
+        public bool EnableRichText = true;
+
+        [Header("Audio")]
+        public bool EnableCharacterSounds = true;
+
+        [Range(0.0f, 1.0f)]
+        public float Volume = 1.0f;
 
         [Header("Behaviour")]
         public DialogueBehavior EndDialogueBehaviour;

@@ -114,6 +114,9 @@ namespace DialogueSystem
             return ptr;    
         }
 
+        public void DisplayString(string @string) => Dialogue.DisplayDialogueString(@string);
+        public void DisplayString(string @string, DialogueActor actor) => Dialogue.DisplayDialogueString(@string, actor);
+
         public DialogueCommand GetCurrentCommand()
         {
             return m_system.Current;

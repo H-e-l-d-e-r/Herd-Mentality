@@ -1,7 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace DialogueSystem
@@ -125,6 +126,7 @@ namespace DialogueSystem
             {
                 case DialogueState.Hidden:
                     OnDialogueStartEvent?.Invoke();
+
                     m_current.ProcessCommand(DialogueState.Typing);
                     break;
                 
@@ -160,6 +162,11 @@ namespace DialogueSystem
             // dequeue
             if(m_dialogueQueue.TryDequeue(out DialoguePtr ptr))
             {
+                if(ptr == DialoguePtr.k_INVALID || ptr >= m_registerdCommands.Count)
+                {
+                    return false;
+                }
+
                 m_current = m_registerdCommands[ptr];
                 m_current.ProcessCommand(DialogueState.Hidden);
 
@@ -185,6 +192,17 @@ namespace DialogueSystem
 
             m_registerdCommands.Clear();
             s_instance = null;
+        }
+
+        /// <summary>
+        /// Register a new command using a dialogue table.
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static DialoguePtr RegisterDialogue(DialogueTable table)
+        {
+            table.TryRelink();
+            return RegisterDialogue(table.ToArray().First());
         }
 
         /// <summary>
@@ -260,6 +278,47 @@ namespace DialogueSystem
             {
                 s_instance.m_dialogueQueue.Enqueue(ptr);
             }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Play a one shot dialogue.
+        /// </summary>
+        /// <param name="text">dialogue content</param>
+        /// <returns>Returns if the dialogue has been played.</returns>
+        public static bool DisplayDialogueString(string text) => DisplayDialogueString(text, null);
+
+        /// <summary>
+        /// Play a one shot dialogue.
+        /// </summary>
+        /// <param name="text">dialogue content</param>
+        /// <param name="actor">dialogue speaker's actor</param>
+        /// <returns>Returns if the dialogue has been played.</returns>
+        public static bool DisplayDialogueString(string text, DialogueActor actor)
+        {
+            if(s_instance == null)
+            {
+                Debug.LogError(new Exception("no instance exists!"));
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return false;
+            }
+
+            string guid = new GUID().ToString();
+
+            DialogueCommand cmd = new DialogueCommand(guid);
+            cmd.Text = text;
+            cmd.Actor = actor;
+
+            DialoguePtr ptr = RegisterDialogue(cmd);
+            PlayDialogue(ptr);
+
+            // todo: try to find a way to destroy the dialogue pointer after it has been used
+            //DestroyDialogue(ptr);
 
             return true;
         }

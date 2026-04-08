@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
-  m_Name: Table
+  m_Name: LeCaca
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Coucou
-  Entries:
-  - Actor: {fileID: 11400000, guid: 76da524b1d1c44949a0b9534c2d56ccc, type: 2}
-    Text: Coucou je suis Ernest
+  Name: LeCaca
+  Description: 
+  m_nodes:
+  - Name: LeCaca
+    Text: 'Coucou c''est moi '
+    Actor: {fileID: 11400000, guid: f922f3524f313302ea048bbd0511df59, type: 2}
+    ActorSprite: 0
     Behavior: 0
-  - Actor: {fileID: 11400000, guid: 76da524b1d1c44949a0b9534c2d56ccc, type: 2}
-    Text: Je suis fan de radio :O
+  - Name: LeCaca
+    Text: J'aime le caca
+    Actor: {fileID: 11400000, guid: f922f3524f313302ea048bbd0511df59, type: 2}
+    ActorSprite: 1
     Behavior: 0

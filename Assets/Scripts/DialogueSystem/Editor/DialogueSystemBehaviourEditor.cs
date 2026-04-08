@@ -71,7 +71,7 @@ namespace DialogueSystem
                 foreach (DialogueCommand cmd in Self.System.Commands)
                 {
                     EditorGUILayout.Space();
-                    GUILayout.Label($"{cmd.Root.Name}");
+                    GUILayout.Label($"{cmd.Text}");
                 }
             } 
         }
