@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66412d6a8004e0398aceaf0a3d6aa312, type: 3}
-  m_Name: Marc
+  m_Name: Otto
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
-  Name: Marc
+  Name: Otto
   Description: 
   Sprites: []
   SpriteSide: 0
-  CharacterAudio: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
-  AudioProbability: 0.25
+  CharacterAudio: {fileID: 8300000, guid: be191ff749b89d649984166c9e6b4aa8, type: 3}
+  AudioProbability: 0.3
   PitchRandomness: {x: 1, y: 1}
   VolumeRandomness: {x: 1, y: 1}

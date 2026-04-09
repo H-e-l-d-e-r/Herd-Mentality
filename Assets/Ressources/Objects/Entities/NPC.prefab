@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a050557c58c9e434d832ad587bf4dde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntitiesBot
-  RefDialogues: {fileID: 11400000, guid: 3a685782e6423934980c7f6a3f7affe3, type: 2}
+  RefDialogues: {fileID: 0}
