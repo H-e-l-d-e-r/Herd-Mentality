@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class RadioManager : MonoBehaviour
 {
+    public float Timer => m_timer;
+
     [Header("Camera")]
     public Camera Camera;
     public CameraAnchor[] Anchors;
@@ -13,6 +16,9 @@ public class RadioManager : MonoBehaviour
 
     [Header("Inputs")]
     public InputActionReference SwitchCameraInput;
+
+    [Header("Events")]
+    public UnityEvent OnPlayTimeEnd;
 
     // constants
     private float k_switchCooldown;
@@ -24,6 +30,9 @@ public class RadioManager : MonoBehaviour
     // camera anchors
     private int m_currentAnchorIndex = 0;
 
+    private float m_timer;
+
+    [Header("Debug")]
     [SerializeField]
     private int[] m_selectedSequences;
 
@@ -42,6 +51,8 @@ public class RadioManager : MonoBehaviour
         
         k_switchCooldown = GlobalGameSettings.Instance.GenericInputCooldown;   
         m_switchCooldown = k_switchCooldown;
+
+        m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
 
         m_playedVinyls = new Queue<VinylObject>();
         m_targetSequences = new Queue<RadioSequenceObject>();
@@ -72,10 +83,21 @@ public class RadioManager : MonoBehaviour
         ClearVinylQueue();
     }
 
-    private void Update()
+    public void RadioUpdate()
     {
+        // when the play time is over
+        // we stop the game
+        if(m_timer < Mathf.Epsilon)
+        {
+            OnPlayTimeEnd.Invoke();
+            return;
+        }
+
         // camera movements
         UpdateCameraSwitch();
+
+        // update timer
+        m_timer -= Time.deltaTime;
     }
 
     /// <summary>

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RadioBehaviour : MonoBehaviour
 {
-    public static RadioBehaviour Instance => s_instance;
-    [HideInInspector] public float AntennaSignalQuality = 1.0f; // 1 = Son Parfait, 0 = Que du bruit blanc
     public AudioListener Listener;
+    public RadioManager Manager;
 
     [Header("Parameters")]
     public float MinFreq;
@@ -19,10 +19,16 @@ public class RadioBehaviour : MonoBehaviour
     public RadioNoiseOSC NoiseOSC;
     public RadioBroadcastBehaviour[] Broadcasts;
 
-    [Header("Power")]
-    public bool IsOn = false; // NOUVEAU MON KIKI
+    [Header("Events")]
+    public UnityEvent OnRadioEnable;
+    public UnityEvent<string> OnRadioTick;
+    public UnityEvent OnRadioDisable;
 
-    private static RadioBehaviour s_instance;
+    [HideInInspector]
+    public bool IsOn = false; // NOUVEAU MON KIKI
+    
+    [HideInInspector] 
+    public float AntennaSignalQuality = 1.0f; // 1 = Son Parfait, 0 = Que du bruit blanc
     
     private List<RadioBroadcastBehaviour> m_broadcasts;
     private float k_minFreq = 0.0f;
@@ -33,14 +39,12 @@ public class RadioBehaviour : MonoBehaviour
 
     void Start()
     {
-        s_instance = this;
-
         k_minFreq = MinFreq;
         k_maxFreq = MaxFreq;
 
         m_broadcasts = new List<RadioBroadcastBehaviour>(Broadcasts);
 
-        FindBroadcast();
+        RegisterBroadcasts();
 
         // On l'allume au d�marrage que si la case IsOn est coch�e (On vas l'allumer ce fils de pute)
         if (IsOn) EnableBroadcasts();
@@ -59,10 +63,14 @@ public class RadioBehaviour : MonoBehaviour
 
     void Update()
     {
-        UpdateSwitchFreq();
+        if (IsOn)
+        {
+            UpdateSwitchFreq();
+
+            OnRadioTick.Invoke($"{(int)(Manager.Timer / 60)}m {(int)(Manager.Timer % 60)}s");
+        }
     }
 
-    
     public void TogglePower()
     {
         IsOn = !IsOn; // Inverse l'�tat (Mamie branch�, mamie d�branch�, mamie vivante, mamie morte.)
@@ -91,8 +99,14 @@ public class RadioBehaviour : MonoBehaviour
 
         foreach (RadioBroadcastBehaviour be in m_broadcasts)
         {
-            be.Play();
+            if (be.gameObject.activeInHierarchy)
+            {
+                be.Play();            
+            }
         }
+
+        NoiseOSC.Play();
+        OnRadioEnable.Invoke();
     }
 
     void DisableBroadcasts()
@@ -106,9 +120,12 @@ public class RadioBehaviour : MonoBehaviour
         {
             be.Stop();
         }
+
+        NoiseOSC.Stop();
+        OnRadioDisable.Invoke();
     }
 
-    void FindBroadcast()
+    void RegisterBroadcasts()
     {
         foreach(RadioBroadcastBehaviour be in transform.GetComponentsInChildren<RadioBroadcastBehaviour>())
         {
@@ -122,16 +139,16 @@ public class RadioBehaviour : MonoBehaviour
     void UpdateSwitchFreq()
     {
         // SI LA RADIO EST �TEINTE, ON COUPE LE VOLUME ET ON S'ARR�TE L� (FBI OPEN UP)
-        if (!IsOn)
-        {
-            foreach(RadioBroadcastBehaviour be in m_broadcasts)
-            {
-                be.VolumeMultiplicator = 0.0f;
-            }
-            if (NoiseOSC != null) NoiseOSC.VolumeMultiplicator = 0.0f;
-            
-            return; 
-        }
+        // if (!IsOn)
+        // {
+        //     foreach(RadioBroadcastBehaviour be in m_broadcasts)
+        //     {
+        //         be.VolumeMultiplicator = 0.0f;
+        //     }
+        //     if (NoiseOSC != null) NoiseOSC.VolumeMultiplicator = 0.0f;
+        //     
+        //     return; 
+        // }
 
         float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
 
