@@ -9,6 +9,6 @@ public class DayDisplay : MonoBehaviour
 
     void Update()
     {
-        dayText.text = $"{PrefixeDay} {DayManager.Instance.CurrentDay}";
+        dayText.text = $"{PrefixeDay} {GameManager.Instance.CurrentDay}";
     }
 }

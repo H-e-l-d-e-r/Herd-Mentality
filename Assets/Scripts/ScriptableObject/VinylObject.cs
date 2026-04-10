@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Vinyl", menuName = "Herd Mentality/Radio Vinyl")]
-public class VinylObject : ScriptableObject
+public class VinylObject : CollectibleObject
 {
-    [Header("Meta")]
+    [Space]
     public string Title;
     public string Author;
     public Color Color;

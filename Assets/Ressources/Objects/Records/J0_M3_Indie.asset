@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aed54d12f8ad9446992f28102c35a7c, type: 3}
+  m_Name: J0_M3_Indie
+  m_EditorClassIdentifier: Assembly-CSharp::VinylObject
+  Name: Coolman!
+  Description: J'ai pas les droits pour le nom de la musique.
+  Title: Coolman!
+  Author: 
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  Clip: {fileID: 8300000, guid: fc8023eb09ab358c8973ca1e9172544b, type: 3}
+  Volume: 0.7

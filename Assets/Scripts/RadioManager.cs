@@ -24,6 +24,9 @@ public class RadioManager : MonoBehaviour
     // camera anchors
     private int m_currentAnchorIndex = 0;
 
+    [SerializeField]
+    private int[] m_selectedSequences;
+
     // les vinyles qui ont deja ete joues
     private Queue<VinylObject> m_playedVinyls;
 
@@ -43,6 +46,12 @@ public class RadioManager : MonoBehaviour
         m_playedVinyls = new Queue<VinylObject>();
         m_targetSequences = new Queue<RadioSequenceObject>();
         m_validatedSequences = new Queue<RadioSequenceObject>();
+
+        // register targets
+        foreach (int seq in m_selectedSequences)
+        {
+            m_targetSequences.Enqueue(GlobalGameSettings.Instance.Sequences[seq]);
+        }
 
         if (Anchors.Length > 0) 
         {

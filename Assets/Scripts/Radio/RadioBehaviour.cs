@@ -42,7 +42,7 @@ public class RadioBehaviour : MonoBehaviour
 
         FindBroadcast();
 
-        // On l'allume au démarrage que si la case IsOn est cochée (On vas l'allumer ce fils de pute)
+        // On l'allume au dï¿½marrage que si la case IsOn est cochï¿½e (On vas l'allumer ce fils de pute)
         if (IsOn) EnableBroadcasts();
         else DisableBroadcasts();
     }
@@ -65,7 +65,7 @@ public class RadioBehaviour : MonoBehaviour
     
     public void TogglePower()
     {
-        IsOn = !IsOn; // Inverse l'état (Mamie branché, mamie débranché, mamie vivante, mamie morte.)
+        IsOn = !IsOn; // Inverse l'ï¿½tat (Mamie branchï¿½, mamie dï¿½branchï¿½, mamie vivante, mamie morte.)
 
         if (IsOn)
         {
@@ -121,7 +121,7 @@ public class RadioBehaviour : MonoBehaviour
 
     void UpdateSwitchFreq()
     {
-        // SI LA RADIO EST ÉTEINTE, ON COUPE LE VOLUME ET ON S'ARRÊTE LÀ (FBI OPEN UP)
+        // SI LA RADIO EST ï¿½TEINTE, ON COUPE LE VOLUME ET ON S'ARRï¿½TE Lï¿½ (FBI OPEN UP)
         if (!IsOn)
         {
             foreach(RadioBroadcastBehaviour be in m_broadcasts)

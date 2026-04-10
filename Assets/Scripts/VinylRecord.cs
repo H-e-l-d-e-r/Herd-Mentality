@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -16,6 +17,7 @@ public class VinylRecord : MonoBehaviour
     }
 
     public MeshRenderer Renderer;
+    public TMP_Text TitleText;
 
     [HideInInspector]
     public bool IsDragged;
@@ -41,6 +43,11 @@ public class VinylRecord : MonoBehaviour
         {
             gameObject.name = Vinyl.ToString();
             Renderer.material.color = Vinyl.Color;
+
+            if (TitleText)
+            {
+                TitleText.text = Vinyl.Title;            
+            }
         }
     }
 

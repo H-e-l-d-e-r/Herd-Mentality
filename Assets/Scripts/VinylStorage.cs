@@ -1,4 +1,3 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -13,8 +12,8 @@ public class VinylStorage : MonoBehaviour
 
     // On remplace le vinyle unique par un tableau pour en mettre plein.... Comme dans ta daronne
     [Header("Vinyl Collection")]
+    [ReadOnlyAttribute]
     public VinylObject[] Vinyls;
-    private int m_currentVinylIndex = 0; // Pour savoir lequel on pioche...Si ta plusieurs daronne S.O Mael
 
     [Header("Inputs")]
     public InputActionReference DragInput;
@@ -41,6 +40,8 @@ public class VinylStorage : MonoBehaviour
 
         m_dragInput = InputActionReference.Create(DragInput);
         m_positionInput = InputActionReference.Create(PositionInput);
+
+        Vinyls = GameManager.Instance.UnlockedVinyls;
 
         foreach (VinylObject vinyl in Vinyls)
         {
