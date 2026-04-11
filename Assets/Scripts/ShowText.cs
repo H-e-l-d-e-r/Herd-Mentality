@@ -1,21 +1,34 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class ShowText : MonoBehaviour
 {
-    public GameObject[] TextToShow;
+    [System.Serializable]
+    public class GroupeTexte
+    {
+        public GameObject[] TextToShow;
+    }
+    public GroupeTexte[] GroupOfTexte;
 
-    public void ActivateText(int IndexTextToShow)
+    public void ActivateGroupsOfText (int IndexTextToShow)
     {
 
-        foreach (GameObject Text in TextToShow) 
+        foreach (GroupeTexte groupe in GroupOfTexte)
         {
-            Text.SetActive(false);
+            foreach (GameObject Text in groupe.TextToShow)
+            {
+                Text.SetActive(false);
+            }
         }
-        if (IndexTextToShow >= 0 && IndexTextToShow < TextToShow.Length)
+
+        if (IndexTextToShow >= 0 && IndexTextToShow < GroupOfTexte.Length)
         {
-            TextToShow[IndexTextToShow].SetActive(true);
+            foreach (GameObject texte in GroupOfTexte[IndexTextToShow].TextToShow)
+            {
+                texte.SetActive(true);
+            }
         }
 
         
