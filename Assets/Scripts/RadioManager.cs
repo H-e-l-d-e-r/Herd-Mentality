@@ -11,6 +11,10 @@ public class RadioManager : MonoBehaviour
     public Camera Camera;
     public CameraAnchor[] Anchors;
 
+    [Header("Planification UI")]
+    public GameObject PlanningCanvas; // Le Canvas à afficher
+    public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
+
     [Header("Components")]
     public VinylRecordPlayer VinylPlayer;
 
@@ -48,8 +52,8 @@ public class RadioManager : MonoBehaviour
     private void Start()
     {
         m_switchCameraInput = InputActionReference.Create(SwitchCameraInput);
-        
-        k_switchCooldown = GlobalGameSettings.Instance.GenericInputCooldown;   
+
+        k_switchCooldown = GlobalGameSettings.Instance.GenericInputCooldown;
         m_switchCooldown = k_switchCooldown;
 
         m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
@@ -64,10 +68,11 @@ public class RadioManager : MonoBehaviour
             m_targetSequences.Enqueue(GlobalGameSettings.Instance.Sequences[seq]);
         }
 
-        if (Anchors.Length > 0) 
+        if (Anchors.Length > 0)
         {
             // On se focus sur la first cam
             Anchors[0].Focus(Camera);
+            UpdatePlanningUI(); // On check si la première cam est la planning
         }
     }
 
@@ -87,7 +92,7 @@ public class RadioManager : MonoBehaviour
     {
         // when the play time is over
         // we stop the game
-        if(m_timer < Mathf.Epsilon)
+        if (m_timer < Mathf.Epsilon)
         {
             OnPlayTimeEnd.Invoke();
             return;
@@ -100,17 +105,30 @@ public class RadioManager : MonoBehaviour
         m_timer -= Time.deltaTime;
     }
 
+    private void UpdatePlanningUI()
+    {
+        if (PlanningCanvas == null) return;
+
+        // Si l'index actuel est celui de la planification, on affiche le Canvas
+        bool isOnPlanning = (m_currentAnchorIndex == PlanningAnchorIndex);
+
+        if (PlanningCanvas.activeSelf != isOnPlanning)
+        {
+            PlanningCanvas.SetActive(isOnPlanning);
+        }
+    }
+
     /// <summary>
     /// Vinyl enqueue wrapper.
     /// </summary>
     /// <param name="vinyl"></param>
     public void EnqueueVinyl(VinylObject vinyl)
     {
-        if(m_playedVinyls == null)
+        if (m_playedVinyls == null)
         {
             return;
         }
-        
+
         m_playedVinyls.Enqueue(vinyl);
 
         // apres, des qu'un vinyl est joue, on pourra check s'il 
@@ -122,7 +140,7 @@ public class RadioManager : MonoBehaviour
     /// </summary>
     public void ClearVinylQueue()
     {
-        if(m_playedVinyls == null)
+        if (m_playedVinyls == null)
         {
             return;
         }
@@ -145,6 +163,9 @@ public class RadioManager : MonoBehaviour
             // On va vers le prochain anchor 
             m_currentAnchorIndex = (m_currentAnchorIndex + 1) % Anchors.Length;
             Anchors[m_currentAnchorIndex].Focus(Camera);
+
+            // 
+            UpdatePlanningUI();
 
             // reset du cooldown
             m_switchCooldown = k_switchCooldown;
