@@ -3,6 +3,8 @@ using UnityEngine.Audio;
 
 public class RadioBroadcastBehaviour : MonoBehaviour
 {
+    public bool IsPlaying => m_source.isPlaying;
+
     [Header("Audio Parameters")]
     public AudioClip Audio;
     public AudioMixerGroup Group;
