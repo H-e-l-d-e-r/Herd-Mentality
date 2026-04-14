@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: J2_D1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: J2_D1
+  Description: Dialogue pour information J2_A0
+  m_nodes:
+  - Name: J2_D1
+    Text: "Ma\xE9 interpelle un membre des Scilas"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Alors, vous avez des news int\xE9ressantes ?<i> dit Ma\xE9 d\u2019un ton
+      joueur <i>\r\n"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Oh que ouais qu\u2019on a des news gamin. Mate-moi \xE7a. Membre des Scylas
+      montre une invitation avec \xE9crit : "
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Vous \xEAtes tous.tes invit\xE9es \xE0 passer la soir\xE9e chez Damien
+      et sa maman ce samedi soir. "
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "C\u2019est plut\xF4t chou\u2026 Ma\xE9 se fait interrompre par un scylas"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: <b>Oh Damien !<b>
+    Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "C\u2019est qu\u2019il gueule celui-l\xE0 ! Je suis juste \xE0 c\xF4t\xE9,
+      merde ! Quoi ?"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Ah ouais s\u2019cuse, c\u2019est que ton p\xE8re sait tellement bien accueillir,
+      pour le coup que j\u2019ai perdu la boule"
+    Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Roh ! D\xE9j\xE0 qu\u2019il me force la main pour distribuer des tracts
+      c\u2019est pas pour que tu viennes en rajouter hein !"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Oh le petit Damien \xE0 son papa\u2026 il veut t\xE9ter le biberon ?\r\nDamien
+      se jette sur le membre des scilas.\r\n"
+    Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Oh le petit Damien \xE0 son papa\u2026 il veut t\xE9ter le biberon ?\r\nDamien
+      se jette sur le membre des scilas.\r\n"
+    Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D1
+    Text: "Bon bah\u2026 Je vous laisse l\xE0 les gars !\r\n"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
