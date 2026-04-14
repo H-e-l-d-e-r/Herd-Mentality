@@ -27,8 +27,7 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D4
-    Text: "Eh, il est o\xF9 le vieux ? C\u2019est qui celle-la? chuchota Ma\xE9 \xE0
-      Eric"
+    Text: "Eh, il est o\xF9 le vieux ? C\u2019est qui celle-l\xE0 ?"
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
     Behavior: 0

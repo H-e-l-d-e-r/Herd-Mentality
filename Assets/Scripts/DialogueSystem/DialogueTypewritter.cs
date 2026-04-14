@@ -185,7 +185,6 @@ namespace DialogueSystem
 
                 if(richTextTagStart >= 0 && richTextTagStart <= length && richTextTagEnd > richTextTagStart)
                 {
-                    Debug.Log($"{richTextTagStart} {richTextTagEnd}");
                     length += richTextTagEnd - richTextTagStart + 1;
                 }
             }

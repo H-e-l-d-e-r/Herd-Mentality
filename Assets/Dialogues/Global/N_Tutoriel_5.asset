@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: N_Tutoriel_5
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: N_Tutoriel_5
+  Description: 
+  m_nodes:
+  - Name: 
+    Text: "Mais c'\xE9tait pas le bonne taille... J'te jure, ils ont encore augmenter
+      les prix des futals... J'\xE9tais all\xE9 vers- "
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 1
+  - Name: 
+    Text: "Il faudrait qu\u2019on cherche des scoops pour notre \xE9mission de ce
+      soir\u2026"
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Et c\u2019est pour dire \xE7a que tu m\u2019as coup\xE9 ?"
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 1
+  - Name: 
+    Text: "Toujours jouer les m\xEAmes musiques finirait par ennuyer les gens..."
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Il faudrait surtout qu\u2019on r\xE9ponde \xE0 des commandes de diffusion"
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: Des quoi ?
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Certains groupes communiquent leurs actions par codes audios. C\u2019est
+      souvent un encha\xEEnement de musique ou des mots de passes chiffr\xE9s..."
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Avec \xE7a, ils s'envoient des informations ou font la promotion d\u2019\xE9v\xE9nements
+      qu\u2019ils organisent."
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Avec \xE7a, ils s'envoient des informations ou font la promotion d\u2019\xE9v\xE9nements
+      qu\u2019ils organisent."
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Avec la r\xE9pression des F\xEAtes Libres, il y a quelque temps, les gens
+      ont peur d\u2019\xEAtre libre. "
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: Parfois, ils paient les radios pour transmettre leurs codes !
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 2
+    Behavior: 0
+  - Name: 
+    Text: "C\u2019est une bonne id\xE9e \u202F! Mais comment on r\xE9cup\xE8re des
+      codes\u202F? On n'est pas connu, personne ne nous ferra confiance\u2026"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: On peut y aller au culot !
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 1
+    Behavior: 0
+  - Name: 
+    Text: "Ouais, je pense qu\u2019il faut juste tenter. S'ils sont r\xE9ticents,
+      essaie de dire que \xE7a vient de moi, j\u2019ai d\xE9j\xE0 parl\xE9 \xE0 Skunner
+      et Joe, ils nous feront confiance !"
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
