@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: J0_D1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: J0_D1
+  Description: "Eric, d\u2019un ton pos\xE9, dans la station radio"
+  m_nodes:
+  - Name: J0_D1
+    Text: "Ma\xE9, si tu veux Otto a trouv\xE9 une ancienne bo\xEEte de vinyles \xE0
+      la brocante du quartier, tu peux aller la chercher\u202F? Tu n\u2019peux pas
+      la manquer, c\u2019est la seule sous l\u2019\xE9tabli, \xE0 c\xF4t\xE9 d\u2019une
+      flight case. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

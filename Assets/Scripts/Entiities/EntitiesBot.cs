@@ -15,6 +15,7 @@ public class EntitiesBot : EntitesBehaviour
 
     public override void OnInteract()
     {
+        Debug.Log((int)m_DialoguePtr);  
         Dialogue.PlayDialogue(m_DialoguePtr);
     }
 }

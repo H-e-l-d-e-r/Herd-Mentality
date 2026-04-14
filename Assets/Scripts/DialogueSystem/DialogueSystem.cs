@@ -225,10 +225,10 @@ namespace DialogueSystem
             }
 
             // if is already registered
-            if (s_instance.m_registerdCommands.Contains(command))
-            {
-                return new DialoguePtr(s_instance.m_registerdCommands.IndexOf(command));
-            }
+            //if (s_instance.m_registerdCommands.Contains(command))
+            //{
+            //    return new DialoguePtr(s_instance.m_registerdCommands.IndexOf(command));
+            //}
 
             s_instance.m_registerdCommands.Add(command);
             return new DialoguePtr(s_instance.m_registerdCommands.Count - 1);

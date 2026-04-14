@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: J1_D7
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: J1_D7
+  Description: Parlophone
+  m_nodes:
+  - Name: 
+    Text: 'Une voix robotique dans un parlophone.
+
+'
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Le Gouvernement de la Cit\xE9 cherche \xE0 vous rappeler que l\u2019\xE9coute
+      et la diffusion de contenu radiophonique est interdit sous lourdes peines."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: " Si vous remarquez un comportement d\xE9faillant, nous vous invitons \xE0
+      en faire part aux services de Force de la Cit\xE9"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
