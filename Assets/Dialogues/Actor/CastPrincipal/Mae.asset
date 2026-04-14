@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
   Name: Mae
   Description: 
-  Sprites: []
+  Sprites:
+  - {fileID: 430689451, guid: 4e76c6cd1b6c3d7468aa94310ffc6c2f, type: 3}
+  - {fileID: 716496139, guid: 4e76c6cd1b6c3d7468aa94310ffc6c2f, type: 3}
+  - {fileID: -1068766673, guid: 4e76c6cd1b6c3d7468aa94310ffc6c2f, type: 3}
   SpriteSide: 0
   CharacterAudio: {fileID: 8300000, guid: fced252bbfbb3c04babe212e83d65e83, type: 3}
   AudioProbability: 0.35

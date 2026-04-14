@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e0bd908a7530044787eaabb7973a688
+guid: 74546049d1ceb244e89ba33490e70897
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,12 +95,78 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: otto_posing_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 121
+        width: 1100
+        height: 3310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d164eb26e804d45aff8c8a0fc3fb93
+      internalID: 1685022772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: otto_posing_4
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 121
+        width: 1100
+        height: 3310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e630b2a2e6cde46a8373a574e77775
+      internalID: -1294733078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: otto_posing_5
+      rect:
+        serializedVersion: 2
+        x: 2931
+        y: 121
+        width: 1100
+        height: 3310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dbac97a64834b4a8a43877d04a7b68
+      internalID: -1762585937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7511e811dcf42ff42b5ce3b48ed75997
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +174,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      otto_posing_0: 1052073972
+      otto_posing_1: 655791425
+      otto_posing_2: 1660832246
+      otto_posing_3: 1685022772
+      otto_posing_4: -1294733078
+      otto_posing_5: -1762585937
+      otto_posing_6: 790495415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

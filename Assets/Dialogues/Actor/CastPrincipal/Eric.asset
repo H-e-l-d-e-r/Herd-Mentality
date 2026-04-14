@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
   Name: Eric
   Description: 
-  Sprites: []
-  SpriteSide: 0
+  Sprites:
+  - {fileID: 1366321015, guid: 765c0aee913b81845991201a2bee722f, type: 3}
+  SpriteSide: 1
   CharacterAudio: {fileID: 8300000, guid: 91fe09cc73aa9fa45a4fc3228062d129, type: 3}
   AudioProbability: 0.3
   PitchRandomness: {x: 1, y: 1}

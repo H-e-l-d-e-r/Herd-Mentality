@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
   Name: Otto
   Description: 
-  Sprites: []
-  SpriteSide: 0
+  Sprites:
+  - {fileID: 1685022772, guid: 74546049d1ceb244e89ba33490e70897, type: 3}
+  - {fileID: -1294733078, guid: 74546049d1ceb244e89ba33490e70897, type: 3}
+  - {fileID: -1762585937, guid: 74546049d1ceb244e89ba33490e70897, type: 3}
+  SpriteSide: 1
   CharacterAudio: {fileID: 8300000, guid: be191ff749b89d649984166c9e6b4aa8, type: 3}
   AudioProbability: 0.3
   PitchRandomness: {x: 1, y: 1}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd01e129cccbdd3491ac912ac217a7f, type: 3}
   m_Name: Dialogue Settings
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueSettings
-  CharacterDelay: 0.1
+  CharacterDelay: 0.05
   CharacterIncrement: 1
   DelayHashmap:
     m_keys: 2c002e00
