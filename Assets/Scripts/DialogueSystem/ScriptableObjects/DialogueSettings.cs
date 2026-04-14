@@ -31,6 +31,8 @@ namespace DialogueSystem
         public DialogueBehavior EndDialogueBehaviour;
 
         [Header("Inputs")]
+        public float DoubleInputCooldown = 0.5f; 
+        
         public InputActionReference InputActionNext;
         public float InputNextCooldown = 0.5f; 
 

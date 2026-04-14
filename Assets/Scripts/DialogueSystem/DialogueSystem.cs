@@ -126,7 +126,6 @@ namespace DialogueSystem
             {
                 case DialogueState.Hidden:
                     OnDialogueStartEvent?.Invoke();
-
                     m_current.ProcessCommand(DialogueState.Typing);
                     break;
                 

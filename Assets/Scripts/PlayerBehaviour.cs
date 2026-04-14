@@ -33,11 +33,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (m_interactInputAction.ReadValue<float>() > 0.5f) // ray cast 
         {
             Ray ray = Camera.main.ScreenPointToRay(m_positionInput.ReadValue<Vector2>());
-            
 
             if (Physics.Raycast(ray,out RaycastHit hitInfo) && hitInfo.transform.TryGetComponent(out EntitesBehaviour behaviour))
             {
-                behaviour.OnInteract();
+                behaviour.Interact();
             }
         }
 

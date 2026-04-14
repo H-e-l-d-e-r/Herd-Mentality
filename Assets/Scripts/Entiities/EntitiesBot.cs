@@ -3,19 +3,29 @@ using UnityEngine;
 
 public class EntitiesBot : EntitesBehaviour
 {
-    public DialogueTable RefDialogues;
+    public DialogueTable[] Tables;
+    public bool PlayOnce;
 
     protected DialoguePtr m_DialoguePtr;
 
     void Start()
     {
-        m_DialoguePtr = Dialogue.RegisterDialogue(RefDialogues);
-
+        // choisit un dialogue random dans la liste.
+        if(Tables.Length > 0)
+        {
+            int random = Random.Range(0, Tables.Length);
+            m_DialoguePtr = Dialogue.RegisterDialogue(Tables[random]);
+        }
     }
 
-    public override void OnInteract()
+    protected override void OnInteract()
     {
-        Debug.Log((int)m_DialoguePtr);  
-        Dialogue.PlayDialogue(m_DialoguePtr);
+        // si le pointeur est valide
+        if (m_DialoguePtr != DialoguePtr.k_INVALID)
+        {
+            IsInteractible = IsInteractible && !PlayOnce;
+
+            Dialogue.PlayDialogue(m_DialoguePtr);
+        }
     }
 }

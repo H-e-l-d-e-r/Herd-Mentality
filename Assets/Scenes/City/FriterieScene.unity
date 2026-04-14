@@ -132,7 +132,19 @@ PrefabInstance:
       value: NPC Test Audio
       objectReference: {fileID: 0}
     - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: PlayOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
       propertyPath: RefDialogues
+      value: 
+      objectReference: {fileID: 11400000, guid: 4036ecb480368424bad5e7c4a03e3940, type: 2}
+    - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: Tables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: 'Tables.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 4036ecb480368424bad5e7c4a03e3940, type: 2}
     - target: {fileID: 5210448427325669696, guid: bc951241131980f44972e1e3551fb096, type: 3}
@@ -179,6 +191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8694363767359339740, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fd4680c8ed373b24894b787afec3afd6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -966,6 +982,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8805636729283125934, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
       propertyPath: m_Name
       value: Dialogue System
@@ -1348,6 +1368,14 @@ PrefabInstance:
       propertyPath: RefDialogues
       value: 
       objectReference: {fileID: 11400000, guid: d1e74af3c804df6418564bfda2544bed, type: 2}
+    - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: Tables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658082068319458331, guid: bc951241131980f44972e1e3551fb096, type: 3}
+      propertyPath: 'Tables.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c73153ddd0b028648bbd830eadbb08d3, type: 2}
     - target: {fileID: 5210448427325669696, guid: bc951241131980f44972e1e3551fb096, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.032139957

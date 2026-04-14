@@ -23,11 +23,13 @@ namespace DialogueSystem
         private InputAction m_inputNext;
         private InputAction m_inputSkip;
 
+        private float k_DOUBLE_INPUT_COOLDOWN;
         private float k_NEXT_COOLDOWN;
         private float k_SKIP_COOLDOWN;
 
         private float m_nextCooldown = 0.0f;
         private float m_skipCooldown = 0.0f;
+        private float m_doubleInputCooldown = 0.0f;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Awake()
@@ -39,8 +41,11 @@ namespace DialogueSystem
 
             k_NEXT_COOLDOWN = Settings.InputNextCooldown;
             k_SKIP_COOLDOWN = Settings.InputSkipCooldown;
+            k_DOUBLE_INPUT_COOLDOWN = Settings.DoubleInputCooldown * 2.0f;
+            
             m_nextCooldown = k_NEXT_COOLDOWN;
             m_skipCooldown = k_SKIP_COOLDOWN;
+            m_doubleInputCooldown = k_DOUBLE_INPUT_COOLDOWN;
 
             // register event
             m_system.OnDialogueEvent += DoDialogue;
@@ -145,6 +150,12 @@ namespace DialogueSystem
                 m_nextCooldown -= Time.deltaTime;
                 return;
             }
+
+            if(m_doubleInputCooldown > Mathf.Epsilon)
+            {
+                m_doubleInputCooldown -= Time.deltaTime;
+                return;
+            }
             
             if(cmd == null)
             {
@@ -159,7 +170,7 @@ namespace DialogueSystem
             if (cmd.Behavior.HasFlag(DialogueBehavior.AutoSkip))
             {
                 //m_system.Next();
-                //m_system.MoveNext();
+                m_system.MoveNext();
             }
 
             if (cmd.Behavior.HasFlag(DialogueBehavior.WaitForInput))
@@ -169,6 +180,7 @@ namespace DialogueSystem
                 {
                     m_system.MoveNext();
                     m_nextCooldown = k_NEXT_COOLDOWN;
+                    m_doubleInputCooldown = k_DOUBLE_INPUT_COOLDOWN;
 
                     //m_system.Next();
                 } 
@@ -183,6 +195,12 @@ namespace DialogueSystem
                 return;
             }
 
+            if(m_doubleInputCooldown > Mathf.Epsilon)
+            {
+                m_doubleInputCooldown -= Time.deltaTime;
+                return;
+            }
+
             if(cmd == null)
             {
                 return;
@@ -192,6 +210,7 @@ namespace DialogueSystem
             {
                 Typewritter.Reveal();
                 m_skipCooldown = k_SKIP_COOLDOWN;
+                m_doubleInputCooldown = k_DOUBLE_INPUT_COOLDOWN;
             }
         }
     }

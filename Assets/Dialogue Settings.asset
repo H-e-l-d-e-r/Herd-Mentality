@@ -15,15 +15,18 @@ MonoBehaviour:
   CharacterDelay: 0.05
   CharacterIncrement: 1
   DelayHashmap:
-    m_keys: 2c002e00
+    m_keys: 2c002e0021003f00
     m_values:
     - 0.2
+    - 0.5
+    - 0.5
     - 0.5
   EnableRichText: 1
   EnableCharacterSounds: 1
   Volume: 1
   EndDialogueBehaviour: 0
+  DoubleInputCooldown: 0.5
   InputActionNext: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   InputNextCooldown: 0.5
-  InputActionSkip: {fileID: -4090225696740746782, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  InputActionSkip: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   InputSkipCooldown: 0.5
