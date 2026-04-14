@@ -79,3 +79,9 @@ MonoBehaviour:
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
     Behavior: 0
+  - Name: J2_D6
+    Text: "J\u2019en ai vu des flics sous couvertures mais celui-l\xE0 c'\xE9tait
+      le plus cram\xE9 de tous. Bon voyons voir sa lettre."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
