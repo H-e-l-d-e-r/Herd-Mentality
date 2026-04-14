@@ -10,7 +10,7 @@ public struct GameStatistics
     
     public uint GlobalAudimat;
 
-    public ushort AprSquatRoskoff;
-    public ushort AprYoungLetterists;
-    public ushort AprScilas;
+    public float AprSquatRoskoff;
+    public float AprYoungLetterists;
+    public float AprScilas;
 }

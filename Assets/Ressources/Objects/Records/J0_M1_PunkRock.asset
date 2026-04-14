@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VinylObject
   Name: Kill
   Description: "Un son Punk rock qui d\xE9chire !"
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 1
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   Title: Kill
   Author: 
   Color: {r: 0, g: 0, b: 0, a: 0}
