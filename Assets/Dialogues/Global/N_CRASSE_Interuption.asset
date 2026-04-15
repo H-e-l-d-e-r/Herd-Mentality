@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: N_CRASSE_Interuption
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: N_CRASSE_Interuption
+  Description: "La diffusion s\u2019arr\xEAte avant la fin (genre, elle ne dure 4
+    min)."
+  m_nodes:
+  - Name: N_CRASSE_Interuption
+    Text: <i>Bruit lourd. La porte est en train de se faire enfoncer.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: C'est quoi ces bruits ?
+    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: "Ils sont venus pour nous aujourd'hui\u202F!"
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 1
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: "<b>Otto</b>, <b>Ma\xE9</b>, allez chercher les palettes et bloquez la
+      porte\u202F!"
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: Il faut essayer de gagner du temps, je vais sauver le plus de matos possible...
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: "Mais pourquoi vous vous stressez autant, mourir dans la peur rend le cadavre
+      laid\u2026"
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: "Si je dois mourir, je veux au moins \xEAtre styl\xE9 dans mon cercueil. "
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: N_CRASSE_Interuption
+    Text: "Justement, on cherche \xE0 \xE9viter de tout perdre !"
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0

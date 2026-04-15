@@ -182,13 +182,9 @@ namespace DialogueSystem
                 // when there is a rich text tag
                 // and it is inside the insert length
                 // and there is a text tag end
-                if(richTextTagStart > 0 && richTextTagEnd > 0)
-                {
-                }
 
-                if(richTextTagStart > 0 && richTextTagStart <= length && richTextTagEnd > richTextTagStart)
+                if(richTextTagStart >= 0 && richTextTagStart <= length && richTextTagEnd > richTextTagStart)
                 {
-                    Debug.Log($"{richTextTagStart} {richTextTagEnd}");
                     length += richTextTagEnd - richTextTagStart + 1;
                 }
             }
@@ -219,6 +215,10 @@ namespace DialogueSystem
                 {
                     UpdateCharacterUI();
                     PlayCharacterSound();
+                }
+                else
+                {
+                    CharacterName = string.Empty;
                 }
             }
 

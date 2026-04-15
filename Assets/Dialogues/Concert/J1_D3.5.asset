@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: J1_D3.5
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: J1_D3.5
+  Description: "Skunner, Bec (Bot Squat Roskoff), Ma\xE9 dans la salle de concert.\r\n\r\n"
+  m_nodes:
+  - Name: J1_D3.5
+    Text: "Ma\xE9 entre dans la salle de concert, une chaise est lanc\xE9e et la
+      fr\xF4le."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "BAHAHAHA, l\u2019alcoolo a essay\xE9 de me lancer une chaise mais n\u2019as
+      pas r\xE9ussi, quel naze ! s\u2019amuse Skunner.\r\n"
+    Actor: {fileID: 11400000, guid: 3c274b7fef0f5774e8c198a702fec4e0, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "BAHAHAHA, l\u2019alcoolo a essay\xE9 de me lancer une chaise mais n\u2019as
+      pas r\xE9ussi, quel naze !\r\n"
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "*Hick* Sale con, rends-moi ma bi\xE8re ! Dit Bec en s\u2019effondrant."
+    Actor: {fileID: 11400000, guid: 46236749a04ccc645a995be5491c1894, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Bon allez, assez rigol\xE9 les gars, on le d\xE9gage \xBB "
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Bec sort, Skunner s\u2019avance vers Ma\xE9.\r\n"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Vraiment d\xE9sol\xE9 pour \xE7a, cet alcoolique n\u2019arrive jamais
+      \xE0 se contr\xF4ler.\r\n"
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Pas de probl\xE8me, j\u2019ai failli mourir et je crois que j\u2019ai
+      march\xE9 sur un peu vomi, mais tout va bien !"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Si c\u2019est que \xE7a, tu survivras hein, t'est une balaise toi ! J\u2019ai
+      pas capt\xE9 ton nom sinon\u2026"
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: Mae
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Ah, le pote d\u2019Eric ! Tout le monde m\u2019appelle Skunner ici, je
+      suis la manageuse de la Salle de concert donc n'h\xE9site pas \xE0 venir vers
+      moi quand t'a une merde ! \r\nD'ailleurs, on organise un concert gratuit le
+      samedi soir.\r\nSi tu en as l\u2019occasion, parle-en sur ta radio, on te paiera
+      une bi\xE8re en retour !\r\n"
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Oh merci ! J\u2019en parlerai \xE0 Eric !\r\n"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Ouais, ciao, passe une bonne soir\xE9e."
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0

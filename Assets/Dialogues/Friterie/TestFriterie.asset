@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: TestFriterie
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Discusionbatard
+  Description: 
+  m_nodes:
+  - Name: 
+    Text: "Tu pr\xE9fr\xE8re la tarte au pomme ou au foutre ?"
+    Actor: {fileID: 11400000, guid: 3c274b7fef0f5774e8c198a702fec4e0, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: bah pourquoi pas les deux ???????
+    Actor: {fileID: 11400000, guid: 1620b95270338e240b807558d2dab0c6, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: luca ta geule (au foutre oui )
+    Actor: {fileID: 11400000, guid: 46236749a04ccc645a995be5491c1894, type: 2}
+    ActorSprite: 0
+    Behavior: 0

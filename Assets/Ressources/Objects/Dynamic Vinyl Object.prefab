@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd4680c8ed373b24894b787afec3afd6, type: 2}
+  - {fileID: 2100000, guid: b2865295453fd38408f0a3a497051293, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,6 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed85c7d37a4862046ab25af511bf309b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableBehaviour
-  Vinyl: {fileID: 0}
   Renderer: {fileID: 5698571072262633836}
   IsDragged: 0
