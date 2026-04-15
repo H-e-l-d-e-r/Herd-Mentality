@@ -8,6 +8,10 @@ public class VinylObject : CollectibleObject
     public string Author;
     public Color Color;
 
+    [Header("Visuals")]
+    // NOUVEAU 
+    public Sprite BackgroundImage;
+
     [Header("Audio Clip")]
     public AudioClip Clip;
 

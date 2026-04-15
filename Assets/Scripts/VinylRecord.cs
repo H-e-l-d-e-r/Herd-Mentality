@@ -55,6 +55,7 @@ public class VinylRecord : MonoBehaviour
     {
         // EXPLOOSSSIIOOONNN!!! Megumin la goat, Kazuma le goat Best Ship Best Waifu Best Husbando (Yes i'm cronically online mtfcka)
         // helder t'es un sale pedo elle est surement mineure :(((
+        // Ohla ohla je ne fais pas de ca moi je parle du ship 
         Destroy(gameObject);  
     }
 }
