@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8253235ec52c6eca5bc20f5c10b9e1a5, type: 3}
   m_Name: Global Settings
   m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
-  GenericInputCooldown: 0.1
-  Sequences: []
+  GenericInputCooldown: 0.5
+  Sequences:
+  - {fileID: 11400000, guid: 3806ba9f0a3ea21ce9163cef4dfa2d25, type: 2}
+  - {fileID: 11400000, guid: f82bfec91c9f5cb8f91661de1b4da283, type: 2}

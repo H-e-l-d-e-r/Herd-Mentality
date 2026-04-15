@@ -1,7 +1,7 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class VinylStorage : MonoBehaviour
 {
@@ -11,10 +11,10 @@ public class VinylStorage : MonoBehaviour
     public GameObject VinylDragInstance;
     public ObjectGroupBehaviour Storage;
 
-    // On remplace le vinyle unique par un tableau pour en mettre plein.... Comme dans ta daronne
+    // On remplace le vinyle unique par une liste dynamique pour la programmation
     [Header("Vinyl Collection")]
-    public VinylObject[] Vinyls;
-    private int m_currentVinylIndex = 0; // Pour savoir lequel on pioche...Si ta plusieurs daronne S.O Mael
+    [ReadOnlyAttribute]
+    public List<VinylObject> Vinyls = new List<VinylObject>();
 
     [Header("Inputs")]
     public InputActionReference DragInput;
@@ -42,6 +42,23 @@ public class VinylStorage : MonoBehaviour
         m_dragInput = InputActionReference.Create(DragInput);
         m_positionInput = InputActionReference.Create(PositionInput);
 
+        // Au lieu de tout spawner ici, on attend que l'UI nous envoie la programmation !
+    }
+
+    // NOUVELLE FONCTION : Appelée par l'UI quand tu as fini de drag & drop
+    public void UpdateProgrammation(List<VinylObject> programmedVinyls)
+    {
+        Vinyls = programmedVinyls;
+
+        // 1. On nettoie l'ancien rangement physique (adieu les anciens disques)
+        // Note: Si ton ObjectGroupBehaviour a une fonction Clear(), utilise-la.
+        // Sinon, on détruit manuellement les enfants :
+        foreach (Transform child in Storage.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // 2. On spawn la nouvelle programmation dans la boite 3D
         foreach (VinylObject vinyl in Vinyls)
         {
             VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
@@ -97,10 +114,6 @@ public class VinylStorage : MonoBehaviour
 
                         OnDragVinyl?.Invoke(record.Vinyl);
                     }
-                    else
-                    {
-                        // no op    
-                    }
                 }
             }
         }
@@ -131,12 +144,6 @@ public class VinylStorage : MonoBehaviour
         }
     }
 
-    void EnableDisks()
-    {
-
-    }
-
-    // J'ai fait ca pour qu'il puisse se destroy quand il collide avec le storage
     private void OnTriggerStay(Collider other)
     {
         VinylRecord draggable = other.GetComponent<VinylRecord>();

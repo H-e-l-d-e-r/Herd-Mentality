@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef5699a6f919f3a4eb94ea7eb268a23e
+guid: 762801d8552333e47aaf74bb90f1cf54
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   - Protest Strike
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 1
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

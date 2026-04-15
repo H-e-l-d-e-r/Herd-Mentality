@@ -7,7 +7,7 @@ public class SceneEndTrigger : MonoBehaviour
   
     public void OnSceneEnd()
     {
-        DayManager.Instance.DayUpdate();
+        GameManager.Instance.NextDay();
 
         SceneManager.LoadScene(NameNextScene);
     }

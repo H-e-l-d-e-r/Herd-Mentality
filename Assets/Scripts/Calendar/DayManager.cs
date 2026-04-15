@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DayManager : MonoBehaviour
+/*public class DayManager : MonoBehaviour
 {
     public static DayManager Instance => s_instance;
     public int CurrentDay => p_currentDay;
@@ -27,4 +27,4 @@ public class DayManager : MonoBehaviour
         
         Debug.Log($"jour : {CurrentDay}");
     }
-}
+}*/

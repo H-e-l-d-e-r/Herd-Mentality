@@ -5,6 +5,9 @@ using UnityEngine.Events;
 [RequireComponent (typeof(Rigidbody))]
 public class VinylRecordPlayer : MonoBehaviour
 {
+    public bool IsPlaying => Broadcast.IsPlaying;
+    public VinylObject CurrentVinyl => m_vinyl;
+
     public RadioBroadcastBehaviour Broadcast;
 
     [Header("Events")]

@@ -1,12 +1,16 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Vinyl", menuName = "Herd Mentality/Radio Vinyl")]
-public class VinylObject : ScriptableObject
+public class VinylObject : CollectibleObject
 {
-    [Header("Meta")]
+    [Space]
     public string Title;
     public string Author;
     public Color Color;
+
+    [Header("Visuals")]
+    // NOUVEAU 
+    public Sprite BackgroundImage;
 
     [Header("Audio Clip")]
     public AudioClip Clip;

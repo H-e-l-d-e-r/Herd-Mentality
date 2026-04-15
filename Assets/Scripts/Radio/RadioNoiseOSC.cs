@@ -29,9 +29,14 @@ public class RadioNoiseOSC : MonoBehaviour
     private uint m_seed = 33423204;
     private float m_last = 0.0f;
 
-    void Start()
+    public void Play()
     {
+        m_canPlay = true;
+    }
 
+    public void Stop()
+    {
+        m_canPlay = false;
     }
 
     private void OnEnable()
@@ -71,10 +76,20 @@ public class RadioNoiseOSC : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
-        // NOUVEAU Demande si il peut jouer le bruitblanc
-        if (!m_canPlay || RadioBehaviour.Instance == null || !RadioBehaviour.Instance.IsOn)
-            return;
+        if(!m_canPlay)
+        {
+            // c'est au cas ou, comment je ne sais pas vraiment
+            // comment la thread sonore fonctionne, on securise
+            // en copiant toute les donnees.
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] = data[i];
+            }
 
+            return;
+        }
+
+        // NOUVEAU Demande si il peut jouer le bruitblanc
         float volume = Mathf.Clamp(VolumeMultiplicator * Volume, MinimumNoise, 0.5f);
         for (int i = 0; i < data.Length; i++)
         {
