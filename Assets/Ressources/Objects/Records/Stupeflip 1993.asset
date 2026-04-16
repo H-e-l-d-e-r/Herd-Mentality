@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aed54d12f8ad9446992f28102c35a7c, type: 3}
   m_Name: Stupeflip 1993
   m_EditorClassIdentifier: Assembly-CSharp::RadioVinyl
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   Title: 1993
   Author: Stupeflip
   Color: {r: 0.8679245, g: 0.2251691, b: 0.2251691, a: 0}
+  BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
   Clip: {fileID: 8300000, guid: 0de849166f2616e4bbfea104562facc6, type: 3}
   Volume: 0.766

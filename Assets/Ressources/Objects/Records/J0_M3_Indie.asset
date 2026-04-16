@@ -25,5 +25,6 @@ MonoBehaviour:
   Title: Coolman!
   Author: 
   Color: {r: 0, g: 0, b: 0, a: 0}
+  BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
   Clip: {fileID: 8300000, guid: fc8023eb09ab358c8973ca1e9172544b, type: 3}
   Volume: 0.7

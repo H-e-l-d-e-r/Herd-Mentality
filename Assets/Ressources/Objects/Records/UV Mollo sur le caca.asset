@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aed54d12f8ad9446992f28102c35a7c, type: 3}
   m_Name: UV Mollo sur le caca
   m_EditorClassIdentifier: Assembly-CSharp::RadioVinyl
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   Title: Mollo sur le caca
   Author: Ultra Vomit
   Color: {r: 0.2924528, g: 0.08966714, b: 0.2880669, a: 0}
+  BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
   Clip: {fileID: 8300000, guid: b3d3cfb70c908a04d9ee6f87b3ed0164, type: 3}
   Volume: 0.766

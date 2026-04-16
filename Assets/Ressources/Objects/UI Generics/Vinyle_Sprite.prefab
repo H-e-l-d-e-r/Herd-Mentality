@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIVinylItem
   VinylData: {fileID: 0}
-  TitleText: {fileID: 0}
+  TitleText: {fileID: 6300169475154222564, guid: e162559419016b14491883114cdd2c10, type: 3}
   BackgroundImage: {fileID: 0}

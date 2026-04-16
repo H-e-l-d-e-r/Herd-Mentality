@@ -16,27 +16,46 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     void Awake()
     {
+        // 1. Gestion du CanvasGroup
         m_canvasGroup = GetComponent<CanvasGroup>();
-        if (m_canvasGroup == null) m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        if (m_canvasGroup == null)
+        {
+            m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
+
+        // 2. AUTO-RÉPARATION DE L'IMAGE (Fini la ligne 29 !)
+        if (BackgroundImage == null)
+        {
+            BackgroundImage = GetComponentInChildren<Image>(); // Cherche s'il en reste une cachée
+
+            // Si vraiment il n'y a plus AUCUNE image sur ton Prefab, le script en crée une !
+            if (BackgroundImage == null)
+            {
+                BackgroundImage = gameObject.AddComponent<Image>();
+            }
+        }
     }
 
     public void Setup(VinylObject data)
     {
+        if (data == null) return; // Sécurité
+
         VinylData = data;
-        TitleText.text = data.Title;
 
-        // On change la couleur de l'objet UI
-        BackgroundImage.color = data.Color;
+        if (TitleText != null)
+        {
+            TitleText.text = data.Title;
+        }
 
-
+        // LA FAMEUSE LIGNE 29 (Qui ne plantera plus jamais)
+        // Maintenant on est sûr à 1000% que BackgroundImage existe grâce au Awake
         if (data.BackgroundImage != null)
         {
-            BackgroundImage.sprite = data.BackgroundImage; // On applique le dessin
-            BackgroundImage.color = Color.white; // On remet la couleur à blanc pour voir l'image normalement
+            BackgroundImage.sprite = data.BackgroundImage;
+            BackgroundImage.color = Color.white;
         }
         else
         {
-            // Sinon on garde juste la couleur unie par défaut
             BackgroundImage.sprite = null;
             BackgroundImage.color = data.Color;
         }
@@ -59,7 +78,8 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition; // Suit la souris
+        // On utilise eventData.position au lieu de Input.mousePosition
+        transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
