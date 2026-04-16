@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RadioScene.unity
     guid: 35702859183152e428e8191a66327191
   - enabled: 1
-    path: Assets/Scenes/Menu/SongScene.unity
+    path: Assets/Scenes/Menu/UIGeneralScene.unity
     guid: f631a655360b47646aa2d56358be15c9
   - enabled: 1
     path: Assets/Scenes/Menu/NoteScene.unity
