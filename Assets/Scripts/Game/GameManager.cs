@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool HasInstance => s_instance != null;
     public static GameManager Instance => s_instance;
+    
     public int CurrentDay => m_currentDay;
 
     public VinylObject[] UnlockedVinyls
@@ -36,6 +38,9 @@ public class GameManager : MonoBehaviour
     private int[] m_unlockedSequences;
 
     private static GameManager s_instance;
+
+    [SerializeField]
+    [ReadOnly]
     private int m_currentDay = 0;
 
     void Start()
