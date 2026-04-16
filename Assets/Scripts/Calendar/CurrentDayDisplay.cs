@@ -7,8 +7,21 @@ public class DayDisplay : MonoBehaviour
     public TMP_Text dayText;
     public string PrefixeDay;
 
-    void Update()
+    void Start()
     {
-        //dayText.text = $"{PrefixeDay} {GameManager.Instance.CurrentDay}";
+        UpdateUI();
+    }
+
+    void OnEnable()
+    {
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        if (GameManager.HasInstance)
+        {
+            dayText.text = $"{PrefixeDay} {GameManager.Instance.CurrentDay}";
+        }
     }
 }
