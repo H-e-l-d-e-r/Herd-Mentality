@@ -39,14 +39,14 @@ public class VinylRecord : MonoBehaviour
     {
         NullComponents.ThrowIfNull(Renderer);
 
-        if(Vinyl != null)
+        if (Vinyl != null)
         {
             gameObject.name = Vinyl.ToString();
             Renderer.material.color = Vinyl.Color;
 
             if (TitleText)
             {
-                TitleText.text = Vinyl.Title;            
+                TitleText.text = Vinyl.Title;
             }
         }
     }
@@ -56,6 +56,6 @@ public class VinylRecord : MonoBehaviour
         // EXPLOOSSSIIOOONNN!!! Megumin la goat, Kazuma le goat Best Ship Best Waifu Best Husbando (Yes i'm cronically online mtfcka)
         // helder t'es un sale pedo elle est surement mineure :(((
         // Ohla ohla je ne fais pas de ca moi je parle du ship 
-        Destroy(gameObject);  
+        Destroy(gameObject);
     }
 }

@@ -11,7 +11,6 @@ public class VinylStorage : MonoBehaviour
     public GameObject VinylDragInstance;
     public ObjectGroupBehaviour Storage;
 
-    // On remplace le vinyle unique par une liste dynamique pour la programmation
     [Header("Vinyl Collection")]
     [ReadOnlyAttribute]
     public List<VinylObject> Vinyls = new List<VinylObject>();
@@ -41,24 +40,18 @@ public class VinylStorage : MonoBehaviour
 
         m_dragInput = InputActionReference.Create(DragInput);
         m_positionInput = InputActionReference.Create(PositionInput);
-
-        // Au lieu de tout spawner ici, on attend que l'UI nous envoie la programmation !
     }
 
-    // NOUVELLE FONCTION : Appelée par l'UI quand tu as fini de drag & drop
+    // Fonction appelée par l'UI (le Drag & Drop) pour ranger les disques physiques
     public void UpdateProgrammation(List<VinylObject> programmedVinyls)
     {
         Vinyls = programmedVinyls;
 
-        // 1. On nettoie l'ancien rangement physique (adieu les anciens disques)
-        // Note: Si ton ObjectGroupBehaviour a une fonction Clear(), utilise-la.
-        // Sinon, on détruit manuellement les enfants :
         foreach (Transform child in Storage.transform)
         {
             Destroy(child.gameObject);
         }
 
-        // 2. On spawn la nouvelle programmation dans la boite 3D
         foreach (VinylObject vinyl in Vinyls)
         {
             VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
@@ -68,7 +61,6 @@ public class VinylStorage : MonoBehaviour
 
     void Update()
     {
-        // uniquement lorsque la camera est focus sur la table
         if (Camera.IsCameraAttached)
         {
             UpdatePickupVinyl();
@@ -76,12 +68,10 @@ public class VinylStorage : MonoBehaviour
         }
     }
 
-    void UpdatePickupVinyl() // On pouvait spawn le vinyle depuis le recorder aussi, Plus mtn! ;) (*0*) <-- urètre de Laink
+    void UpdatePickupVinyl()
     {
         if (m_dragInput.ReadValue<float>() > 0.1f)
         {
-            // On ne lance le Raycast que si on ne tient rien pour plus de stabilite 
-            // THANK YOU CLAUDE.AI YOU ARE MY BEST FRIEND YOU ARE THE BEST CODER YOU ARE THE LEGEND
             if (!m_isHolding)
             {
                 Ray ray = Camera.Camera.ScreenPointToRay(m_positionInput.ReadValue<Vector2>());
@@ -102,7 +92,6 @@ public class VinylStorage : MonoBehaviour
                         m_lastSpawnedVinyl = m_vinylInstance;
 
                         Storage.Remove(index);
-
                         OnSelectVinyl?.Invoke(record.Vinyl);
                     }
                     else if (hit.transform.tag == "Dynamic Vinyl Record")
@@ -123,17 +112,12 @@ public class VinylStorage : MonoBehaviour
             if (m_vinylInstance != null)
             {
                 m_vinylInstance.IsDragged = false;
-
-                // CORRECTION ICI : On invoque l'événement d'abord !
                 OnUnselectVinyl?.Invoke(m_vinylInstance.Vinyl);
-
-                // Et on oublie la référence APRÈS.
                 m_vinylInstance = null;
             }
         }
     }
 
-    // On met a jour le comportement des disques lorsqu'ils sont drag par le joueur
     void UpdateDragBehaviour()
     {
         if (m_isHolding && m_vinylInstance)
@@ -148,16 +132,12 @@ public class VinylStorage : MonoBehaviour
     {
         VinylRecord draggable = other.GetComponent<VinylRecord>();
 
-        // On refuse de detruire le vinyle s'il est celui qu'on vient juste de faire spawn 
-        // (Comme en Amerique :/ Fuck les Pro-life allez adopter au lieu de faire chier)
         if (draggable != null && !draggable.IsDragged && draggable != m_lastSpawnedVinyl)
         {
             draggable.DestroyObject();
         }
     }
 
-    // Quand le vinyle sort completement de la zone, il perd son immunite (Comme dans Koh-Lanta)
-    // Si tu le ramenes dans le bac il sera detruit (Et la sentence est irrevocable magueule )
     private void OnTriggerExit(Collider other)
     {
         VinylRecord draggable = other.GetComponent<VinylRecord>();

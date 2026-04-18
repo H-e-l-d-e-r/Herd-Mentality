@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: J1_A2_SC
-  m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
+  m_Script: {fileID: 11500000, guid: 2aed54d12f8ad9446992f28102c35a7c, type: 3}
+  m_Name: Test_Sound2
+  m_EditorClassIdentifier: Assembly-CSharp::VinylObject
   Name: 
   Description: 
   Like:
@@ -22,6 +22,9 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Blocs:
-  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
-  - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
+  Title: 
+  Author: 
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  BackgroundImage: {fileID: 155385067, guid: c66a543b982e56589a0441f13f7e7cc7, type: 3}
+  Clip: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
+  Volume: 1
