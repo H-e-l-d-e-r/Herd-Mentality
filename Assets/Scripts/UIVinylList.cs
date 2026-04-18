@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
+using UnityEditor;
 
 public class UIVinylList : MonoBehaviour
 {
@@ -17,9 +19,13 @@ public class UIVinylList : MonoBehaviour
     public TMP_Text TextAppreciationYl;
     public TMP_Text TextAppreciationrSr;
     public TMP_Text TextAppreciationSc;
+    public float vitesseRotation;
 
     private List<VinylRecord> m_spawnedUI;
     private AudioSource m_audioSource;
+    private RectTransform m_rectTransform;
+    private bool m_musicPlays = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +37,16 @@ public class UIVinylList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+    void Awake()
+    {
+        m_rectTransform = Template.GetComponent<RectTransform>(); 
+    }
+    public void RotateVinyl()
+    {
+        m_rectTransform.Rotate(0f, 0f, +vitesseRotation);
+
     }
 
     void CreateVinyl()
@@ -58,25 +73,38 @@ public class UIVinylList : MonoBehaviour
 
         m_spawnedUI.Clear();
     }
-    
-    public void Stop()
+    public void SetAudio(VinylRecord record)
     {
-        m_audioSource.Stop();
+        m_audioSource = gameObject.AddComponent<AudioSource>();
+        m_audioSource.clip = record.Vinyl.Clip;
+        m_audioSource.volume = record.Vinyl.Volume;
     }
-
-    // display text when button clicked 
+    
+    // display text + audio when button clicked 
     void OnButtonClick(VinylRecord record)
     {
-        Debug.Log("qmlskejf");
+        SetAudio(record);
+        Debug.Log(m_musicPlays);
+
+        if (m_musicPlays == true)
+        {
+            Debug.Log("qmlskejf");
+            m_audioSource.Stop();
+            m_musicPlays = false;
+
+        }
+        else
+        {
+            m_audioSource.Play();
+            m_musicPlays = true;
+        }
+
         TextLyrics.text = record.Vinyl.Description;
         TextLyrics.gameObject.SetActive(true);
         //TextLyrics.text = record.Vinyl.Description;
+        
 
-        m_audioSource = gameObject.AddComponent<AudioSource>();
-
-        m_audioSource.Play();
-        Debug.Log("fhzbvsbjsdhjsxbhjv fdjk");
-
+        
         if (record.Vinyl.Like.YoungLetterists)
         {
             TextAppreciationYl.gameObject.SetActive(true);
@@ -95,7 +123,7 @@ public class UIVinylList : MonoBehaviour
             TextAppreciationrSr.gameObject.SetActive(false);
             TextAppreciationSc.gameObject.SetActive(true);
         }
-
+        // pas ouf le code mais ca fonctionne 
     }
 
 }

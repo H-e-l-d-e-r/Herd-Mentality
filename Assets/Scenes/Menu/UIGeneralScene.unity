@@ -214,6 +214,7 @@ MonoBehaviour:
   TextAppreciationYl: {fileID: 209930235}
   TextAppreciationrSr: {fileID: 1974991809}
   TextAppreciationSc: {fileID: 1157838034}
+  vitesseRotation: 15
 --- !u!1 &35196873
 GameObject:
   m_ObjectHideFlags: 0
