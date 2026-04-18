@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: J0_M0_PopRock
   m_EditorClassIdentifier: Assembly-CSharp::VinylObject
   Name: Won't Remember?
-  Description: 
+  Description: LINDA LINDA. LINDA LINDA LINDAAAAA
   Like:
     YoungLetterists: 1
     SquatRoskoff: 0
@@ -25,5 +25,6 @@ MonoBehaviour:
   Title: Won't Remember?
   Author: 
   Color: {r: 0, g: 0, b: 0, a: 0}
+  BackgroundImage: {fileID: 0}
   Clip: {fileID: 8300000, guid: e253f1a97cb9dcfc191695f4ccaf9b2d, type: 3}
   Volume: 0.7

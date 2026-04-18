@@ -1,8 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(MeshRenderer))]
+// [RequireComponent(typeof(Collider))]
+// [RequireComponent(typeof(MeshRenderer))]
 public class VinylRecord : MonoBehaviour
 {
     // ON STOCK LA MARCHANDISE ICI (BEENDO Z EST PAS BETE HEIN)
@@ -37,12 +37,15 @@ public class VinylRecord : MonoBehaviour
 
     public void UpdateVinylProperties()
     {
-        NullComponents.ThrowIfNull(Renderer);
-
         if(Vinyl != null)
         {
             gameObject.name = Vinyl.ToString();
-            Renderer.material.color = Vinyl.Color;
+
+            if (Renderer)
+            {
+                Renderer.material.color = Vinyl.Color;
+
+            }
 
             if (TitleText)
             {

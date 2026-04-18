@@ -28,6 +28,6 @@ public class TextGroupBehaviour : MonoBehaviour
     [Serializable]
     public struct TextGroupContainer
     {
-        public GameObject[] TextToShow; 
+        public GameObject[] TextToShow;
     }
 }
