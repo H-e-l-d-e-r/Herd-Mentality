@@ -1076,6 +1076,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_selectedSequences: 0000000001000000
+  m_overwriteRadioTicks: 0
 --- !u!4 &207092273
 Transform:
   m_ObjectHideFlags: 0
@@ -1445,6 +1446,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &281123965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,6 +4606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1155405661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,6 +5355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1270786071
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,6 +6085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1594838632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7493,6 +7518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1996695426
 Transform:
   m_ObjectHideFlags: 0
@@ -8190,6 +8221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed057641a6894044b85819475a8130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnchor
+  OnFocus:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocusOnce:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2138465975
 GameObject:
   m_ObjectHideFlags: 0
