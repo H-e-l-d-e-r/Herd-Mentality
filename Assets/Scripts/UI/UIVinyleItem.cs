@@ -6,9 +6,11 @@ using TMPro;
 
 public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [HideInInspector] public VinylObject VinylData; 
+    [HideInInspector] 
+    public VinylObject VinylData; 
 
     public TMP_Text TitleText;
+
     public Image BackgroundImage;
 
     private Transform m_originalParent;
@@ -23,12 +25,12 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
-        // 2. AUTO-RÉPARATION DE L'IMAGE (Fini la ligne 29 !)
+        // 2. AUTO-Rï¿½PARATION DE L'IMAGE (Fini la ligne 29 !)
         if (BackgroundImage == null)
         {
-            BackgroundImage = GetComponentInChildren<Image>(); // Cherche s'il en reste une cachée
+            BackgroundImage = GetComponentInChildren<Image>(); // Cherche s'il en reste une cachï¿½e
 
-            // Si vraiment il n'y a plus AUCUNE image sur ton Prefab, le script en crée une !
+            // Si vraiment il n'y a plus AUCUNE image sur ton Prefab, le script en crï¿½e une !
             if (BackgroundImage == null)
             {
                 BackgroundImage = gameObject.AddComponent<Image>();
@@ -38,7 +40,7 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void Setup(VinylObject data)
     {
-        if (data == null) return; // Sécurité
+        if (data == null) return; // Sï¿½curitï¿½
 
         VinylData = data;
 
@@ -48,7 +50,8 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
 
         // LA FAMEUSE LIGNE 29 (Qui ne plantera plus jamais)
-        // Maintenant on est sûr à 1000% que BackgroundImage existe grâce au Awake
+        // Maintenant on est sï¿½r ï¿½ 1000% que BackgroundImage existe grï¿½ce au Awake
+        // bah sache que j'ai reussi a faire une erreur sur la ligne 29 de merde
         if (data.BackgroundImage != null)
         {
             BackgroundImage.sprite = data.BackgroundImage;
@@ -69,10 +72,10 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         Canvas mainCanvas = GetComponentInParent<Canvas>();
         transform.SetParent(mainCanvas.transform);
 
-        // On se met en toute dernière position pour être dessiné au-dessus de tout le reste
+        // On se met en toute derniï¿½re position pour ï¿½tre dessinï¿½ au-dessus de tout le reste
         transform.SetAsLastSibling();
 
-        // On désactive le raycast pour que la souris puisse cliquer sur la zone de drop en dessous
+        // On dï¿½sactive le raycast pour que la souris puisse cliquer sur la zone de drop en dessous
         m_canvasGroup.blocksRaycasts = false;
     }
 
@@ -86,7 +89,7 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         m_canvasGroup.blocksRaycasts = true;
 
-        // Si on le lâche dans le vide il retourne à sa place d'origine
+        // Si on le lï¿½che dans le vide il retourne ï¿½ sa place d'origine
         if (transform.parent == transform.root)
         {
             transform.SetParent(m_originalParent);

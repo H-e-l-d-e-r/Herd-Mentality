@@ -37,7 +37,7 @@ namespace DialogueSystem
             if(Settings == null) Debug.LogError(new ArgumentNullException(nameof(Settings)));
             if(Typewritter == null) Debug.LogError(new ArgumentNullException(nameof(Typewritter)));
 
-            m_system = new Dialogue(Settings);
+            m_system = new Dialogue(this);
 
             k_NEXT_COOLDOWN = Settings.InputNextCooldown;
             k_SKIP_COOLDOWN = Settings.InputSkipCooldown;
