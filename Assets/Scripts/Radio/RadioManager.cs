@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DialogueSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -14,7 +15,7 @@ public class RadioManager : MonoBehaviour
     public CameraAnchor[] Anchors;
 
     [Header("Planification UI")]
-    public GameObject PlanningCanvas; // Le Canvas à afficher
+    public GameObject PlanningCanvas; // Le Canvas ï¿½ afficher
     public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
 
     [Header("Components")]
@@ -41,6 +42,9 @@ public class RadioManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField]
     private int[] m_selectedSequences;
+
+    [SerializeField]
+    private bool m_overwriteRadioTicks = false;
 
     // les vinyles qui ont deja ete joues
     private Queue<VinylObject> m_playedVinyls;
@@ -77,7 +81,7 @@ public class RadioManager : MonoBehaviour
         {
             // On se focus sur la first cam
             Anchors[0].Focus(Camera);
-            UpdatePlanningUI(); // On check si la première cam est la planning
+            UpdatePlanningUI(); // On check si la premiï¿½re cam est la planning
         }
     }
 
@@ -91,6 +95,14 @@ public class RadioManager : MonoBehaviour
     {
         // reset
         ClearVinylQueue();
+    }
+
+    void Update()
+    {
+        if (m_overwriteRadioTicks && !Dialogue.Instance.IsPlaying)
+        {
+            RadioUpdate();
+        }
     }
 
     public void RadioUpdate()
