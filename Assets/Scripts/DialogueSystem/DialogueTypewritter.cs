@@ -11,6 +11,7 @@ namespace DialogueSystem
     {
         [Header("Components")]
         public CanvasGroup PanelGroup;
+        public RectTransform CharacterNamePanel;
         public AudioSource AudioSource;
 
         [Header("Dynamics")]
@@ -142,6 +143,7 @@ namespace DialogueSystem
 
         private void ClearComponents()
         {
+            CharacterNamePanel.gameObject.SetActive(false);
             DialogueText.SetText(string.Empty);
             CharacterNameText.SetText(string.Empty);
 
@@ -236,6 +238,7 @@ namespace DialogueSystem
 
         void UpdateCharacterUI()
         {
+            CharacterNamePanel.gameObject.SetActive(true);
             CharacterName = m_command.Actor.Name;
             if (m_command.Actor.HasSprites)
             {

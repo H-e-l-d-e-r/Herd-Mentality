@@ -1,8 +1,9 @@
 using DialogueSystem;
 using UnityEngine;
 
-public class EntitiesBot : EntitesBehaviour
+public class EntityBot : EntityBehaviour
 {
+    [Header("Entity Bot")]
     public DialogueTable[] Tables;
     public bool PlayOnce;
 
@@ -10,12 +11,19 @@ public class EntitiesBot : EntitesBehaviour
 
     void Start()
     {
+        base.StartBehaviour();
+
         // choisit un dialogue random dans la liste.
         if(Tables.Length > 0)
         {
             int random = Random.Range(0, Tables.Length);
             m_DialoguePtr = Dialogue.RegisterDialogue(Tables[random]);
         }
+    }
+
+    void Update()
+    {
+        base.UpdateBehaviour();  
     }
 
     protected override void OnInteract()
@@ -27,5 +35,10 @@ public class EntitiesBot : EntitesBehaviour
 
             Dialogue.PlayDialogue(m_DialoguePtr);
         }
+    }
+
+    protected override void OnHover()
+    {
+        
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6749252726164194523}
   - component: {fileID: 4658082068319458331}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: SpawnedEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124106579492111506}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8694363767359339740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4b13518d12e67c200b63000be6d44ba0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,4 +125,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a050557c58c9e434d832ad587bf4dde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntitiesBot
-  RefDialogues: {fileID: 0}
+  IsInteractible: 1
+  InteractibleColor: {r: 1, g: 1, b: 1, a: 1}
+  DisableColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  HoverColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  OnInteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  Tables: []
+  PlayOnce: 0

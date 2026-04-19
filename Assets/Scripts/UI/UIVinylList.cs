@@ -24,7 +24,6 @@ public class UIVinylList : MonoBehaviour
 
     private List<VinylRecord> m_spawnedUI;
     private RectTransform m_rectTransform;
-    private bool m_musicPlays;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +31,6 @@ public class UIVinylList : MonoBehaviour
     {
         m_spawnedUI = new();
         CreateVinyl();
-        m_musicPlays = false;
     }
 
     // Update is called once per frame
@@ -57,6 +55,7 @@ public class UIVinylList : MonoBehaviour
     void CreateVinyl()
     {
         ClearVinyls();
+        
         foreach (VinylObject vinyl in GameManager.Instance.UnlockedVinyls)
         {
             GameObject @object = Instantiate(Template, Grid);
@@ -90,13 +89,10 @@ public class UIVinylList : MonoBehaviour
     {
         AudioSource.Stop();
         SetAudio(record);
-        AudioSource.Play();
-
-        m_musicPlays = true;        
+        AudioSource.Play();     
 
         TextLyrics.text = record.Vinyl.Description;
         TextLyrics.gameObject.SetActive(true);
-        //TextLyrics.text = record.Vinyl.Description;
         
         if (record.Vinyl.Like.YoungLetterists)
         {

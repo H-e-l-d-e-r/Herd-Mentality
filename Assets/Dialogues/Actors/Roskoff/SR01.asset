@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66412d6a8004e0398aceaf0a3d6aa312, type: 3}
-  m_Name: JeuneLettriste 02
+  m_Name: SR01
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
-  Name: 
+  Name: Roskoff
   Description: 
   Sprites: []
   SpriteSide: 1
-  CharacterAudio: {fileID: 0}
-  AudioProbability: 0
+  CharacterAudio: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
+  AudioProbability: 0.4
   PitchRandomness: {x: 1, y: 1}
   VolumeRandomness: {x: 1, y: 1}

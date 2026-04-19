@@ -13,11 +13,11 @@ public class EntitiesManager : MonoBehaviour
 
     public Transform[] SpawnPoints;
 
-    private List<EntitesBehaviour> m_entities;
+    private List<EntityBehaviour> m_entities;
 
     private void Start()
     {
-        m_entities = new List<EntitesBehaviour>();
+        m_entities = new List<EntityBehaviour>();
         SpawnEntities(GameManager.Instance.CurrentDay);
     }
 
@@ -41,12 +41,12 @@ public class EntitiesManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Transform target = SpawnPoints[UnityEngine.Random.Range(0, SpawnPoints.Length)];
-            EntitesBehaviour entity = Instantiate(EntityTemplate, target).GetComponent<EntitesBehaviour>();
+            EntityBehaviour entity = Instantiate(EntityTemplate, target).GetComponent<EntityBehaviour>();
             
             // check for correct type
-            Debug.Assert(entity.GetType() == typeof(EntitiesBot));
+            Debug.Assert(entity.GetType() == typeof(EntityBot));
 
-            EntitiesBot bot = entity as EntitiesBot;
+            EntityBot bot = entity as EntityBot;
             bot.transform.localPosition = Vector3.zero;
             bot.PlayOnce = Tables[day].PlayOnce;
             
@@ -59,7 +59,7 @@ public class EntitiesManager : MonoBehaviour
 
     void ClearEntities()
     {
-        foreach (EntitesBehaviour entity in m_entities)
+        foreach (EntityBehaviour entity in m_entities)
         {
             Destroy(entity.gameObject);
         }
