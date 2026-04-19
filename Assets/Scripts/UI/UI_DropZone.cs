@@ -1,35 +1,46 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class UIDropZone : MonoBehaviour, IDropHandler
 {
+    public VinylObject[] Vinyls => m_programmedVinyls.ToArray();
+
     [Header("References")]
-    public VinylStorage PhysicalStorage; // Le lecteur 3D lié à cette zone
-    public Transform ProgrammationContent; // Le Layout Group où les disques vont s'aligner
+    // j'ai changÃ© l'endroit oÃ¹ l'enregistrement des vinyls est fait
+    // maintenant c'est dÃ¨s que le joueur valide Ã§a programmation
+    //public VinylStorage PhysicalStorage; // Le lecteur 3D liï¿½ ï¿½ cette zone
+    public Transform ProgrammationContent; // Le Layout Group oï¿½ les disques vont s'aligner
+    
+    public int Capacity = 1;
+
+    public UnityEvent OnDropEvent;
 
     private List<VinylObject> m_programmedVinyls = new List<VinylObject>();
 
-    // Quand on lâche un objet au-dessus de cette zone
+    // Quand on lï¿½che un objet au-dessus de cette zone
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedObject = eventData.pointerDrag;
 
-        if (droppedObject != null)
+        if (droppedObject != null && m_programmedVinyls.Count < Capacity)
         {
             UIVinylItem item = droppedObject.GetComponent<UIVinylItem>();
             if (item != null)
             {
-                // On l'attache à cette zone visuellement (false = on garde sa taille normale)
+                // On l'attache ï¿½ cette zone visuellement (false = on garde sa taille normale)
                 droppedObject.transform.SetParent(ProgrammationContent, false);
                 droppedObject.transform.localScale = Vector3.one;
 
                 UpdatePhysicalStorage();
+                
+                OnDropEvent.Invoke();
             }
         }
     }
 
-    // Met à jour la liste et prévient la radio 3D
+    // Met ï¿½ jour la liste et prï¿½vient la radio 3D
     public void UpdatePhysicalStorage()
     {
         m_programmedVinyls.Clear();
@@ -44,10 +55,10 @@ public class UIDropZone : MonoBehaviour, IDropHandler
             }
         }
 
-        // On envoie la nouvelle playlist à la radio 3D
-        if (PhysicalStorage != null)
-        {
-            PhysicalStorage.UpdateProgrammation(m_programmedVinyls);
-        }
+        // On envoie la nouvelle playlist ï¿½ la radio 3D
+        // if (PhysicalStorage != null)
+        // {
+        //     PhysicalStorage.UpdateProgrammation(m_programmedVinyls);
+        // }
     }
 }

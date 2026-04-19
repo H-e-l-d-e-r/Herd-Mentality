@@ -12,6 +12,7 @@ public class VinylStorage : MonoBehaviour
     public ObjectGroupBehaviour Storage;
 
     [Header("Vinyl Collection")]
+    public bool LoadFromGameManager;
     [ReadOnlyAttribute]
     public List<VinylObject> Vinyls = new List<VinylObject>();
 
@@ -40,24 +41,32 @@ public class VinylStorage : MonoBehaviour
 
         m_dragInput = InputActionReference.Create(DragInput);
         m_positionInput = InputActionReference.Create(PositionInput);
+
+        if (LoadFromGameManager)
+        {
+            Vinyls.Clear();
+            Vinyls.AddRange(GameManager.Instance.UnlockedVinyls);
+
+            foreach (VinylObject vinyl in GameManager.Instance.UnlockedVinyls)
+            {
+                VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
+                instance.Vinyl = vinyl;
+            }
+        }
     }
 
     // Fonction appelée par l'UI (le Drag & Drop) pour ranger les disques physiques
-    public void UpdateProgrammation(List<VinylObject> programmedVinyls)
-    {
-        Vinyls = programmedVinyls;
-
-        foreach (Transform child in Storage.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach (VinylObject vinyl in Vinyls)
-        {
-            VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
-            instance.Vinyl = vinyl;
-        }
-    }
+    //public void UpdateProgrammation(List<VinylObject> programmedVinyls)
+    //{
+    //    Vinyls = programmedVinyls;
+    //    Storage.transform.RemoveAllChildren();
+    //
+    //    foreach (VinylObject vinyl in Vinyls)
+    //    {
+    //        VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
+    //        instance.Vinyl = vinyl;
+    //    }
+    //}
 
     void Update()
     {

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class UI_Manager : MonoBehaviour
+public static class UI_Manager
 {
-    // Fonction ultra flexible : tu lui donnes un objet (Canvas/Panel), elle l'éteint.
-    public void CloseCanvas(GameObject canvasToClose)
+    // Fonction ultra flexible : tu lui donnes un objet (Canvas/Panel), elle l'ï¿½teint.
+    public static void CloseCanvas(GameObject canvasToClose)
     {
         if (canvasToClose != null)
         {
@@ -11,12 +11,12 @@ public class UI_Manager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(" Tu as oublié d'assigner le Canvas à fermer dans le bouton !");
+            Debug.LogWarning(" Tu as oubliï¿½ d'assigner le Canvas ï¿½ fermer dans le bouton !");
         }
     }
 
     // Bonus : l'inverse, pour l'ouvrir !
-    public void OpenCanvas(GameObject canvasToOpen)
+    public static void OpenCanvas(GameObject canvasToOpen)
     {
         if (canvasToOpen != null)
         {
@@ -24,12 +24,12 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    // Re-bonus : Un bouton qui fait les deux (Ouvre si c'est fermé, ferme si c'est ouvert)
-    public void ToggleCanvas(GameObject canvasToToggle)
+    // Re-bonus : Un bouton qui fait les deux (Ouvre si c'est fermï¿½, ferme si c'est ouvert)
+    public static void ToggleCanvas(GameObject canvasToToggle)
     {
         if (canvasToToggle != null)
         {
-            // LE MOUCHARD : Il va afficher le nom EXACT de ce qu'il éteint dans la console
+            // LE MOUCHARD : Il va afficher le nom EXACT de ce qu'il ï¿½teint dans la console
             Debug.Log("Le script UI_Manager vient de basculer l'objet : " + canvasToToggle.name);
 
             canvasToToggle.SetActive(!canvasToToggle.activeSelf);

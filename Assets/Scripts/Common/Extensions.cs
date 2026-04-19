@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public static class Extension
 {
@@ -14,5 +15,13 @@ public static class Extension
                 return true;
         }
         return false;
+    }
+
+    public static void RemoveAllChildren(this Transform self)
+    {
+        foreach (Transform child in self)
+        {
+            Object.Destroy(child.gameObject);
+        }
     }
 }

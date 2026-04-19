@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DialogueSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class RadioManager : MonoBehaviour
 {
@@ -16,7 +18,12 @@ public class RadioManager : MonoBehaviour
 
     [Header("Planification UI")]
     public GameObject PlanningCanvas; // Le Canvas � afficher
+    public Transform PlanningNote;
+
+    public GameObject PlanningNotePrefab;
+    
     public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
+    public bool EnqueueAllSequences; 
 
     [Header("Components")]
     public VinylRecordPlayer VinylPlayer;
@@ -58,6 +65,8 @@ public class RadioManager : MonoBehaviour
     private void Start()
     {
         NullComponents.ThrowIfNull(VinylPlayer);
+        NullComponents.ThrowIfNull(PlanningCanvas);
+        NullComponents.ThrowIfNull(PlanningNote);
         NullComponents.ThrowIfNull(Camera);
 
         m_switchCameraInput = InputActionReference.Create(SwitchCameraInput);
@@ -72,9 +81,12 @@ public class RadioManager : MonoBehaviour
         m_validatedSequences = new List<RadioSequenceObject>();
 
         // register targets
-        foreach (int seq in m_selectedSequences)
+        if (EnqueueAllSequences)
         {
-            m_targetSequences.Enqueue(GlobalGameSettings.Instance.Sequences[seq]);
+            foreach (int seq in m_selectedSequences)
+            {
+                EnqueueSequence(GlobalGameSettings.Instance.Sequences[seq]);
+            }   
         }
 
         if (Anchors.Length > 0)
@@ -156,8 +168,19 @@ public class RadioManager : MonoBehaviour
 
         // apres, des qu'un vinyl est joue, on pourra check s'il 
         // permet de completer un objectif. 
-
         Debug.Log(FindSequences().Length);
+    }
+
+    public void EnqueueSequence(RadioSequenceObject seq)
+    {
+        if (m_targetSequences.Contains(seq))
+        {
+            return;
+        }
+
+        m_targetSequences.Enqueue(seq);
+        TMP_Text textInstance = Instantiate(PlanningNotePrefab, PlanningNote).GetComponent<TMP_Text>();
+        textInstance.text = seq.ToString();
     }
 
     /// <summary>
@@ -195,12 +218,13 @@ public class RadioManager : MonoBehaviour
         return eq / 200.0f * 100.0f;
     }
 
-    public RadioSequenceObject[] FindSequences()
+    public RadioSequenceObject[] FindSequences() => FindSequences(m_playedVinyls.ToArray());
+    public RadioSequenceObject[] FindSequences(VinylObject[] vinyls)
     {
         List<RadioSequenceObject> list = new List<RadioSequenceObject>();
         foreach(RadioSequenceObject seq in GlobalGameSettings.Instance.Sequences)
         {
-            if (m_playedVinyls.ContainsSubSequence(seq.Blocs))
+            if (vinyls.ContainsSubSequence(seq.Blocs))
             {
                 list.Add(seq);
             }
