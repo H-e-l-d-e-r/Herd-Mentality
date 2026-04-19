@@ -19,10 +19,10 @@ public class UIVinylList : MonoBehaviour
     public TMP_Text TextAppreciationYl;
     public TMP_Text TextAppreciationrSr;
     public TMP_Text TextAppreciationSc;
+    public AudioSource AudioSource;
     public float vitesseRotation;
 
     private List<VinylRecord> m_spawnedUI;
-    private AudioSource m_audioSource;
     private RectTransform m_rectTransform;
     private bool m_musicPlays;
 
@@ -51,7 +51,7 @@ public class UIVinylList : MonoBehaviour
     }
     public void Stop()
     {
-        m_audioSource.Stop();
+        AudioSource.Stop();
     }
 
     void CreateVinyl()
@@ -78,40 +78,25 @@ public class UIVinylList : MonoBehaviour
 
         m_spawnedUI.Clear();
     }
+
     public void SetAudio(VinylRecord record)
     {
-        m_audioSource = gameObject.AddComponent<AudioSource>();
-        m_audioSource.clip = record.Vinyl.Clip;
-        m_audioSource.volume = record.Vinyl.Volume;
+        AudioSource.clip = record.Vinyl.Clip;
+        AudioSource.volume = record.Vinyl.Volume;
     }
     
     // display text + audio when button clicked 
     void OnButtonClick(VinylRecord record)
     {
+        AudioSource.Stop();
         SetAudio(record);
-        
+        AudioSource.Play();
 
-        if (m_musicPlays == true)
-        {
-            
-            m_audioSource.Stop();
-            Destroy(m_audioSource);
-            m_musicPlays = false;
-            Debug.Log("stop wait a minute");
-
-        }
-        else if (m_musicPlays == false) 
-        {
-            m_audioSource.Play();
-            m_musicPlays = true; 
-            Debug.Log(m_musicPlays);
-        }
+        m_musicPlays = true;        
 
         TextLyrics.text = record.Vinyl.Description;
         TextLyrics.gameObject.SetActive(true);
         //TextLyrics.text = record.Vinyl.Description;
-        
-
         
         if (record.Vinyl.Like.YoungLetterists)
         {
