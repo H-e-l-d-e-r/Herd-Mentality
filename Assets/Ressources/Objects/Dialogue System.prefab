@@ -58,7 +58,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108861058842260015}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
     eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
     in culpa qui officia deserunt mollit anim id est laborum
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f2c616b4322cfb4aa28acb78f270e5c, type: 2}
-  m_sharedMaterial: {fileID: 2940313589995708299, guid: 2f2c616b4322cfb4aa28acb78f270e5c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -623,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueTypewritter
   PanelGroup: {fileID: 8805636729283125934}
+  CharacterNamePanel: {fileID: 464133059655796285}
   AudioSource: {fileID: 4439166953428314172}
   DialogueText: {fileID: 8583882148252235988}
   CharacterNameText: {fileID: 5753644690966984612}

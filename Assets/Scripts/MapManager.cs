@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MapManager : MonoBehaviour
 {
     public SerializableDictionary<string, string> MapHashMap;
@@ -24,6 +25,7 @@ public class MapManager : MonoBehaviour
     {
         if (m_SelectIndex != string.Empty)
         {
+            
             SceneManager.LoadScene(m_SelectIndex);
         }
     }

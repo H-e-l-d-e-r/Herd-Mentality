@@ -6,10 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static bool HasInstance => s_instance != null;
     public static GameManager Instance => s_instance;
-    
     public int CurrentDay => m_currentDay;
 
-    // MAGIE LINQ : On trie instantanément les Vinyles ET les Séquences sans aucune boucle !
+    // MAGIE LINQ : On trie instantanï¿½ment les Vinyles ET les Sï¿½quences sans aucune boucle !
     public VinylObject[] UnlockedVinyls => m_unlockedCollectibles.OfType<VinylObject>().ToArray();
     public RadioSequenceObject[] UnlockedSequences => m_unlockedCollectibles.OfType<RadioSequenceObject>().ToArray();
 
