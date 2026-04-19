@@ -823,7 +823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   MapHashMap:
     m_keys:
-    - "caf\xE9e"
+    - cafe
     - concert
     - magasin de vinyle
     - "\xE0 la friterie"
@@ -6797,7 +6797,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "caf\xE9"
+          m_StringArgument: cafe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 628362985}
