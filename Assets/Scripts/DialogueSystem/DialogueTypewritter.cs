@@ -51,6 +51,8 @@ namespace DialogueSystem
             }
         }
 
+        public bool IsPlaying => PanelGroup.alpha == 0.0f;
+
         public bool HasCommand => m_command != null;
 
         private const double k_MINIMUM_TIME_DELAY = double.Epsilon;

@@ -14,4 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
   Name: 
   Description: 
-  Blocs: []
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 1
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Blocs:
+  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
+  - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}

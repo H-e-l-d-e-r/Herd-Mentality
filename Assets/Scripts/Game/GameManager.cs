@@ -9,22 +9,9 @@ public class GameManager : MonoBehaviour
     
     public int CurrentDay => m_currentDay;
 
-    public VinylObject[] UnlockedVinyls
-    {
-        get
-        {
-            List<VinylObject> vinyls = new();
-            foreach(CollectibleObject collectible in m_unlockedCollectibles)
-            {
-                if(collectible.GetType() == typeof(VinylObject))
-                {
-                    vinyls.Add(collectible as VinylObject);
-                }
-            }
-
-            return vinyls.ToArray();
-        }
-    }
+    // MAGIE LINQ : On trie instantanément les Vinyles ET les Séquences sans aucune boucle !
+    public VinylObject[] UnlockedVinyls => m_unlockedCollectibles.OfType<VinylObject>().ToArray();
+    public RadioSequenceObject[] UnlockedSequences => m_unlockedCollectibles.OfType<RadioSequenceObject>().ToArray();
 
     public CollectibleObject[] UnlockedCollectibles => m_unlockedCollectibles;
 
@@ -33,9 +20,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private CollectibleObject[] m_unlockedCollectibles;
-
-    [SerializeField]
-    private int[] m_unlockedSequences;
 
     private static GameManager s_instance;
 
@@ -67,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     void Singletonize()
     {
-        if(s_instance == null || s_instance == this)
+        if (s_instance == null || s_instance == this)
         {
             s_instance = this;
             DontDestroyOnLoad(gameObject);

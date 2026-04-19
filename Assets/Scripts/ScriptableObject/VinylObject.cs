@@ -9,7 +9,6 @@ public class VinylObject : CollectibleObject
     public Color Color;
 
     [Header("Visuals")]
-    // NOUVEAU 
     public Sprite BackgroundImage;
 
     [Header("Audio Clip")]
