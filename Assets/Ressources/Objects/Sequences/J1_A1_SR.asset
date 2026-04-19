@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
   Name: Infos Squat Roskoff
   Description: Tu savais que le Squat organisait un concert ? Maintenant oui.
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 1
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   Blocs:
   - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
   - {fileID: 11400000, guid: 6e8e57b8b2e523f1aae93211217541f4, type: 2}
