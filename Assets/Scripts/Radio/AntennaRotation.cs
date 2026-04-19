@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class AntennaTuner : MonoBehaviour
 {
@@ -6,15 +8,23 @@ public class AntennaTuner : MonoBehaviour
     public float maxAngle = 180f;
 
     [Header("Zone Cible (Inspecteur)")]
-    [Range(-180f, 180f)] public float targetAngle = 45f; // L'angle parfait (#Tape dans le fond c pas ta m�re)
-    public float zoneTolerance = 5f; // La marge d'erreur (Ta un peu rat� le fond)
-    public float maxDistanceForRed = 90f; // La distance � partir de laquelle c'est 100% rouge (Tu t tromp� de trou)
+    [Range(-180f, 180f)] public float targetAngle = 45f;// L'angle parfait (#Tape dans le fond c pas ta m�re)
+    public float zoneTolerance = 5f;// La marge d'erreur (Ta un peu rat� le fond)
+    public float maxDistanceForRed = 90f;// La distance � partir de laquelle c'est 100% rouge (Tu t tromp� de trou)
 
-    [Header("Visuel")]
-    public MeshRenderer targetRenderer; // L'objet qui va changer de couleur (Ta tes r�gles ou quoi?! #SexistePasSexy)
+    [Header("Visuel & UI")]
+    public MeshRenderer targetRenderer;
     public RadioBehaviour RadioBehaviour;
-    
+    public Slider AntennaSlider; // NOUVEAU : La reference a ton slider UI
+
+    [Header("Systeme de Vent")]
+    public bool windEnabled = true;
+    public float minWindInterval = 10f;
+    public float maxWindInterval = 30f;
+    public float maxWindForce = 0.2f;
+
     private Material m_materialInstance;
+    private float m_currentSliderValue = 0.5f;
 
     void Start()
     {
@@ -22,45 +32,63 @@ public class AntennaTuner : MonoBehaviour
 
         if (targetRenderer != null)
             m_materialInstance = targetRenderer.material;
+
+        if (windEnabled) StartCoroutine(WindSimulation());
     }
 
+    IEnumerator WindSimulation()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(minWindInterval, maxWindInterval));
+
+            float windShift = Random.Range(-maxWindForce, maxWindForce);
+            Debug.Log("<color=cyan>[ANTENNE] Coup de vent ! L'antenne a bouge.</color>");
+
+            m_currentSliderValue = Mathf.Clamp01(m_currentSliderValue + windShift);
+
+            // On met a jour la rotation 3D et les couleurs
+            UpdateRotationY(m_currentSliderValue);
+
+            // On force le slider UI a bouger tout seul, 
+            
+            if (AntennaSlider != null)
+            {
+                AntennaSlider.SetValueWithoutNotify(m_currentSliderValue);
+            }
+        }
+    }
 
     public void UpdateRotationY(float sliderValue)
     {
-        //  On tourne l'antenne
+        m_currentSliderValue = sliderValue;
+
         float currentAngle = Mathf.Lerp(-maxAngle, maxAngle, sliderValue);
         transform.localRotation = Quaternion.Euler(transform.localEulerAngles.x, currentAngle, transform.localEulerAngles.z);
 
-        //  On change la couleur
         UpdateColorFeedback(currentAngle);
     }
 
     private void UpdateColorFeedback(float currentAngle)
     {
-        // 1. On calcule l'�cart
         float distance = Mathf.Abs(Mathf.DeltaAngle(currentAngle, targetAngle));
         float hue;
-        float signalQuality; // NOUVEAU : On pr�pare la variable de qualit� du son
+        float signalQuality;
 
         if (distance <= zoneTolerance)
         {
-            hue = 0.33f; // Vert
-            signalQuality = 1f; // Son parfait (100%)
+            hue = 0.33f;
+            signalQuality = 1f;
         }
         else
         {
-            // On calcule le d�grad� (0 = proche du vert, 1 = rouge vif)
             float t = Mathf.InverseLerp(zoneTolerance, maxDistanceForRed, distance);
             hue = Mathf.Lerp(0.33f, 0f, t);
-
-            // NOUVEAU : La qualit� du son est l'inverse de la couleur (Si t=1, le signal est � 0)
             signalQuality = 1f - t;
         }
 
-        // On envoie la qualit� du son � la radio !
         RadioBehaviour.AntennaSignalQuality = signalQuality;
 
-        // On applique la couleur
         if (m_materialInstance != null)
         {
             m_materialInstance.color = Color.HSVToRGB(hue, 1f, 1f);
