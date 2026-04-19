@@ -23,30 +23,38 @@ public class UIVinylList : MonoBehaviour
     public float vitesseRotation;
 
     private List<VinylRecord> m_spawnedUI;
-    private RectTransform m_rectTransform;
-
+    private Transform m_rectTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         m_spawnedUI = new();
+        m_rectTransform = null;
+
         CreateVinyl();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        RotateVinyl();
     }
-    void Awake()
-    {
-        m_rectTransform = Template.GetComponent<RectTransform>(); 
-    }
+
     public void RotateVinyl()
     {
-        m_rectTransform.Rotate(0f, 0f, +vitesseRotation);
+        if(m_rectTransform == null)
+        {
+            return;    
+        }
 
+        float increment = vitesseRotation * Time.deltaTime;
+        m_rectTransform.eulerAngles = new Vector3(
+            m_rectTransform.eulerAngles.x,
+            m_rectTransform.eulerAngles.y,
+            m_rectTransform.eulerAngles.z + increment
+        );
     }
+
     public void Stop()
     {
         AudioSource.Stop();
@@ -87,12 +95,22 @@ public class UIVinylList : MonoBehaviour
     // display text + audio when button clicked 
     void OnButtonClick(VinylRecord record)
     {
+        if(m_rectTransform == record.gameObject.transform)
+        {
+            AudioSource.Stop();
+            m_rectTransform = null;
+            return;
+        } 
+
         AudioSource.Stop();
+
         SetAudio(record);
         AudioSource.Play();     
 
         TextLyrics.text = record.Vinyl.Description;
         TextLyrics.gameObject.SetActive(true);
+
+        m_rectTransform = record.gameObject.transform;
         
         if (record.Vinyl.Like.YoungLetterists)
         {

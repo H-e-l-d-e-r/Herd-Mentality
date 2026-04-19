@@ -54,9 +54,13 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D7
-    Text: "C\u2019est de l'histoire ancienne \xE7a, regardez ce que j\u2019ai trouv\xE9.
-      <i>Reda montre un vinyle <i>\r\n"
+    Text: "C\u2019est de l'histoire ancienne \xE7a, regardez ce que j\u2019ai trouv\xE9.\r\n"
     Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D7
+    Text: <i>Reda montre un vinyle <i>
+    Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D7

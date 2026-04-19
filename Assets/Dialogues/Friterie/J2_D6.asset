@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: "Bot Policier, Ma\xE9\r\nFriterie\r\n"
   m_nodes:
   - Name: J2_D6
-    Text: "<i>Ma\xE9 entre dans la friterie <i>"
+    Text: "<i>Ma\xE9 entre dans la friterie. <i>"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0

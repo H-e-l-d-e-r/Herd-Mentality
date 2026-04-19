@@ -15,22 +15,15 @@ MonoBehaviour:
   Name: J1_D7
   Description: Parlophone
   m_nodes:
-  - Name: 
-    Text: 'Une voix robotique dans un parlophone.
-
-'
-    Actor: {fileID: 0}
-    ActorSprite: 0
-    Behavior: 0
-  - Name: 
+  - Name: J1_D7
     Text: "Le Gouvernement de la Cit\xE9 cherche \xE0 vous rappeler que l\u2019\xE9coute
       et la diffusion de contenu radiophonique est interdit sous lourdes peines."
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: 
+  - Name: J1_D7
     Text: " Si vous remarquez un comportement d\xE9faillant, nous vous invitons \xE0
       en faire part aux services de Force de la Cit\xE9"
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
