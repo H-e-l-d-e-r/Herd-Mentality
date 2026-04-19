@@ -16,8 +16,8 @@ MonoBehaviour:
   Description: "Un son Punk rock qui d\xE9chire !"
   Like:
     YoungLetterists: 0
-    SquatRoskoff: 0
-    Scilas: 1
+    SquatRoskoff: 1
+    Scilas: 0
   Dislike:
     YoungLetterists: 0
     SquatRoskoff: 0

@@ -25,12 +25,12 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
-       
+        // 2. AUTO-R�PARATION DE L'IMAGE (Fini la ligne 29 !)
         if (BackgroundImage == null)
         {
             BackgroundImage = GetComponentInChildren<Image>(); // Cherche s'il en reste une cach�e
 
-            // Si vraiment il n'y a plus dímage sur ton Prefab le script en cree une
+            // Si vraiment il n'y a plus AUCUNE image sur ton Prefab, le script en cr�e une !
             if (BackgroundImage == null)
             {
                 BackgroundImage = gameObject.AddComponent<Image>();
@@ -40,7 +40,7 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void Setup(VinylObject data)
     {
-        if (data == null) return; // au cas ou
+        if (data == null) return; // S�curit�
 
         VinylData = data;
 
@@ -49,8 +49,9 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             TitleText.text = data.Title;
         }
 
-        
-        // on est sur que BackgroundImage existe grace au Awake
+        // LA FAMEUSE LIGNE 29 (Qui ne plantera plus jamais)
+        // Maintenant on est s�r � 1000% que BackgroundImage existe gr�ce au Awake
+        // bah sache que j'ai reussi a faire une erreur sur la ligne 29 de merde
         if (data.BackgroundImage != null)
         {
             BackgroundImage.sprite = data.BackgroundImage;
@@ -88,7 +89,7 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         m_canvasGroup.blocksRaycasts = true;
 
-        // Si on le lache dans le vide il retourne a sa place d'origine
+        // Si on le l�che dans le vide il retourne � sa place d'origine
         if (transform.parent == transform.root)
         {
             transform.SetParent(m_originalParent);

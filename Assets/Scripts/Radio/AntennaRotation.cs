@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class AntennaTuner : MonoBehaviour
@@ -7,22 +6,15 @@ public class AntennaTuner : MonoBehaviour
     public float maxAngle = 180f;
 
     [Header("Zone Cible (Inspecteur)")]
-    [Range(-180f, 180f)] public float targetAngle = 45f;
-    public float zoneTolerance = 5f;
-    public float maxDistanceForRed = 90f;
+    [Range(-180f, 180f)] public float targetAngle = 45f; // L'angle parfait (#Tape dans le fond c pas ta m�re)
+    public float zoneTolerance = 5f; // La marge d'erreur (Ta un peu rat� le fond)
+    public float maxDistanceForRed = 90f; // La distance � partir de laquelle c'est 100% rouge (Tu t tromp� de trou)
 
     [Header("Visuel")]
-    public MeshRenderer targetRenderer;
+    public MeshRenderer targetRenderer; // L'objet qui va changer de couleur (Ta tes r�gles ou quoi?! #SexistePasSexy)
     public RadioBehaviour RadioBehaviour;
-
-    [Header("Systeme de Vent")]
-    public bool windEnabled = true;
-    public float minWindInterval = 10f;
-    public float maxWindInterval = 30f;
-    public float maxWindForce = 0.2f;
-
+    
     private Material m_materialInstance;
-    private float m_currentSliderValue = 0.5f;
 
     void Start()
     {
@@ -30,55 +22,45 @@ public class AntennaTuner : MonoBehaviour
 
         if (targetRenderer != null)
             m_materialInstance = targetRenderer.material;
-
-        if (windEnabled) StartCoroutine(WindSimulation());
     }
 
-    IEnumerator WindSimulation()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(minWindInterval, maxWindInterval));
-
-            float windShift = Random.Range(-maxWindForce, maxWindForce);
-            Debug.Log("<color=cyan>VENT : L'antenne a bouge !</color>");
-
-            m_currentSliderValue = Mathf.Clamp01(m_currentSliderValue + windShift);
-            UpdateRotationY(m_currentSliderValue);
-
-            // Si tu as un objet UI Slider, n'oublie pas de le mettre a jour ici pour que le visuel suive !
-        }
-    }
 
     public void UpdateRotationY(float sliderValue)
     {
-        m_currentSliderValue = sliderValue;
+        //  On tourne l'antenne
         float currentAngle = Mathf.Lerp(-maxAngle, maxAngle, sliderValue);
         transform.localRotation = Quaternion.Euler(transform.localEulerAngles.x, currentAngle, transform.localEulerAngles.z);
 
+        //  On change la couleur
         UpdateColorFeedback(currentAngle);
     }
 
     private void UpdateColorFeedback(float currentAngle)
     {
+        // 1. On calcule l'�cart
         float distance = Mathf.Abs(Mathf.DeltaAngle(currentAngle, targetAngle));
         float hue;
-        float signalQuality;
+        float signalQuality; // NOUVEAU : On pr�pare la variable de qualit� du son
 
         if (distance <= zoneTolerance)
         {
-            hue = 0.33f;
-            signalQuality = 1f;
+            hue = 0.33f; // Vert
+            signalQuality = 1f; // Son parfait (100%)
         }
         else
         {
+            // On calcule le d�grad� (0 = proche du vert, 1 = rouge vif)
             float t = Mathf.InverseLerp(zoneTolerance, maxDistanceForRed, distance);
             hue = Mathf.Lerp(0.33f, 0f, t);
+
+            // NOUVEAU : La qualit� du son est l'inverse de la couleur (Si t=1, le signal est � 0)
             signalQuality = 1f - t;
         }
 
+        // On envoie la qualit� du son � la radio !
         RadioBehaviour.AntennaSignalQuality = signalQuality;
 
+        // On applique la couleur
         if (m_materialInstance != null)
         {
             m_materialInstance.color = Color.HSVToRGB(hue, 1f, 1f);
