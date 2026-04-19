@@ -24,7 +24,7 @@ public class UIVinylList : MonoBehaviour
     private List<VinylRecord> m_spawnedUI;
     private AudioSource m_audioSource;
     private RectTransform m_rectTransform;
-    private bool m_musicPlays = false;
+    private bool m_musicPlays;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +32,7 @@ public class UIVinylList : MonoBehaviour
     {
         m_spawnedUI = new();
         CreateVinyl();
+        m_musicPlays = false;
     }
 
     // Update is called once per frame
@@ -47,6 +48,10 @@ public class UIVinylList : MonoBehaviour
     {
         m_rectTransform.Rotate(0f, 0f, +vitesseRotation);
 
+    }
+    public void Stop()
+    {
+        m_audioSource.Stop();
     }
 
     void CreateVinyl()
@@ -84,19 +89,22 @@ public class UIVinylList : MonoBehaviour
     void OnButtonClick(VinylRecord record)
     {
         SetAudio(record);
-        Debug.Log(m_musicPlays);
+        
 
         if (m_musicPlays == true)
         {
-            Debug.Log("qmlskejf");
+            
             m_audioSource.Stop();
+            Destroy(m_audioSource);
             m_musicPlays = false;
+            Debug.Log("stop wait a minute");
 
         }
-        else
+        else if (m_musicPlays == false) 
         {
             m_audioSource.Play();
-            m_musicPlays = true;
+            m_musicPlays = true; 
+            Debug.Log(m_musicPlays);
         }
 
         TextLyrics.text = record.Vinyl.Description;
