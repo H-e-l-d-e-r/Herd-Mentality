@@ -74,9 +74,14 @@ MonoBehaviour:
     Behavior: 0
   - Name: J2_D4
     Text: "Maintenant revenons \xE0 vous, plut\xF4t j\u2019avais discut\xE9 avec
-      des Jeunes Lettristes et il m\u2019ont parl\xE9 d\u2019un rassemblement qu\u2019ils
-      organisaient dans les sous-sols de l\u2019universit\xE9 mais j\u2019ai pas
-      capt\xE9 la date d\xE9sol\xE9."
+      des Jeunes Lettristes."
+    Actor: {fileID: 11400000, guid: 4b0b365ac0df3f840a918da53ce3bae3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D4
+    Text: "il m\u2019ont parl\xE9 d\u2019un rassemblement qu\u2019ils organisaient
+      dans les sous-sols de l\u2019universit\xE9 mais j\u2019ai pas capt\xE9 la date
+      d\xE9sol\xE9."
     Actor: {fileID: 11400000, guid: 4b0b365ac0df3f840a918da53ce3bae3, type: 2}
     ActorSprite: 0
     Behavior: 0

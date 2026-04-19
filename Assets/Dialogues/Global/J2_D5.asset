@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   m_nodes:
   - Name: J2_D5
-    Text: "Brouhaha incompr\xE9hensible devant un camion de pompier"
+    Text: "<i>Brouhaha incompr\xE9hensible devant un camion de pompier"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
@@ -32,13 +32,12 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D5
-    Text: "Attends que je t\u2019attrape toi! <i> ??? se jette sur un membre de la
-      C.R.A.S.S.E <i>"
+    Text: "Attends que je t\u2019attrape toi !"
     Actor: {fileID: 11400000, guid: 9e35cff62f60c6f46a58392b393b651e, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D5
-    Text: "Hey, arr\xEAtez-\xE7a ! C\u2019est trop tard pour r\xE9cup\u2019 ta station
+    Text: "Hey, arr\xEAtez-\xE7a ! C\u2019est trop tard pour r\xE9cup\xE9rer ta station
       mec, ne risque pas de te faire embarquer.\r\n"
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
@@ -57,16 +56,19 @@ MonoBehaviour:
     Behavior: 0
   - Name: J2_D5
     Text: "Vous vous prenez pour des h\xE9ros mais vous ne faites que d\xE9truire
-      la vie des autres en pr\xF4nant une justice qui n\u2019arrange que vous ! Commence
-      \xE0 pleurer\n"
+      la vie des autres en pr\xF4nant une justice qui n\u2019arrange que vous !\n"
     Actor: {fileID: 11400000, guid: 9e35cff62f60c6f46a58392b393b651e, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D5
     Text: "J'\xE9tais pas avec eux, l\xE2che moi ! J\u2019suis d\xE9sol\xE9 pour
       ta station, mais les flics vont pas me laisser tranquille s\u2019ils m\u2019attrapent,
-      j'me tire ! T\u2019as pas int\xE9r\xEAt \xE0 balancer notre histoire !\r\nContinue
-      \xE0 pleurer \r\n"
+      j'me tire ! \r\n"
+    Actor: {fileID: 11400000, guid: 1f461b77deff7aa48bf19ddba8a42a70, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J2_D5
+    Text: "T\u2019as pas int\xE9r\xEAt \xE0 balancer notre histoire ! "
     Actor: {fileID: 11400000, guid: 1f461b77deff7aa48bf19ddba8a42a70, type: 2}
     ActorSprite: 0
     Behavior: 0

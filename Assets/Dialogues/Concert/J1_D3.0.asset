@@ -16,13 +16,13 @@ MonoBehaviour:
   Description: "Gege Way, Ma\xE9, dans la salle de concert"
   m_nodes:
   - Name: J1_D3.0
-    Text: "Ma\xE9 est dans la salle. Elle s\u2019approche de Gege."
+    Text: "<i>Ma\xE9 est dans la salle. Elle s\u2019approche de Gege."
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
   - Name: J1_D3.0
-    Text: "\r\nJe ne sais pas qui tu es, ni d'o\xF9 tu viens mais ici on ne m\u2019approche
-      pas sans tr\xE8s bonne raison quand je suis occup\xE9, commence Gege."
+    Text: "Je ne sais pas qui tu es, ni d'o\xF9 tu viens mais ici on ne m\u2019approche
+      pas sans tr\xE8s bonne raison quand je suis occup\xE9."
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -45,9 +45,18 @@ MonoBehaviour:
     Behavior: 0
   - Name: J1_D3.0
     Text: "Tu n\u2019sais pas lire la pancarte\u202F? Je vais le faire pour toi alors
-      : \u201CLe prochain concert de la salle est Les Gorgonzolas ce samedi \xE0
-      19h30\u201D. Tu as bien \xE9cout\xE9\u202F? Je n\u2019r\xE9p\xE8te pas deux
-      fois moi."
+      : "
+    Actor: {fileID: 11400000, guid: bf86f15f8b2f11447a0bb1e5e0cebe8b, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.0
+    Text: "\u201CLe prochain concert de la salle est Les Gorgonzolas ce samedi \xE0
+      19h30\u201D."
+    Actor: {fileID: 11400000, guid: bf86f15f8b2f11447a0bb1e5e0cebe8b, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.0
+    Text: "Tu as bien \xE9cout\xE9\u202F? Je n\u2019r\xE9p\xE8te pas deux fois moi."
     Actor: {fileID: 11400000, guid: bf86f15f8b2f11447a0bb1e5e0cebe8b, type: 2}
     ActorSprite: 0
     Behavior: 0

@@ -23,12 +23,6 @@ MonoBehaviour:
     Behavior: 0
   - Name: J1_D3.5
     Text: "BAHAHAHA, l\u2019alcoolo a essay\xE9 de me lancer une chaise mais n\u2019as
-      pas r\xE9ussi, quel naze ! s\u2019amuse Skunner.\r\n"
-    Actor: {fileID: 11400000, guid: 3c274b7fef0f5774e8c198a702fec4e0, type: 2}
-    ActorSprite: 0
-    Behavior: 0
-  - Name: J1_D3.5
-    Text: "BAHAHAHA, l\u2019alcoolo a essay\xE9 de me lancer une chaise mais n\u2019as
       pas r\xE9ussi, quel naze !\r\n"
     Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
     ActorSprite: 0
@@ -44,7 +38,7 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J1_D3.5
-    Text: "Bec sort, Skunner s\u2019avance vers Ma\xE9.\r\n"
+    Text: "<i>Bec sort, Skunner s\u2019avance vers Ma\xE9.\r\n"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
@@ -67,16 +61,31 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J1_D3.5
-    Text: Mae
+    Text: "Ma\xE9."
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J1_D3.5
     Text: "Ah, le pote d\u2019Eric ! Tout le monde m\u2019appelle Skunner ici, je
-      suis la manageuse de la Salle de concert donc n'h\xE9site pas \xE0 venir vers
-      moi quand t'a une merde ! \r\nD'ailleurs, on organise un concert gratuit le
-      samedi soir.\r\nSi tu en as l\u2019occasion, parle-en sur ta radio, on te paiera
-      une bi\xE8re en retour !\r\n"
+      suis la manageuse de la Salle de concert."
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "N'h\xE9site pas \xE0 venir vers moi quand t'a une merde !\n"
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: 'D''ailleurs, on organise un concert gratuit le samedi soir.
+
+'
+    Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J1_D3.5
+    Text: "Si tu en as l\u2019occasion, parle-en sur ta radio, on te paiera une bi\xE8re
+      en retour !"
     Actor: {fileID: 11400000, guid: 8075864c9497893469aa9b7a02b155a3, type: 2}
     ActorSprite: 0
     Behavior: 0

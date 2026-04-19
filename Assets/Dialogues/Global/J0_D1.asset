@@ -17,9 +17,13 @@ MonoBehaviour:
   m_nodes:
   - Name: J0_D1
     Text: "Ma\xE9, si tu veux Otto a trouv\xE9 une ancienne bo\xEEte de vinyles \xE0
-      la brocante du quartier, tu peux aller la chercher\u202F? Tu n\u2019peux pas
-      la manquer, c\u2019est la seule sous l\u2019\xE9tabli, \xE0 c\xF4t\xE9 d\u2019une
-      flight case. "
-    Actor: {fileID: 0}
+      la brocante du quartier, tu peux aller la chercher\u202F?"
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: J0_D1
+    Text: "Tu n\u2019peux pas la manquer, c\u2019est la seule sous l\u2019\xE9tabli,
+      \xE0 c\xF4t\xE9 d\u2019une flight case. "
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
     ActorSprite: 0
     Behavior: 0

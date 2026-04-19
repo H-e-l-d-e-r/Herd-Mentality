@@ -20,35 +20,35 @@ MonoBehaviour:
   - Name: J2_D2
     Text: "Allo ?! On m\u2019entends bien? Bon.. Pour les 2-3 au fond de leur grottes
       je r\xE9sume les \xE9v\xE9nements d\u2019hier soir."
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D2
     Text: "Le quartier centre \xE0 d\xE9cid\xE9 dans toute leur l\xE2chet\xE9 de
       faire une ratonnade nocturne pour s\u2019attaquer aux habitants de notre quartier."
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D2
     Text: "Comme vous le savez, ici \xE0 l\u2019Est on ne se laisse pas faire. C\u2019est
       pourquoi on va leur montrer de quoi est fait le quartier Est ce soir \xE0 23h."
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D2
     Text: "Les centraux, si vous ne voulez pas d'ennui, restez chez vous sinon venez
       vous battre bandes de l\xE2ches. Bruit de porte qui s\u2019enfonce"
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D2
-    Text: "<b>EHHH C\u2019EST TOI QUI M\u2019AS VOL\xC9 LE PARLOPHONE?!! <b> Je ne
+    Text: "<b>EHHH C\u2019EST TOI QUI M\u2019AS VOL\xC9 LE PARLOPHONE ?!!<b> Je ne
       sais de quoi vous parlez laissez moi vous expliquer\u2026 Bzzzzt\u2026 \r\n"
-    Actor: {fileID: 0}
+    Actor: {fileID: 11400000, guid: abeb5aa562affa53b9adc43e861ccbed, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D2
-    Text: "La diffusion c\u2019est coup\xE9"
-    Actor: {fileID: 0}
-    ActorSprite: 0
+    Text: "La diffusion c\u2019est coup\xE9."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 2
     Behavior: 0

@@ -21,8 +21,7 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D1
-    Text: "Alors, vous avez des news int\xE9ressantes ?<i> dit Ma\xE9 d\u2019un ton
-      joueur <i>\r\n"
+    Text: "Alors, vous avez des news int\xE9ressantes ?\r\n"
     Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -56,7 +55,7 @@ MonoBehaviour:
     Behavior: 0
   - Name: J2_D1
     Text: "Ah ouais s\u2019cuse, c\u2019est que ton p\xE8re sait tellement bien accueillir,
-      pour le coup que j\u2019ai perdu la boule"
+      pour le coup que j\u2019ai perdu la boule."
     Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -64,12 +63,6 @@ MonoBehaviour:
     Text: "Roh ! D\xE9j\xE0 qu\u2019il me force la main pour distribuer des tracts
       c\u2019est pas pour que tu viennes en rajouter hein !"
     Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
-    ActorSprite: 0
-    Behavior: 0
-  - Name: J2_D1
-    Text: "Oh le petit Damien \xE0 son papa\u2026 il veut t\xE9ter le biberon ?\r\nDamien
-      se jette sur le membre des scilas.\r\n"
-    Actor: {fileID: 11400000, guid: 5dcea5daed85cb54a82453d03321e7e5, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: J2_D1
