@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66412d6a8004e0398aceaf0a3d6aa312, type: 3}
   m_Name: Gege Way
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
-  Name: "G\xE9g\xE9 Way"
+  Name: GegeWay
   Description: 
   Sprites: []
   SpriteSide: 1
