@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 003e102818180874f958db15358003f0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Scenes: {fileID: 11400000, guid: 95e31aeed59b24b4295f4d20cce63ad1, type: 2}
+  - Scenes1: {instanceID: 0}
+  - Tutori: {instanceID: 0}
+  - Tu: {instanceID: 0}
+  - Tutoriele: {instanceID: 0}
+  - TutlEnd: {instanceID: 0}
+  - Tutorlay: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

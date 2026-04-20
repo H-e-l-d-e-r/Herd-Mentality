@@ -1,2 +1,18 @@
 fileFormatVersion: 2
 guid: cc7f2ecb3718bc7c1a41f494cd2f7293
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Introduction: {instanceID: 0}
+  - TutorielPreGameplay: {instanceID: 0}
+  - TutorielAntenna: {instanceID: 0}
+  - TutorielFrequencyModulator: {instanceID: 0}
+  - TutorielFrequencyForce: {instanceID: 0}
+  - TutorielEnd: {instanceID: 0}
+  - TutorielPostGameplay: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

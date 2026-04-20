@@ -3,7 +3,7 @@ using DialogueSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TutorielScript : MonoBehaviour
+public class StartSceneScript : MonoBehaviour
 {
     [Header("Tables")]
     public DialogueTable Introduction;
