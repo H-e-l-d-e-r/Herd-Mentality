@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: J1_A1_SR
   m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
-  Name: Infos Squat Roskoff
+  Name: Concert des Gorgonzola
   Description: Tu savais que le Squat organisait un concert ? Maintenant oui.
   Like:
     YoungLetterists: 0

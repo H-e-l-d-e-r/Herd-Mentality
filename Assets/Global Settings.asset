@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: Global Settings
   m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
   GenericInputCooldown: 0.5
+  RadioPlayTime: 4.5
+  AppreciationIncreaseMusic: 0.5
+  AppreciationDecreaseMusic: 0.5
+  AppreciationIncrease: 1
   Sequences:
   - {fileID: 11400000, guid: 3806ba9f0a3ea21ce9163cef4dfa2d25, type: 2}
   - {fileID: 11400000, guid: f82bfec91c9f5cb8f91661de1b4da283, type: 2}
+  - {fileID: 11400000, guid: 4b1c127a3655085b987c3e4e078f7272, type: 2}
+  - {fileID: 11400000, guid: f647485e72ccbfe41a7ac439d723732b, type: 2}
+  - {fileID: 11400000, guid: 452c87e286b8b20429b975657243e3a1, type: 2}
+  - {fileID: 11400000, guid: fa948d3af5b952d4091e2544826722ee, type: 2}

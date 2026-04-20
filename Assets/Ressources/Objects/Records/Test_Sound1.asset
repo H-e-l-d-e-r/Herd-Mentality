@@ -27,4 +27,4 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 0}
   BackgroundImage: {fileID: 446372668, guid: c66a543b982e56589a0441f13f7e7cc7, type: 3}
   Clip: {fileID: 8300000, guid: 91fe09cc73aa9fa45a4fc3228062d129, type: 3}
-  Volume: 1
+  Volume: 0.7
