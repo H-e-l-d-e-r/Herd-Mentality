@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: J0_M0_PopRock
   m_EditorClassIdentifier: Assembly-CSharp::VinylObject
   Name: Won't Remember?
-  Description: 
+  Description: "why did I failed to tell you the truth ?\r\nAbout things that i've
+    should done next to you.\r\nWhy does eyes, remainds me a past \r\nWhere I hoped
+    that theses moments forever last\r\n\r\nSo how's your new lover ? \r\nI wish
+    that you'll get better.\r\nIt's weird to not seeing you\r\nSmiling, acting like
+    we've been through \r\n\r\nEven if you won't remember\r\nAll i asked you is to
+    trust me\r\nTo go see new places\r\nWhere words speaks for me"
   Like:
     YoungLetterists: 1
     SquatRoskoff: 0
@@ -23,8 +28,8 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Title: Won't Remember?
-  Author: 
-  Color: {r: 0, g: 0, b: 0, a: 0}
+  Author: Tiny Hands
+  Color: {r: 0.836478, g: 0.26041287, b: 0.26041287, a: 1}
   BackgroundImage: {fileID: 21300000, guid: 0ad0064b2df9c5d429f91c77ce651d66, type: 3}
-  Clip: {fileID: 8300000, guid: e253f1a97cb9dcfc191695f4ccaf9b2d, type: 3}
+  Clip: {fileID: 8300000, guid: d028b7d9fb4d62044b4f03025d5e07de, type: 3}
   Volume: 0.7

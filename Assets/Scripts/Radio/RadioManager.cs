@@ -72,7 +72,7 @@ public class RadioManager : MonoBehaviour
     // les sequences qui ont ete valides
     private List<RadioSequenceObject> m_validatedSequences;
 
-    private Dictionary<RadioSequenceObject, int> m_sequencesProgress = new Dictionary<RadioSequenceObject, int>();
+    // private Dictionary<RadioSequenceObject, int> m_sequencesProgress = new Dictionary<RadioSequenceObject, int>();
 
     private void Awake()
     {
@@ -114,28 +114,25 @@ public class RadioManager : MonoBehaviour
             UpdatePlanningUI(); // On check si la premiere cam est la planning
         }
 
-        RefreshAvailableSequences();
+        Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
     }
 
-    public void RefreshAvailableSequences()
+    /*public void RefreshAvailableSequences()
     {
-        m_sequencesProgress.Clear();
+        m_targetSequences.Clear();
 
-        
-        var allSequences = GameManager.Instance.UnlockedSequences;
+        RadioSequenceObject[] allSequences = GameManager.Instance.UnlockedSequences;
 
         if (allSequences != null)
         {
-            foreach (var seq in allSequences)
+            foreach (RadioSequenceObject seq in allSequences)
             {
-                if (seq != null && seq.Blocs != null && seq.Blocs.Length > 0)
-                {
-                    m_sequencesProgress.Add(seq, 0);
-                }
+                EnqueueSequence(seq);
             }
         }
-        Debug.Log($"<color=magenta>[DEBUG] {m_sequencesProgress.Count} sequences chargees depuis le GameManager !</color>");
-    }
+
+        Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
+    }*/
 
     void OnEnable()
     {
@@ -243,10 +240,10 @@ public class RadioManager : MonoBehaviour
 
         Debug.Log(FindSequences().Length);
 
-        ProcessVinylForSequences(vinyl);
+        //ProcessVinylForSequences(vinyl);
     }
 
-    public void ProcessVinylForSequences(VinylObject playedVinyl)
+    /*public void ProcessVinylForSequences(VinylObject playedVinyl)
     {
         if (playedVinyl == null) return;
 
@@ -293,15 +290,10 @@ public class RadioManager : MonoBehaviour
         GameManager.Instance.Statistics.AprScilas += diffSC;
 
         Debug.Log($"<color=green>[VALIDATION] {seq.name} terminee ! Bilan : YL:{diffYL} SR:{diffSR} SC:{diffSC}</color>");
-    }
+    }*/
 
     public void EnqueueSequence(RadioSequenceObject seq)
     {
-        if (m_targetSequences.Contains(seq))
-        {
-            return;
-        }
-
         m_targetSequences.Enqueue(seq);
         TMP_Text textInstance = Instantiate(PlanningNotePrefab, PlanningNote).GetComponent<TMP_Text>();
         textInstance.text = seq.ToString();
@@ -349,17 +341,11 @@ public class RadioManager : MonoBehaviour
     {
         List<RadioSequenceObject> list = new List<RadioSequenceObject>();
 
-        var allSequences = GameManager.Instance.UnlockedSequences;
-
-        if (allSequences != null)
+        foreach (RadioSequenceObject seq in m_targetSequences)
         {
-            foreach (RadioSequenceObject seq in allSequences)
+            if (vinyls.ContainsSubSequence(seq.Blocs))
             {
-                
-                if (vinyls.ContainsSubSequence(seq.Blocs))
-                {
-                    list.Add(seq);
-                }
+                list.Add(seq);
             }
         }
 
@@ -381,7 +367,7 @@ public class RadioManager : MonoBehaviour
             PlanningCanvas.SetActive(isOnPlanning);
         }
     }
-
+     
     void UpdateCameraSwitch()
     {
         // ANCHORS?! Ca fait beaucoup la non? ;)

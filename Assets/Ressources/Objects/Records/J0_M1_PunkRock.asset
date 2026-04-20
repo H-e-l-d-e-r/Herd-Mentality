@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aed54d12f8ad9446992f28102c35a7c, type: 3}
   m_Name: J0_M1_PunkRock
   m_EditorClassIdentifier: Assembly-CSharp::VinylObject
-  Name: Kill
-  Description: "Un son Punk rock qui d\xE9chire !"
+  Name: Waters
+  Description: "Un son punk, bien grunge, qui d\xE9chire la t\xEAte."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 1
@@ -22,9 +22,9 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Title: Kill
-  Author: 
-  Color: {r: 0, g: 0, b: 0, a: 0}
+  Title: Waters
+  Author: Grim Metals
+  Color: {r: 0.6037736, g: 0.024682458, b: 0.024682458, a: 1}
   BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
-  Clip: {fileID: 8300000, guid: 3c7bb92fb2ae641408240cb248098319, type: 3}
+  Clip: {fileID: 8300000, guid: 5b11268aa1d13064195bf8a3d1f31042, type: 3}
   Volume: 0.7

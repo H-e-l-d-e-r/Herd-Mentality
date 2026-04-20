@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   Statistics:
+    Money: 0
     GlobalAppreciation: 0
     GlobalAudimat: 0
     AprSquatRoskoff: 0
@@ -54,4 +55,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
   - {fileID: 11400000, guid: 6e8e57b8b2e523f1aae93211217541f4, type: 2}
   - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
-  m_unlockedSequences: []
+  - {fileID: 11400000, guid: 27a601cb7564b9145ae5d7e2d75e97bf, type: 2}
+  m_currentDay: 0

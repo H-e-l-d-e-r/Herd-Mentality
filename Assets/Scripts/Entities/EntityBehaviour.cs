@@ -19,6 +19,8 @@ public abstract class EntityBehaviour : MonoBehaviour
     protected MeshRenderer p_renderer;
     protected bool p_IsHover;
 
+    private const string m_materialColorId = "_MainColor";
+
     protected void StartBehaviour()
     {
         p_renderer = GetComponent<MeshRenderer>();
@@ -28,11 +30,11 @@ public abstract class EntityBehaviour : MonoBehaviour
     {
         if (IsInteractible)
         {
-            p_renderer.material.color = p_IsHover ? HoverColor : InteractibleColor;
+            p_renderer.material.SetColor(m_materialColorId, p_IsHover ? HoverColor : InteractibleColor);
         }
         else
         {
-            p_renderer.material.color = DisableColor;
+            p_renderer.material.SetColor(m_materialColorId, p_IsHover ? HoverColor : DisableColor);
         }
     }   
 

@@ -70,6 +70,8 @@ public class UILibraryManager : MonoBehaviour
 
         foreach (RadioSequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
         {
+            Debug.Log(seq.ToString());
+
             TMP_Text instantiateText = Instantiate(UICodePrefab, CodeContent).GetComponent<TMP_Text>();
             instantiateText.text = seq.ToString();
         }
