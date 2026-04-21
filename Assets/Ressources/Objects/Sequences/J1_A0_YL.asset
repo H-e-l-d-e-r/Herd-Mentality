@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: J1_A0_YL
   m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
-  Name: Infos jeunes lettristes
-  Description: Tu savais qu'il avait un journal ?
+  Name: Journal Jeunes Lettristes
+  Description: Tu savais qu'ils avaient un journal ?
+  Like:
+    YoungLetterists: 1
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   Blocs:
   - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
   - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}

@@ -37,6 +37,7 @@ namespace DialogueSystem
         }
 
         public bool HasCommand => m_current != null;
+        public bool IsPlaying => !m_behaviour.Typewritter.IsPlaying;
 
         public DialogueCommand[] Commands
         {
@@ -50,22 +51,24 @@ namespace DialogueSystem
         private List<DialogueCommand> m_registerdCommands;
         private Queue<DialoguePtr> m_dialogueQueue;
         
+        private DialogueSystemBehaviour m_behaviour;
         private DialogueCommand m_current; 
 
-        public Dialogue(DialogueSettings settings)
+        public Dialogue(DialogueSystemBehaviour behaviour)
         {
             if (s_instance != null)
             {
                 Debug.LogError(new Exception("a Dialogue System instance already exists!"));
             }
 
-            Settings = settings;
+            Settings = behaviour.Settings;
 
             m_registerdCommands = new List<DialogueCommand>();
             m_dialogueQueue = new Queue<DialoguePtr>();
             m_current = null;
 
             s_instance = this;
+            m_behaviour = behaviour;
         }
 
         /// <summary>

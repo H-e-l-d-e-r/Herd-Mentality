@@ -39,6 +39,6 @@ public class EntityBot : EntityBehaviour
 
     protected override void OnHover()
     {
-        
+        Debug.Log("hover");
     }
 }

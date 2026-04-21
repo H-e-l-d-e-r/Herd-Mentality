@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2141453518271902949}
   - component: {fileID: 5094237821315777474}
   - component: {fileID: 9093781464605521264}
-  - component: {fileID: 2949954906491520095}
   - component: {fileID: 3900216262358824631}
+  - component: {fileID: 2949954906491520095}
   m_Layer: 0
   m_Name: Static Vinyl Object
   m_TagString: Static Vinyl Record
@@ -93,21 +93,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2949954906491520095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620028589310586452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed85c7d37a4862046ab25af511bf309b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VinylRecord
-  Renderer: {fileID: 9093781464605521264}
-  TitleText: {fileID: 1837383900478208749}
-  IsDragged: 0
 --- !u!65 &3900216262358824631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +114,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2949954906491520095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620028589310586452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed85c7d37a4862046ab25af511bf309b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VinylRecord
+  Renderer: {fileID: 9093781464605521264}
+  TitleText: {fileID: 1837383900478208749}
+  IsDragged: 0
 --- !u!1 &4013917696183250552
 GameObject:
   m_ObjectHideFlags: 0

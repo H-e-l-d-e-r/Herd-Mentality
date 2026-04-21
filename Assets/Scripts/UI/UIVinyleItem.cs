@@ -6,9 +6,11 @@ using TMPro;
 
 public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [HideInInspector] public VinylObject VinylData; 
+    [HideInInspector] 
+    public VinylObject VinylData; 
 
     public TMP_Text TitleText;
+
     public Image BackgroundImage;
 
     private Transform m_originalParent;
@@ -16,27 +18,47 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     void Awake()
     {
+        // 1. Gestion du CanvasGroup
         m_canvasGroup = GetComponent<CanvasGroup>();
-        if (m_canvasGroup == null) m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        if (m_canvasGroup == null)
+        {
+            m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
+
+        // 2. AUTO-Rï¿½PARATION DE L'IMAGE (Fini la ligne 29 !)
+        if (BackgroundImage == null)
+        {
+            BackgroundImage = GetComponentInChildren<Image>(); // Cherche s'il en reste une cachï¿½e
+
+            // Si vraiment il n'y a plus AUCUNE image sur ton Prefab, le script en crï¿½e une !
+            if (BackgroundImage == null)
+            {
+                BackgroundImage = gameObject.AddComponent<Image>();
+            }
+        }
     }
 
     public void Setup(VinylObject data)
     {
+        if (data == null) return; // Sï¿½curitï¿½
+
         VinylData = data;
-        TitleText.text = data.Title;
 
-        // On change la couleur de l'objet UI
-        BackgroundImage.color = data.Color;
+        if (TitleText != null)
+        {
+            TitleText.text = data.Title;
+        }
 
-
+        // LA FAMEUSE LIGNE 29 (Qui ne plantera plus jamais)
+        // Maintenant on est sï¿½r ï¿½ 1000% que BackgroundImage existe grï¿½ce au Awake
+        // bah sache que j'ai reussi a faire une erreur sur la ligne 29 de merde
         if (data.BackgroundImage != null)
         {
-            BackgroundImage.sprite = data.BackgroundImage; // On applique le dessin
-            BackgroundImage.color = Color.white; // On remet la couleur à blanc pour voir l'image normalement
+            BackgroundImage.sprite = data.BackgroundImage;
+            BackgroundImage.color = Color.white;
         }
         else
         {
-            // Sinon on garde juste la couleur unie par défaut
             BackgroundImage.sprite = null;
             BackgroundImage.color = data.Color;
         }
@@ -50,23 +72,24 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         Canvas mainCanvas = GetComponentInParent<Canvas>();
         transform.SetParent(mainCanvas.transform);
 
-        // On se met en toute dernière position pour être dessiné au-dessus de tout le reste
+        // On se met en toute derniï¿½re position pour ï¿½tre dessinï¿½ au-dessus de tout le reste
         transform.SetAsLastSibling();
 
-        // On désactive le raycast pour que la souris puisse cliquer sur la zone de drop en dessous
+        // On dï¿½sactive le raycast pour que la souris puisse cliquer sur la zone de drop en dessous
         m_canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition; // Suit la souris
+        // On utilise eventData.position au lieu de Input.mousePosition
+        transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         m_canvasGroup.blocksRaycasts = true;
 
-        // Si on le lâche dans le vide il retourne à sa place d'origine
+        // Si on le lï¿½che dans le vide il retourne ï¿½ sa place d'origine
         if (transform.parent == transform.root)
         {
             transform.SetParent(m_originalParent);

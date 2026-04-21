@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: J1_A2_SC
   m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
-  Name: 
-  Description: 
-  Blocs: []
+  Name: "D\xE9gradation des Scilas"
+  Description: Les scilas ont fait une descente sur un poste de police. <color=red>ACAB!
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 1
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Blocs:
+  - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
+  - {fileID: 11400000, guid: 27a601cb7564b9145ae5d7e2d75e97bf, type: 2}
