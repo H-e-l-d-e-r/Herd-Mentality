@@ -28,43 +28,53 @@ public class UIDropZone : MonoBehaviour, IDropHandler
     public Transform ListContent;
     
     public int Capacity = 1;
+    public bool IsDroppable = true;
 
     public UnityEvent OnDropEvent;
 
-    private List<GameObject> m_programmedVinyls;
+    private List<GameObject> m_programmedVinyls = new();
 
     void Start()
     {
-        m_programmedVinyls = new List<GameObject>();
+
     }
 
     // Quand on l�che un objet au-dessus de cette zone
     public void OnDrop(PointerEventData eventData)
     {
-        GameObject droppedObject = eventData.pointerDrag;
-
-        if (droppedObject != null)
+        if (IsDroppable)
         {
-            UIVinylItem item = droppedObject.GetComponent<UIVinylItem>();
-            if (item != null)
+            SetContent(eventData.pointerDrag);
+        }
+    }
+
+    public void SetContent(GameObject @object)
+    {
+        if (!@object)
+        {
+            return;
+        }
+
+        UIVinylItem item = @object.GetComponent<UIVinylItem>();
+        if (item != null)
+        {
+            if (m_programmedVinyls != null && m_programmedVinyls.Count >= Capacity)
             {
-                if(m_programmedVinyls.Count >= Capacity)
-                {
-                    GameObject last = m_programmedVinyls.Last();
-                    last.transform.SetParent(ListContent, false);
-                    last.transform.localScale = Vector3.one;
+                GameObject last = m_programmedVinyls.Last();
+                last.transform.SetParent(ListContent, false);
+                last.transform.localScale = Vector3.one;
 
-                    m_programmedVinyls.Remove(last);    
-                }
-
-                // On l'attache � cette zone visuellement (false = on garde sa taille normale)
-                droppedObject.transform.SetParent(ProgrammationContent, false);
-                droppedObject.transform.localScale = Vector3.one;
-
-                UpdatePhysicalStorage();
-                
-                OnDropEvent.Invoke();
+                m_programmedVinyls.Remove(last);
             }
+
+            // On l'attache � cette zone visuellement (false = on garde sa taille normale)
+            @object.transform.SetParent(ProgrammationContent, false);
+            @object.transform.localScale = Vector3.one;
+            item.IsDraggable = IsDroppable;
+
+            UpdatePhysicalStorage();
+
+            OnDropEvent.Invoke();
         }
     }
 

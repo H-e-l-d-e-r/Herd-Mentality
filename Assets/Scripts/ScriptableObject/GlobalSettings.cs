@@ -24,5 +24,6 @@ public class GlobalGameSettings : SingletonScriptableObject<GlobalGameSettings>
     public float AppreciationIncrease = 1.0f;
 
     [Header("Registries")]
-    public List<RadioSequenceObject> Sequences;
+    public RadioSequenceObject[] Sequences;
+    public QuestObject[] Quests;
 }

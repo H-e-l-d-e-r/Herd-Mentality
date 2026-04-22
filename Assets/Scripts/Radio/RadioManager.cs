@@ -1,13 +1,14 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using DialogueSystem;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
+[DefaultExecutionOrder(2500)] 
 public class RadioManager : MonoBehaviour
 {
     public static RadioManager Instance { get; private set; }
@@ -18,17 +19,16 @@ public class RadioManager : MonoBehaviour
     public Camera Camera;
     public CameraAnchor[] Anchors;
 
-    [Header("Planification UI")]
-    public GameObject PlanningCanvas; // Le Canvas a afficher
-    public Transform PlanningNote;
-    public GameObject PlanningNotePrefab;
-
-    public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
-    public bool EnqueueAllSequences;
+    // public GameObject PlanningCanvas; // Le Canvas a afficher
+    // public Transform PlanningNote;
+    // public GameObject PlanningNotePrefab;
+    // public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
+    // public bool EnqueueAllSequences;
 
     [Header("Components")]
+    public TextGroupBehaviour CanvasManager;
+    public UILibraryManager PreparationManager;
     public VinylRecordPlayer VinylPlayer;
-
     public RadioBehaviour RadioBehaviour;
 
     [Header("Inputs")]
@@ -72,6 +72,11 @@ public class RadioManager : MonoBehaviour
     // les sequences qui ont ete valides
     private List<RadioSequenceObject> m_validatedSequences;
 
+    // le quete que le joueur doit realiser
+    [SerializeField]
+    [ReadOnly]
+    private QuestObject m_questObject;
+
     // private Dictionary<RadioSequenceObject, int> m_sequencesProgress = new Dictionary<RadioSequenceObject, int>();
 
     private void Awake()
@@ -83,8 +88,7 @@ public class RadioManager : MonoBehaviour
     private void Start()
     {
         NullComponents.ThrowIfNull(VinylPlayer);
-        NullComponents.ThrowIfNull(PlanningCanvas);
-        NullComponents.ThrowIfNull(PlanningNote);
+        NullComponents.ThrowIfNull(PreparationManager);
         NullComponents.ThrowIfNull(Camera);
 
         m_switchCameraInput = InputActionReference.Create(SwitchCameraInput);
@@ -97,13 +101,21 @@ public class RadioManager : MonoBehaviour
         m_playedVinyls = new Queue<VinylObject>();
         m_targetSequences = new Queue<RadioSequenceObject>();
         m_validatedSequences = new List<RadioSequenceObject>();
+        m_questObject = GetRandomQuest(new CollectibleObject.UndergroundGroups());
 
         // register targets
-        if (EnqueueAllSequences)
+        if (m_selectedSequences.Length > 0)
         {
             foreach (int seq in m_selectedSequences)
             {
                 EnqueueSequence(GlobalGameSettings.Instance.Sequences[seq]);
+            }
+        }
+        else
+        {
+            foreach (RadioSequenceObject seq in GlobalGameSettings.Instance.Sequences)
+            {
+                EnqueueSequence(seq);
             }
         }
 
@@ -111,8 +123,36 @@ public class RadioManager : MonoBehaviour
         {
             // On se focus sur la first cam
             Anchors[0].Focus(Camera);
-            UpdatePlanningUI(); // On check si la premiere cam est la planning
+            // UpdatePlanningUI(); // On check si la premiere cam est la planning
         }
+
+        // focus sur l'introduction
+        CanvasManager.ActivateGroupsOfText(0);
+
+        // dialogue callback
+        Dialogue.Instance.OnDialogueCloseEvent += () =>
+        {
+            // permet d'aller a la scene de preparation des que le dialogue est fini
+            if(CanvasManager.CurrentGroup == 0)
+            {
+                CanvasManager.ActivateGroupsOfText(1);
+
+                // define quest constraints
+                for (int i = 0; i < m_questObject.ConstraintVinyles.Length; i++)
+                {
+                    if (m_questObject.ConstraintVinyles[i] == null)
+                    {
+                        break;
+                    }
+
+                    PreparationManager.VinylsDropZones[i].IsDroppable = false;
+                    PreparationManager.VinylsDropZones[i].SetContent(PreparationManager.FindVinyle(m_questObject.ConstraintVinyles[i]));
+                }
+            }
+        };
+
+        m_questObject.StartDialogue();
+        
 
         Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
     }
@@ -192,17 +232,17 @@ public class RadioManager : MonoBehaviour
         m_timer -= Time.deltaTime;
     }
 
-    private void UpdateAudimatLogic()
+    void UpdateAudimatLogic()
     {
         m_audimatLogTimer -= Time.deltaTime;
 
-        bool hasMusic = VinylPlayer.IsPlaying;
         bool hasRadio = RadioBehaviour != null;
         float signal = hasRadio ? (RadioBehaviour.AntennaSignalQuality + RadioBehaviour.FrequencyQuality) / 2f : 0f;
 
         if (m_audimatLogTimer <= 0)
         {
-            if (!hasMusic) Debug.Log("<color=red>[INFO 10S] Audimat en pause. La platine ne joue rien.</color>");
+            // feedbacks
+            if (!VinylPlayer.IsPlaying) Debug.Log("<color=red>[INFO 10S] Audimat en pause. La platine ne joue rien.</color>");
             else if (!hasRadio) Debug.Log("<color=red>[INFO 10S] Audimat en pause. RadioBehaviour non assigne.</color>");
             else if (signal <= 0.1f) Debug.Log($"<color=orange>[INFO 10S] Audimat en pause : Signal trop faible ({signal:P0}). Reglez la molette !</color>");
             else Debug.Log($"<color=yellow>[INFO 10S] L'Audimat grimpe ! Gain: +{audimatIncreaseRate * signal:F2}/sec | Audimat Total : {m_currentAudimat:F1}</color>");
@@ -210,11 +250,34 @@ public class RadioManager : MonoBehaviour
             m_audimatLogTimer = 10.0f;
         }
 
-        if (hasMusic && hasRadio && signal > 0.1f)
+        if (VinylPlayer.IsPlaying && hasRadio && signal > 0.1f)
         {
             float gain = audimatIncreaseRate * signal * Time.deltaTime;
             m_currentAudimat += gain;
             GameManager.Instance.Statistics.GlobalAppreciation = m_currentAudimat;
+        }
+    }
+
+    void UpdateCameraSwitch()
+    {
+        // ANCHORS?! Ca fait beaucoup la non? ;)
+        // ahaha trop drole ta blague. non
+        if (m_switchCooldown > Mathf.Epsilon)
+        {
+            m_switchCooldown -= Time.deltaTime;
+            return;
+        }
+
+        if (m_switchCameraInput.ReadValue<float>() > 0.1f)
+        {
+            // On va vers le prochain anchor 
+            m_currentAnchorIndex = (m_currentAnchorIndex + 1) % Anchors.Length;
+            Anchors[m_currentAnchorIndex].Focus(Camera);
+
+            // UpdatePlanningUI();
+
+            // reset du cooldown
+            m_switchCooldown = k_switchCooldown;
         }
     }
 
@@ -295,8 +358,6 @@ public class RadioManager : MonoBehaviour
     public void EnqueueSequence(RadioSequenceObject seq)
     {
         m_targetSequences.Enqueue(seq);
-        TMP_Text textInstance = Instantiate(PlanningNotePrefab, PlanningNote).GetComponent<TMP_Text>();
-        textInstance.text = seq.ToString();
     }
 
     /// <summary>
@@ -355,39 +416,33 @@ public class RadioManager : MonoBehaviour
         return list.ToArray();
     }
 
-    void UpdatePlanningUI()
+    public QuestObject GetRandomQuest(CollectibleObject.UndergroundGroups blacklist)
     {
-        if (PlanningCanvas == null) return;
-
-        // Si l'index actuel est celui de la planification, on affiche le Canvas
-        bool isOnPlanning = (m_currentAnchorIndex == PlanningAnchorIndex);
-
-        if (PlanningCanvas.activeSelf != isOnPlanning)
+        // lorsqu'il n'y a pas de quete precedente
+        if(m_questObject == null || m_questObject.Next == null)
         {
-            PlanningCanvas.SetActive(isOnPlanning);
+            // choisit un groupe
+            int random = UnityEngine.Random.Range(0, 3);
+            return GlobalGameSettings.Instance.Quests[random];
         }
+
+        // si on a deja eu une quete avant et qu'elle a une quete qui suit
+        // on prend la quete suivante
+        return m_questObject.Next;
     }
+
+    // void UpdatePlanningUI()
+    // {
+    //     if (PlanningCanvas == null) return;
+    // 
+    //     // Si l'index actuel est celui de la planification, on affiche le Canvas
+    //     bool isOnPlanning = (m_currentAnchorIndex == PlanningAnchorIndex);
+    // 
+    //     if (PlanningCanvas.activeSelf != isOnPlanning)
+    //     {
+    //         PlanningCanvas.SetActive(isOnPlanning);
+    //     }
+    // }
      
-    void UpdateCameraSwitch()
-    {
-        // ANCHORS?! Ca fait beaucoup la non? ;)
-        // ahaha trop drole ta blague. non
-        if (m_switchCooldown > Mathf.Epsilon)
-        {
-            m_switchCooldown -= Time.deltaTime;
-            return;
-        }
 
-        if (m_switchCameraInput.ReadValue<float>() > 0.1f)
-        {
-            // On va vers le prochain anchor 
-            m_currentAnchorIndex = (m_currentAnchorIndex + 1) % Anchors.Length;
-            Anchors[m_currentAnchorIndex].Focus(Camera);
-
-            UpdatePlanningUI();
-
-            // reset du cooldown
-            m_switchCooldown = k_switchCooldown;
-        }
-    }
 }

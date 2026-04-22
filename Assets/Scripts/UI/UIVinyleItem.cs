@@ -10,11 +10,13 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public VinylObject VinylData; 
 
     public TMP_Text TitleText;
+    public bool IsDraggable = true;
 
     public Image BackgroundImage;
 
     private Transform m_originalParent;
     private CanvasGroup m_canvasGroup;
+    private Canvas m_canvas;
 
     void Awake()
     {
@@ -24,6 +26,8 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             m_canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
+
+        m_canvas = GetComponentInParent<Canvas>();
 
         // 2. AUTO-R�PARATION DE L'IMAGE (Fini la ligne 29 !)
         if (BackgroundImage == null)
@@ -66,11 +70,15 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!IsDraggable)
+        {
+            return;
+        }
+
         m_originalParent = transform.parent;
 
         // NOUVEAU : On trouve le Canvas le plus proche et on s'y attache !
-        Canvas mainCanvas = GetComponentInParent<Canvas>();
-        transform.SetParent(mainCanvas.transform);
+        transform.SetParent(m_canvas.transform, false);
 
         // On se met en toute derni�re position pour �tre dessin� au-dessus de tout le reste
         transform.SetAsLastSibling();
@@ -81,16 +89,26 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!IsDraggable)
+        {
+            return;
+        }
+
         // On utilise eventData.position au lieu de Input.mousePosition
         transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!IsDraggable)
+        {
+            return;
+        }
+
         m_canvasGroup.blocksRaycasts = true;
 
         // Si on le l�che dans le vide il retourne � sa place d'origine
-        if (transform.parent == transform.root)
+        if (transform.parent == m_canvas.transform)
         {
             transform.SetParent(m_originalParent);
         }

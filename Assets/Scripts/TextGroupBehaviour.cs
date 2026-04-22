@@ -4,9 +4,15 @@ using UnityEngine;
 public class TextGroupBehaviour : MonoBehaviour
 {
     public TextGroupContainer[] GroupOfTexte;
+    
+    public int CurrentGroup
+    {
+        get; private set;
+    }
 
     public void ActivateGroupsOfText (int IndexTextToShow)
     {
+        CurrentGroup = IndexTextToShow;
 
         foreach (TextGroupContainer groupe in GroupOfTexte)
         {
