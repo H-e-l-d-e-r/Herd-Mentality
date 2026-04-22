@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51689e356da273d4986ae867b9e33eee
+guid: ebd66946933ff054ba7e71150015291f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RadioButtons_0
+      name: Radio_boutons_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1200
-        width: 400
-        height: 400
+        x: 38
+        y: 2195
+        width: 90
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,140 +112,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79c36d9565d63c849975d110d224537c
-      internalID: -972444563
+      spriteID: 87772acc24bd860488081e6032a61638
+      internalID: 1772810097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadioButtons_1
+      name: Radio_boutons_1
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1200
-        width: 400
-        height: 400
+        x: 123
+        y: 1370
+        width: 595
+        height: 623
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fffa74cd0d060a14c909ac51356e8e88
-      internalID: -41868980
+      spriteID: a4c08c2bae8648f49aeabde6dc5bc8a2
+      internalID: -81566112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadioButtons_2
+      name: Radio_boutons_2
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1200
-        width: 400
-        height: 400
+        x: 844
+        y: 1370
+        width: 641
+        height: 638
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50316099ae44f52499332176dc46e5e2
-      internalID: -749122957
+      spriteID: dd44c0e948230c8498bb6e51039ddd58
+      internalID: 274880736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadioButtons_3
+      name: Radio_boutons_3
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 400
-        height: 400
+        x: 1696
+        y: 1284
+        width: 384
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cad2871c910f6547b4c993aceb6bc6d
-      internalID: -229830570
+      spriteID: 99909c56bd305804a92dc9a27ad4aff0
+      internalID: -198431669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadioButtons_4
+      name: Radio_boutons_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 800
-        width: 400
-        height: 400
+        x: 2121
+        y: 1287
+        width: 382
+        height: 758
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52835be7299736c46a5a02f0953513c1
-      internalID: 19596132
+      spriteID: 95342a1b096255748b75a50e0ff648ea
+      internalID: 1316169957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadioButtons_5
+      name: Radio_boutons_5
       rect:
         serializedVersion: 2
-        x: 800
-        y: 800
-        width: 400
-        height: 400
+        x: 844
+        y: 766
+        width: 639
+        height: 574
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab9fd6ba5ed0454caba9aa6ee7d05ab
-      internalID: 347574918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RadioButtons_6
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 800
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95fd3e6817660b548b129a63e82a689d
-      internalID: 1260955426
+      spriteID: 9024e2ecea67fe647bd96aa97d8f55d7
+      internalID: 1729197919
       vertices: []
       indices: 
       edges: []
@@ -254,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d79754fabc7e98499dd158b12312fdf
+    spriteID: a3211f71775c9d44d976db5e289f5122
     internalID: 0
     vertices: []
     indices: 
@@ -264,15 +242,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RadioButtons_0: -972444563
-      RadioButtons_1: -41868980
-      RadioButtons_2: -749122957
-      RadioButtons_3: -229830570
-      RadioButtons_4: 19596132
-      RadioButtons_5: 347574918
-      RadioButtons_6: 1260955426
+      Radio_boutons_0: 1772810097
+      Radio_boutons_1: -81566112
+      Radio_boutons_2: 274880736
+      Radio_boutons_3: -198431669
+      Radio_boutons_4: 1316169957
+      Radio_boutons_5: 1729197919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
