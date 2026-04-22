@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M6_DIAG_JL2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M6_JL2
+  Description: "Voix d\u2019un jeune lettriste"
+  m_nodes:
+  - Name: M6_JL2
+    Text: Allo ?
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Vous m\u2019entendez ?"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "C\u2019est toujours un jeune lettriste."
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Je passe par le parlophone pour \xE9viter qu\u2019on se fasse prendre\u2026"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Comme tu le sais les lettristes ont toujours \xE9t\xE9 en minorit\xE9
+      dans l\u2019universit\xE9."
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Jusqu\u2019\xE0 pr\xE9sent on arrivait \xE0 survivre car l\u2019un de
+      nos profs nous soutenait mais il s\u2019est fait vir\xE9\u2026"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Jusqu\u2019\xE0 pr\xE9sent on arrivait \xE0 survivre car l\u2019un de
+      nos profs nous soutenait mais il s\u2019est fait vir\xE9\u2026 Maintenant qu\u2019on
+      n\u2019est plus sous la protection de Keating on risque de se faire virer. "
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Mais je sais qu\u2019on peut compter les uns sur les autres ! Alors j\u2019aimerai
+      que tu diffuses un message g\xE9n\xE9rale pour demander du soutient !"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: "Mais je sais qu\u2019on peut compter les uns sur les autres ! Alors j\u2019aimerai
+      que tu diffuses un message g\xE9n\xE9rale pour demander du soutient !"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M6_JL2
+    Text: Fin de la communication.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

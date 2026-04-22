@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M3_DIAG_JL1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M3_JL1
+  Description: "Voix radio d\u2019un jeune lettriste"
+  m_nodes:
+  - Name: M3_JL1
+    Text: "Biiiiip\u2026 Transmission d\xE9marr\xE9e \xE0 21h36 depuis l\u2019universit\xE9
+      du Quartier Est."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M3_JL1
+    Text: "Bonjour Ma\xE9, c\u2019est toujours un jeune lettriste."
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M3_JL1
+    Text: "On voulait vous remercier pour le coup de publicit\xE9. Gr\xE2ce \xE0
+      vous on a vendu plus que d\u2019habitude !"
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M3_JL1
+    Text: "Comme vous semblez \xEAtre de confiance, on voulait vous demander de relayer
+      le code de rassemblement des jeunes lettristes."
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M3_JL1
+    Text: "On esp\xE8re avoir plus d\u2019adh\xE9rent que la derni\xE8re fois\u2026
+      je vous l\u2019envoie joins \xE0 ce message."
+    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M3_JL1
+    Text: Fin de transmission.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

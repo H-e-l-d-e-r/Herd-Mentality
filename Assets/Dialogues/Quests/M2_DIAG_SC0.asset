@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M2_DIAG_SC0
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M2_SC0
+  Description: "Voix radio d\u2019un Scilas"
+  m_nodes:
+  - Name: M2_SC0
+    Text: "Bzzzzz\u2026 Transmission d\xE9marr\xE9e \xE0 03h46 depuis un lieu inconnu."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: " Yooo la Herd ! Comment \xE7a roule ?"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: "Alors comment va R\xE9da ? Toujours aussi dr\xF4le ?"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: "On m\u2019a demander de vous dire qu\u2019on a enfin r\xE9ussit \xE0 rentrer
+      dans un poste de police pour que vous le r\xE9pandez dans la ville !"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: "C\u2019est pas beau \xE7a ? On est all\xE9 faire danser les flics !"
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: "Un grand pas pour la r\xE9volution ! On vous envoie les code dans l\u2019heure,
+      vous savez quoi faire. "
+    Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M2_SC0
+    Text: Fin de transmission.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

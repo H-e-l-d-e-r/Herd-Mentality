@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M8_DIAG_SC2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M8_SC2
+  Description: Voix de Diz
+  m_nodes:
+  - Name: M8_SC2
+    Text: "Allo ? Ma\xE9 ? Ouais c\u2019est Diz des Scilaciens\u2026 "
+    Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M8_SC2
+    Text: "J\u2019ai une requ\xEAte pour toi."
+    Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M8_SC2
+    Text: "Depuis quelques temps nos ventes de barbe \xE0 papa sont en chute\u2026
+      c\u2019est un peu compliqu\xE9 d\u2019avoir assez de revenu pour nourrir tout
+      le monde\u2026"
+    Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M8_SC2
+    Text: "On voudrait que tu fasses la pub de nos barbe \xE0 papa ! Ce serait super
+      gentil\u2026 je t\u2019envoie le message apr\xE8s !"
+    Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M8_SC2
+    Text: Fin de la communication.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

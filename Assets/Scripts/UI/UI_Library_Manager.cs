@@ -69,12 +69,12 @@ public class UILibraryManager : MonoBehaviour
     }
 
     // ajoute une sequence a la fiche de memo
-    public void AddSequenceMemo(RadioSequenceObject seq)
+    public void AddSongMemo(VinylObject obj)
     {
         TMP_Text tmp = Instantiate(MemoPrefab, MemoContent).GetComponent<TMP_Text>();
         if (tmp)
         {
-            tmp.text = seq.ToString();
+            tmp.text = obj.ToString();
         }
     }
 
@@ -87,7 +87,11 @@ public class UILibraryManager : MonoBehaviour
         foreach (RadioSequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
         {
             Manager.EnqueueSequence(seq);
-            AddSequenceMemo(seq);
+        }
+        
+        foreach (VinylObject vinyle in m_targetVinyls)
+        {
+            AddSongMemo(vinyle);
         }
     }
 
