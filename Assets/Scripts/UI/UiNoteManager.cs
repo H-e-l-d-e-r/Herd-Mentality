@@ -6,9 +6,18 @@ using UnityEngine.UI;
 
 public class UiNoteManager : MonoBehaviour
 {
-    //public GameObject ZoneDisplay;
+    [Header("note")]
     public GameObject[] NoteDontDisplay;
     public TMP_Text[] NoteDisplay;
+
+    [Header("code")]
+    public GameObject[] ImageDisplay;
+    public TMP_Text[] CodeDescriptionDisplay;
+    public TMP_Text[] CodeSequenceDisplay;
+    public RectTransform Grid;
+
+    [Header("button")]
+    public Button BtnCode;
     public Button BtnOuvrirCarnet;
     public Button BtnNext;
     public Button BtnPrevious;
@@ -27,6 +36,7 @@ public class UiNoteManager : MonoBehaviour
         //BtnNext.onClick.AddListener(NextPage);
         //BtnPrevious.onClick.AddListener(PreviusPage);
         BtnOuvrirCarnet.onClick.AddListener(CreateText);
+        BtnCode.onClick.AddListener(CreateCode);
 
         MettreAJourBoutons();
         
@@ -44,6 +54,7 @@ public class UiNoteManager : MonoBehaviour
         //int index = (int)Mathf.Clamp(m_page, 0, GameManager.Instance.UnlockedCollectibles.Length - 1);
         CollectibleObject[] collectible = GameManager.Instance.UnlockedCollectibles;
         BtnOuvrirCarnet.onClick.AddListener(() => { OnButtonClick(collectible); });
+
         if (collectible == null || GameManager.Instance.UnlockedCollectibles.Length == 0) return;
 
         // Page gauche
@@ -97,6 +108,37 @@ public class UiNoteManager : MonoBehaviour
         }
     }
     */
+    public void CreateCode()
+    {
+        RadioSequenceObject[] sequence = GameManager.Instance.UnlockedSequences;
+
+        int indexGauche = m_page * 2;
+        if (indexGauche < sequence.Length)
+        {
+            CodeDescriptionDisplay[0].text = sequence[indexGauche].ToString();
+            CodeDescriptionDisplay[0].gameObject.SetActive(true);
+
+        }
+        else
+        {
+            CodeDescriptionDisplay[0].text = "";
+            CodeDescriptionDisplay[0].gameObject.SetActive(false);
+        }
+        int indexDroit = m_page * 2 + 1;
+        if (indexDroit < sequence.Length)
+        {
+            CodeSequenceDisplay[0].text = sequence[indexDroit].name;
+            CodeSequenceDisplay[0].gameObject.SetActive(true);
+        }
+        else
+        {
+            CodeSequenceDisplay[0].text = "";
+            CodeSequenceDisplay[0].gameObject.SetActive(false);
+        }
+
+
+
+    }
     void MettreAJourBoutons()
     {
         CollectibleObject[] collectibles = GameManager.Instance.UnlockedCollectibles;
