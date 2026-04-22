@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UiNoteManager : MonoBehaviour
 {
+
     [Header("note")]
     public GameObject[] NoteDontDisplay;
     public TMP_Text[] NoteDisplay;
@@ -14,151 +15,183 @@ public class UiNoteManager : MonoBehaviour
     public GameObject[] ImageDisplay;
     public TMP_Text[] CodeDescriptionDisplay;
     public TMP_Text[] CodeSequenceDisplay;
+    public GameObject[] CodeDontDisplay;
     public RectTransform Grid;
 
     [Header("button")]
     public Button BtnCode;
-    public Button BtnOuvrirCarnet;
+    public Button BtnNotes;
     public Button BtnNext;
     public Button BtnPrevious;
 
     private List<CollectibleObject> m_spawnText;
-    private int m_page = 0;
+    private bool m_ongletNoteActif = true;
+    private int m_pageNote = 0;
+    private int m_pageCode = 0;
     private int m_indexGauche;
     private int m_indexDroite;
          
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_indexGauche = m_page * 2;
-        m_indexDroite = m_page * 2 + 1;
+        CreateNote();
+        CreateCode();
 
-        CreateText();
-
-        //BtnNext.onClick.AddListener(NextPage);
-        //BtnPrevious.onClick.AddListener(PreviusPage);
-        BtnOuvrirCarnet.onClick.AddListener(CreateText);
-        BtnCode.onClick.AddListener(CreateCode);
+        BtnNext.onClick.AddListener(NextPage);
+        BtnPrevious.onClick.AddListener(PreviousPage);
+        BtnNotes.onClick.AddListener(() => ChangerOnglet(true));
+        BtnCode.onClick.AddListener(() => ChangerOnglet(false));
 
         MettreAJourBoutons();
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+        ChangerOnglet(m_ongletNoteActif);
+    }
+    void ChangerOnglet(bool ongletNotes)
     {
+        m_ongletNoteActif = ongletNotes;
+
+        // Switch les panels
         
+        {
+            foreach (GameObject hideText in NoteDontDisplay)
+            {
+                hideText.SetActive(m_ongletNoteActif);
+            }
+        }
+        {
+            foreach (GameObject hideCode in CodeDontDisplay)
+            {
+                hideCode.SetActive(!m_ongletNoteActif);
+            }
+        }
+
+        AfficherOngletActif();
+        MettreAJourBoutons();
+    }
+    void AfficherOngletActif()
+    {
+        if (m_ongletNoteActif)
+            CreateNote();
+        else
+            CreateCode();
     }
 
     // creer le texte a afichier depuis l'instance 
-    void CreateText()
+    void CreateNote()
     {
         //int index = (int)Mathf.Clamp(m_page, 0, GameManager.Instance.UnlockedCollectibles.Length - 1);
-        CollectibleObject[] collectible = GameManager.Instance.UnlockedCollectibles;
-        BtnOuvrirCarnet.onClick.AddListener(() => { OnButtonClick(collectible); });
+        CollectibleObject[] collectibles = GameManager.Instance.UnlockedCollectibles;
+        //BtnOuvrirCarnet.onClick.AddListener(() => { OnButtonClick(collectibles); });
 
-        if (collectible == null || GameManager.Instance.UnlockedCollectibles.Length == 0) return;
-
-        // Page gauche
-        
-        if (m_indexGauche < collectible.Length)
+        if (collectibles == null || collectibles.Length == 0)
         {
-            NoteDisplay[0].text = collectible[m_indexGauche].Description;
-            NoteDisplay[0].gameObject.SetActive(true);
-        }
-        else
-        {
-            NoteDisplay[0].text = "";
-            NoteDisplay[0].gameObject.SetActive(false);
-        }
-        //page droite
-        
-        if (m_indexDroite < collectible.Length)
-        {
-            NoteDisplay[1].text = collectible[m_indexDroite].Description;
-            NoteDisplay[1].gameObject.SetActive(true);
-        }
-        else
-        {
+            NoteDisplay[0].text = "Aucune note pour le moment...";
             NoteDisplay[1].text = "";
-            NoteDisplay[1].gameObject.SetActive(false);
+            return;
         }
 
-        //m_spawnText.Add(collectible);   
-        // bz ton pere la tchoing page a la con de carnet 
+        int indexGauche = m_pageNote * 2;
+        int indexDroite = m_pageNote * 2 + 1;
+
+        NoteDisplay[0].text = indexGauche < collectibles.Length ? collectibles[indexGauche].Description : "";
+        NoteDisplay[0].gameObject.SetActive(indexGauche < collectibles.Length);
+
+        NoteDisplay[1].text = indexDroite < collectibles.Length ? collectibles[indexDroite].Description : "";
+        NoteDisplay[1].gameObject.SetActive(indexDroite < collectibles.Length);
     }
     // pour afficher prochaine page 
-    
-    public void NextPage()
-    {
-        int totalPages = Mathf.CeilToInt(GameManager.Instance.UnlockedCollectibles.Length / 2f);
-        if (m_page < totalPages - 1)
-        {
-            m_page++;
-            CreateText();
-            MettreAJourBoutons();
-        }
-    }
-    //pour afficher Previus page
-    public void PreviusPage()
-    {
-        if (m_page > 0)
-        {
-            m_page--;
-            CreateText();
-            MettreAJourBoutons();
-        }
-    }
-    
+
     void CreateCode()
     {
-        RadioSequenceObject[] sequence = GameManager.Instance.UnlockedSequences;
 
-        if (sequence == null || GameManager.Instance.UnlockedSequences.Length == 0) return;
+        RadioSequenceObject[] sequences = GlobalGameSettings.Instance.Sequences.ToArray();
 
-        
-        if (m_indexGauche < sequence.Length)
+        if (sequences == null || sequences.Length == 0)
         {
-            CodeDescriptionDisplay[0].text = sequence[m_indexGauche].ToString();
+            CodeDescriptionDisplay[0].text = "Aucune séquence débloquée...";
+            CodeSequenceDisplay[0].text = "";
+            return;
+        }
+
+        int indexGauche = m_pageCode * 2;
+        int indexDroite = m_pageCode * 2 + 1;
+
+        // Page gauche
+        if (indexGauche < sequences.Length)
+        {
+            CodeDescriptionDisplay[0].text = sequences[indexGauche].ToString();
+            CodeSequenceDisplay[0].text = sequences[indexGauche].name;
             CodeDescriptionDisplay[0].gameObject.SetActive(true);
-
-        }
-        else
-        {
-            CodeDescriptionDisplay[0].text = "";
-            CodeDescriptionDisplay[0].gameObject.SetActive(false);
-        }
-        
-        if (m_indexDroite < sequence.Length)
-        {
-            CodeSequenceDisplay[0].text = sequence[m_indexDroite].name;
             CodeSequenceDisplay[0].gameObject.SetActive(true);
         }
         else
         {
-            CodeSequenceDisplay[0].text = "";
+            CodeDescriptionDisplay[0].gameObject.SetActive(false);
             CodeSequenceDisplay[0].gameObject.SetActive(false);
         }
 
-
-
-    }
-    void MettreAJourBoutons()
-    {
-        CollectibleObject[] collectibles = GameManager.Instance.UnlockedCollectibles;
-
-        if (collectibles == null || collectibles.Length == 0)
+        // Page droite
+        if (indexDroite < sequences.Length)
         {
-            BtnNext.gameObject.SetActive(false);
-            BtnPrevious.gameObject.SetActive(false);
-            return;
+            CodeDescriptionDisplay[1].text = sequences[indexDroite].ToString();
+            CodeSequenceDisplay[1].text = sequences[indexDroite].name;
+            CodeDescriptionDisplay[1].gameObject.SetActive(true);
+            CodeSequenceDisplay[1].gameObject.SetActive(true);
+        }
+        else
+        {
+            CodeDescriptionDisplay[1].gameObject.SetActive(false);
+            CodeSequenceDisplay[1].gameObject.SetActive(false);
+        }
+    }
+    public void NextPage()
+    {
+        if (m_ongletNoteActif)
+        {
+            int total = Mathf.CeilToInt(GameManager.Instance.UnlockedCollectibles.Length / 2f);
+            if (m_pageNote < total - 1) m_pageNote++;
+        }
+        else
+        {
+            int total = Mathf.CeilToInt(GlobalGameSettings.Instance.Sequences.Count / 2f);
+            if (m_pageCode < total - 1) m_pageCode++;
         }
 
-        int totalPages = Mathf.CeilToInt(collectibles.Length / 2f);
-        BtnPrevious.gameObject.SetActive(m_page > 0);
-        BtnNext.gameObject.SetActive(m_page < totalPages - 1);
+        AfficherOngletActif();
+        MettreAJourBoutons();
     }
-    // logique de click sur le bouton 
+
+    public void PreviousPage()
+    {
+        if (m_ongletNoteActif)
+        {
+            if (m_pageNote > 0) m_pageNote--;
+        }
+        else
+        {
+            if (m_pageCode > 0) m_pageCode--;
+        }
+
+        AfficherOngletActif();
+        MettreAJourBoutons();
+    }
+
+
+    void MettreAJourBoutons()
+    {
+        int longueur = m_ongletNoteActif
+            ? GameManager.Instance.UnlockedCollectibles.Length
+            : GlobalGameSettings.Instance.Sequences.Count;
+
+        int pageActuelle = m_ongletNoteActif ? m_pageNote : m_pageCode;
+        int totalPages = Mathf.CeilToInt(longueur / 2f);
+
+        BtnPrevious.gameObject.SetActive(pageActuelle > 0);
+        BtnNext.gameObject.SetActive(pageActuelle < totalPages - 1);
+    
+    }
+
+    /* logique de click sur le bouton 
     public void OnButtonClick(CollectibleObject[] collectible)
     {
         foreach (TMP_Text show in NoteDisplay)
@@ -173,5 +206,6 @@ public class UiNoteManager : MonoBehaviour
         }
 
     }
+    */
 
 }
