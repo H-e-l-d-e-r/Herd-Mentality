@@ -137,15 +137,15 @@ public class VinylStorage : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        VinylRecord draggable = other.GetComponent<VinylRecord>();
+    // private void OnTriggerStay(Collider other)
+    //{
+    //VinylRecord draggable = other.GetComponent<VinylRecord>();
 
-        if (draggable != null && !draggable.IsDragged && draggable != m_lastSpawnedVinyl)
-        {
-            draggable.DestroyObject();
-        }
-    }
+    // if (draggable != null && !draggable.IsDragged && draggable != m_lastSpawnedVinyl)
+    //{
+    // draggable.DestroyObject();
+    //}
+    //}
 
     private void OnTriggerExit(Collider other)
     {

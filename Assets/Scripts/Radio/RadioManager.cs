@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-
+using System.Collections; 
 [DefaultExecutionOrder(2500)]
 public class RadioManager : MonoBehaviour
 {
@@ -29,6 +29,10 @@ public class RadioManager : MonoBehaviour
     public UILibraryManager PreparationManager;
     public VinylRecordPlayer VinylPlayer;
     public RadioBehaviour RadioBehaviour;
+
+    [Header("UI Quête")]
+    public GameObject QuestCompletedCanvas; 
+    public TMP_Text QuestCompletedText;    
 
     [Header("Inputs")]
     public InputActionReference SwitchCameraInput;
@@ -223,7 +227,7 @@ public class RadioManager : MonoBehaviour
                 
                 UI_Manager.Instance.UpdateText(EndScreenSequencesCount, m_validatedSequences.Count.ToString());
 
-                UI_Manager.Instance.OpenCanvas(EndGameCanvas);
+                
             }
 
             OnPlayTimeEnd.Invoke();
@@ -325,11 +329,25 @@ public class RadioManager : MonoBehaviour
             return;
         }
 
+        int countBefore = m_validatedSequences.Count;
+
         m_playedVinyls.Enqueue(vinyl);
 
-        Debug.Log(FindSequences().Length);
+        RadioSequenceObject[] currentValidations = FindSequences();
+        Debug.Log(currentValidations.Length);
 
-        //ProcessVinylForSequences(vinyl);
+        if (m_validatedSequences.Count > countBefore)
+        {
+            RadioSequenceObject lastSeq = m_validatedSequences[m_validatedSequences.Count - 1];
+
+            if (QuestCompletedCanvas != null)
+            {
+                UI_Manager.Instance.UpdateText(QuestCompletedText, lastSeq.name + " Complété !");
+
+                // --- ON LANCE NOTRE MINUTEUR AU LIEU D'OUVRIR DIRECTEMENT ---
+                StartCoroutine(ShowAndFadeQuestPopup());
+            }
+        }
     }
 
     /*public void ProcessVinylForSequences(VinylObject playedVinyl)
@@ -455,6 +473,7 @@ public class RadioManager : MonoBehaviour
         // si on a deja eu une quete avant et qu'elle a une quete qui suit
         // on prend la quete suivante
         return m_questObject.Next;
+        
     }
 
     // void UpdatePlanningUI()
@@ -469,5 +488,48 @@ public class RadioManager : MonoBehaviour
     //         PlanningCanvas.SetActive(isOnPlanning);
     //     }
     // }
+
+
+    //-----TEMPORAIRE LE TEMPS DE FAIRE UNE ANIMATION------
+   
+    private IEnumerator ShowAndFadeQuestPopup()
+    {
+        
+        UI_Manager.Instance.OpenCanvas(QuestCompletedCanvas);
+
+        
+        CanvasGroup canvasGroup = QuestCompletedCanvas.GetComponent<CanvasGroup>();
+
+       
+        if (canvasGroup == null)
+        {
+            canvasGroup = QuestCompletedCanvas.AddComponent<CanvasGroup>();
+        }
+
+       
+        canvasGroup.alpha = 1f;
+
+       
+        yield return new WaitForSeconds(4f);
+
+        
+        float fadeDuration = 2f;
+        float timeElapsed = 0f;
+
+       
+        while (timeElapsed < fadeDuration)
+        {
+            timeElapsed += Time.deltaTime; 
+
+            
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, timeElapsed / fadeDuration);
+
+            
+            yield return null;
+        }
+
+        
+        UI_Manager.Instance.CloseCanvas(QuestCompletedCanvas);
+    }
 
 }
