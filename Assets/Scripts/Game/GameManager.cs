@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     // MAGIE LINQ : On trie instantan�ment les Vinyles ET les S�quences sans aucune boucle !
     public VinylObject[] UnlockedVinyls => m_unlockedCollectibles.OfType<VinylObject>().ToArray();
-    public RadioSequenceObject[] UnlockedSequences => m_unlockedCollectibles.OfType<RadioSequenceObject>().ToArray();
 
     public CollectibleObject[] UnlockedCollectibles => m_unlockedCollectibles;
 

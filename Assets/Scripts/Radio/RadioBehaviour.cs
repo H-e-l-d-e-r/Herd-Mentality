@@ -25,7 +25,21 @@ public class RadioBehaviour : MonoBehaviour
     public UnityEvent OnRadioDisable;
 
     [HideInInspector]
-    public bool IsOn = false; // NOUVEAU MON KIKI
+    public bool IsOn {
+        get => m_isEnabled;
+        set
+        {
+            m_isEnabled = value;
+            if (IsOn)
+            {
+                EnableBroadcasts();
+            }
+            else
+            {
+                DisableBroadcasts();
+            }
+        }
+    } // NOUVEAU MON KIKI
 
     [HideInInspector]
     public float AntennaSignalQuality = 1.0f; // 1 = Son Parfait, 0 = Que du bruit blanc
@@ -40,6 +54,8 @@ public class RadioBehaviour : MonoBehaviour
 
     private float m_maxVolumeMult = 0.9f;
     private float m_freq = 0.0f;
+
+    private bool m_isEnabled;
 
     // NEW Pour le Hack 
     public float CurrentFrequency => m_freq;
@@ -80,16 +96,7 @@ public class RadioBehaviour : MonoBehaviour
 
     public void TogglePower()
     {
-        IsOn = !IsOn; // Inverse l'état (Mamie branché, mamie débranché, mamie vivante, mamie morte.)
-
-        if (IsOn)
-        {
-            EnableBroadcasts();
-        }
-        else
-        {
-            DisableBroadcasts();
-        }
+        IsOn = !IsOn; // Inverse l'état (Mamie branché, mamie débranché, mamie vivante, mamie morte
     }
 
     public void UpdateFrequenceKnobs(float v)

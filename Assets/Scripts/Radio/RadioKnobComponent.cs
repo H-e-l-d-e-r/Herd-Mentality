@@ -35,7 +35,7 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         m_lastPointPosition = eventData.position;
 
         // C'est ici que la magie opere : on multiplie par la Sensitivity !
-        float deltaDeg = deltaX * StepIncrement * Sensitivity;
+        float deltaDeg = deltaX * Sensitivity * Time.deltaTime;
         float value = 0;
 
         if (IsInfinite)
@@ -50,7 +50,7 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
             m_totalAngles = newAngle;
 
             float t = (m_totalAngles + k_ARC_H) / (k_ARC_H * 2.0f);
-            value = Mathf.Lerp(MinValue, MaxValue, t);
+            value = Mathf.Lerp(MinValue, MaxValue, t) * StepIncrement;
         }
 
         base.SetValue(value);

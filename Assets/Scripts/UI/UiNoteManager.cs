@@ -104,7 +104,7 @@ public class UiNoteManager : MonoBehaviour
     void CreateCode()
     {
 
-        RadioSequenceObject[] sequences = GlobalGameSettings.Instance.Sequences.ToArray();
+        RadioSequenceObject[] sequences = GlobalGameSettings.Instance.Sequences;
 
         if (sequences == null || sequences.Length == 0)
         {
@@ -153,7 +153,7 @@ public class UiNoteManager : MonoBehaviour
         }
         else
         {
-            int total = Mathf.CeilToInt(GlobalGameSettings.Instance.Sequences.Count / 2f);
+            int total = Mathf.CeilToInt(GlobalGameSettings.Instance.Sequences.Length / 2f);
             if (m_pageCode < total - 1) m_pageCode++;
         }
 
@@ -181,7 +181,7 @@ public class UiNoteManager : MonoBehaviour
     {
         int longueur = m_ongletNoteActif
             ? GameManager.Instance.UnlockedCollectibles.Length
-            : GlobalGameSettings.Instance.Sequences.Count;
+            : GlobalGameSettings.Instance.Sequences.Length;
 
         int pageActuelle = m_ongletNoteActif ? m_pageNote : m_pageCode;
         int totalPages = Mathf.CeilToInt(longueur / 2f);

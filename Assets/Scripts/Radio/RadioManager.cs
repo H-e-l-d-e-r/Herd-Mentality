@@ -30,7 +30,11 @@ public class RadioManager : MonoBehaviour
     public VinylRecordPlayer VinylPlayer;
     public RadioBehaviour RadioBehaviour;
 
-    [Header("UI Quête")]
+    [Header("Audio")]
+    public float BackgroundMusicVolume = 0.5f;
+    public AudioSource BackgroundMusicSource;
+
+    [Header("UI Quest")]
     public GameObject QuestCompletedCanvas; 
     public TMP_Text QuestCompletedText;    
 
@@ -53,6 +57,7 @@ public class RadioManager : MonoBehaviour
 
     [Header("UI Fin de Niveau")]
     public GameObject EndGameCanvas;
+    public TMP_Text EndScreenAudimat;
     public TMP_Text EndScreenYoungLetterists;
     public TMP_Text EndScreenSquatRoskoff;
     public TMP_Text EndScreenScilas;
@@ -69,7 +74,6 @@ public class RadioManager : MonoBehaviour
     private int m_currentAnchorIndex = 0;
 
     private float m_timer;
-   
 
     [Header("Debug")]
     [SerializeField]
@@ -150,6 +154,12 @@ public class RadioManager : MonoBehaviour
             // permet d'aller a la scene de preparation des que le dialogue est fini
             if (CanvasManager.CurrentGroup == 0)
             {
+                if (m_timer <= Mathf.Epsilon)
+                {
+                    NextDay();
+                    return;
+                }
+
                 CanvasManager.ActivateGroupsOfText(1);
 
                 // define quest constraints
@@ -168,6 +178,9 @@ public class RadioManager : MonoBehaviour
 
         m_questObject.StartDialogue();
 
+        // On-Off callback
+        RadioBehaviour.OnRadioEnable.AddListener(() => { BackgroundMusicSource.volume = 0.0f; });
+        RadioBehaviour.OnRadioDisable.AddListener(() => { BackgroundMusicSource.volume = BackgroundMusicVolume; });
 
         Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
     }
@@ -218,19 +231,16 @@ public class RadioManager : MonoBehaviour
         if (m_timer < Mathf.Epsilon)
         {
             // On ouvre le endGame
-            if (EndGameCanvas != null)
-            {
-                UI_Manager.Instance.UpdateText(EndScreenYoungLetterists, GameManager.Instance.Statistics.AprYoungLetterists.ToString("0") + " Pts");
-                UI_Manager.Instance.UpdateText(EndScreenSquatRoskoff, GameManager.Instance.Statistics.AprSquatRoskoff.ToString("0") + " Pts");
-                UI_Manager.Instance.UpdateText(EndScreenScilas, GameManager.Instance.Statistics.AprScilas.ToString("0") + " Pts");
+            UI_Manager.Instance.UpdateText(EndScreenYoungLetterists, GameManager.Instance.Statistics.AprYoungLetterists.ToString("0") + " Pts");
+            UI_Manager.Instance.UpdateText(EndScreenSquatRoskoff, GameManager.Instance.Statistics.AprSquatRoskoff.ToString("0") + " Pts");
+            UI_Manager.Instance.UpdateText(EndScreenScilas, GameManager.Instance.Statistics.AprScilas.ToString("0") + " Pts");
+            UI_Manager.Instance.UpdateText(EndScreenAudimat, GameManager.Instance.Statistics.GlobalAudimat.ToString("0") + " Auditeurs!");
 
-                
-                UI_Manager.Instance.UpdateText(EndScreenSequencesCount, m_validatedSequences.Count.ToString());
-
-                
-            }
-
+            UI_Manager.Instance.UpdateText(EndScreenSequencesCount, m_validatedSequences.Count.ToString());
+            m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+            
             OnPlayTimeEnd.Invoke();
+            
             return;
         }
 
@@ -333,21 +343,50 @@ public class RadioManager : MonoBehaviour
 
         m_playedVinyls.Enqueue(vinyl);
 
-        RadioSequenceObject[] currentValidations = FindSequences();
-        Debug.Log(currentValidations.Length);
-
         if (m_validatedSequences.Count > countBefore)
         {
             RadioSequenceObject lastSeq = m_validatedSequences[m_validatedSequences.Count - 1];
 
             if (QuestCompletedCanvas != null)
             {
-                UI_Manager.Instance.UpdateText(QuestCompletedText, lastSeq.name + " Complété !");
+                UI_Manager.Instance.UpdateText(QuestCompletedText, lastSeq.name + " Complete !");
 
                 // --- ON LANCE NOTRE MINUTEUR AU LIEU D'OUVRIR DIRECTEMENT ---
                 StartCoroutine(ShowAndFadeQuestPopup());
             }
         }
+    }
+
+    /// <summary>
+    /// Reset everything to start a new day
+    /// </summary>
+    public void NextDay()
+    {
+
+        if (m_questObject.EndTable)
+        {
+            CanvasManager.ActivateGroupsOfText(0);
+            m_questObject.StartEndDialogue();
+            m_questObject = null; 
+
+            return;
+        }
+
+        m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+
+        m_playedVinyls = new Queue<VinylObject>();
+        m_targetSequences = new Queue<RadioSequenceObject>();
+        m_validatedSequences = new List<RadioSequenceObject>();
+        m_questObject = GetRandomQuest(new CollectibleObject.UndergroundGroups());
+
+        if (Anchors.Length > 0)
+        {
+            // On se focus sur la first cam
+            Anchors[0].Focus(Camera);
+        }
+
+        CanvasManager.ActivateGroupsOfText(0);
+        m_questObject.StartDialogue();
     }
 
     /*public void ProcessVinylForSequences(VinylObject playedVinyl)
@@ -470,6 +509,7 @@ public class RadioManager : MonoBehaviour
             return GlobalGameSettings.Instance.Quests[random];
         }
 
+        Debug.Log(m_questObject.Next.Name);
         // si on a deja eu une quete avant et qu'elle a une quete qui suit
         // on prend la quete suivante
         return m_questObject.Next;
@@ -488,6 +528,11 @@ public class RadioManager : MonoBehaviour
     //         PlanningCanvas.SetActive(isOnPlanning);
     //     }
     // }
+
+    void AudioClipCallback()
+    {
+
+    }
 
 
     //-----TEMPORAIRE LE TEMPS DE FAIRE UNE ANIMATION------

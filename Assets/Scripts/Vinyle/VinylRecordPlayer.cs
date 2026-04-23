@@ -19,34 +19,19 @@ public class VinylRecordPlayer : MonoBehaviour
     private VinylObject m_vinyl;
     private bool m_wasPlaying;
 
-    // Dictionnaire pour suivre l'avancement de chaque séquence
-    private Dictionary<RadioSequenceObject, int> m_sequencesProgress = new Dictionary<RadioSequenceObject, int>();
-
     void Start()
     {
         NullComponents.ThrowIfNull(Broadcast);
-        RefreshAvailableSequences();
-    }
-
-    public void RefreshAvailableSequences()
-    {
-        m_sequencesProgress.Clear();
-        var unlocked = GameManager.Instance.UnlockedSequences;
-
-        foreach (var seq in unlocked)
-        {
-            m_sequencesProgress.Add(seq, 0); // On met tous les compteurs à zéro
-        }
     }
 
     void Update()
     {
         // Détection de fin de morceau (Quand ça jouait, mais que ça ne joue plus)
-        if (m_wasPlaying && !IsPlaying)
-        {
-            CheckSequencesProgress();
-        }
-        m_wasPlaying = IsPlaying;
+        // if (m_wasPlaying && !IsPlaying)
+        // {
+        //     CheckSequencesProgress();
+        // }
+        // m_wasPlaying = IsPlaying;
     }
 
     private void OnTriggerStay(Collider other)
@@ -73,7 +58,7 @@ public class VinylRecordPlayer : MonoBehaviour
     }
 
     // --- LE VÉRIFICATEUR DE SÉQUENCES ---
-    private void CheckSequencesProgress()
+    /*private void CheckSequencesProgress()
     {
         if (m_vinyl == null) return;
 
@@ -110,5 +95,5 @@ public class VinylRecordPlayer : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

@@ -48,9 +48,8 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL2
-    Text: "Jusqu\u2019\xE0 pr\xE9sent on arrivait \xE0 survivre car l\u2019un de
-      nos profs nous soutenait mais il s\u2019est fait vir\xE9\u2026 Maintenant qu\u2019on
-      n\u2019est plus sous la protection de Keating on risque de se faire virer. "
+    Text: "Maintenant qu\u2019on n\u2019est plus sous la protection de Keating on
+      risque de se faire virer. "
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
