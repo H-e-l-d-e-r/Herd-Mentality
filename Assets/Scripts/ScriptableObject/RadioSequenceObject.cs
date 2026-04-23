@@ -6,7 +6,6 @@ using UnityEngine;
 public class RadioSequenceObject : CollectibleObject
 {
     public VinylObject[] Blocs;
-
     public override string ToString()
     {
         string str = $"{Name} (";
