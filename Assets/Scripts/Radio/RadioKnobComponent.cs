@@ -9,6 +9,9 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
     public float MinValue;
     public float MaxValue;
 
+    [Tooltip("Multiplicateur de vitesse pour tourner le bouton. 1 = Normal, 2 = Rapide, 0.5 = Lent/Precis")]
+    public float Sensitivity = 1.0f;
+
     [Header("Components")]
     public RectTransform Borehole;
     public RectTransform Knob;
@@ -31,7 +34,8 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         float deltaX = eventData.position.x - m_lastPointPosition.x;
         m_lastPointPosition = eventData.position;
 
-        float deltaDeg = deltaX * StepIncrement;
+        // C'est ici que la magie opere : on multiplie par la Sensitivity !
+        float deltaDeg = deltaX * StepIncrement * Sensitivity;
         float value = 0;
 
         if (IsInfinite)
@@ -71,7 +75,6 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         {
             value = _value;
             m_totalAngles += (_value - Value);
-        
         }
         else
         {

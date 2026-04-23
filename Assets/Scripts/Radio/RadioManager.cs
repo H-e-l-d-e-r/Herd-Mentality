@@ -1,14 +1,13 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
 using DialogueSystem;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-[DefaultExecutionOrder(2500)] 
+[DefaultExecutionOrder(2500)]
 public class RadioManager : MonoBehaviour
 {
     public static RadioManager Instance { get; private set; }
@@ -44,6 +43,17 @@ public class RadioManager : MonoBehaviour
     private float m_currentAudimat = 0f;
     private float m_audimatLogTimer = 10.0f;
 
+    [Header("Textes UI")]
+    public TMP_Text AudimatTexte;
+    public TMP_Text YoungLetteristsTexte;
+
+    [Header("UI Fin de Niveau")]
+    public GameObject EndGameCanvas;
+    public TMP_Text EndScreenYoungLetterists;
+    public TMP_Text EndScreenSquatRoskoff;
+    public TMP_Text EndScreenScilas;
+    public TMP_Text EndScreenSequencesCount;
+
     // constants
     private float k_switchCooldown;
 
@@ -55,6 +65,7 @@ public class RadioManager : MonoBehaviour
     private int m_currentAnchorIndex = 0;
 
     private float m_timer;
+   
 
     [Header("Debug")]
     [SerializeField]
@@ -133,7 +144,7 @@ public class RadioManager : MonoBehaviour
         Dialogue.Instance.OnDialogueCloseEvent += () =>
         {
             // permet d'aller a la scene de preparation des que le dialogue est fini
-            if(CanvasManager.CurrentGroup == 0)
+            if (CanvasManager.CurrentGroup == 0)
             {
                 CanvasManager.ActivateGroupsOfText(1);
 
@@ -152,7 +163,7 @@ public class RadioManager : MonoBehaviour
         };
 
         m_questObject.StartDialogue();
-        
+
 
         Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
     }
@@ -202,6 +213,19 @@ public class RadioManager : MonoBehaviour
         // we stop the game
         if (m_timer < Mathf.Epsilon)
         {
+            // On ouvre le endGame
+            if (EndGameCanvas != null)
+            {
+                UI_Manager.Instance.UpdateText(EndScreenYoungLetterists, GameManager.Instance.Statistics.AprYoungLetterists.ToString("0") + " Pts");
+                UI_Manager.Instance.UpdateText(EndScreenSquatRoskoff, GameManager.Instance.Statistics.AprSquatRoskoff.ToString("0") + " Pts");
+                UI_Manager.Instance.UpdateText(EndScreenScilas, GameManager.Instance.Statistics.AprScilas.ToString("0") + " Pts");
+
+                
+                UI_Manager.Instance.UpdateText(EndScreenSequencesCount, m_validatedSequences.Count.ToString());
+
+                UI_Manager.Instance.OpenCanvas(EndGameCanvas);
+            }
+
             OnPlayTimeEnd.Invoke();
             return;
         }
@@ -226,6 +250,7 @@ public class RadioManager : MonoBehaviour
             GameManager.Instance.Statistics.AprYoungLetterists -= (Convert.ToSingle(VinylPlayer.CurrentVinyl.Dislike.YoungLetterists) * decrease);
             GameManager.Instance.Statistics.AprSquatRoskoff -= (Convert.ToSingle(VinylPlayer.CurrentVinyl.Dislike.SquatRoskoff) * decrease);
             GameManager.Instance.Statistics.AprScilas -= (Convert.ToSingle(VinylPlayer.CurrentVinyl.Dislike.Scilas) * decrease);
+
         }
 
         // update timer
@@ -255,6 +280,7 @@ public class RadioManager : MonoBehaviour
             float gain = audimatIncreaseRate * signal * Time.deltaTime;
             m_currentAudimat += gain;
             GameManager.Instance.Statistics.GlobalAppreciation = m_currentAudimat;
+            UI_Manager.Instance.UpdateText(AudimatTexte, m_currentAudimat.ToString("0") + " Auditeurs");
         }
     }
 
@@ -395,7 +421,7 @@ public class RadioManager : MonoBehaviour
         return eq / 200.0f * 100.0f;
     }
 
-   
+
     public RadioSequenceObject[] FindSequences() => FindSequences(m_playedVinyls.ToArray());
 
     public RadioSequenceObject[] FindSequences(VinylObject[] vinyls)
@@ -419,7 +445,7 @@ public class RadioManager : MonoBehaviour
     public QuestObject GetRandomQuest(CollectibleObject.UndergroundGroups blacklist)
     {
         // lorsqu'il n'y a pas de quete precedente
-        if(m_questObject == null || m_questObject.Next == null)
+        if (m_questObject == null || m_questObject.Next == null)
         {
             // choisit un groupe
             int random = UnityEngine.Random.Range(0, 3);
@@ -443,6 +469,5 @@ public class RadioManager : MonoBehaviour
     //         PlanningCanvas.SetActive(isOnPlanning);
     //     }
     // }
-     
 
 }

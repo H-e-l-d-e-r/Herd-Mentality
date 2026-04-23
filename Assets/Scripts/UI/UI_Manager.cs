@@ -1,22 +1,60 @@
 using UnityEngine;
+using TMPro;
 
-public static class UI_Manager
+public class UI_Manager : MonoBehaviour
 {
-    // Fonction ultra flexible : tu lui donnes un objet (Canvas/Panel), elle l'�teint.
-    public static void CloseCanvas(GameObject canvasToClose)
+    public static UI_Manager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+    // --- NOUVELLES FONCTIONS UNIVERSELLES POUR LE TEXTE ---
+
+    /// <summary>
+    /// Met à jour un texte avec une chaîne de caractères simple.
+    /// </summary>
+    public void UpdateText(TMP_Text textComponent, string newText)
+    {
+        if (textComponent != null)
+        {
+            textComponent.text = newText;
+        }
+        else
+        {
+            Debug.LogWarning("[UI_Manager] Tu as essayé de mettre à jour un texte, mais le composant TMP n'est pas assigné dans l'inspecteur !");
+        }
+    }
+
+    /// <summary>
+    /// Met à jour un texte directement avec un nombre (float ou int).
+    /// Tu peux préciser le format : "0" (sans virgule), "F1" (1 chiffre après la virgule), etc.
+    /// </summary>
+    public void UpdateText(TMP_Text textComponent, float newValue, string format = "0")
+    {
+        if (textComponent != null)
+        {
+            textComponent.text = newValue.ToString(format);
+        }
+        else
+        {
+            Debug.LogWarning("[UI_Manager] Tu as essayé de mettre à jour un texte numérique, mais le composant TMP n'est pas assigné !");
+        }
+    }
+
+    // --- FONCTIONS CLASSIQUES DES CANVAS ---
+
+    public void CloseCanvas(GameObject canvasToClose)
     {
         if (canvasToClose != null)
         {
             canvasToClose.SetActive(false);
         }
-        else
-        {
-            Debug.LogWarning(" Tu as oubli� d'assigner le Canvas � fermer dans le bouton !");
-        }
     }
 
-    // Bonus : l'inverse, pour l'ouvrir !
-    public static void OpenCanvas(GameObject canvasToOpen)
+    public void OpenCanvas(GameObject canvasToOpen)
     {
         if (canvasToOpen != null)
         {
@@ -24,14 +62,10 @@ public static class UI_Manager
         }
     }
 
-    // Re-bonus : Un bouton qui fait les deux (Ouvre si c'est ferm�, ferme si c'est ouvert)
-    public static void ToggleCanvas(GameObject canvasToToggle)
+    public void ToggleCanvas(GameObject canvasToToggle)
     {
         if (canvasToToggle != null)
         {
-            // LE MOUCHARD : Il va afficher le nom EXACT de ce qu'il �teint dans la console
-            Debug.Log("Le script UI_Manager vient de basculer l'objet : " + canvasToToggle.name);
-
             canvasToToggle.SetActive(!canvasToToggle.activeSelf);
         }
     }

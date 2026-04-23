@@ -55,7 +55,7 @@ public class UILibraryManager : MonoBehaviour
             drop.OnDropEvent.AddListener(() => DropZoneCallback(drop));
         }
 
-        UI_Manager.OpenCanvas(PreparationCanvas.gameObject);
+        UI_Manager.Instance.OpenCanvas(PreparationCanvas.gameObject);
     }
 
     // ajoute une sequence a la liste des sequences trouvees
@@ -81,7 +81,7 @@ public class UILibraryManager : MonoBehaviour
     // valide la preparation du joueur
     public void ValidatePreparation()
     {
-        UI_Manager.CloseCanvas(PreparationCanvas.gameObject);
+        UI_Manager.Instance.CloseCanvas(PreparationCanvas.gameObject);
         
         // on enqueue dans le manager toutes les sequences validee
         foreach (RadioSequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))

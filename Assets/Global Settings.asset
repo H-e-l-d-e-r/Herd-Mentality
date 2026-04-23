@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Global Settings
   m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
   GenericInputCooldown: 0.5
-  RadioPlayTime: 4.5
+  RadioPlayTime: 0.3
   AppreciationIncreaseMusic: 0.5
   AppreciationDecreaseMusic: 0.5
   AppreciationIncrease: 1
