@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 
 public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -17,6 +18,8 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Transform m_originalParent;
     private CanvasGroup m_canvasGroup;
     private Canvas m_canvas;
+
+    private Material m_material;
 
     void Awake()
     {
@@ -40,6 +43,9 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 BackgroundImage = gameObject.AddComponent<Image>();
             }
         }
+
+        m_material = new Material(BackgroundImage.material);
+        BackgroundImage.material = m_material;
     }
 
     public void Setup(VinylObject data)
@@ -53,18 +59,22 @@ public class UIVinylItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             TitleText.text = data.Title;
         }
 
+        Debug.Log(data.Color);
+        
         // LA FAMEUSE LIGNE 29 (Qui ne plantera plus jamais)
         // Maintenant on est s�r � 1000% que BackgroundImage existe gr�ce au Awake
         // bah sache que j'ai reussi a faire une erreur sur la ligne 29 de merde
         if (data.BackgroundImage != null)
         {
             BackgroundImage.sprite = data.BackgroundImage;
-            BackgroundImage.color = Color.white;
+            BackgroundImage.material.SetColor("_MainColor", data.Color);
+
         }
         else
         {
             BackgroundImage.sprite = null;
-            BackgroundImage.color = data.Color;
+            BackgroundImage.material.SetColor("_MainColor", data.Color);
+
         }
     }
 

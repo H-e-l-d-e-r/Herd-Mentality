@@ -85,14 +85,23 @@ Shader "Custom/URP/TransparentMainColor"
             }
 
             // --------------- Fragment Shader ---------------
-
+             
             half4 frag(Varyings IN) : SV_Target
             {
+                half4 whiteTreshold = half4(0.9, 0.9, 0.9, 1.0);
+                half4 finalColor;
+
                 // Échantillonner la texture
                 half4 texColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
 
                 // Multiplier par la couleur principale
-                half4 finalColor = texColor * _MainColor;
+                if(texColor.r > whiteTreshold.r && texColor.g > whiteTreshold.g && texColor.b > whiteTreshold.b){
+                    finalColor = texColor * _MainColor;
+
+                } 
+                else {
+                    finalColor = texColor;
+                }
 
                 // Appliquer le multiplicateur d'alpha global
                 finalColor.a *= _Alpha;

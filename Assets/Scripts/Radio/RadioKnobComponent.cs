@@ -50,10 +50,10 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
             m_totalAngles = newAngle;
 
             float t = (m_totalAngles + k_ARC_H) / (k_ARC_H * 2.0f);
-            value = Mathf.Lerp(MinValue, MaxValue, t) * StepIncrement;
+            value = Mathf.Lerp(MinValue, MaxValue, t);
         }
 
-        base.SetValue(value);
+        base.SetValue(value * StepIncrement);
         ApplyRotation();
     }
 

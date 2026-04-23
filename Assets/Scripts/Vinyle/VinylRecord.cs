@@ -23,6 +23,16 @@ public class VinylRecord : MonoBehaviour
     public bool IsDragged;
 
     private VinylObject m_vinyl;
+    private Material m_material;
+
+    private void Start()
+    {
+        if (Renderer)
+        {
+            m_material = new Material(Renderer.material);
+            Renderer.material = m_material;
+        }
+    }
 
     void OnEnable()
     {
