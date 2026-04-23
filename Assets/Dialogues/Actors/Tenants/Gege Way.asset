@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
   Name: "G\xE9g\xE9 Way"
   Description: 
-  Sprites:
-  - {fileID: -1574814456, guid: 4c7dfa25792c571d09ac639b3a404b90, type: 3}
+  Sprites: []
   SpriteSide: 1
   CharacterAudio: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
   AudioProbability: 0.7

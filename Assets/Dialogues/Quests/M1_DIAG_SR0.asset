@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M1_DIAG_SR0
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M1_SR0
+  Description: "Voix radio d\u2019un gars du Squat Roskoff."
+  m_nodes:
+  - Name: M1_SR0
+    Text: "Tzzzzziii\u2026 Transmission d\xE9marr\xE9e \xE0 16h12 depuis l\u2019Anciennce
+      papetrie. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M1_SR0
+    Text: "Hey mec, ici Rapido depuis le Squat Roskoff ! \xE7a roule chez vous ?"
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M1_SR0
+    Text: "Otto m\u2019a parl\xE9 de votre radio. C\u2019est trop cool que vous ayez
+      enfin commencer \xE0 diffuser ! Pour f\xEAter \xE7a, on a une annonce sp\xE9ciale
+      pour vous."
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M1_SR0
+    Text: "Samedi, \xE0 20h, on va s\u2019arracher \xE0 coup de guitares \xE9l\xE9ctriques
+      et de batteries violentes pour un concert d\xE9cha\xEEn\xE9 !"
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M1_SR0
+    Text: "Partagez \xE7a sur vos ondes et n\u2019h\xE9sitez \xE0 nous rejoindre
+      !"
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M1_SR0
+    Text: Fin de transmission.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

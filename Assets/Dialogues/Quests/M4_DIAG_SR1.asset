@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M4_DIAG_SR1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M4_SR1
+  Description: "Voix radio d\u2019un gars du Squat Roskoff"
+  m_nodes:
+  - Name: M4_SR1
+    Text: "Tzzzzziii\u2026 Transmission d\xE9marr\xE9e \xE0 18h27 depuis l\u2019Anciennce
+      papetrie. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M4_SR1
+    Text: Toujours Rapido pour le Squat Roskoff !
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M4_SR1
+    Text: "Je voulais vous pr\xE9venir que nous organisons un barbecue chez nous.
+      Et bonne nouvelle, vous \xEAtes invit\xE9 !"
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M4_SR1
+    Text: "On va f\xEAter \xE7a \xE0 coup de saucisses, c\u2019est pas super ?"
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M4_SR1
+    Text: "Enfin bref, on aimerai que tu invites le plus de tes copains pour nous
+      rejoindre ! On vous envoie le code apr\xE8s. "
+    Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M4_SR1
+    Text: Fin de transmission.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
