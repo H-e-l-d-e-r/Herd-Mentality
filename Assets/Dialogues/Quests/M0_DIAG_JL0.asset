@@ -27,14 +27,14 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M0_JL0
-    Text: "Eric nous a parl\xE9 de votre station. On voulait vous faire part que
-      nous sommes partant pour croiser nos chemins num\xE9riques."
+    Text: "Eric nous a parl\xE9 de votre station. On voulait vous annoncer que nous
+      sommes partant pour croiser nos chemins num\xE9riques."
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M0_JL0
-    Text: 'Pour ce faire, on voudrait que vous fassiez une courte annonce pour notre
-      dernier journal. '
+    Text: "En \xE9change, on voudrait que vous fassiez une courte annonce pour notre
+      dernier journal. "
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0

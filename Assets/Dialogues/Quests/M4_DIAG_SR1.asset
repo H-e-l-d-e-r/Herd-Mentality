@@ -17,7 +17,7 @@ MonoBehaviour:
   m_nodes:
   - Name: M4_SR1
     Text: "Tzzzzziii\u2026 Transmission d\xE9marr\xE9e \xE0 18h27 depuis l\u2019Anciennce
-      papetrie. "
+      papeterie. "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     Behavior: 0
   - Name: M4_SR1
     Text: "Je voulais vous pr\xE9venir que nous organisons un barbecue chez nous.
-      Et bonne nouvelle, vous \xEAtes invit\xE9 !"
+      Et bonne nouvelle, vous \xEAtes invit\xE9s !"
     Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
     ActorSprite: 0
     Behavior: 0

@@ -26,14 +26,14 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M8_SC2
-    Text: "Depuis quelques temps nos ventes de barbe \xE0 papa sont en chute\u2026
-      c\u2019est un peu compliqu\xE9 d\u2019avoir assez de revenu pour nourrir tout
+    Text: "Depuis quelques temps nos ventes de barbes \xE0 papa sont en chute\u2026
+      c\u2019est un peu compliqu\xE9 d\u2019avoir assez de revenus pour nourrir tout
       le monde\u2026"
     Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M8_SC2
-    Text: "On voudrait que tu fasses la pub de nos barbe \xE0 papa ! Ce serait super
+    Text: "On voudrait que tu fasses la pub de nos barbes \xE0 papa ! Ce serait super
       gentil\u2026 je t\u2019envoie le message apr\xE8s !"
     Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
     ActorSprite: 0

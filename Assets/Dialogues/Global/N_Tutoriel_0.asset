@@ -29,7 +29,7 @@ MonoBehaviour:
     Text: "On d\xE9termine la fr\xE9quence de l\u2019\xE9metteur d\xE9cam\xE9trique
       ou la direction de l\u2019antenne biphas\xE9e. Puis, on s\u2019occupe de la
       diffusion pour enfin la cl\xF4turer."
-    Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
+    Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
     ActorSprite: 1
     Behavior: 1
   - Name: N_Tutoriel_0

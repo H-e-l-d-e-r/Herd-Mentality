@@ -33,7 +33,7 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: N_Introduction
-    Text: "Non, c'\xE9tait le dernier"
+    Text: "Non, c'\xE9tait le dernier."
     Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -60,8 +60,8 @@ MonoBehaviour:
     ActorSprite: 1
     Behavior: 0
   - Name: N_Introduction
-    Text: "Au moins, nous, on un projet, plut\xF4t que de rester sur le canap\xE9
-      \xE0 attendre les aides du ch\xF4mage."
+    Text: "Si tu arr\xEAtais de faire des blagues aussi nulles, tu nous serais plus
+      utile..."
     Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
     ActorSprite: 1
     Behavior: 0
@@ -84,7 +84,8 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: N_Introduction
-    Text: "Plut\xF4t que de ricaner dans ton coin, tu peux aller mettre l\u2019antenne\u202F?"
+    Text: "R\xE9da, plut\xF4t que de ricaner dans ton coin, tu peux aller mettre
+      l\u2019antenne\u202F?"
     Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
     ActorSprite: 0
     Behavior: 0

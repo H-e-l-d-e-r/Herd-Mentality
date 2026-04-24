@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class StartSceneScript : MonoBehaviour
 {
+    public RadioBehaviour RadioBehaviour;
+
     [Header("Tables")]
     public DialogueTable Introduction;
     public DialogueTable TutorielPreGameplay;
@@ -16,6 +18,7 @@ public class StartSceneScript : MonoBehaviour
 
     [Header("Event Callbacks")]
     public UnityEvent StartEvent;
+    public UnityEvent OnDialogueEnd;
 
     private int m_tutorielProgression;
     private DialoguePtr m_introduction;
@@ -38,6 +41,7 @@ public class StartSceneScript : MonoBehaviour
     
         StartEvent.Invoke();    
         Dialogue.PlayDialogue(m_introduction);
+        Dialogue.Instance.OnDialogueCloseEvent += () => OnDialogueEnd.Invoke();
     }
 
     public void NextTutorielStep()

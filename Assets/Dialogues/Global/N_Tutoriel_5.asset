@@ -67,7 +67,7 @@ MonoBehaviour:
     Behavior: 0
   - Name: N_Tutoriel_5
     Text: "Avec la r\xE9pression des F\xEAtes Libres, il y a quelque temps, les gens
-      ont peur d\u2019\xEAtre libre. "
+      ont peur d\u2019\xEAtre libres. "
     Actor: {fileID: 11400000, guid: 66abae6a6093db84a9e9f714529bc892, type: 2}
     ActorSprite: 0
     Behavior: 0

@@ -28,7 +28,7 @@ MonoBehaviour:
     Behavior: 0
   - Name: M8_SC2
     Text: "Gr\xE2ce \xE0 vous, nous avons pu vendre plus que d\u2019habitude et nous
-      avons assez pour reprendre nos sc\xE9ances de m\xE9ditation astrales !"
+      avons assez pour reprendre nos sc\xE9ances de m\xE9ditation astrale !"
     Actor: {fileID: 11400000, guid: da259bd26b035c3dd87ad7e1eaa08d88, type: 2}
     ActorSprite: 0
     Behavior: 0

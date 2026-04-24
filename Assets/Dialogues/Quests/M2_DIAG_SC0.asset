@@ -31,8 +31,9 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M2_SC0
-    Text: "On m\u2019a demander de vous dire qu\u2019on a enfin r\xE9ussit \xE0 rentrer
-      dans un poste de police pour que vous le r\xE9pandez dans la ville !"
+    Text: "On m\u2019a demand\xE9 de vous dire qu\u2019on a enfin r\xE9ussi \xE0
+      rentrer dans un poste de police pour que vous le r\xE9pandez dans la ville
+      !"
     Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -42,7 +43,7 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M2_SC0
-    Text: "Un grand pas pour la r\xE9volution ! On vous envoie les code dans l\u2019heure,
+    Text: "Un grand pas pour la r\xE9volution ! On vous envoie les codes dans l\u2019heure,
       vous savez quoi faire. "
     Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
     ActorSprite: 0

@@ -21,13 +21,13 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M7_DIAG_SR3
-    Text: "Je sais pas si tu as entendu les nouvelles mais notre technique a fonctionn\xE9
+    Text: "Je ne sais pas si tu as entendu les nouvelles mais notre technique a fonctionn\xE9
       ! Rapido \xE0 accepter ! "
     Actor: {fileID: 11400000, guid: 5559205a7f6cd904ab929386e6539674, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M7_DIAG_SR3
-    Text: "On va enfin pouvoir construire notre super vaisseau spaciale pour aller
+    Text: "On va enfin pouvoir construire notre super vaisseau spatial pour aller
       explorer le monde. C\u2019est merveilleux !"
     Actor: {fileID: 11400000, guid: 5559205a7f6cd904ab929386e6539674, type: 2}
     ActorSprite: 0

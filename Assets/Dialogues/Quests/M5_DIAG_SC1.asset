@@ -32,15 +32,13 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M5_SC1
-    Text: "Dans quelques jours on change notre planque de place on cherche \xE0 garder
-      \xE7a secret\u2026"
+    Text: "Dans quelques jours, on change notre planque de place mais on cherche
+      \xE0 garder \xE7a secret\u2026"
     Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M5_SC1
-    Text: "Dans quelques jours on change notre planque de place on cherche \xE0 garder
-      \xE7a secret\u2026 Tu comprends, on veut garder notre barbe \xE0 papa entre
-      de bonnes mains\u2026 "
+    Text: "Tu comprends, on veut garder notre barbe \xE0 papa entre de bonnes mains\u2026 "
     Actor: {fileID: 11400000, guid: 1ea2bdb625fc2a749a012f5b6e8596d5, type: 2}
     ActorSprite: 0
     Behavior: 0

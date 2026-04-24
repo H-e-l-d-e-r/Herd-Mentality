@@ -39,8 +39,8 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M3_JL1
-    Text: "On esp\xE8re avoir plus d\u2019adh\xE9rent que la derni\xE8re fois\u2026
-      je vous l\u2019envoie joins \xE0 ce message."
+    Text: "On esp\xE8re avoir plus d\u2019adh\xE9rents que la derni\xE8re fois\u2026
+      je vous l\u2019envoie joint \xE0 ce message."
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0

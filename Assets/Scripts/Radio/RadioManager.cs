@@ -1,12 +1,17 @@
 using DialogueSystem;
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
+using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using System.Collections; 
+
+/// <summary>
+/// This class manage :
+/// - link radio behaviour to the game systems
+/// 
+/// </summary>
 [DefaultExecutionOrder(2500)]
 public class RadioManager : MonoBehaviour
 {
@@ -14,68 +19,28 @@ public class RadioManager : MonoBehaviour
 
     public float Timer => m_timer;
 
-    [Header("Camera")]
-    public Camera Camera;
-    public CameraAnchor[] Anchors;
-
-    // public GameObject PlanningCanvas; // Le Canvas a afficher
-    // public Transform PlanningNote;
-    // public GameObject PlanningNotePrefab;
-    // public int PlanningAnchorIndex;   // L'index de l'anchor "Planification"
-    // public bool EnqueueAllSequences;
-
     [Header("Components")]
-    public TextGroupBehaviour CanvasManager;
-    public UILibraryManager PreparationManager;
     public VinylRecordPlayer VinylPlayer;
     public RadioBehaviour RadioBehaviour;
+    public QuestManager QuestManager;
+    public UIRadio UI;
 
     [Header("Audio")]
     public float BackgroundMusicVolume = 0.5f;
     public AudioSource BackgroundMusicSource;
 
-    [Header("UI Quest")]
-    public GameObject QuestCompletedCanvas; 
-    public TMP_Text QuestCompletedText;    
-
-    [Header("Inputs")]
-    public InputActionReference SwitchCameraInput;
-
     [Header("Events")]
     public UnityEvent OnPlayTimeEnd;
-
     public UnityEvent<RadioSequenceObject> OnSequenceValidated;
-
-    [Header("Parametres Audimat")]
-    public float audimatIncreaseRate = 0.5f;
-    private float m_currentAudimat = 0f;
-    private float m_audimatLogTimer = 10.0f;
-
-    [Header("Textes UI")]
-    public TMP_Text AudimatTexte;
-    public TMP_Text YoungLetteristsTexte;
-
-    [Header("UI Fin de Niveau")]
-    public GameObject EndGameCanvas;
-    public TMP_Text EndScreenAudimat;
-    public TMP_Text EndScreenYoungLetterists;
-    public TMP_Text EndScreenSquatRoskoff;
-    public TMP_Text EndScreenScilas;
-    public TMP_Text EndScreenSequencesCount;
-
-    // constants
-    private float k_switchCooldown;
-
-    // inputs
-    private InputAction m_switchCameraInput;
-    private float m_switchCooldown = 0.0f;
-
-    // camera anchors
-    private int m_currentAnchorIndex = 0;
 
     private float m_timer;
 
+    private float m_currentAudimat = 0f;
+    private float m_audimatLogTimer = 10.0f;
+
     [Header("Debug")]
+    public bool EnableQuests = true;
+
     [SerializeField]
     private int[] m_selectedSequences;
 
@@ -91,13 +56,6 @@ public class RadioManager : MonoBehaviour
     // les sequences qui ont ete valides
     private List<RadioSequenceObject> m_validatedSequences;
 
-    // le quete que le joueur doit realiser
-    [SerializeField]
-    [ReadOnly]
-    private QuestObject m_questObject;
-
-    // private Dictionary<RadioSequenceObject, int> m_sequencesProgress = new Dictionary<RadioSequenceObject, int>();
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -107,20 +65,12 @@ public class RadioManager : MonoBehaviour
     private void Start()
     {
         NullComponents.ThrowIfNull(VinylPlayer);
-        NullComponents.ThrowIfNull(PreparationManager);
-        NullComponents.ThrowIfNull(Camera);
-
-        m_switchCameraInput = InputActionReference.Create(SwitchCameraInput);
-
-        k_switchCooldown = GlobalGameSettings.Instance.GenericInputCooldown;
-        m_switchCooldown = k_switchCooldown;
 
         m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
 
         m_playedVinyls = new Queue<VinylObject>();
         m_targetSequences = new Queue<RadioSequenceObject>();
         m_validatedSequences = new List<RadioSequenceObject>();
-        m_questObject = GetRandomQuest(new CollectibleObject.UndergroundGroups());
 
         // register targets
         if (m_selectedSequences.Length > 0)
@@ -138,51 +88,59 @@ public class RadioManager : MonoBehaviour
             }
         }
 
-        if (Anchors.Length > 0)
-        {
-            // On se focus sur la first cam
-            Anchors[0].Focus(Camera);
-            // UpdatePlanningUI(); // On check si la premiere cam est la planning
-        }
-
         // focus sur l'introduction
-        CanvasManager.ActivateGroupsOfText(0);
+        //CanvasManager.ActivateGroupsOfText(0);
 
         // dialogue callback
-        Dialogue.Instance.OnDialogueCloseEvent += () =>
-        {
-            // permet d'aller a la scene de preparation des que le dialogue est fini
-            if (CanvasManager.CurrentGroup == 0)
-            {
-                if (m_timer <= Mathf.Epsilon)
-                {
-                    NextDay();
-                    return;
-                }
+        //Dialogue.Instance.OnDialogueCloseEvent += () =>
+        //{
+        //    // permet d'aller a la scene de preparation des que le dialogue est fini
+        //    if (!m_disableQuests && CanvasManager.CurrentGroup == 0)
+        //    {
+        //        if (m_timer <= Mathf.Epsilon)
+        //        {
+        //            NextDay();
+        //            return;
+        //        }
+//
+        //        CanvasManager.ActivateGroupsOfText(1);
+//
+        //        // define quest constraints
+        //        for (int i = 0; i < m_questObject.ConstraintVinyles.Length; i++)
+        //        {
+        //            if (m_questObject.ConstraintVinyles[i] == null)
+        //            {
+        //                break;
+        //            }
+//
+        //            PreparationManager.VinylsDropZones[i].IsInteractible = false;
+        //            PreparationManager.VinylsDropZones[i].AttachGameObject(PreparationManager.FindVinyle(m_questObject.ConstraintVinyles[i]));
+        //        }
+        //    }
+        //};
 
-                CanvasManager.ActivateGroupsOfText(1);
-
-                // define quest constraints
-                for (int i = 0; i < m_questObject.ConstraintVinyles.Length; i++)
-                {
-                    if (m_questObject.ConstraintVinyles[i] == null)
-                    {
-                        break;
-                    }
-
-                    PreparationManager.VinylsDropZones[i].IsDroppable = false;
-                    PreparationManager.VinylsDropZones[i].SetContent(PreparationManager.FindVinyle(m_questObject.ConstraintVinyles[i]));
-                }
-            }
-        };
-
-        m_questObject.StartDialogue();
+        // start dialogue quest
+        // TODO move this to a separate component
+        // if (!m_disableQuests)
+        // {
+        //     m_questObject.StartDialogue();
+        // }
 
         // On-Off callback
         RadioBehaviour.OnRadioEnable.AddListener(() => { BackgroundMusicSource.volume = 0.0f; });
         RadioBehaviour.OnRadioDisable.AddListener(() => { BackgroundMusicSource.volume = BackgroundMusicVolume; });
 
         Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
+
+        if (EnableQuests)
+        {
+            UI.ShowQuestDialogue();
+            QuestManager.StartCurrentQuest();
+        }
+        else
+        {
+            UI.ShowPreparationScreen();
+        }
     }
 
     /*public void RefreshAvailableSequences()
@@ -222,6 +180,7 @@ public class RadioManager : MonoBehaviour
         {
             RadioUpdate();
         }
+
     }
 
     public void RadioUpdate()
@@ -230,28 +189,47 @@ public class RadioManager : MonoBehaviour
         // we stop the game
         if (m_timer < Mathf.Epsilon)
         {
-            // On ouvre le endGame
-            UI_Manager.Instance.UpdateText(EndScreenYoungLetterists, GameManager.Instance.Statistics.AprYoungLetterists.ToString("0") + " Pts");
-            UI_Manager.Instance.UpdateText(EndScreenSquatRoskoff, GameManager.Instance.Statistics.AprSquatRoskoff.ToString("0") + " Pts");
-            UI_Manager.Instance.UpdateText(EndScreenScilas, GameManager.Instance.Statistics.AprScilas.ToString("0") + " Pts");
-            UI_Manager.Instance.UpdateText(EndScreenAudimat, GameManager.Instance.Statistics.GlobalAudimat.ToString("0") + " Auditeurs!");
-
-            UI_Manager.Instance.UpdateText(EndScreenSequencesCount, m_validatedSequences.Count.ToString());
+            // reset the timer
             m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+            UI.ShowEndScreen();
             
             OnPlayTimeEnd.Invoke();
             
             return;
         }
 
-        // camera movements
-        UpdateCameraSwitch();
+        UpdateStats();
 
-        UpdateAudimatLogic();
+        // update timer
+        m_timer -= Time.deltaTime;
+    }
 
-        // music increase
-        if (VinylPlayer.IsPlaying)
+    void UpdateStats()
+    {
+        m_audimatLogTimer -= Time.deltaTime;
+
+        bool hasRadio = RadioBehaviour != null;
+        float signal = hasRadio ? (RadioBehaviour.AntennaSignalQuality + RadioBehaviour.FrequencyQuality) / 2f : 0f;
+
+        if (m_audimatLogTimer <= 0)
         {
+            // feedbacks
+            if (!VinylPlayer.IsPlaying) Debug.Log("<color=red>[INFO 10S] Audimat en pause. La platine ne joue rien.</color>");
+            else if (!hasRadio) Debug.Log("<color=red>[INFO 10S] Audimat en pause. RadioBehaviour non assigne.</color>");
+            else if (signal <= 0.1f) Debug.Log($"<color=orange>[INFO 10S] Audimat en pause : Signal trop faible ({signal:P0}). Reglez la molette !</color>");
+            else Debug.Log($"<color=yellow>[INFO 10S] L'Audimat grimpe ! Gain: +{GlobalGameSettings.Instance.AppreciationIncrease * signal:F2}/sec | Audimat Total : {m_currentAudimat:F1}</color>");
+
+            m_audimatLogTimer = 10.0f;
+        }
+
+        if (VinylPlayer.IsPlaying && hasRadio && signal > 0.1f)
+        {
+            // audimat
+            float gain = GlobalGameSettings.Instance.AppreciationIncrease * signal * Time.deltaTime;
+            m_currentAudimat += gain;
+            GameManager.Instance.Statistics.GlobalAudimat = (uint)m_currentAudimat;
+        
+            // group appreciations
             float increase = GlobalGameSettings.Instance.AppreciationIncreaseMusic * Time.deltaTime;
             float decrease = GlobalGameSettings.Instance.AppreciationDecreaseMusic * Time.deltaTime;
 
@@ -265,59 +243,7 @@ public class RadioManager : MonoBehaviour
             GameManager.Instance.Statistics.AprSquatRoskoff -= (Convert.ToSingle(VinylPlayer.CurrentVinyl.Dislike.SquatRoskoff) * decrease);
             GameManager.Instance.Statistics.AprScilas -= (Convert.ToSingle(VinylPlayer.CurrentVinyl.Dislike.Scilas) * decrease);
 
-        }
-
-        // update timer
-        m_timer -= Time.deltaTime;
-    }
-
-    void UpdateAudimatLogic()
-    {
-        m_audimatLogTimer -= Time.deltaTime;
-
-        bool hasRadio = RadioBehaviour != null;
-        float signal = hasRadio ? (RadioBehaviour.AntennaSignalQuality + RadioBehaviour.FrequencyQuality) / 2f : 0f;
-
-        if (m_audimatLogTimer <= 0)
-        {
-            // feedbacks
-            if (!VinylPlayer.IsPlaying) Debug.Log("<color=red>[INFO 10S] Audimat en pause. La platine ne joue rien.</color>");
-            else if (!hasRadio) Debug.Log("<color=red>[INFO 10S] Audimat en pause. RadioBehaviour non assigne.</color>");
-            else if (signal <= 0.1f) Debug.Log($"<color=orange>[INFO 10S] Audimat en pause : Signal trop faible ({signal:P0}). Reglez la molette !</color>");
-            else Debug.Log($"<color=yellow>[INFO 10S] L'Audimat grimpe ! Gain: +{audimatIncreaseRate * signal:F2}/sec | Audimat Total : {m_currentAudimat:F1}</color>");
-
-            m_audimatLogTimer = 10.0f;
-        }
-
-        if (VinylPlayer.IsPlaying && hasRadio && signal > 0.1f)
-        {
-            float gain = audimatIncreaseRate * signal * Time.deltaTime;
-            m_currentAudimat += gain;
-            GameManager.Instance.Statistics.GlobalAppreciation = m_currentAudimat;
-            UI_Manager.Instance.UpdateText(AudimatTexte, m_currentAudimat.ToString("0") + " Auditeurs");
-        }
-    }
-
-    void UpdateCameraSwitch()
-    {
-        // ANCHORS?! Ca fait beaucoup la non? ;)
-        // ahaha trop drole ta blague. non
-        if (m_switchCooldown > Mathf.Epsilon)
-        {
-            m_switchCooldown -= Time.deltaTime;
-            return;
-        }
-
-        if (m_switchCameraInput.ReadValue<float>() > 0.1f)
-        {
-            // On va vers le prochain anchor 
-            m_currentAnchorIndex = (m_currentAnchorIndex + 1) % Anchors.Length;
-            Anchors[m_currentAnchorIndex].Focus(Camera);
-
-            // UpdatePlanningUI();
-
-            // reset du cooldown
-            m_switchCooldown = k_switchCooldown;
+        
         }
     }
 
@@ -341,102 +267,52 @@ public class RadioManager : MonoBehaviour
 
         int countBefore = m_validatedSequences.Count;
 
+
         m_playedVinyls.Enqueue(vinyl);
+
+
+        FindSequences();
+
 
         if (m_validatedSequences.Count > countBefore)
         {
             RadioSequenceObject lastSeq = m_validatedSequences[m_validatedSequences.Count - 1];
 
-            if (QuestCompletedCanvas != null)
-            {
-                UI_Manager.Instance.UpdateText(QuestCompletedText, lastSeq.name + " Complete !");
-
-                // --- ON LANCE NOTRE MINUTEUR AU LIEU D'OUVRIR DIRECTEMENT ---
-                StartCoroutine(ShowAndFadeQuestPopup());
-            }
+            //if (QuestCompletedCanvas != null)
+            //{
+            //    UIToolkit.SetText(QuestCompletedText, lastSeq.name + " Complete !");
+//
+//
+            //    StartCoroutine(ShowAndFadeQuestPopup());
+            //}
         }
     }
 
     /// <summary>
     /// Reset everything to start a new day
     /// </summary>
-    public void NextDay()
-    {
-
-        if (m_questObject.EndTable)
-        {
-            CanvasManager.ActivateGroupsOfText(0);
-            m_questObject.StartEndDialogue();
-            m_questObject = null; 
-
-            return;
-        }
-
-        m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
-
-        m_playedVinyls = new Queue<VinylObject>();
-        m_targetSequences = new Queue<RadioSequenceObject>();
-        m_validatedSequences = new List<RadioSequenceObject>();
-        m_questObject = GetRandomQuest(new CollectibleObject.UndergroundGroups());
-
-        if (Anchors.Length > 0)
-        {
-            // On se focus sur la first cam
-            Anchors[0].Focus(Camera);
-        }
-
-        CanvasManager.ActivateGroupsOfText(0);
-        m_questObject.StartDialogue();
-    }
-
-    /*public void ProcessVinylForSequences(VinylObject playedVinyl)
-    {
-        if (playedVinyl == null) return;
-
-        var sequences = m_sequencesProgress.Keys.ToList();
-        foreach (var seq in sequences)
-        {
-            int currentIndex = m_sequencesProgress[seq];
-            if (playedVinyl == seq.Blocs[currentIndex])
-            {
-                m_sequencesProgress[seq]++;
-                Debug.Log($"<color=cyan>[PROGRESSION] {seq.name} : {m_sequencesProgress[seq]}/{seq.Blocs.Length}</color>");
-
-                if (m_sequencesProgress[seq] >= seq.Blocs.Length)
-                {
-                    ProcessSequenceValidation(seq);
-                    OnSequenceValidated?.Invoke(seq);
-                    m_sequencesProgress[seq] = 0;
-                }
-            }
-            else if (m_sequencesProgress[seq] > 0)
-            {
-                m_sequencesProgress[seq] = (playedVinyl == seq.Blocs[0]) ? 1 : 0;
-            }
-        }
-    }
-
-    public void ProcessSequenceValidation(RadioSequenceObject seq)
-    {
-        int diffYL = 0; int diffSR = 0; int diffSC = 0;
-
-        foreach (var vinyl in seq.Blocs)
-        {
-            diffYL += (vinyl.Like.YoungLetterists ? 2 : 0) - (vinyl.Dislike.YoungLetterists ? 2 : 0);
-            diffSR += (vinyl.Like.SquatRoskoff ? 2 : 0) - (vinyl.Dislike.SquatRoskoff ? 2 : 0);
-            diffSC += (vinyl.Like.Scilas ? 2 : 0) - (vinyl.Dislike.Scilas ? 2 : 0);
-        }
-
-        diffYL += (seq.Like.YoungLetterists ? 10 : 0) - (seq.Dislike.YoungLetterists ? 10 : 0);
-        diffSR += (seq.Like.SquatRoskoff ? 10 : 0) - (seq.Dislike.SquatRoskoff ? 10 : 0);
-        diffSC += (seq.Like.Scilas ? 10 : 0) - (seq.Dislike.Scilas ? 10 : 0);
-
-        GameManager.Instance.Statistics.AprYoungLetterists += diffYL;
-        GameManager.Instance.Statistics.AprSquatRoskoff += diffSR;
-        GameManager.Instance.Statistics.AprScilas += diffSC;
-
-        Debug.Log($"<color=green>[VALIDATION] {seq.name} terminee ! Bilan : YL:{diffYL} SR:{diffSR} SC:{diffSC}</color>");
-    }*/
+    //public void NextDay()
+    //{
+//
+    //    if (m_questObject.EndTable)
+    //    {
+    //        CanvasManager.ActivateGroupsOfText(0);
+    //        m_questObject.StartEndDialogue();
+    //        m_questObject = null; 
+//
+    //        return;
+    //    }
+//
+    //    m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+//
+    //    m_playedVinyls = new Queue<VinylObject>();
+    //    m_targetSequences = new Queue<RadioSequenceObject>();
+    //    m_validatedSequences = new List<RadioSequenceObject>();
+    //    m_questObject = GetRandomQuest(new CollectibleObject.UndergroundGroups());
+//
+    //    CanvasManager.ActivateGroupsOfText(0);
+    //    m_questObject.StartDialogue();
+    //}
 
     public void EnqueueSequence(RadioSequenceObject seq)
     {
@@ -483,6 +359,12 @@ public class RadioManager : MonoBehaviour
 
     public RadioSequenceObject[] FindSequences(VinylObject[] vinyls)
     {
+        // avoid concurrency race 
+        if(m_targetSequences == null || m_validatedSequences == null)
+        {
+            return new RadioSequenceObject[0];
+        }
+
         List<RadioSequenceObject> list = new List<RadioSequenceObject>();
 
         foreach (RadioSequenceObject seq in m_targetSequences)
@@ -499,48 +381,26 @@ public class RadioManager : MonoBehaviour
         return list.ToArray();
     }
 
-    public QuestObject GetRandomQuest(CollectibleObject.UndergroundGroups blacklist)
+    public void NextQuest()
     {
-        // lorsqu'il n'y a pas de quete precedente
-        if (m_questObject == null || m_questObject.Next == null)
+        if (EnableQuests)
         {
-            // choisit un groupe
-            int random = UnityEngine.Random.Range(0, 3);
-            return GlobalGameSettings.Instance.Quests[random];
+            QuestManager.FinishCurrentQuest();
+            UI.ShowQuestDialogue();
+            QuestManager.StartCurrentQuest();
         }
-
-        Debug.Log(m_questObject.Next.Name);
-        // si on a deja eu une quete avant et qu'elle a une quete qui suit
-        // on prend la quete suivante
-        return m_questObject.Next;
-        
+        else
+        {
+            UI.ShowPreparationScreen();
+        }
     }
-
-    // void UpdatePlanningUI()
-    // {
-    //     if (PlanningCanvas == null) return;
-    // 
-    //     // Si l'index actuel est celui de la planification, on affiche le Canvas
-    //     bool isOnPlanning = (m_currentAnchorIndex == PlanningAnchorIndex);
-    // 
-    //     if (PlanningCanvas.activeSelf != isOnPlanning)
-    //     {
-    //         PlanningCanvas.SetActive(isOnPlanning);
-    //     }
-    // }
-
-    void AudioClipCallback()
-    {
-
-    }
-
 
     //-----TEMPORAIRE LE TEMPS DE FAIRE UNE ANIMATION------
    
-    private IEnumerator ShowAndFadeQuestPopup()
+    /*private IEnumerator ShowAndFadeQuestPopup()
     {
         
-        UI_Manager.Instance.OpenCanvas(QuestCompletedCanvas);
+        UIToolkit.OpenCanvas(QuestCompletedCanvas);
 
         
         CanvasGroup canvasGroup = QuestCompletedCanvas.GetComponent<CanvasGroup>();
@@ -548,7 +408,7 @@ public class RadioManager : MonoBehaviour
        
         if (canvasGroup == null)
         {
-            canvasGroup = QuestCompletedCanvas.AddComponent<CanvasGroup>();
+            canvasGroup = QuestCompletedCanvas.gameObject.AddComponent<CanvasGroup>();
         }
 
        
@@ -574,7 +434,7 @@ public class RadioManager : MonoBehaviour
         }
 
         
-        UI_Manager.Instance.CloseCanvas(QuestCompletedCanvas);
-    }
+        UIToolkit.CloseCanvas(QuestCompletedCanvas);
+    }*/
 
 }

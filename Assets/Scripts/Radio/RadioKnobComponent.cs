@@ -53,7 +53,7 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
             value = Mathf.Lerp(MinValue, MaxValue, t);
         }
 
-        base.SetValue(value * StepIncrement);
+        base.SetValue(value);
         ApplyRotation();
     }
 

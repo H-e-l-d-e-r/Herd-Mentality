@@ -16,17 +16,18 @@ MonoBehaviour:
   Description: "Voix d\u2019un jeune lettriste"
   m_nodes:
   - Name: M6_JL3
-    Text: "Ma\xE9 ! Ma\xE9 ! On a r\xE9ussit ! Notre prof reste parmi nous !"
+    Text: "Ma\xE9 ! Ma\xE9 ! On a r\xE9ussi ! Notre prof reste parmi nous !"
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL3
-    Text: 'Nous sommes tous enthousiaste de pouvoir faire perdurer le mouvement ! '
+    Text: 'Nous sommes tous enthousiastes de pouvoir faire perdurer le mouvement
+      ! '
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL3
-    Text: Je suis tellement gratifiant de votre travail. On vous en doit vraiment
+    Text: Je suis tellement reconnaissant pour votre travail. On vous en doit vraiment
       une !
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0

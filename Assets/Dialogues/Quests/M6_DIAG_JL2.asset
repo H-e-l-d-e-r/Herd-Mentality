@@ -42,26 +42,20 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL2
-    Text: "Jusqu\u2019\xE0 pr\xE9sent on arrivait \xE0 survivre car l\u2019un de
-      nos profs nous soutenait mais il s\u2019est fait vir\xE9\u2026"
+    Text: "Jusqu\u2019\xE0 pr\xE9sent, on arrivait \xE0 survivre car l\u2019un de
+      nos profs, Keating, nous soutenait mais il s\u2019est fait virer\u2026"
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL2
-    Text: "Maintenant qu\u2019on n\u2019est plus sous la protection de Keating on
-      risque de se faire virer. "
-    Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
-    ActorSprite: 0
-    Behavior: 0
-  - Name: M6_JL2
-    Text: "Mais je sais qu\u2019on peut compter les uns sur les autres ! Alors j\u2019aimerai
+    Text: "Mais je sais qu\u2019on peut compter les uns sur les autres ! Alors, j\u2019aimerais
       que tu diffuses un message g\xE9n\xE9rale pour demander du soutient !"
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M6_JL2
     Text: "Mais je sais qu\u2019on peut compter les uns sur les autres ! Alors j\u2019aimerai
-      que tu diffuses un message g\xE9n\xE9rale pour demander du soutient !"
+      que tu diffuses un message g\xE9n\xE9ral pour demander du soutien !"
     Actor: {fileID: 11400000, guid: 88440844a2f6e544482d8ea5152e5825, type: 2}
     ActorSprite: 0
     Behavior: 0

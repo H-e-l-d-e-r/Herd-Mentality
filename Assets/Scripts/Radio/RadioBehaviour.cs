@@ -50,7 +50,7 @@ public class RadioBehaviour : MonoBehaviour
 
     private List<RadioBroadcastBehaviour> m_broadcasts;
     private float k_minFreq = 0.0f;
-    private float k_maxFreq = 2000.0f;
+    private float k_maxFreq = 30000.0f;
 
     private float m_maxVolumeMult = 0.9f;
     private float m_freq = 0.0f;
@@ -76,7 +76,7 @@ public class RadioBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        if (IsOn) EnableBroadcasts();
+        EnableBroadcasts();
     }
 
     private void OnDisable()

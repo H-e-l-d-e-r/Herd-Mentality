@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class VinylStorage : MonoBehaviour
 {
     [Header("Game Objects")]
+    public RadioBehaviour RadioBehaviour;
     public CameraAnchor Camera;
     public GameObject VinylStaticInstance;
     public GameObject VinylDragInstance;
@@ -13,7 +14,8 @@ public class VinylStorage : MonoBehaviour
 
     [Header("Vinyl Collection")]
     public bool LoadFromGameManager;
-    [ReadOnlyAttribute]
+
+    [ReadOnly]
     public List<VinylObject> Vinyls = new List<VinylObject>();
 
     [Header("Inputs")]
@@ -70,7 +72,7 @@ public class VinylStorage : MonoBehaviour
 
     void Update()
     {
-        if (Camera.IsCameraAttached)
+        if (Camera.IsCameraAttached && RadioBehaviour.IsOn)
         {
             UpdatePickupVinyl();
             UpdateDragBehaviour();

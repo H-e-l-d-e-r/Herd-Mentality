@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using Unity.VisualScripting;
+
 using UnityEditor;
 
 public class UIVinylList : MonoBehaviour

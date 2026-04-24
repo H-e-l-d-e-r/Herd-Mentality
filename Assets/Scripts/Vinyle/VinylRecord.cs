@@ -39,9 +39,17 @@ public class VinylRecord : MonoBehaviour
         UpdateVinylProperties();
     }
 
+    void Update()
+    {
+        
+    }
+
     public void SetObjectPosition(Vector3 vector)
     {
-        transform.position = vector;
+        transform.position = Vector3.Lerp(
+            transform.position, vector, GlobalGameSettings.Instance.LerpStrengh
+        );
+        
         IsDragged = true;
     }
 
@@ -53,7 +61,7 @@ public class VinylRecord : MonoBehaviour
 
             if (Renderer)
             {
-                Renderer.material.color = Vinyl.Color;
+                Renderer.material.SetColor("_MainColor", Vinyl.Color);
 
             }
 
@@ -64,7 +72,7 @@ public class VinylRecord : MonoBehaviour
         }
     }
 
-    public void DestroyObject()
+    public void Destroy()
     {
         // EXPLOOSSSIIOOONNN!!! Megumin la goat, Kazuma le goat Best Ship Best Waifu Best Husbando (Yes i'm cronically online mtfcka)
         // helder t'es un sale pedo elle est surement mineure :(((

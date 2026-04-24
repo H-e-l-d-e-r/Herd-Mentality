@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "Settings", menuName = "Herd Mentality/Global Settings")]
 public class GlobalGameSettings : SingletonScriptableObject<GlobalGameSettings>
@@ -7,10 +8,14 @@ public class GlobalGameSettings : SingletonScriptableObject<GlobalGameSettings>
     [Header("Inputs")]
     [Range(0.0f, 0.5f)]
     public float GenericInputCooldown;
+    public InputActionReference NextCameraInputAction;
+    public InputActionReference InteractInputAction;
+    public InputActionReference MousePositionInputAction;
 
     [Header("Atomization")]
     [Tooltip("En minutes")]
     public float RadioPlayTime = 4.5f;
+    public float LerpStrengh = 0.5f;
 
     [Range(0.0f, 1.0f)]
     [Tooltip("Accroissement de l'appreciation pour la musique par secondes")]

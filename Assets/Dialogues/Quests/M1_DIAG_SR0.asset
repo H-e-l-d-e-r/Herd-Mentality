@@ -17,18 +17,18 @@ MonoBehaviour:
   m_nodes:
   - Name: M1_SR0
     Text: "Tzzzzziii\u2026 Transmission d\xE9marr\xE9e \xE0 16h12 depuis l\u2019Anciennce
-      papetrie. "
+      papeterie. "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
   - Name: M1_SR0
-    Text: "Hey mec, ici Rapido depuis le Squat Roskoff ! \xE7a roule chez vous ?"
+    Text: "Hey mec, ici Rapido depuis le Squat Roskoff ! \xC7a roule chez vous ?"
     Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: M1_SR0
     Text: "Otto m\u2019a parl\xE9 de votre radio. C\u2019est trop cool que vous ayez
-      enfin commencer \xE0 diffuser ! Pour f\xEAter \xE7a, on a une annonce sp\xE9ciale
+      enfin commenc\xE9 \xE0 diffuser ! Pour f\xEAter \xE7a, on a une annonce sp\xE9ciale
       pour vous."
     Actor: {fileID: 11400000, guid: 9bfaa23eb41f1cd4f985bae74b3dd15d, type: 2}
     ActorSprite: 0
