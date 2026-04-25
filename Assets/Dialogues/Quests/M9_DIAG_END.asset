@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: M9_DIAG_END
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: M_9_End
+  Description: La fin.
+  m_nodes:
+  - Name: M_9_End
+    Text: "Le parlophone ne sonne pas. On dirait que vous avez aid\xE9 ceux qui en
+      avaient besoins."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M_9_End
+    Text: "Mais il me semble qu'il vous reste encore des choses \xE0 faire. Des myst\xE8res
+      \xE0 r\xE9soudre."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: M_9_End
+    Text: La fin est proche mon ami.e.
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

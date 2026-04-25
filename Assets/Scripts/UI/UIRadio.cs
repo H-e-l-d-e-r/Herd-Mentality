@@ -46,7 +46,14 @@ public class UIRadio : MonoBehaviour
         UIToolkit.SetFormattedText(EndScreenScilas, GameManager.Instance.Statistics.AprScilas, "0");
 
         UIToolkit.SetFormattedText(EndScreenAudimat, GameManager.Instance.Statistics.GlobalAudimat, "0");
+
+        UIToolkit.CloseCanvas(QuestCompletedTransform);
         //UIToolkit.SetFormattedText(EndScreenSequencesCount, m_validatedSequences.Count, "");
+    }
+
+    public void ShowQuestComplete()
+    {
+        UIToolkit.OpenCanvas(QuestCompletedTransform);
     }
 
     void DialogueCallback()

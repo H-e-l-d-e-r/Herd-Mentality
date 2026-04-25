@@ -191,8 +191,13 @@ public class RadioManager : MonoBehaviour
         {
             // reset the timer
             m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+
             UI.ShowEndScreen();
-            
+            if (QuestManager.IsComplete)
+            {
+                UI.ShowQuestComplete();
+            }
+
             OnPlayTimeEnd.Invoke();
             
             return;

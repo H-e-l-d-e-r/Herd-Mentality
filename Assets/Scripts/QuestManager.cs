@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using DialogueSystem;
 using UnityEngine;
 
@@ -6,8 +7,13 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour 
 {
     public UILibraryManager Library;
+    public RadioManager RadioManager;
 
     public QuestObject Quest { get; private set; }
+    public bool IsComplete
+    {
+        get => RadioManager.FindSequences(Quest.ConstraintVinyles).ContainsSubSequence(RadioManager.FindSequences());
+    }
 
     private DialoguePtr m_questDialoguePtr = DialoguePtr.k_INVALID; 
     private DialoguePtr m_questEndDialoguePtr = DialoguePtr.k_INVALID; 
@@ -29,10 +35,10 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     /// <param name="modifier">black listed underground groups</param>
     /// <returns></returns>
-    public QuestObject GetNextQuest(CollectibleObject.UndergroundGroups modifier)
+    public QuestObject GetNextQuest(CollectibleObject.UndergroundGroups modifier, bool reset = false)
     {        
         // si on doit piocher une nouvelle trame narrative
-        if(Quest == null || Quest.Next == null)
+        if(Quest == null || Quest.Next == null || reset)
         {
             // determine les groupes valides
             List<QuestObject> undergroundQuest = new List<QuestObject>();
@@ -77,7 +83,17 @@ public class QuestManager : MonoBehaviour
             Dialogue.PlayDialogue(m_questEndDialoguePtr);
         }
 
-        Quest = GetNextQuest(new CollectibleObject.UndergroundGroups());
+        if(Quest.Next == null && IsComplete)
+        {
+            GameManager.Instance.Statistics.NarrativeDone.YoungLetterists |= Quest.Like.YoungLetterists; 
+            GameManager.Instance.Statistics.NarrativeDone.SquatRoskoff |= Quest.Like.SquatRoskoff; 
+            GameManager.Instance.Statistics.NarrativeDone.Scilas |= Quest.Like.Scilas; 
+        }
+
+        // if the player has validated the music sequence
+        // it will go to the next one
+        // otherwise, it will not
+        Quest = GetNextQuest(GameManager.Instance.Statistics.NarrativeDone, !IsComplete);
         CreateDialogueContext();
     }
 

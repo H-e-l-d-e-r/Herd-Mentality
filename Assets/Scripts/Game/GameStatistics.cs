@@ -13,4 +13,6 @@ public struct GameStatistics
     public float AprSquatRoskoff;
     public float AprYoungLetterists;
     public float AprScilas;
+
+    public CollectibleObject.UndergroundGroups NarrativeDone;
 }
