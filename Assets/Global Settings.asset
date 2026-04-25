@@ -20,7 +20,7 @@ MonoBehaviour:
   LerpStrengh: 0.25
   AppreciationIncreaseMusic: 0.5
   AppreciationDecreaseMusic: 0.5
-  AppreciationIncrease: 1
+  AppreciationIncrease: 0.2
   Sequences:
   - {fileID: 11400000, guid: 0e2444aedc40d3a4a81dabcc7788ea1e, type: 2}
   - {fileID: 11400000, guid: 1b7070d55aa524147b6aed627852555d, type: 2}

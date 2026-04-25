@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioKnob
   InitialValue: 0
-  StepIncrement: 0.2
+  StepIncrement: 0.8
   OnValueChange:
     m_PersistentCalls:
       m_Calls:
@@ -73,7 +73,8 @@ MonoBehaviour:
   m_value: 0
   IsInfinite: 1
   MinValue: 0
-  MaxValue: 2000
+  MaxValue: 30000
+  Sensitivity: 0.8
   Borehole: {fileID: 591980074395454885}
   Knob: {fileID: 2587674997789825821}
 --- !u!1 &970463915997580191

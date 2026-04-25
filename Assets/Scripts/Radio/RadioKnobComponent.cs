@@ -19,6 +19,7 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
     private const float k_ARC_H = 150f;
 
     private float m_totalAngles;
+    private float m_previousValue;
     private Vector2 m_lastPointPosition;
 
     private void Start()
@@ -34,37 +35,40 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         float deltaX = eventData.position.x - m_lastPointPosition.x;
         m_lastPointPosition = eventData.position;
 
+        // create an exponential acceleration curve
+        float increase = Mathf.Min((Mathf.Abs(Value - m_previousValue) + StepIncrement) * (Sensitivity / 100.0f), 15.0f);
+
         // C'est ici que la magie opere : on multiplie par la Sensitivity !
-        float deltaDeg = deltaX * Sensitivity * Time.deltaTime;
-        float value = 0;
+        float deltaDeg = deltaX * StepIncrement * increase;
 
         if (IsInfinite)
         {
-            m_totalAngles += deltaDeg;
-            value = Mathf.Clamp(Value + deltaDeg, MinValue, MaxValue);
+            m_totalAngles += deltaDeg * Time.deltaTime;
+            base.SetValue(Mathf.Clamp(Value + deltaDeg, MinValue, MaxValue));
         }
         else
         {
             float newAngle = Mathf.Clamp(m_totalAngles + deltaDeg, -k_ARC_H, k_ARC_H);
             deltaDeg = newAngle - m_totalAngles;
-            m_totalAngles = newAngle;
+            m_totalAngles = newAngle * Time.deltaTime;
 
             float t = (m_totalAngles + k_ARC_H) / (k_ARC_H * 2.0f);
-            value = Mathf.Lerp(MinValue, MaxValue, t);
+            base.SetValue(Mathf.Lerp(MinValue, MaxValue, t));
         }
 
-        base.SetValue(value);
         ApplyRotation();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         // no-op
+        m_previousValue = Value;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         m_lastPointPosition = eventData.position;
+        m_previousValue = Value; 
     }
 
     public override void SetValue(float _value)

@@ -52,6 +52,9 @@ public class UILibraryManager : MonoBehaviour
         }
 
         UIToolkit.OpenCanvas(PreparationCanvas);
+        
+        // force update
+        DropZoneCallback(null);
     }
 
     // ajoute une sequence a la liste des sequences trouvees

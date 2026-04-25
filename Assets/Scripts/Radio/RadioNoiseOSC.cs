@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RadioNoiseOSC : MonoBehaviour
 {
+    public RadioBehaviour Radio;
+
     [Header("Noise OSC")]
     [Range(0.0f, 1.0f)]
     public float Volume = 1.0f;
@@ -20,10 +22,15 @@ public class RadioNoiseOSC : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float CrakleNoiseVolume = 0.4f;
 
+    [Range(0.0f, 1.0f)]
+    public float CarrierNoiseVolume = 0.4f;
+
+    public float CrackStrengh = 800.0f;
+
     [HideInInspector]
     public float VolumeMultiplicator = 1.0f;
 
-    private const float k_CRACKLE_PROBABILITY = 800f / 44100;
+    private float k_CRACKLE_PROBABILITY => CrackStrengh / 44100.0f;
 
     private bool m_canPlay;
     private uint m_seed = 33423204;
@@ -68,7 +75,7 @@ public class RadioNoiseOSC : MonoBehaviour
         {
             float sign = WhiteNoiseNextSample() >= 0f ? 1f : -1f;
             float amplitude = 0.4f + (WhiteNoiseNextSample() * 0.5f + 0.5f) * 0.6f;
-            return sign * amplitude * 2.0f;
+            return sign * amplitude * 5.0f;
         }
 
         return 0f;
@@ -93,7 +100,9 @@ public class RadioNoiseOSC : MonoBehaviour
         float volume = Mathf.Clamp(VolumeMultiplicator * Volume, MinimumNoise, 0.5f);
         for (int i = 0; i < data.Length; i++)
         {
-            float white = Crakle() * CrakleNoiseVolume + PinkNoiseNextSample() * WhiteNoiseVolume;
+            float rate = i / 44100.0f;
+            float carrier = MathF.Sin(2f * MathF.PI * (Radio.CurrentFrequency / 16.0f) * rate);
+            float white = Crakle() * CrakleNoiseVolume + PinkNoiseNextSample() * (WhiteNoiseVolume * carrier) + carrier * CarrierNoiseVolume;
 
             m_last = m_last * Smoothness + white * (1.0f - Smoothness);
             data[i] = data[i] * (1.0f - volume) + m_last * volume;

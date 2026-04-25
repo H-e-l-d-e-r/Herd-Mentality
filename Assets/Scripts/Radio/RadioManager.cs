@@ -371,7 +371,21 @@ public class RadioManager : MonoBehaviour
         {
             if (vinyls.ContainsSubSequence(seq.Blocs))
             {
-                list.Add(seq);
+                // for sequences that contains for than one element
+                // theses are always added
+                if(seq.Blocs.Length > 1)
+                {
+                    list.Add(seq);                
+                }
+                // when the sequence only contains one vinyl
+                // we only add it if it's the current quest 
+                else if (seq.Blocs.Length == 1 && EnableQuests)
+                {
+                    if (QuestManager.Quest.ConstraintVinyles.ContainsSubSequence(seq.Blocs))
+                    {
+                        list.Add(seq);                                    
+                    }
+                }
             }
         }
 

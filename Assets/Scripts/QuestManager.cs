@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using DialogueSystem;
 using UnityEngine;
 
-[DefaultExecutionOrder(2500)]
+[DefaultExecutionOrder(2400)]
 public class QuestManager : MonoBehaviour 
 {
     public UILibraryManager Library;
@@ -16,9 +16,6 @@ public class QuestManager : MonoBehaviour
     void Start()
     {
         NullComponents.ThrowIfNull(Library);
-
-        Quest = GetNextQuest(new CollectibleObject.UndergroundGroups());
-        CreateDialogueContext();
     }
 
     // Update is called once per frame
@@ -59,6 +56,12 @@ public class QuestManager : MonoBehaviour
 
     public void StartCurrentQuest()
     {
+        if(Quest == null)
+        {
+            Quest = GetNextQuest(new CollectibleObject.UndergroundGroups());
+            CreateDialogueContext();
+        }
+        
         // if the quest dialogue exists
         if(m_questDialoguePtr != DialoguePtr.k_INVALID)
         {
@@ -87,6 +90,10 @@ public class QuestManager : MonoBehaviour
         if (Quest.IntroductionTable)
         {
             m_questDialoguePtr = Dialogue.RegisterDialogue(Quest.IntroductionTable);
+        }
+        else
+        {
+            Debug.Log("failed to create the introduction table");
         }
 
         // create end dialogue

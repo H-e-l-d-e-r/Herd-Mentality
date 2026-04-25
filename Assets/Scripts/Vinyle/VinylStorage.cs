@@ -96,7 +96,8 @@ public class VinylStorage : MonoBehaviour
                         m_isHolding = true;
                         m_distance = hit.distance;
 
-                        m_vinylInstance = Instantiate(VinylDragInstance, transform).GetComponent<VinylRecord>();
+                        m_vinylInstance = Instantiate(VinylDragInstance).GetComponent<VinylRecord>();
+                        m_vinylInstance.transform.SetParent(transform, true);
                         m_vinylInstance.Vinyl = record.Vinyl;
                         m_vinylInstance.IsDragged = true;
 

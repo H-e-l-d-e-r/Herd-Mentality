@@ -35,6 +35,10 @@ public class UIDragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             OriginParent = transform.parent;
             transform.SetParent(m_attachedCanvas.transform, false);
             transform.SetAsLastSibling();
+            
+            transform.localScale = Vector3.one;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
 
             m_group.blocksRaycasts = false;
         }
@@ -50,6 +54,10 @@ public class UIDragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             if(transform.parent == m_attachedCanvas.transform)
             {
                 transform.SetParent(OriginParent, false);
+
+                transform.localScale = Vector3.one;
+                transform.localPosition = Vector3.zero;
+                transform.localRotation = Quaternion.identity;
             }
         }
     }

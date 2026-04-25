@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIVinylDropZone : UIDropBehaviour<UIVinylItem>
 {
+    public RectTransform ShadowBox;
+    public float ShadowAlpha;
+
     public VinylObject Vinyl
     {
         get
@@ -22,7 +26,14 @@ public class UIVinylDropZone : UIDropBehaviour<UIVinylItem>
 
     public override void OnContentChange(UIVinylItem newValue)
     {
-        //Vinyl = newValue.Vinyl;
+        if(ShadowBox.TryGetComponent<Image>(out Image component))
+        {
+            float alpha = (newValue != null) ? ShadowAlpha : 0.0f;
+            Color shadow = new Color(component.color.r, component.color.g, component.color.b, alpha);
+            component.color = shadow;
+        }
+
+        newValue.IsInteractible = IsInteractible;
     }
 
     /*public VinylObject[] Vinyls

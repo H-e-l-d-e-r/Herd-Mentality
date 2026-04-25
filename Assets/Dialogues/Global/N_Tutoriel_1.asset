@@ -16,8 +16,7 @@ MonoBehaviour:
   Description: "L\u2019orientation de l\u2019antenne"
   m_nodes:
   - Name: N_Tutoriel_1
-    Text: "Ici, c'est l\u2019antenne et le transformateur. D\xE8s que tu appuyeras
-      sur le bouton <color=red>rouge</color> la diffusion commencera !"
+    Text: "Ici, c'est l\u2019antenne. "
     Actor: {fileID: 11400000, guid: d9b16eecb50285445b72b5a690b587a3, type: 2}
     ActorSprite: 0
     Behavior: 0
