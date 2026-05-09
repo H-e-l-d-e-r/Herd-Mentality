@@ -104,7 +104,7 @@ public class UiNoteManager : MonoBehaviour
     void CreateCode()
     {
 
-        RadioSequenceObject[] sequences = GlobalGameSettings.Instance.Sequences;
+        SequenceObject[] sequences = GlobalGameSettings.Instance.Sequences;
 
         if (sequences == null || sequences.Length == 0)
         {

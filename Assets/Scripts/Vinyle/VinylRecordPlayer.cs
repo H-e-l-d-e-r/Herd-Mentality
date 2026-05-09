@@ -17,7 +17,7 @@ public class VinylRecordPlayer : MonoBehaviour
     public float RecordRotation;
 
     [Header("Events")]
-    public UnityEvent<RadioSequenceObject> OnSequenceValidated; // Quand une s�quence est finie
+    public UnityEvent<SequenceObject> OnSequenceValidated; // Quand une s�quence est finie
     public UnityEvent<VinylObject> OnPlayMusic;
     public UnityEvent<VinylObject> OnStopMusic;
 

@@ -10,7 +10,7 @@ public class UIGroupBehaviour : MonoBehaviour
         get => m_current;
         set
         {
-            m_current = value;
+            m_current = Mathf.Min(value, Groups.Length - 1);
 
             foreach (GroupContainer group in Groups)
             {

@@ -58,7 +58,7 @@ public class UILibraryManager : MonoBehaviour
     }
 
     // ajoute une sequence a la liste des sequences trouvees
-    public void AddSequence(RadioSequenceObject seq)
+    public void AddSequence(SequenceObject seq)
     {
         Debug.Assert(seq);
 
@@ -87,7 +87,7 @@ public class UILibraryManager : MonoBehaviour
         UIToolkit.CloseCanvas(PreparationCanvas);
         
         // on enqueue dans le manager toutes les sequences validee
-        foreach (RadioSequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
+        foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
         {
             Manager.EnqueueSequence(seq);
         }
@@ -132,7 +132,7 @@ public class UILibraryManager : MonoBehaviour
         }
 
         // update found sequences
-        foreach (RadioSequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
+        foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
         {
             AddSequence(seq);
         }

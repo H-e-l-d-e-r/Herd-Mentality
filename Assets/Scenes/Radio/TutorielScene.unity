@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 773f151c653d64d42a4e45ecc46dbdfc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -172,6 +172,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1723977704}
+        m_TargetAssemblyTypeName: StartSceneScript, Assembly-CSharp
+        m_MethodName: NextTutorielStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSequenceValidated:
     m_PersistentCalls:
       m_Calls: []
@@ -246,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestManager
   Library: {fileID: 0}
+  RadioManager: {fileID: 0}
 --- !u!1 &289477112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,8 +1466,8 @@ MonoBehaviour:
   TutorielAntenna: {fileID: 11400000, guid: 1632d32a3487f24468902096002d3994, type: 2}
   TutorielFrequencyModulator: {fileID: 11400000, guid: 9e00838d0e535ca4fa1469f2c822179c, type: 2}
   TutorielFrequencyForce: {fileID: 11400000, guid: dd8c7422c335316468f55c939987657c, type: 2}
-  TutorielEnd: {fileID: 11400000, guid: c73153ddd0b028648bbd830eadbb08d3, type: 2}
-  TutorielPostGameplay: {fileID: 11400000, guid: c73153ddd0b028648bbd830eadbb08d3, type: 2}
+  TutorielEnd: {fileID: 11400000, guid: e35db89ddd4f8a649977d32995cf7a14, type: 2}
+  TutorielPostGameplay: {fileID: 11400000, guid: e35db89ddd4f8a649977d32995cf7a14, type: 2}
   StartEvent:
     m_PersistentCalls:
       m_Calls: []

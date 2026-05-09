@@ -18,8 +18,6 @@ public class PlayerBehaviour : MonoBehaviour
     // cooldown
     private float m_interactCooldown;
     private float m_cameraCooldown;
-
-    private EntityBehaviour m_lastEntityHover;
     private int m_currentCamera;
 
     void Start()
@@ -40,48 +38,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
-        // clear focus
-        if (m_lastEntityHover)
-        {
-            m_lastEntityHover.LostFocus();
-            m_lastEntityHover = null;
-        }
-
         // avoid inputs over dialogues
         if(!(Dialogue.Instance != null && Dialogue.Instance.IsPlaying))
         {
             UpdateCamera();
-            UpdateRaycast();
-        }
-    }
-
-    void UpdateRaycast()
-    {
-        bool canInteract = true;
-        
-        // cooldown
-        if (m_interactCooldown > Mathf.Epsilon)
-        {
-            m_interactCooldown -= Time.deltaTime;
-            canInteract = false;
-        }
-        
-        Ray ray = Camera.main.ScreenPointToRay(m_mousePositionInput.ReadValue<Vector2>());
-
-        // trace raycast and check for any entity component
-        if (Physics.Raycast(ray,out RaycastHit hitInfo) && hitInfo.transform.TryGetComponent(out EntityBehaviour behaviour))
-        {
-            m_lastEntityHover = behaviour;
-
-            // when the mouse is over an entity
-            behaviour.Focus();
-
-            // when the play interact with it
-            if (m_interactInput.ReadValue<float>() > 0.5f && canInteract) // ray cast 
-            {
-                behaviour.Interact();
-                m_interactCooldown = GlobalGameSettings.Instance.GenericInputCooldown;
-            }
         }
     }
 

@@ -8,6 +8,11 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         get => m_source != null ? m_source.isPlaying : false;
     }
 
+    public bool IsListenable
+    {
+        get => VolumeMultiplicator * Volume > c_listenTreshold;
+    }
+
     [Header("Audio Parameters")]
     public AudioClip Audio;
     public AudioMixerGroup Group;
@@ -16,12 +21,12 @@ public class RadioBroadcastBehaviour : MonoBehaviour
     public float Volume;
     public bool Loop;
 
+    public BroadcastMask Mask;
+
     [HideInInspector]
     public float VolumeMultiplicator = 1.0f;
 
-    [Header("Radio Parameters")]
-    public float Freq;
-    public float Bandwidth;
+    private const float c_listenTreshold = 0.01f;
 
     private AudioSource m_source;
 

@@ -8,6 +8,9 @@ public class RadioBehaviour : MonoBehaviour
     public AudioListener Listener;
     public RadioManager Manager;
 
+    public RadioKnobComponent FreqKnob;
+    public AntennaTunerBehaviour Antenna;
+
     [Header("Parameters")]
     public float MinFreq;
     public float MaxFreq;
@@ -30,6 +33,7 @@ public class RadioBehaviour : MonoBehaviour
         set
         {
             m_isEnabled = value;
+
             if (IsOn)
             {
                 EnableBroadcasts();
@@ -41,9 +45,6 @@ public class RadioBehaviour : MonoBehaviour
         }
     } // NOUVEAU MON KIKI
 
-    [HideInInspector]
-    public float AntennaSignalQuality = 1.0f; // 1 = Son Parfait, 0 = Que du bruit blanc
-
     // NEW Pour l'Audimat
     [HideInInspector]
     public float FrequencyQuality = 0.0f; // 1 = Frequence parfaite, 0 = Que du bruit
@@ -54,6 +55,7 @@ public class RadioBehaviour : MonoBehaviour
 
     private float m_maxVolumeMult = 0.9f;
     private float m_freq = 0.0f;
+    private float m_orientation = 0.0f;
 
     private bool m_isEnabled;
 
@@ -66,6 +68,16 @@ public class RadioBehaviour : MonoBehaviour
         k_maxFreq = MaxFreq;
 
         m_broadcasts = new List<RadioBroadcastBehaviour>(Broadcasts);
+
+        FreqKnob.OnValueChange.AddListener((value) =>
+        {
+            m_freq = value;
+        });
+
+        Antenna.OnValueChange.AddListener((value) =>
+        {
+            m_orientation = value;
+        });
 
         RegisterBroadcasts();
 
@@ -97,11 +109,6 @@ public class RadioBehaviour : MonoBehaviour
     public void TogglePower()
     {
         IsOn = !IsOn; // Inverse l'état (Mamie branché, mamie débranché, mamie vivante, mamie morte
-    }
-
-    public void UpdateFrequenceKnobs(float v)
-    {
-        m_freq = v;
     }
 
     void EnableBroadcasts()
@@ -166,23 +173,30 @@ public class RadioBehaviour : MonoBehaviour
 
         float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
 
+        // orientation entre 0f et 1f
+        float ori = Antenna.Value; 
+
         float noiseVolume = 0.0f;
         float maxTuningAccuracy = 0.0f; // NOUVEAU : Pour l'audimat
 
         foreach (RadioBroadcastBehaviour be in m_broadcasts)
         {
+            // frequence mask
             // utilisation d'une cloche de gauss :3 (T sur qu'il y a rien qui cloche? Moi je pense que si)
-            float delta = Mathf.Abs(freq - be.Freq);
-            float rawExp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
+            float deltaF = Mathf.Abs(freq - be.Mask.Frequence);
+            float rawExpF = Mathf.Exp(-Mathf.Pow(deltaF / (be.Mask.Bandwidth / 2), 2));
+
+            // orientation mask
+            float deltaO = Mathf.Abs(ori - be.Mask.Orientation);
+            float rawExpO = Mathf.Exp(-Mathf.Pow(deltaO / (be.Mask.OrientationTresh / 2), 2));
+
+            float signalStrength = rawExpF * rawExpO;
 
             // On garde la meilleure précision pour l'audimat
-            maxTuningAccuracy = Mathf.Max(maxTuningAccuracy, rawExp);
+            maxTuningAccuracy = Mathf.Max(maxTuningAccuracy, signalStrength);
 
-            // On applique la qualité de l'antenne au volume
-            float exp = rawExp * AntennaSignalQuality;
-
-            be.VolumeMultiplicator = exp * GlobalVolume;
-            noiseVolume = Mathf.Max(noiseVolume, exp);
+            be.VolumeMultiplicator = Mathf.Clamp01(GlobalVolume * signalStrength);
+            noiseVolume = Mathf.Max(noiseVolume, signalStrength);
         }
 
         // On assigne la qualité finale de la fréquence
@@ -197,21 +211,22 @@ public class RadioBehaviour : MonoBehaviour
     {
         if (m_broadcasts == null || m_broadcasts.Count == 0) return null;
 
-        RadioBroadcastBehaviour bestMatch = null;
-        float maxExp = 0.1f; // Faut capter à au moins 10% pour pouvoir pirater
-
-        foreach (var be in m_broadcasts)
-        {
-            float delta = Mathf.Abs(m_freq - be.Freq);
-            float exp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
-
-            if (exp > maxExp)
-            {
-                maxExp = exp;
-                bestMatch = be;
-            }
-        }
-
-        return bestMatch;
+        //RadioBroadcastBehaviour bestMatch = null;
+        //float maxExp = 0.1f; // Faut capter à au moins 10% pour pouvoir pirater
+        //
+        //foreach (var be in m_broadcasts)
+        //{
+        //    float delta = Mathf.Abs(m_freq - be.Freq);
+        //    float exp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
+        //
+        //    if (exp > maxExp)
+        //    {
+        //        maxExp = exp;
+        //        bestMatch = be;
+        //    }
+        //}
+        //
+        //return bestMatch;
+        return null;
     }
 }

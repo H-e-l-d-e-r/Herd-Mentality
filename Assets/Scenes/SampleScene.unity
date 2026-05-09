@@ -171,9 +171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueTypewritter
   PanelGroup: {fileID: 7590212910424579069}
-  NextCallToAction: {fileID: 1837355538}
+  CharacterNamePanel: {fileID: 0}
+  AudioSource: {fileID: 0}
   DialogueText: {fileID: 551622826}
   CharacterNameText: {fileID: 2116712764}
+  NextCallToAction: {fileID: 1837355538}
+  ActorLeft: {fileID: 0}
+  ActorRight: {fileID: 0}
 --- !u!1 &162719400
 GameObject:
   m_ObjectHideFlags: 0

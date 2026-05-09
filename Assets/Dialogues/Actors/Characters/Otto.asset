@@ -21,5 +21,5 @@ MonoBehaviour:
   SpriteSide: 0
   CharacterAudio: {fileID: 8300000, guid: be191ff749b89d649984166c9e6b4aa8, type: 3}
   AudioProbability: 0.5
-  PitchRandomness: {x: 1, y: 1}
+  PitchRandomness: {x: 0.7, y: 1.2}
   VolumeRandomness: {x: 1, y: 1}
