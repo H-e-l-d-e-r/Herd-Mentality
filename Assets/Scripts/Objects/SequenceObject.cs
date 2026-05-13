@@ -5,24 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Sequence", menuName = "Herd Mentality/Sequence")]
 public class SequenceObject : CollectibleObject
 {
-    
+    [Header("Message")]
+    [Tooltip("Which audio will be played")]
+    public AudioClip Clip;
 
-    /*public VinylObject[] Blocs;
-    public override string ToString()
+    [Tooltip("The total length of the message")]
+    public float Duration;
+
+    public DecryptionsResults[] Translations = new DecryptionsResults[]
     {
-        string str = $"{Name} (";
-        for (int i = 0; i < Blocs.Length; i++)
-        {
-            if(i > 0)
-            {
-                str += " + ";
-            }
-
-            str += Blocs[i].Name;
-        }
-
-        str += ")";
-        
-        return str;
-    }*/
+        new DecryptionsResults(DecryptionModes.FromAudio, ""),
+        new DecryptionsResults(DecryptionModes.FromMorse, ""),
+        new DecryptionsResults(DecryptionModes.FromInvertAudio, ""),
+    };
 }

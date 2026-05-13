@@ -21,7 +21,10 @@ public static class Extension
     {
         foreach (Transform child in self)
         {
-            Object.Destroy(child.gameObject);
+            if (child.gameObject.activeInHierarchy)
+            {
+                Object.Destroy(child.gameObject);            
+            }
         }
     }
 }

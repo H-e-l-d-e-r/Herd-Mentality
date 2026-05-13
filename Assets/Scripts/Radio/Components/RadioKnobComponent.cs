@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.Rendering.DebugUI;
@@ -9,8 +11,12 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
     public float MinValue;
     public float MaxValue;
 
-    [Tooltip("Multiplicateur de vitesse pour tourner le bouton. 1 = Normal, 2 = Rapide, 0.5 = Lent/Precis")]
+    [Space]
+    public bool UseAngle = true;
+    public bool UseDistance = true;
+
     public float Sensitivity = 1.0f;
+    public float Exponential;
 
     [Header("Components")]
     public RectTransform Borehole;
@@ -27,35 +33,50 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         NullComponents.ThrowIfNull(Borehole);
         NullComponents.ThrowIfNull(Knob);
 
-        SetValue(InitialValue);
+        SetValue(Default);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        float deltaX = eventData.position.x - m_lastPointPosition.x;
-        m_lastPointPosition = eventData.position;
+        float delta = 0f;
+        float angle = 0f;
+        float deltaAngle = 0f;
+        float deltaDist = 0f;
 
-        // create an exponential acceleration curve
-        float increase = Mathf.Min((Mathf.Abs(Value - m_previousValue) + StepIncrement) * (Sensitivity / 100.0f), 15.0f);
+        // get mouvements directions
+        Vector2 curDir = eventData.position - new Vector2(transform.position.x, transform.position.y);
+        Vector2 lastDir = m_lastPointPosition - new Vector2(transform.position.x, transform.position.y);
+        
+        // invert order or not?
+        float order = -1.0f;
 
-        // C'est ici que la magie opere : on multiplie par la Sensitivity !
-        float deltaDeg = deltaX * StepIncrement * increase;
+        // calculate de difference between the current and the last angle
+        float currentAngle = Mathf.Atan2(curDir.y, curDir.x) * Mathf.Rad2Deg;
+        float lastAngle = Mathf.Atan2(lastDir.y, lastDir.x) * Mathf.Rad2Deg;
 
-        if (IsInfinite)
+        // delta angle
+        angle = currentAngle - lastAngle;
+
+        if (UseAngle)
         {
-            m_totalAngles += deltaDeg * Time.deltaTime;
-            base.SetValue(Mathf.Clamp(Value + deltaDeg, MinValue, MaxValue));
+            deltaAngle = angle;
         }
-        else
+
+        if (UseDistance)
         {
-            float newAngle = Mathf.Clamp(m_totalAngles + deltaDeg, -k_ARC_H, k_ARC_H);
-            deltaDeg = newAngle - m_totalAngles;
-            m_totalAngles = newAngle * Time.deltaTime;
-
-            float t = (m_totalAngles + k_ARC_H) / (k_ARC_H * 2.0f);
-            base.SetValue(Mathf.Lerp(MinValue, MaxValue, t));
+            deltaDist = Vector2.Distance(m_lastPointPosition, eventData.position) / Sensitivity;        
         }
 
+        // calc an increment
+        float exp = Mathf.Min(Mathf.Exp(delta), Exponential) / Sensitivity;
+
+        delta = (deltaAngle + deltaDist * Mathf.Sign(angle)) * order;
+        delta *= Increment;
+
+        //m_lastPointPosition = eventData.position;
+
+        // updates
+        SetValue(Value + delta);
         ApplyRotation();
     }
 
@@ -71,6 +92,11 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
         m_previousValue = Value; 
     }
 
+    /// <summary>
+    /// Setting value overwrite.
+    /// There, we add value claming and angle calculations
+    /// </summary>
+    /// <param name="_value"></param>
     public override void SetValue(float _value)
     {
         float value;
@@ -97,6 +123,6 @@ public class RadioKnobComponent : RadioComponentBehaviour<float>, IDragHandler, 
 
     void ApplyRotation()
     {
-        Knob.localRotation = Quaternion.Euler(0, 0, -m_totalAngles);
+        Knob.localRotation = Quaternion.Euler(0, 0, -(m_totalAngles / Sensitivity));
     }
 }

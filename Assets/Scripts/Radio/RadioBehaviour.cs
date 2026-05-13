@@ -10,6 +10,7 @@ public class RadioBehaviour : MonoBehaviour
 
     public RadioKnobComponent FreqKnob;
     public AntennaTunerBehaviour Antenna;
+    public RadioDecrypter Decrypter;
 
     [Header("Parameters")]
     public float MinFreq;
@@ -72,11 +73,13 @@ public class RadioBehaviour : MonoBehaviour
         FreqKnob.OnValueChange.AddListener((value) =>
         {
             m_freq = value;
+            Decrypter.InteruptRecoding();
         });
 
         Antenna.OnValueChange.AddListener((value) =>
         {
             m_orientation = value;
+            Decrypter.InteruptRecoding();
         });
 
         RegisterBroadcasts();
@@ -102,7 +105,15 @@ public class RadioBehaviour : MonoBehaviour
         {
             UpdateSwitchFreq();
 
-            OnRadioTick.Invoke($"{(int)(Manager.Timer / 60)}m {(int)(Manager.Timer % 60)}s");
+            foreach (RadioBroadcastBehaviour be in m_broadcasts)
+            {
+                if (be.enabled)
+                {
+                    be.RadioUpdate();
+                }
+            }
+
+            OnRadioTick.Invoke($"{(int)(Manager.GameClock.Now / 60)}m {(int)(Manager.GameClock.Now % 60)}s");
         }
     }
 
@@ -207,26 +218,42 @@ public class RadioBehaviour : MonoBehaviour
 
     //  le système de piratage (Hack)
 
-    public RadioBroadcastBehaviour GetTargetedBroadcast()
+    public RadioBroadcastBehaviour GetCurrentBroadcast()
     {
         if (m_broadcasts == null || m_broadcasts.Count == 0) return null;
 
-        //RadioBroadcastBehaviour bestMatch = null;
-        //float maxExp = 0.1f; // Faut capter à au moins 10% pour pouvoir pirater
-        //
-        //foreach (var be in m_broadcasts)
-        //{
-        //    float delta = Mathf.Abs(m_freq - be.Freq);
-        //    float exp = Mathf.Exp(-Mathf.Pow(delta / (be.Bandwidth / 2), 2));
-        //
-        //    if (exp > maxExp)
-        //    {
-        //        maxExp = exp;
-        //        bestMatch = be;
-        //    }
-        //}
-        //
-        //return bestMatch;
-        return null;
+        float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
+
+        float ori = Antenna.Value; 
+
+        // minimum captable signal
+        float maxSignal = 0.1f;
+        RadioBroadcastBehaviour radio = null;
+        
+        foreach (var be in m_broadcasts)
+        {
+            // if the broadcast cannot be heard, we skip it
+            if (!be.IsListenable)
+            {
+                continue;
+            }
+
+            float deltaF = Mathf.Abs(freq - be.Mask.Frequence);
+            float rawExpF = Mathf.Exp(-Mathf.Pow(deltaF / (be.Mask.Bandwidth / 2), 2));
+
+            // orientation mask
+            float deltaO = Mathf.Abs(ori - be.Mask.Orientation);
+            float rawExpO = Mathf.Exp(-Mathf.Pow(deltaO / (be.Mask.OrientationTresh / 2), 2));
+
+            float signalStrength = rawExpF * rawExpO;
+        
+            if (signalStrength > maxSignal)
+            {
+                maxSignal = signalStrength;
+                radio = be;
+            }
+        }
+        
+        return radio;
     }
 }

@@ -21,17 +21,4 @@ MonoBehaviour:
   AppreciationIncreaseMusic: 0.5
   AppreciationDecreaseMusic: 0.5
   AppreciationIncrease: 0.2
-  Sequences:
-  - {fileID: 11400000, guid: 0e2444aedc40d3a4a81dabcc7788ea1e, type: 2}
-  - {fileID: 11400000, guid: 1b7070d55aa524147b6aed627852555d, type: 2}
-  - {fileID: 11400000, guid: 940ce06ab89240e4d8b04d02b9033613, type: 2}
-  - {fileID: 11400000, guid: c0ae0db174834d8439fd3b6d0eca3bf3, type: 2}
-  - {fileID: 11400000, guid: 1dc8a451c99e5534b9f676039f7e1a74, type: 2}
-  - {fileID: 11400000, guid: 4573a125bea49c341b52ec936d189630, type: 2}
-  - {fileID: 11400000, guid: 4313e307beabef746bd8dcb6736cdfba, type: 2}
-  - {fileID: 11400000, guid: 404fe9af2dfea6647964a4aa5e052b69, type: 2}
-  - {fileID: 11400000, guid: cdd8d6d8e4f71b4488ffeb130207a8c8, type: 2}
-  Quests:
-  - {fileID: 11400000, guid: 2f81c8542a5fd419bb1324344fda12ae, type: 2}
-  - {fileID: 11400000, guid: 582a367241eaeedd5b87008f2d9e25ee, type: 2}
-  - {fileID: 11400000, guid: 6f2eaa6a7cff864f8a4e489724403020, type: 2}
+  Sequences: []

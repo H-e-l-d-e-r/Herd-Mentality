@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -13,8 +14,14 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         get => VolumeMultiplicator * Volume > c_listenTreshold;
     }
 
+    public bool HasNext
+    {
+        get => m_current != null ? m_current.Next != null : false;
+    }
+
+    public SequenceObject Current => m_current != null ? m_current.Object : null;
+
     [Header("Audio Parameters")]
-    public AudioClip Audio;
     public AudioMixerGroup Group;
 
     [Range(0f, 1f)]
@@ -23,34 +30,75 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     public BroadcastMask Mask;
 
+    [Header("Messages")]
+    public BroadcastMessageObject[] Messages;
+
     [HideInInspector]
     public float VolumeMultiplicator = 1.0f;
 
     private const float c_listenTreshold = 0.01f;
 
     private AudioSource m_source;
+    private BroadcastMessageObject m_current;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        // 
+        if (Messages.Length > 0)
+        {
+            m_current = Messages[0];
+            m_current.Next = null;
+            m_current.Prev = null;
+
+            for(int index = 1; index < Messages.Length; index++)
+            {
+                m_current.Next = Messages[index];
+                m_current.Next.Prev = m_current;
+
+                m_current = m_current.Next;
+            }
+
+            m_current = null;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateAudio();
-    }
-
-    void UpdateAudio()
+    public void RadioUpdate()
     {
         if (m_source != null && m_source.isPlaying)
         {
             m_source.volume = Volume * VolumeMultiplicator;
         }
+
+        if (m_current != null)
+        {
+            // if there is a next message and we need to increase the counter
+            if (m_current.Next != null && 
+                RadioManager.Instance.GameClock.Now > m_current.Next.StartTime)
+            {
+                m_current = m_current.Next;
+
+                // play audio
+                Stop();
+                Play(m_current.Object.Clip);
+            }
+
+            if(RadioManager.Instance.GameClock.Now > m_current.EndTime)
+            {
+                Stop();
+            }
+
+        } else if(Messages.Length > 0)
+        {
+            m_current = Messages[0];
+            Play(m_current.Object.Clip);
+        }
     }
 
-    public void Play() => Play(Audio);
+    public void Play()
+    {
+
+    }
+
     public void Play(AudioClip clip)
     {
         if(m_source != null)
@@ -78,4 +126,44 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         Destroy(m_source);
         m_source = null;
     } 
+
+
+    public double GetTimeToNext()
+    {
+        if (!HasNext)
+        {
+            return m_current.EndTime - RadioManager.Instance.GameClock.Now;
+        }
+
+        return m_current.Next.StartTime - RadioManager.Instance.GameClock.Now;
+    }
+
+    [Serializable]
+    public class BroadcastMessageObject
+    {
+        public float Time;
+        public SequenceObject Object;
+
+        // linked list
+        public BroadcastMessageObject Prev;
+        public BroadcastMessageObject Next;
+
+        public float StartTime
+        {
+            get {
+                float offset = Time;
+                BroadcastMessageObject self = this;
+                
+                while (self.Prev != null)
+                {
+                    offset += self.Prev.StartTime;
+                    self = self.Prev;
+                }
+
+                return offset;
+            }
+        }
+
+        public float EndTime => StartTime + Object.Duration;
+    }
 }

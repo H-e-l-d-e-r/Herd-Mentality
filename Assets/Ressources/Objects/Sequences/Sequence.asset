@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: S3_JL1
-  m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
-  Name: Rassemblement des Lettristes
-  Description: "Les jeunes lettriste veulent parler d'un rassemblement dans l'universit\xE9."
+  m_Name: Sequence
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: Won't Remeber
+  Description: 
   Like:
-    YoungLetterists: 1
+    YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
   Dislike:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Blocs:
-  - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
-  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
+  Clip: {fileID: 8300000, guid: d028b7d9fb4d62044b4f03025d5e07de, type: 3}
+  Duration: 30
+  Translations:
+  - Mode: 0
+    Content: Coucou depuis l'audio.
+  - Mode: 1
+    Content: Coucou depuis le morse
+  - Mode: 2
+    Content: Coucou depuis l'inverted audio

@@ -18,8 +18,8 @@ public class AntennaTunerBehaviour : RadioComponentBehaviour<float>
     {
         Slider.onValueChanged.AddListener((value) => SetValue(value));
 
-        SetValue(InitialValue);
-        Slider.value = 0.5f + (InitialValue / MaxAngle);
+        SetValue(Default);
+        Slider.value = 0.5f + (Default / MaxAngle);
     }
 
     public override void SetValue(float value)

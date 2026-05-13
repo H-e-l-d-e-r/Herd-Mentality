@@ -8,8 +8,8 @@ public abstract class RadioComponentBehaviour<T> : MonoBehaviour
 {
     [SerializeField]
     [Header("Radio Component Parent")]
-    public T InitialValue;
-    public T StepIncrement;
+    public T Default;
+    public T Increment;
 
     public T Value => m_value;
 
@@ -20,7 +20,7 @@ public abstract class RadioComponentBehaviour<T> : MonoBehaviour
 
     protected void Reset()
     {
-        SetValue(InitialValue);
+        SetValue(Default);
     }
 
     public virtual void SetValue(T value)

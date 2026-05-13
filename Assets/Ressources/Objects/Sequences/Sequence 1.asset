@@ -10,19 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: S6_JL2
-  m_EditorClassIdentifier: Assembly-CSharp::RadioSequenceObject
-  Name: Sauvetage de prof
-  Description: Les Jeunes lettristes veulent rassembler du monde pour sauver Keating.
+  m_Name: Sequence 1
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: Talking to the Wind
+  Description: 
   Like:
-    YoungLetterists: 1
+    YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
   Dislike:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Blocs:
-  - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
-  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
-  - {fileID: 11400000, guid: 27a601cb7564b9145ae5d7e2d75e97bf, type: 2}
+  Clip: {fileID: 8300000, guid: 1d5f47dc39e9fd34f8b195b5bf3dec26, type: 3}
+  Duration: 30
+  Translations:
+  - Mode: 0
+    Content: Coucou depuis l'audio.
+  - Mode: 1
+    Content: Coucou depuis le morse
+  - Mode: 2
+    Content: Coucou depuis l'inverted audio

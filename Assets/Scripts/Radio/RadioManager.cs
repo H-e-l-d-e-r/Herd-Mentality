@@ -17,8 +17,6 @@ public class RadioManager : MonoBehaviour
 {
     public static RadioManager Instance { get; private set; }
 
-    public float Timer => m_timer;
-
     [Header("Components")]
     public VinylRecordPlayer VinylPlayer;
     public RadioBehaviour RadioBehaviour;
@@ -32,7 +30,8 @@ public class RadioManager : MonoBehaviour
     public UnityEvent OnPlayTimeEnd;
     public UnityEvent<SequenceObject> OnSequenceValidated;
 
-    private float m_timer;
+    [ReadOnly]
+    public Clock GameClock;
 
     private float m_currentAudimat = 0f;
     private float m_audimatLogTimer = 10.0f;
@@ -63,8 +62,8 @@ public class RadioManager : MonoBehaviour
     private void Start()
     {
         NullComponents.ThrowIfNull(VinylPlayer);
-
-        m_timer = GlobalGameSettings.Instance.RadioPlayTime * 60.0f;
+        
+        GameClock = new Clock();
 
         m_playedVinyls = new Queue<VinylObject>();
         m_targetSequences = new Queue<SequenceObject>();
@@ -136,6 +135,8 @@ public class RadioManager : MonoBehaviour
         //    
         //    return;
         //}
+
+        GameClock.Now += Time.deltaTime;
 
         UpdateStats();
 
@@ -305,5 +306,14 @@ public class RadioManager : MonoBehaviour
         m_validatedSequences.AddRange(list);
 
         return list.ToArray();
+    }
+
+    [Serializable]
+    public struct Clock
+    {
+        /// <summary>
+        /// Seconds from the start of the radio
+        /// </summary>
+        public double Now;
     }
 }

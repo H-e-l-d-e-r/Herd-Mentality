@@ -35,8 +35,14 @@ namespace DialogueSystem
 
         public string CharacterName
         {
-            get => CharacterNameText.text;
-            set => CharacterNameText.SetText(value);
+            get => m_hasCharacterPanel ? CharacterNameText.text : string.Empty;
+            set
+            {
+                if (m_hasCharacterPanel) 
+                { 
+                    CharacterNameText.SetText(value);
+                }
+            }
         }
 
         public bool IsFinish
@@ -58,6 +64,11 @@ namespace DialogueSystem
 
         private const double k_MINIMUM_TIME_DELAY = double.Epsilon;
 
+        private bool m_hasCharacterPanel;
+        private bool m_hasAudioSource;
+        private bool m_hasCTA;
+        private bool m_hasActorImages;
+
         private StringBuilder m_string;
         private DialogueCommand m_command;
 
@@ -67,8 +78,16 @@ namespace DialogueSystem
 
         void Awake()
         {
+            NullComponents.ThrowIfNull(PanelGroup);
+
             // constructor
             m_string = new StringBuilder();
+
+            // check for components to avoid throwing errors 
+            m_hasCharacterPanel = CharacterNameText != null && CharacterNamePanel != null;
+            m_hasAudioSource = AudioSource != null;
+            m_hasCTA = NextCallToAction != null;
+            m_hasActorImages = ActorLeft != null && ActorRight != null;
         } 
 
         void Start()
@@ -132,7 +151,17 @@ namespace DialogueSystem
                 return;
             }
 
-            AddStringToBuffers(m_command.Text.Substring(m_characterIndex), m_command.Text.Length - m_characterIndex);
+            AddStringToBuffers(
+                m_command.Text.Substring(m_characterIndex), 
+                m_command.Text.Length - m_characterIndex
+            );
+        }
+
+        public void Clear()
+        {
+            ClearBuffers();
+            ClearComponents();
+            ClearTypewritterCooldowns();
         }
 
         private void ClearBuffers()
@@ -145,18 +174,28 @@ namespace DialogueSystem
 
         private void ClearComponents()
         {
-            CharacterNamePanel.gameObject.SetActive(false);
             DialogueText.SetText(string.Empty);
-            CharacterNameText.SetText(string.Empty);
 
-            ActorLeft.sprite = null;
-            ActorRight.sprite = null;
-            ActorLeft.color = new Color(0, 0, 0, 0);
-            ActorRight.color = new Color(0, 0, 0, 0);
+            if (m_hasCharacterPanel)
+            {        
+                CharacterNamePanel.gameObject.SetActive(false);
+                CharacterNameText.SetText(string.Empty);
+            }
 
-            AudioSource.pitch = 1.0f;
-            AudioSource.volume = 1.0f;
-            AudioSource.clip = null;
+            if (m_hasActorImages)
+            {
+                ActorLeft.sprite = null;
+                ActorRight.sprite = null;
+                ActorLeft.color = new Color(0, 0, 0, 0);
+                ActorRight.color = new Color(0, 0, 0, 0);
+            }
+
+            if (m_hasAudioSource)
+            {
+                AudioSource.pitch = 1.0f;
+                AudioSource.volume = 1.0f;
+                AudioSource.clip = null;
+            }
         } 
 
         private void ClearTypewritterCooldowns()
@@ -240,9 +279,13 @@ namespace DialogueSystem
 
         void UpdateCharacterUI()
         {
-            CharacterNamePanel.gameObject.SetActive(true);
-            CharacterName = m_command.Actor.Name;
-            if (m_command.Actor.HasSprites)
+            if (m_hasCharacterPanel)
+            {
+                CharacterNamePanel.gameObject.SetActive(true);
+                CharacterName = m_command.Actor.Name;
+            }
+
+            if (m_hasActorImages && m_command.Actor.HasSprites)
             {
                 uint sprite = (uint)Mathf.Min(m_command.ActorSprite, m_command.Actor.Sprites.Length - 1);
 
@@ -266,7 +309,7 @@ namespace DialogueSystem
                 return;
             }
 
-            if(m_command.Actor.CharacterAudio == null)
+            if(!m_hasAudioSource || m_command.Actor.CharacterAudio == null)
             {
                 return;
             }

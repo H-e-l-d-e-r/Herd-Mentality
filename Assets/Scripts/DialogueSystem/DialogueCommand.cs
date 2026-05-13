@@ -52,6 +52,14 @@ namespace DialogueSystem
             Parent = this;
         }
 
+        public DialogueCommand(string name, DialogueActor actor, string text) : this(null, null)
+        {
+            Name = name;
+            Actor = actor;
+            Text = text;
+            Parent = this;
+        }
+
         internal void ProcessCommand(DialogueState newState)
         {
             m_state = newState;

@@ -31,6 +31,7 @@ public class UINotify : MonoBehaviour
     void OnEnable()
     {
         GroupComponent.alpha = 0f;
+        GroupComponent.blocksRaycasts = false;
         Text = string.Empty;
         m_remaingTime = 0f;
         m_duration = 0f;
