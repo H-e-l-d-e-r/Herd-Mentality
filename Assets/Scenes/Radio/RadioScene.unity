@@ -9125,6 +9125,7 @@ MonoBehaviour:
   Manager: {fileID: 207092272}
   FreqKnob: {fileID: 3924604024226767123}
   Antenna: {fileID: 395166788287936079}
+  Decrypter: {fileID: 6747454719012529717}
   MinFreq: 3000
   MaxFreq: 13000
   GlobalVolume: 1
@@ -9825,6 +9826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioDecrypter
   RecordButton: {fileID: 1614083459}
   TranslateButton: {fileID: 1574971220}
+  ProgressBar: {fileID: 1985127566}
   DecryptionModeSelector: {fileID: 2058648907}
   Typewritter: {fileID: 5584511444739376208}
 --- !u!1 &6755407014263960614
