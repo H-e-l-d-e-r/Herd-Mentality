@@ -26,8 +26,10 @@ MonoBehaviour:
   Duration: 30
   Translations:
   - Mode: 0
-    Content: Coucou depuis l'audio.
+    p_content: 'Hello from Audio :]'
   - Mode: 1
-    Content: Coucou depuis le morse
+    p_content: 'Hello from Morse :]'
   - Mode: 2
-    Content: Coucou depuis l'inverted audio
+    p_content: 'Hello from Invert Audio :]'
+  - Mode: 3
+    p_content: You have found caesar

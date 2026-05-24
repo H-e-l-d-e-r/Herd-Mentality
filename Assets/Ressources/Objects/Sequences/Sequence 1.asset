@@ -26,8 +26,10 @@ MonoBehaviour:
   Duration: 30
   Translations:
   - Mode: 0
-    Content: Coucou depuis l'audio.
+    p_content: "Haii from Audio \t"
   - Mode: 1
-    Content: Coucou depuis le morse
+    p_content: Haii from Morse
   - Mode: 2
-    Content: Coucou depuis l'inverted audio
+    p_content: Haii from invert audio
+  - Mode: 3
+    p_content: WOWO CAESAR IS HEREE
