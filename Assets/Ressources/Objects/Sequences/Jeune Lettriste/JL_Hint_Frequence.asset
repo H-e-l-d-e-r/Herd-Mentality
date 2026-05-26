@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: JL_Hint_Frequence
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: JL_Hint_Frequence
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 0}
+  Duration: 0
+  Translations:
+  - Mode: 0
+    p_content: 'Xirwmsr ezig piw irwimkrerxw, izmxid hi hmjjywiv wyv pe jviuyirgi
+      5645. Iwwecid 5538 ; wm gipe ri jsrgxmsrri tew, iwwecid 398. Ni vitixi : izmxid
+      hi xvst hmjjywiv.'
+  - Mode: 1
+    p_content: 
+  - Mode: 2
+    p_content: 
+  - Mode: 3
+    p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+      12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
+      : \xE9vitez de trop diffuser."

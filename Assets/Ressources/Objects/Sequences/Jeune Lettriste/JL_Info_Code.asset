@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: JL_Info_Code
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: JL_Info_Code
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 0}
+  Duration: 5
+  Translations:
+  - Mode: 0
+    p_content: "21H12\nDan tu m'avais promis que tu m'offrirais des fleurs.\nOh,
+      c'est bon je suis au fleuriste.\nRam\xE8ne toi ici tout de suite. Je rigole
+      pas avec toi.\nMon cher je ne rigole point, mon travail fut plus long que d'habitude.\nInsolent
+      va, je suis sur tu mens.\nRaclette ce soir ? Pour me faire pardonner ca te
+      vas ?\n3057"
+  - Mode: 1
+    p_content: 
+  - Mode: 2
+    p_content: 

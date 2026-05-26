@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: JL_Hint_Temps
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: JL_Hint_Temps
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 0}
+  Duration: 5
+  Translations:
+  - Mode: 0
+    p_content: 'Glerkiqirx h''liyvi hy virhid-zsyw. Ey pmiy hi 66l74, sr glerki tsyv
+      65l74, nywxi etviw uyi pi gsrgmivki emx jivqi pe kvmppi. Ni vitixi : 65l74.'
+  - Mode: 1
+    p_content: 
+  - Mode: 2
+    p_content: 
+  - Mode: 3
+    p_content: "Changement d'heure du rendez-vous. Au lieu de 22h30, on change pour
+      21h30, juste apr\xE8s que le concierge ait ferm\xE9 la grille. Je r\xE9p\xE8te
+      : 21h30."

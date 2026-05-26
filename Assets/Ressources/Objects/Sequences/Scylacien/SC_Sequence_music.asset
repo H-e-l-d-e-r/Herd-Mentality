@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: SC_Sequence_music
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: SC_Sequence_music
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 0}
+  Duration: 4
+  Translations:
+  - Mode: 0
+    p_content: "Bonsoir tout le monde, on se retrouve pour la tier list des 4 sons
+      les plus \xE9cout\xE9s de ce mois. Tout en bas, en E on a \"talking to the
+      wind\". Pour continuer, en D on a \"Won't Remember\", puis en C \"Coolgirl\",
+      la num\xE9ro 1 des jeunes lettristes, mais  elle ne fait pas le poids. En haut
+      du panier en B on a \"Waters\". Finalement en A...\"Mercury\"!!! F\xE9licitations
+      \xE0 eux, merci de nous avoir \xE9cout\xE9 et a la prochaine."
+  - Mode: 1
+    p_content: 
+  - Mode: 2
+    p_content: 
