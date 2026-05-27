@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -40,7 +41,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     private AudioSource m_source;
     private BroadcastMessageObject m_current;
-
+    private double m_loopOffset = 0;
     private void Start()
     {
         // 
@@ -50,7 +51,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
             m_current.Next = null;
             m_current.Prev = null;
 
-            for(int index = 1; index < Messages.Length; index++)
+            for (int index = 1; index < Messages.Length; index++)
             {
                 m_current.Next = Messages[index];
                 m_current.Next.Prev = m_current;
@@ -62,6 +63,8 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
     }
 
+    
+
     public void RadioUpdate()
     {
         if (m_source != null && m_source.isPlaying)
@@ -71,26 +74,32 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
         if (m_current != null)
         {
-            // if there is a next message and we need to increase the counter
-            if (m_current.Next != null && 
-                RadioManager.Instance.GameClock.Now > m_current.Next.StartTime)
+            double now = RadioManager.Instance.GameClock.Now - m_loopOffset;
+
+            //  toujours attendre la fin du clip actuel, peu importe le StartTime du suivant
+            if (now > m_current.EndTime)
             {
-                m_current = m_current.Next;
+                if (m_current.Next == null)
+                {
+                    m_loopOffset = RadioManager.Instance.GameClock.Now;
+                    m_current = Messages[0];
+                }
+                else
+                {
+                    m_current = m_current.Next;
+                }
 
-                // play audio
+                Debug.Log(m_current.Object.Name);
                 Stop();
-                Play(m_current.Object.Clip);
+                Play(m_current);
+                return;
             }
-
-            if(RadioManager.Instance.GameClock.Now > m_current.EndTime)
-            {
-                Stop();
-            }
-
-        } else if(Messages.Length > 0)
+        }
+        else if (Messages.Length > 0)
         {
+            m_loopOffset = RadioManager.Instance.GameClock.Now;
             m_current = Messages[0];
-            Play(m_current.Object.Clip);
+            Play(m_current);
         }
     }
 
@@ -99,9 +108,17 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     }
 
+    public void Play(BroadcastMessageObject @object)
+    {
+        if (m_source != null) return;
+
+        @object.Time = (float)(RadioManager.Instance.GameClock.Now - m_loopOffset);
+        Play(@object.Object.Clip);
+    }
+
     public void Play(AudioClip clip)
     {
-        if(m_source != null)
+        if (m_source != null)
         {
             return;
         }
@@ -109,15 +126,15 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         m_source = gameObject.AddComponent<AudioSource>();
         m_source.clip = clip;
         m_source.volume = Volume;
-        m_source.loop = Loop;
+        m_source.loop = false;
         m_source.outputAudioMixerGroup = Group;
-        
+
         m_source.Play();
     }
 
     public void Stop()
     {
-        if(m_source == null)
+        if (m_source == null)
         {
             return;
         }
@@ -125,7 +142,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         m_source.Stop();
         Destroy(m_source);
         m_source = null;
-    } 
+    }
 
 
     public double GetTimeToNext()
@@ -150,13 +167,14 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
         public float StartTime
         {
-            get {
-                float offset = Time;
+            get
+            {
+                float offset = Time; // juste le délai relatif de CE message
                 BroadcastMessageObject self = this;
-                
+
                 while (self.Prev != null)
                 {
-                    offset += self.Prev.StartTime;
+                    offset += self.Prev.Time; // additionne le Time brut, pas StartTime
                     self = self.Prev;
                 }
 
@@ -165,5 +183,13 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
 
         public float EndTime => StartTime + Object.Duration;
+
+        private float m_initialOffset;
+
+        public BroadcastMessageObject()
+        {
+            m_initialOffset = Time;
+            
+        }
     }
 }

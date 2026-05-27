@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+ 
 [RequireComponent(typeof(AudioListener))]
 public class RadioWaveform : MonoBehaviour
 {
@@ -19,6 +19,9 @@ public class RadioWaveform : MonoBehaviour
 
         m_buffer = new float[256];
         m_compute = new ComputeBuffer(256, sizeof(float));
+
+        m_compute.SetData(m_buffer);
+        Material.SetBuffer("_Buffer", m_compute);
 
         if (Material)
         {

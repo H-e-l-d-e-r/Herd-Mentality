@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Diag_Lei_3
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Lei
+  Description: Le joueur passe vers la station 12700Hmz
+  m_nodes:
+  - Name: Lei
+    Text: "\u2019Kay, round 2 ! Si t'es arriv\xE9 jusque l\xE0, c'est d\xE9j\xE0
+      pas mal, challenger, mais ce n'est pas assez pour m'\xE9pater."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Je dois encore voir si tu sais d\xE9crypter un message."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Il y a quatre types de chiffrements communs : l'Invert, le C\xE9sar, le
+      Morse et le spectrogramme."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Je m'imagine d\xE9j\xE0 la t\xEAte des d\xE9butants en entendant \xE7a,
+      mais ne vous inqui\xE9tez pas : Vous n'avez qu'\xE0 selectionner le mode de
+      decryptage sur votre station."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Le reste est simple : enregistre-le et traduis-le d\xE8s que tu penses
+      qu'il y a un code cach\xE9 quelque part."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Je te laisse essayer tout \xE7a et on se retrouve de l'autre c\xF4t\xE9.
+      Bizouille ! "
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0

@@ -48,7 +48,7 @@ public class RadioManager : MonoBehaviour
     private Queue<VinylObject> m_playedVinyls;
 
     // les sequences que le joueur doit jouer
-    private Queue<SequenceObject> m_targetSequences;
+    private Queue<SequenceObject> m_discoverd;
 
     // les sequences qui ont ete valides
     private List<SequenceObject> m_validatedSequences;
@@ -66,7 +66,7 @@ public class RadioManager : MonoBehaviour
         GameClock = new Clock();
 
         m_playedVinyls = new Queue<VinylObject>();
-        m_targetSequences = new Queue<SequenceObject>();
+        m_discoverd = new Queue<SequenceObject>();
         m_validatedSequences = new List<SequenceObject>();
 
         // register targets
@@ -90,7 +90,7 @@ public class RadioManager : MonoBehaviour
         RadioBehaviour.OnRadioEnable.AddListener(() => { BackgroundMusicSource.volume = 0.0f; });
         RadioBehaviour.OnRadioDisable.AddListener(() => { BackgroundMusicSource.volume = BackgroundMusicVolume; });
 
-        Debug.Log($"<color=magenta>[DEBUG] {m_targetSequences.Count()} sequences chargees depuis le GameManager !</color>");
+        Debug.Log($"<color=magenta>[DEBUG] {m_discoverd.Count()} sequences chargees depuis le GameManager !</color>");
     }
 
     void OnEnable()
@@ -228,7 +228,8 @@ public class RadioManager : MonoBehaviour
 
     public void EnqueueSequence(SequenceObject seq)
     {
-        m_targetSequences.Enqueue(seq);
+        m_discoverd.Enqueue(seq);
+        UI.Notify.Notify($"New Message registerd!", 2f);
     }
 
     /// <summary>
@@ -272,7 +273,7 @@ public class RadioManager : MonoBehaviour
     public SequenceObject[] FindSequences(VinylObject[] vinyls)
     {
         // avoid concurrency race 
-        if(m_targetSequences == null || m_validatedSequences == null)
+        if(m_discoverd == null || m_validatedSequences == null)
         {
             return new SequenceObject[0];
         }

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Dialogue Table
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Lei
+  Description: 
+  m_nodes:
+  - Name: Lei
+    Text: "Allo ? Ici Charlie Uniform Zulu November, quelqu'un me re\xE7oit ?"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Mon amie est port\xE9e disparue depuis quelque temps et je n'arrive plus
+      \xE0 la joindre."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Elle m'a laiss\xE9 les coordonn\xE9es de plusieurs groupes de Dalheim...
+      mais je n'y comprends rien. Elle me fait toujours des coups comme \xE7a !"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Si seulement j'avais une station de d\xE9cryptage... Cette chipie m'a
+      encore fait une tonne d'\xE9nigmes pour la retrouver. Elle sait pourtant \xE0
+      quel point je d\xE9teste \xE7a..."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Tous ceux qui me re\xE7oivent et poss\xE8dent une station, passez sur
+      la fr\xE9quence 12,7 MHz."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: Mon amie a besoin de moi et je ne pourrai pas la retrouver toute seule.
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0

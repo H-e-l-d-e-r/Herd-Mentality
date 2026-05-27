@@ -10,6 +10,6 @@ public class UIRadio : MonoBehaviour
 
     void Start()
     {
-        Notify.Notify("hello wold!", 5);
+        
     }
 }
