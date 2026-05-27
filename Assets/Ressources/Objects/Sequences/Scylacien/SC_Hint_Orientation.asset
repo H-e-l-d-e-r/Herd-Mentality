@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: SC_Hint_Orientation
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: SC_Hint_Orientation
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 0}
+  Duration: 2
+  Translations:
+  - Mode: 0
+    p_content: "Pitch \xAB ollA ! Il y a nuqleuq ? Je suis udreP \xE0 \xE9t\xF4c
+      de al ecalp principale. nueleuQ pourrait redia'm ? \xBB\nPitch \xAB ueH, ouais\u2026
+      seT qui iot , ? Tu xuev iouq ? \xBB\nPitch \xAB J'ai \xE9cnemmoc \xE0 \xE9couter
+      nu truc. \xE0\xC7 m'a tellement \xE9ss\xE9r\xE9tni que j'ai sap vu el temps
+      ressap, et \xE0l, toutes sel lumi\xE8res se tnoS \xE9teintes et j'arrive sap
+      \xE0 rentrer zeHc moi. \xBB\nPitch \xAB Ouais, yako\u2026 ueH, si seT \xE0
+      la ecalp, normalement ut suis noit\u0430\u0442neiro'd de ton ennetnA, du puoc
+      sniom etnert-deux, un curt snad le style. \xBB"
+  - Mode: 1
+    p_content: 
+  - Mode: 2
+    p_content: "hctiP \xAB ollA ! lI y a nuqleuq ? eJ suis udreP \xE0 \xE9t\xF4c
+      ed la ecalp .elapicnirp nueleuQ pourrait ?\xBBredia'm \xBB\nhctiP \xAB ueH,
+      ouais\u2026 seT qui, iot ? uT veux iouq ? \xBB\nhctiP \xAB iaJ commenc\xE9
+      \xE0 retuoc\xE9 un curt. \xE0\xC7 m'a tellement \xE9ss\xE9r\xE9tni que iaj
+      pas uv le temps ressap, te \xE0l, toutes sel lumi\xE8res se tnoS \xE9teintes
+      et ev\xEDrra'j pas \xE0 rentrer zeHc iom. \xBB\nhctiP \xAB siauo, okay\u2026
+      ueH, si set \xE0 al place, tnemelamon tu siuS l'orientation ed ton ,ennetnA
+      ud puoc sniom trente-xued nu , curt snad el elyts. \xBB\n"
