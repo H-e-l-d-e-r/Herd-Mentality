@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -18,4 +19,9 @@ public class SequenceObject : CollectibleObject
         new DecryptionsResults(DecryptionModes.FromMorse, ""),
         new DecryptionsResults(DecryptionModes.FromInvertAudio, ""),
     };
+
+    public override string ToString()
+    {
+        return Name + "\n" + Description;
+    }
 }

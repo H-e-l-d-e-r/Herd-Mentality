@@ -8,8 +8,15 @@ public class UIRadio : MonoBehaviour
     public UILibraryManager LibraryManager;
     public UINotify Notify;
 
+    public Transform CarnetTransform;
+
     void Start()
     {
         
+    }
+
+    public void ToggleCarnet()
+    { 
+        CarnetTransform.gameObject.SetActive(!CarnetTransform.gameObject.activeInHierarchy);
     }
 }

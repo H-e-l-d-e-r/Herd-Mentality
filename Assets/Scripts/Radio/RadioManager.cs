@@ -229,6 +229,7 @@ public class RadioManager : MonoBehaviour
     public void EnqueueSequence(SequenceObject seq)
     {
         m_discoverd.Enqueue(seq);
+        GameManager.Instance.AddCollectible(seq);
         UI.Notify.Notify($"New Message registerd!", 2f);
     }
 

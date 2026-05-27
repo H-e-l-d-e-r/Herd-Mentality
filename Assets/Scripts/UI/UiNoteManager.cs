@@ -15,7 +15,7 @@ public class UiNoteManager : MonoBehaviour
     public GameObject[] ImageDisplay;
     public TMP_Text[] CodeDescriptionDisplay;
     public TMP_Text[] CodeSequenceDisplay;
-    public GameObject[] CodeDontDisplay;
+    // public GameObject[] CodeDontDisplay;
     public RectTransform Grid;
 
     [Header("button")]
@@ -46,6 +46,7 @@ public class UiNoteManager : MonoBehaviour
 
         ChangerOnglet(m_ongletNoteActif);
     }
+
     void ChangerOnglet(bool ongletNotes)
     {
         m_ongletNoteActif = ongletNotes;
@@ -59,17 +60,28 @@ public class UiNoteManager : MonoBehaviour
             }
         }
         {
-            foreach (GameObject hideCode in CodeDontDisplay)
-            {
-                hideCode.SetActive(!m_ongletNoteActif);
-            }
+            // foreach (GameObject hideCode in CodeDontDisplay)
+            // {
+            //     hideCode.SetActive(!m_ongletNoteActif);
+            // }
         }
 
         AfficherOngletActif();
         MettreAJourBoutons();
     }
+
     void AfficherOngletActif()
     {
+        foreach (TMP_Text text in CodeDescriptionDisplay)
+        {
+            text.text = string.Empty;
+        }
+
+        foreach (TMP_Text text in CodeSequenceDisplay)
+        {
+            text.text = string.Empty;
+        }
+
         if (m_ongletNoteActif)
             CreateNote();
         else
@@ -93,17 +105,16 @@ public class UiNoteManager : MonoBehaviour
         int indexGauche = m_pageNote * 2;
         int indexDroite = m_pageNote * 2 + 1;
 
-        NoteDisplay[0].text = indexGauche < collectibles.Length ? collectibles[indexGauche].Description : "";
+        NoteDisplay[0].text = indexGauche < collectibles.Length ? collectibles[indexGauche].ToString() : "";
         NoteDisplay[0].gameObject.SetActive(indexGauche < collectibles.Length);
 
-        NoteDisplay[1].text = indexDroite < collectibles.Length ? collectibles[indexDroite].Description : "";
+        NoteDisplay[1].text = indexDroite < collectibles.Length ? collectibles[indexDroite].ToString() : "";
         NoteDisplay[1].gameObject.SetActive(indexDroite < collectibles.Length);
     }
-    // pour afficher prochaine page 
 
+    // pour afficher prochaine page 
     void CreateCode()
     {
-
         SequenceObject[] sequences = GlobalGameSettings.Instance.Sequences;
 
         if (sequences == null || sequences.Length == 0)
@@ -144,6 +155,7 @@ public class UiNoteManager : MonoBehaviour
             CodeSequenceDisplay[1].gameObject.SetActive(false);
         }
     }
+
     public void NextPage()
     {
         if (m_ongletNoteActif)

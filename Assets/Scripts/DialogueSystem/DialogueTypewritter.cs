@@ -115,6 +115,7 @@ namespace DialogueSystem
         public void Show()
         {
             PanelGroup.alpha = 1.0f;
+            PanelGroup.blocksRaycasts = true;
         }
 
         /// <summary>
@@ -123,6 +124,7 @@ namespace DialogueSystem
         public void Hide()
         {
             PanelGroup.alpha = 0.0f;
+            PanelGroup.blocksRaycasts = false;
             
             ClearBuffers();
             ClearComponents();

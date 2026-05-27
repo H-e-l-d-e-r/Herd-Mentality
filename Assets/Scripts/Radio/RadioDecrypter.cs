@@ -47,7 +47,7 @@ public class RadioDecrypter : MonoBehaviour
 
         RecordButton.onClick.AddListener(StartRecording);
         TranslateButton.onClick.AddListener(StartTranslating);
-        DecryptionModeSelector.OnChange.AddListener((_) => StartTranslating());
+        DecryptionModeSelector.OnChange.AddListener((_) => { InteruptTranslating(); StartTranslating(); });
 
         Groups.CurrentGroup = 0; 
     }
@@ -75,6 +75,17 @@ public class RadioDecrypter : MonoBehaviour
 
 
         m_isRecordRunning = false;
+    }
+
+    public void InteruptTranslating()
+    {
+        if (!m_isTranslateRunning)
+        {
+            return;
+        }
+
+        m_isTranslateRunningTwice = false;
+        Groups.CurrentGroup = 0;
     }
 
     IEnumerator Record()
