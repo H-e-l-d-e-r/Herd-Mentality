@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-using UnityEditor;
 using UnityEngine;
 
 namespace DialogueSystem
@@ -43,7 +42,7 @@ namespace DialogueSystem
             Next = next;
 
             m_state = DialogueState.Hidden;
-            m_guid = new GUID().ToString();
+            m_guid = System.Guid.NewGuid().ToString();
         }
 
         public DialogueCommand(string name) : this(null, null)

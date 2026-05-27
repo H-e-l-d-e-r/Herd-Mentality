@@ -6,8 +6,6 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-using UnityEditor;
-
 public class UIVinylList : MonoBehaviour
 {
     [Header("List")]
