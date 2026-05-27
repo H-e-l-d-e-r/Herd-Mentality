@@ -7927,7 +7927,7 @@ MonoBehaviour:
   Mask:
     Frequence: 5067
     Bandwidth: 45
-    Orientation: 140
+    Orientation: -22
     OrientationTresh: 10
   Messages:
   - Time: 5
@@ -13849,8 +13849,8 @@ MonoBehaviour:
   Mask:
     Frequence: 11000
     Bandwidth: 75
-    Orientation: 210
-    OrientationTresh: 1
+    Orientation: -32
+    OrientationTresh: 4
   Messages:
   - Time: 5
     Object: {fileID: 11400000, guid: cd90ab22a4b687444b0417539fc8238f, type: 2}
