@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: Au_Diag_6_Lei_Audio
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: 424c6a2394a85544c87352c97ed12902, type: 3}
+  Duration: 7
+  Translations:
+  - Mode: 2
+    p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
+      pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s
+      rhr m ae\xE9\xE9iaahe m l i j r q aao g r u e u u r d o r \xF3\xF4h e p lshm
+      e b\xF4 \xE2 t reae e b"
+  - Mode: 0
+    p_content: "Voil\xE0 ! Les chiffres que tu as trouv\xE9s en d\xE9codant forment
+      une cl\xE9 de code C\xE9sar. Tu peux maintenant chercher o\xF9 est-ce que j'ai
+      cach\xE9 ce code, hiiiihiiiii. Indice : la premi\xE8re part de g\xE2teau est
+      toujours la meilleure !"
+  - Mode: 3
+    p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
+      pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s
+      rhr m ae\xE9\xE9iaahe m l i j r q aao g r u e u u r d o r \xF3\xF4h e p lshm
+      e b\xF4 \xE2 t reae e b"
+  - Mode: 1
+    p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
+      pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s
+      rhr m ae\xE9\xE9iaahe m l i j r q aao g r u e u u r d o r \xF3\xF4h e p lshm
+      e b\xF4 \xE2 t reae e b"

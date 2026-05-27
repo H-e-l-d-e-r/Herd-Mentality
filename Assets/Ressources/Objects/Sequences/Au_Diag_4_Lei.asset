@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: Au_Diag_1_Lei
+  m_Name: Au_Diag_4_Lei
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: 
   Description: 
@@ -22,8 +22,8 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 8300000, guid: bd9eff7453e9b0b45a5c51192b92c282, type: 3}
-  Duration: 12
+  Clip: {fileID: 8300000, guid: 611a583bcf8bf26479b5a2ad6f7fe518, type: 3}
+  Duration: 13
   Translations:
   - Mode: 0
     p_content: Aucune traduction disponible!

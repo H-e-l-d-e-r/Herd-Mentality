@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: Au_Diag_8_Lei_6500HMz
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: 5373e63900773c14682c9f4c90b7ae2e, type: 3}
+  Duration: 3
+  Translations:
+  - Mode: 2
+    p_content: "xrxdK hta 3 .httccdsgddr hctxrpanrH : oBW7605 cdxipictxgD ,\xB002
+      htcjtY htihxgiitA : oBW2106 cdxipictxgD ,\xB054 uudzhdG : oBW7676 cdxipictxgD
+      \xB006-"
+  - Mode: 0
+    p_content: "Kdxrx ath 3 rddgsdcctth. Hrnaprxtch : 5067WBo Dgxtcipixdc 20\xB0,
+      Ytjcth Atiigxhith : 6012WBo Dgxtcipixdc 45\xB0, Gdhzduu :  6767WBo Dgxtcipixdc
+      -60\xB0"
+  - Mode: 3
+    p_content: "Leysy bui 3 seehtedduui. Isobqsyudi : 5067XCp Ehyudjqjyed 20\xB0,
+      Zukdui Bujjhyijui : 6012XCp Ehyudjqjyed 45\xB0, Heiaevv :  6767XCp Ehyudjqjyed
+      -60\xB0 6767WBo Dgxtcipixdc -60\xB0"
+  - Mode: 1
+    p_content: "Leysy bui 3 seehtedduui. Isobqsyudi : 5067XCp Ehyudjqjyed 20\xB0,
+      Zukdui Bujjhyijui : 6012XCp Ehyudjqjyed 45\xB0, Heiaevv :  6767XCp Ehyudjqjyed
+      -60\xB0"
