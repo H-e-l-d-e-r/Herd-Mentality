@@ -34,8 +34,8 @@ MonoBehaviour:
     Behavior: 0
   - Name: Lei
     Text: "Je m'imagine d\xE9j\xE0 la t\xEAte des d\xE9butants en entendant \xE7a,
-      mais ne vous inqui\xE9tez pas : ta station fait tout de suite la diff\xE9rence
-      entre les quatre."
+      mais ne vous inqui\xE9tez pas : Vous n'avez qu'\xE0 selectionner le mode de
+      decryptage sur votre station."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0

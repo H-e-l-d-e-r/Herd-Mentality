@@ -23,10 +23,17 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: 04cdfa0692a0ab949a0b3d327ffc723d, type: 3}
-  Duration: 5
+  Duration: 3
   Translations:
   - Mode: 3
-    p_content: LBKFY !!!! Cs d'oc kbbsfo tecaeo vk, m'ocd aeo de pobkc cebowoxd vo
-      zysnc myxdbo voc oxsqwoc no wyx kwso Xoxo. Ovvo w'k nyxxo moc aekdbo ybsoxdkdsyxc,
-      wksc to x'ks zkc boeccs k bocyenbo coc oxsqwoc k vk wksx. To cesc ceb aeo dk
-      cdkdsyx od dys zyebboj w'ksnob k vk bodbyefob od k wo bomyxmsvsob kfom ovvo.
+    p_content: LBKFY !!!! Cs d'oc kbbsfo tecaeo vk, m'ocd aeo de pobkc vo zysnc myxdbo
+      voc oxsqwoc no wyx kwso Xoxo. Ovvo w'k nyxxo moc aekdbo ybsoxdkdsyxc, wksc
+      to x'ks zkc boeccs k bocyenbo coc oxsqwoc k vk wksx. To cesc ceb aeo dk cdkdsyx
+      od dys zyebboj w'ksnob k vk bodbyefob od k wo bomyxmsvsob kfom ovvo. Boxnc-dys
+      k vk pboaeoxmo 6500 WRj zyeb voc nomyefbsb.
+  - Mode: 0
+    p_content: LBKFY !!!! Cs d'oc kbbsfo tecaeo vk, m'ocd aeo de pobkc vo zysnc myxdbo
+      voc oxsqwoc no wyx kwso Xoxo. Ovvo w'k nyxxo moc aekdbo ybsoxdkdsyxc, wksc
+      to x'ks zkc boeccs k bocyenbo coc oxsqwoc k vk wksx. To cesc ceb aeo dk cdkdsyx
+      od dys zyebboj w'ksnob k vk bodbyefob od k wo bomyxmsvsob kfom ovvo. Boxnc-dys
+      k vk pboaeoxmo 6500 WRj zyeb voc nomyefbsb.

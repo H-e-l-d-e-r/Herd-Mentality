@@ -23,7 +23,7 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: bd9eff7453e9b0b45a5c51192b92c282, type: 3}
-  Duration: 10
+  Duration: 12
   Translations:
   - Mode: 0
     p_content: Aucune traduction disponible!

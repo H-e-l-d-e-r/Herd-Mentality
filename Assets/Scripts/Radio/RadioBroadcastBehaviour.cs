@@ -41,7 +41,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     private AudioSource m_source;
     private BroadcastMessageObject m_current;
-
+    private double m_loopOffset = 0;
     private void Start()
     {
         // 
@@ -63,6 +63,8 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
     }
 
+    
+
     public void RadioUpdate()
     {
         if (m_source != null && m_source.isPlaying)
@@ -72,26 +74,30 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
         if (m_current != null)
         {
-            // if there is a next message and we need to increase the counter
-            double next_timer = m_current.Next == null ? m_current.EndTime : m_current.Next.StartTime;
-            if (RadioManager.Instance.GameClock.Now > next_timer)
-            {
-                m_current = m_current.Next == null ? Messages[0] : m_current.Next;
-                Debug.Log(m_current.Object.Name);
+            double now = RadioManager.Instance.GameClock.Now - m_loopOffset;
 
-                // play audio
+            //  toujours attendre la fin du clip actuel, peu importe le StartTime du suivant
+            if (now > m_current.EndTime)
+            {
+                if (m_current.Next == null)
+                {
+                    m_loopOffset = RadioManager.Instance.GameClock.Now;
+                    m_current = Messages[0];
+                }
+                else
+                {
+                    m_current = m_current.Next;
+                }
+
+                Debug.Log(m_current.Object.Name);
                 Stop();
                 Play(m_current);
+                return;
             }
-
-            if (RadioManager.Instance.GameClock.Now > m_current.EndTime)
-            {
-                Stop();
-            }
-
         }
         else if (Messages.Length > 0)
         {
+            m_loopOffset = RadioManager.Instance.GameClock.Now;
             m_current = Messages[0];
             Play(m_current);
         }
@@ -104,12 +110,9 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     public void Play(BroadcastMessageObject @object)
     {
-        if (m_source != null)
-        {
-            return;
-        }
+        if (m_source != null) return;
 
-        @object.Time = (float)RadioManager.Instance.GameClock.Now;
+        @object.Time = (float)(RadioManager.Instance.GameClock.Now - m_loopOffset);
         Play(@object.Object.Clip);
     }
 
@@ -123,7 +126,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         m_source = gameObject.AddComponent<AudioSource>();
         m_source.clip = clip;
         m_source.volume = Volume;
-        m_source.loop = Loop;
+        m_source.loop = false;
         m_source.outputAudioMixerGroup = Group;
 
         m_source.Play();
@@ -166,12 +169,12 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         {
             get
             {
-                float offset = Time + m_initialOffset;
+                float offset = Time; // juste le délai relatif de CE message
                 BroadcastMessageObject self = this;
 
                 while (self.Prev != null)
                 {
-                    offset += self.Prev.StartTime;
+                    offset += self.Prev.Time; // additionne le Time brut, pas StartTime
                     self = self.Prev;
                 }
 
@@ -186,7 +189,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         public BroadcastMessageObject()
         {
             m_initialOffset = Time;
-            Time = 0;
+            
         }
     }
 }
