@@ -1525,6 +1525,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &795524005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
+  m_PrefabInstance: {fileID: 1072587952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &882460163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1396563158221385851, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
+  m_PrefabInstance: {fileID: 1072587952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e12ff47cc686839ba6aff1b500c1e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueTypewritter
 --- !u!1 &890322311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,13 +2148,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1072587955}
   m_SourcePrefab: {fileID: 100100000, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
 --- !u!224 &1072587953 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5387149724599841770, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
   m_PrefabInstance: {fileID: 1072587952}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1072587955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795524005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f1f0d6e4742054194cf408d1a6717d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTutorial
+  DialogueTableTut: {fileID: 11400000, guid: aef1a6640c001564fa60fa59ea9b720c, type: 2}
+  Diag_Lei_2: {fileID: 11400000, guid: 51019beec0900be4588abc1321096b40, type: 2}
+  fILSDEPUTE: {fileID: 6243907957645297930}
+  TypeWritter: {fileID: 882460163}
+  FreqTuto: 12700
 --- !u!1 &1125332313
 GameObject:
   m_ObjectHideFlags: 0
