@@ -16,37 +16,37 @@ MonoBehaviour:
   Description: 
   m_nodes:
   - Name: Lei
-    Text: Hallo? Ici Charlie Uniform Zulu November, quelqu'un me recoit?
+    Text: "Allo ? Ici Charlie Uniform Zulu November, quelqu'un me re\xE7oit ?"
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Mon amie est port\xE9e disparue depuis quelques temps et je n'arrive plus
+    Text: "Mon amie est port\xE9e disparue depuis quelque temps et je n'arrive plus
       \xE0 la joindre."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Elle m'as laiss\xE9 les coordonn\xE9es de plusieurs groupes de Dalheim...Mais
-      je n'y comprends rien. Elle me fait toujours des coups comme ca! "
+    Text: "Elle m'a laiss\xE9 les coordonn\xE9es de plusieurs groupes de Dalheim...
+      mais je n'y comprends rien. Elle me fait toujours des coups comme \xE7a !"
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: " Si seulement j'avais une Station de decryptage, cette chipie m'as encore
-      fait une tonne d'enigmes pour la retrouver. Elle sait pourtant \xE0 quel point
-      je deteste \xE7a..."
+    Text: "Si seulement j'avais une station de d\xE9cryptage... Cette chipie m'a
+      encore fait une tonne d'\xE9nigmes pour la retrouver. Elle sait pourtant \xE0
+      quel point je d\xE9teste \xE7a..."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Tout ceux qui me recoivent et poss\xE8dent une station, passez vers la
-      station 12.45HM."
+    Text: "Tous ceux qui me re\xE7oivent et poss\xE8dent une station, passez sur
+      la fr\xE9quence 12,7 MHz."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Mon amie \xE0 besoin de moi et je ne pourrais pas la retrouver toute seule."
+    Text: Mon amie a besoin de moi et je ne pourrai pas la retrouver toute seule.
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
