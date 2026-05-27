@@ -37,3 +37,7 @@ MonoBehaviour:
     p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
       12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
       : \xE9vitez de trop diffuser."
+  - Mode: 3
+    p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+      12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
+      : \xE9vitez de trop diffuser."

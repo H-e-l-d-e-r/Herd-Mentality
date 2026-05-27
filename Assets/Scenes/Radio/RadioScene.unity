@@ -813,7 +813,7 @@ MonoBehaviour:
     OrientationTresh: 1
   Messages:
   - Time: 5
-    Object: {fileID: 11400000, guid: d71a0e2efd9e4ec43a076d578e45b731, type: 2}
+    Object: {fileID: 11400000, guid: cd90ab22a4b687444b0417539fc8238f, type: 2}
   VolumeMultiplicator: 1
 --- !u!1 &323696729
 GameObject:
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 323696730}
   - component: {fileID: 323696731}
   m_Layer: 0
-  m_Name: 6.12MF JL Time
+  m_Name: 6.12MF JL Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     OrientationTresh: 10
   Messages:
   - Time: 5
-    Object: {fileID: 11400000, guid: 56dbb4a79bc8704488c1b712ae38344e, type: 2}
+    Object: {fileID: 11400000, guid: 0d6598c6513c5ee47a0992d3112cd41a, type: 2}
   VolumeMultiplicator: 1
 --- !u!1 &718196064
 GameObject:
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 1051035273}
   - component: {fileID: 1051035274}
   m_Layer: 0
-  m_Name: 5.67FM Scyalciens Time
+  m_Name: 5.67FM Scyalciens Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3063,7 +3063,7 @@ MonoBehaviour:
     OrientationTresh: 5
   Messages:
   - Time: 5
-    Object: {fileID: 11400000, guid: 8c5c3d96735e6d6409f7081cc349d402, type: 2}
+    Object: {fileID: 11400000, guid: 51ba73d6a03d6ec429544aa5d5ed6089, type: 2}
   VolumeMultiplicator: 1
 --- !u!1 &1541742018
 GameObject:
@@ -3592,7 +3592,7 @@ GameObject:
   - component: {fileID: 1708425525}
   - component: {fileID: 1708425526}
   m_Layer: 0
-  m_Name: 11.94MF Sequence temps
+  m_Name: 11.94MF Sequence orientaion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3630,12 +3630,12 @@ MonoBehaviour:
   Loop: 0
   Mask:
     Frequence: 11094
-    Bandwidth: 3
-    Orientation: 45
-    OrientationTresh: 5
+    Bandwidth: 4
+    Orientation: 12
+    OrientationTresh: 4
   Messages:
   - Time: 5
-    Object: {fileID: 11400000, guid: 8c5c3d96735e6d6409f7081cc349d402, type: 2}
+    Object: {fileID: 11400000, guid: 642f5202d1af3a043926f9c31de719d5, type: 2}
   VolumeMultiplicator: 1
 --- !u!1 &1755390128
 GameObject:
@@ -4160,7 +4160,7 @@ MonoBehaviour:
     OrientationTresh: 10
   Messages:
   - Time: 5
-    Object: {fileID: 11400000, guid: 56dbb4a79bc8704488c1b712ae38344e, type: 2}
+    Object: {fileID: 11400000, guid: 4f33eefa0ae12494da473d0be7134cc3, type: 2}
   VolumeMultiplicator: 1
 --- !u!1 &1927803751
 GameObject:

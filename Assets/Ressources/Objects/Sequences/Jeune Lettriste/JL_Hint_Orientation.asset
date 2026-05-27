@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: JL_Hint_Temps
+  m_Name: JL_Hint_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Hint_Temps
+  Name: JL_Hint_Orientation
   Description: 
   Like:
     YoungLetterists: 0
@@ -26,8 +26,9 @@ MonoBehaviour:
   Duration: 5
   Translations:
   - Mode: 0
-    p_content: 'Glerkiqirx h''liyvi hy virhid-zsyw. Ey pmiy hi 66l74, sr glerki tsyv
-      65l74, nywxi etviw uyi pi gsrgmivki emx jivqi pe kvmppi. Ni vitixi : 65l74.'
+    p_content: "Ji xcvibz g'jmdziovodji yz g'vioziiz zi mvdnji yz yzbmvyvodjin xvpnzzn
+      kvm yz kzodon bvmizhzion lpd i'jio mdzi y'vpomz v avdmz yz gzpm ejpmizz. V
+      gv kgvxz yz \u221289, ji kvnnz v 89"
   - Mode: 1
     p_content: 
   - Mode: 2
@@ -36,3 +37,7 @@ MonoBehaviour:
     p_content: "Changement d'heure du rendez-vous. Au lieu de 22h30, on change pour
       21h30, juste apr\xE8s que le concierge ait ferm\xE9 la grille. Je r\xE9p\xE8te
       : 21h30."
+  - Mode: 3
+    p_content: "On change l'orientation de l'antenne en raison de d\xE9gradations
+      caus\xE9es par de petits garnements qui n'ont rien d'autre \xE0 faire de leur
+      journ\xE9e. \xC0 la place de \u221212, on passe \xE0 12."

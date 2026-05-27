@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
-  m_Name: JL_Sequence_Temps
+  m_Name: JL_Sequence_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Sequence_Temps
+  Name: JL_Sequence_Orientation
   Description: 
   Like:
     YoungLetterists: 0
@@ -26,12 +26,14 @@ MonoBehaviour:
   Duration: 0
   Translations:
   - Mode: 0
-    p_content: 'Tvsfpiqi ezig Vswuysj ix Wgcpegmir : rsr-viwtigx hiw lsvemviw, fexemppi
-      tsyv vigytiviv p''eyhmirgi e tevxmv hi 64l66 nywuy''e 66l81'
+    p_content: "Tvsfpiqi ezig Vswuysj ix Wgcpegmir : rsr-viwtigx hiw svmirxexmsrw
+      hi hmjjywmsr, fexemppi tsyv vigytiviv p'eyhmirgi. Mrwxeppiv yri rsyzippi erxirri
+      ir \u221296 tsyv vigytiviv pe dsri kvmwi hi hmjjywmsr."
   - Mode: 1
     p_content: 
   - Mode: 3
-    p_content: "Probl\xE8me avec Rosquof et Scylacien : non-respect des horaires,
-      bataille pour r\xE9cup\xE9rer l'audience \xE0 partir de 20h22 jusqu'\xE0 22h47."
+    p_content: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
+      de diffusion, bataille pour r\xE9cup\xE9rer l'audience. Installer une nouvelle
+      antenne en \u221252 pour r\xE9cup\xE9rer la zone grise de diffusion."
   - Mode: 2
     p_content: 
