@@ -27,8 +27,6 @@ MonoBehaviour:
   Translations:
   - Mode: 0
     p_content: "Haii from Audio \t"
-  - Mode: 1
-    p_content: Haii from Morse
   - Mode: 2
     p_content: Haii from invert audio
   - Mode: 3

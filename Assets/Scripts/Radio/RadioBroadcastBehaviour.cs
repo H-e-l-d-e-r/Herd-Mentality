@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -72,14 +73,15 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         if (m_current != null)
         {
             // if there is a next message and we need to increase the counter
-            if (m_current.Next != null && 
-                RadioManager.Instance.GameClock.Now > m_current.Next.StartTime)
+            double next_timer = m_current.Next == null ? m_current.EndTime : m_current.Next.StartTime; 
+            if(RadioManager.Instance.GameClock.Now > next_timer)
             {
-                m_current = m_current.Next;
-
+                m_current = m_current.Next == null ? Messages[0] : m_current.Next;
+                Debug.Log(m_current.Object.Name);
+                
                 // play audio
                 Stop();
-                Play(m_current.Object.Clip);
+                Play(m_current);
             }
 
             if(RadioManager.Instance.GameClock.Now > m_current.EndTime)
@@ -90,13 +92,24 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         } else if(Messages.Length > 0)
         {
             m_current = Messages[0];
-            Play(m_current.Object.Clip);
+            Play(m_current);
         }
     }
 
     public void Play()
     {
 
+    }
+
+    public void Play(BroadcastMessageObject @object)
+    {
+        if(m_source != null)
+        {
+            return;
+        }
+
+        @object.Time += (float)RadioManager.Instance.GameClock.Now;
+        Play(@object.Object.Clip);
     }
 
     public void Play(AudioClip clip)

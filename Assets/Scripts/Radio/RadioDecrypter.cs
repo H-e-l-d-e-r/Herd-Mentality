@@ -125,6 +125,8 @@ public class RadioDecrypter : MonoBehaviour
         Typewritter.Clear();
         Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording done!"));
 
+        RadioManager.Instance.EnqueueSequence(m_recordObject);
+
         m_isRecordRunning = false;
     }
 
