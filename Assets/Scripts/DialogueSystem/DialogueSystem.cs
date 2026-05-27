@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 namespace DialogueSystem
@@ -310,7 +309,7 @@ namespace DialogueSystem
                 return false;
             }
 
-            string guid = new GUID().ToString();
+            string guid = Guid.NewGuid().ToString();
 
             DialogueCommand cmd = new DialogueCommand(guid);
             cmd.Text = text;

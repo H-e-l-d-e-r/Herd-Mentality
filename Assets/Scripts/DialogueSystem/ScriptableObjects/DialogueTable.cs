@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-using UnityEditor;
-using UnityEditor.Callbacks;
-
 using UnityEngine;
 
 namespace DialogueSystem
@@ -110,20 +107,6 @@ namespace DialogueSystem
 
                 m_nodes[i].Name = Name;
             }
-        }
-
-        [OnOpenAsset]
-        public static bool OnOpenEditor(int instance, int line)
-        {
-            DialogueTable table = EditorUtility.EntityIdToObject(instance) as DialogueTable;
-            
-            if(table != null)
-            {
-                
-                return true;
-            } 
-
-            return false;
         }
 
         public IEnumerator<DialogueCommand> GetEnumerator()
