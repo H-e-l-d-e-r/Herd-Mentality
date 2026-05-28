@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: JL_Info_Radio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: JL_Info_Radio
-  Description: 
+  Description: 'JEUNES LETTRISTE
+
+    4.53MF
+
+    6.12MF
+
+    6.98MF
+
+    Orientation
+    45'
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: JL_Hint_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: JL_Hint_Orientation
-  Description: 
+  Description: "On change l'orientation de l'antenne en raison de d\xE9gradations
+    caus\xE9es par de petits garnements qui n'ont rien d'autre \xE0 faire de leur
+    journ\xE9e. \xC0 la place de moins douze , on passe \xE0 douze."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

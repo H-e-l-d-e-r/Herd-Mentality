@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: SC_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: SC_Hint_Frequence
-  Description: 
+  Description: "Pchit : \xAB Hey mec, tu te rappelles de la fr\xE9quence du truc
+    de fou qu'on avait entendu \xE0 la radio ? \xBB\n\nPchit : \xAB Que le chanteur
+    des Scylaciens, est le g\xE9rant de la baraque \xE0 frites ? Je pense que c'\xE9tait
+    deux mille cent ou deux mille trois cent un truc comme \xE7a.\xBB"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

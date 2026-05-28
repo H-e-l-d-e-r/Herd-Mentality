@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: SC_Info_Radio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: SC_Info_Radio
-  Description: 
+  Description: 'SCYLACIENS
+
+    5.67HM.
+
+    Orientation 20 / -22'
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: JL_Info_Code
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: JL_Info_Code
-  Description: 
+  Description: "3057\n<u><b>D</b></u>an tu m'avais promis que tu m'offrirais des
+    fleurs.\n<u><b>O</b></u>h, c'est bon je suis au fleuriste.\n<u><b>R</b></u>am\xE8ne
+    toi ici tout de suite. Je rigole pas avec toi.\n<u><b>M</b></u>on cher je ne
+    rigole point, mon travail fut plus long que d'habitude.\n<u><b>I</b></u>nsolent
+    va, je suis sur tu mens.\n<u><b>R</b></u>aclette ce soir ? Pour me faire pardonner
+    ca te vas ?\n3057"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

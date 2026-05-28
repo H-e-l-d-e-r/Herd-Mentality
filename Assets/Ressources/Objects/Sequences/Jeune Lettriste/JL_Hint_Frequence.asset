@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: JL_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: JL_Hint_Frequence
-  Description: 
+  Description: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+    douze mille un. Essayez onze mille nonante quatre ; si cela ne fonctionne pas,
+    essayez neuf mille cinquante quatre. Je r\xE9p\xE8te : \xE9vitez de trop diffuser"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

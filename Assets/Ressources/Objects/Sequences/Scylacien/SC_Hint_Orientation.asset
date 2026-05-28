@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: SC_Hint_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: SC_Hint_Orientation
-  Description: 
+  Description: "Pitch \xAB ollA ! Il y a nuqleuq ? Je suis udreP \xE0 \xE9t\xF4c
+    de al ecalp principale. nueleuQ pourrait redia'm ? \xBB\nPitch \xAB ueH, ouais\u2026
+    seT qui iot , ? Tu xuev iouq ? \xBB\nPitch \xAB J'ai \xE9cnemmoc \xE0 \xE9couter
+    nu truc. \xE0\xC7 m'a tellement \xE9ss\xE9r\xE9tni que j'ai sap vu el temps ressap,
+    et \xE0l, toutes sel lumi\xE8res se tnoS \xE9teintes et j'arrive sap \xE0 rentrer
+    zeHc moi. \xBB\nPitch \xAB Ouais, yako\u2026 ueH, si seT \xE0 la ecalp, normalement
+    ut suis noit\u0430\u0442neiro'd de ton ennetnA, du puoc sniom etnert-deux, un
+    curt snad le style. \xBB\n\nhctiP \xAB ollA ! lI y a nuqleuq ? eJ suis udreP
+    \xE0 \xE9t\xF4c ed la ecalp .elapicnirp nueleuQ pourrait ?\xBBredia'm \xBB\nhctiP
+    \xAB ueH, ouais\u2026 seT qui, iot ? uT veux iouq ? \xBB\nhctiP \xAB iaJ commenc\xE9
+    \xE0 retuoc\xE9 un curt. \xE0\xC7 m'a tellement \xE9ss\xE9r\xE9tni que iaj pas
+    uv le temps ressap, te \xE0l, toutes sel lumi\xE8res se tnoS \xE9teintes et ev\xEDrra'j
+    pas \xE0 rentrer zeHc iom. \xBB\nhctiP \xAB siauo, okay\u2026 ueH, si set \xE0
+    al place, tnemelamon tu siuS l'orientation ed ton ,ennetnA ud puoc sniom trente-xued
+    nu , curt snad el elyts. \xBB\n"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

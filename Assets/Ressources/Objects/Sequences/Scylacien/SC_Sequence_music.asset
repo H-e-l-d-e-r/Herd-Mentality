@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: SC_Sequence_music
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: SC_Sequence_music
-  Description: 
+  Description: "Bonsoir tout le monde, on se retrouve pour la tier list des 5 sons
+    les plus \xE9cout\xE9s de ce mois. Tout en bas, en E on a \"talking to the wind\".
+    Pour continuer, en D on a \"Won't Remember\", puis en C \"Coolgirl\", la num\xE9ro
+    1 des jeunes lettristes, mais  elle ne fait pas le poids. En haut du panier en
+    B on a \"Waters\". Finalement en A...\"Mercury\"!!! F\xE9licitations \xE0 eux,
+    merci de nous avoir \xE9cout\xE9 et a la prochaine."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -26,7 +31,7 @@ MonoBehaviour:
   Duration: 25
   Translations:
   - Mode: 0
-    p_content: "Bonsoir tout le monde, on se retrouve pour la tier list des 4 sons
+    p_content: "Bonsoir tout le monde, on se retrouve pour la tier list des 5 sons
       les plus \xE9cout\xE9s de ce mois. Tout en bas, en E on a \"talking to the
       wind\". Pour continuer, en D on a \"Won't Remember\", puis en C \"Coolgirl\",
       la num\xE9ro 1 des jeunes lettristes, mais  elle ne fait pas le poids. En haut

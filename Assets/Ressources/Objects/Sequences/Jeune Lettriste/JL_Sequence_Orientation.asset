@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: JL_Sequence_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: JL_Sequence_Orientation
-  Description: 
+  Description: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
+    de diffusion, bataille pour r\xE9cup\xE9rer l'audience installer anouvelle anttenne
+    en moins cinquante deux pour r\xE9cuper la zone grise de diffusion."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
