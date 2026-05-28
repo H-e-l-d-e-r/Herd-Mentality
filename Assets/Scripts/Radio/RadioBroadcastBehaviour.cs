@@ -78,7 +78,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
             //  toujours attendre la fin du clip actuel, peu importe le StartTime du suivant
             if (now > m_current.EndTime)
             {
-                if (m_current.Next == null)
+                if (Loop && m_current.Next == null)
                 {
                     m_loopOffset = RadioManager.Instance.GameClock.Now;
                     m_current = Messages[0];
@@ -88,7 +88,6 @@ public class RadioBroadcastBehaviour : MonoBehaviour
                     m_current = m_current.Next;
                 }
 
-                Debug.Log(m_current.Object.Name);
                 Stop();
                 Play(m_current);
                 return;
@@ -109,8 +108,8 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
     public void Play(BroadcastMessageObject @object)
     {
-        if (m_source != null) return;
-
+        if (m_source != null || @object == null) return;
+ 
         @object.Time = (float)(RadioManager.Instance.GameClock.Now - m_loopOffset);
         Play(@object.Object.Clip);
     }
@@ -168,12 +167,12 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         {
             get
             {
-                float offset = Time; // juste le d�lai relatif de CE message
+                float offset = Time;
                 BroadcastMessageObject self = this;
 
                 while (self.Prev != null)
                 {
-                    offset += self.Prev.Time; // additionne le Time brut, pas StartTime
+                    offset += self.Prev.StartTime; // additionne le Time brut, pas StartTime
                     self = self.Prev;
                 }
 

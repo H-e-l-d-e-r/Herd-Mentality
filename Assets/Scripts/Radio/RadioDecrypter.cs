@@ -132,7 +132,6 @@ public class RadioDecrypter : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-
         Typewritter.Clear();
         Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording done!"));
 
