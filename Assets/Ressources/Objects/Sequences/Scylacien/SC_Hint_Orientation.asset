@@ -22,8 +22,8 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 2
+  Clip: {fileID: 8300000, guid: f698390599b3fab4986d795ad79468c7, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
     p_content: "Pitch \xAB ollA ! Il y a nuqleuq ? Je suis udreP \xE0 \xE9t\xF4c

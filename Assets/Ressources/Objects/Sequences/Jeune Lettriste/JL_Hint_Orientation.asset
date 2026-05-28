@@ -22,22 +22,14 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 5
+  Clip: {fileID: 8300000, guid: 51ebe5a2c01ff3c48a0c6a61bd76b801, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
-    p_content: "Ji xcvibz g'jmdziovodji yz g'vioziiz zi mvdnji yz yzbmvyvodjin xvpnzzn
-      kvm yz kzodon bvmizhzion lpd i'jio mdzi y'vpomz v avdmz yz gzpm ejpmizz. V
-      gv kgvxz yz \u221289, ji kvnnz v 89"
-  - Mode: 1
-    p_content: 
-  - Mode: 2
-    p_content: 
-  - Mode: 3
-    p_content: "Changement d'heure du rendez-vous. Au lieu de 22h30, on change pour
-      21h30, juste apr\xE8s que le concierge ait ferm\xE9 la grille. Je r\xE9p\xE8te
-      : 21h30."
-  - Mode: 3
     p_content: "On change l'orientation de l'antenne en raison de d\xE9gradations
       caus\xE9es par de petits garnements qui n'ont rien d'autre \xE0 faire de leur
       journ\xE9e. \xC0 la place de \u221212, on passe \xE0 12."
+  - Mode: 3
+    p_content: "Ji xcvibz g'jmdziovodji yz g'vioziiz zi mvdnji yz yzbmvyvodjin xvpnzzn
+      kvm yz kzodon bvmizhzion lpd i'jio mdzi y'vpomz v avdmz yz gzpm ejpmizz. V
+      gv kgvxz yz \u221289, ji kvnnz v 89"

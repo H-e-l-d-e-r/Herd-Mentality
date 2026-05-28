@@ -22,18 +22,14 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 0
+  Clip: {fileID: 8300000, guid: 7db1816a088ac8941ae1ab1938994f2f, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
     p_content: "Tvsfpiqi ezig Vswuysj ix Wgcpegmir : rsr-viwtigx hiw svmirxexmsrw
       hi hmjjywmsr, fexemppi tsyv vigytiviv p'eyhmirgi. Mrwxeppiv yri rsyzippi erxirri
       ir \u221296 tsyv vigytiviv pe dsri kvmwi hi hmjjywmsr."
-  - Mode: 1
-    p_content: 
   - Mode: 3
     p_content: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
       de diffusion, bataille pour r\xE9cup\xE9rer l'audience. Installer une nouvelle
       antenne en \u221252 pour r\xE9cup\xE9rer la zone grise de diffusion."
-  - Mode: 2
-    p_content: 

@@ -22,22 +22,14 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 0
+  Clip: {fileID: 8300000, guid: 0a8fd9517ca55104db5f8b2e4e5d77b5, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
+    p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+      12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
+      : \xE9vitez de trop diffuser."
+  - Mode: 3
     p_content: 'Xirwmsr ezig piw irwimkrerxw, izmxid hi hmjjywiv wyv pe jviuyirgi
       5645. Iwwecid 5538 ; wm gipe ri jsrgxmsrri tew, iwwecid 398. Ni vitixi : izmxid
       hi xvst hmjjywiv.'
-  - Mode: 1
-    p_content: 
-  - Mode: 2
-    p_content: 
-  - Mode: 3
-    p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
-      12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
-      : \xE9vitez de trop diffuser."
-  - Mode: 3
-    p_content: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
-      12001. Essayez 11094 ; si cela ne fonctionne pas, essayez 9054. Je r\xE9p\xE8te
-      : \xE9vitez de trop diffuser."

@@ -22,12 +22,8 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 1
+  Clip: {fileID: 8300000, guid: 4c9bcaaf578df2b4da874a7c5cac4554, type: 3}
+  Duration: 10
   Translations:
   - Mode: 0
-    p_content: 7prt5xtm21plz12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard
-  - Mode: 1
-    p_content: 
-  - Mode: 2
-    p_content: 
+    p_content: 12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard

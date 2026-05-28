@@ -22,8 +22,8 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 5
+  Clip: {fileID: 8300000, guid: ff6ba915aad45fb478da50abf9857f58, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
     p_content: "-45\nDan tu m'avais promis que tu m'offrirais des fleurs.\nOh, c'est
@@ -31,7 +31,3 @@ MonoBehaviour:
       toi.\nMon cher je ne rigole point, mon travail fut plus long que d'habitude.\nInsolent
       va, je suis sur tu mens.\nRaclette ce soir ? Pour me faire pardonner ca te
       vas ?\n3057"
-  - Mode: 1
-    p_content: 
-  - Mode: 2
-    p_content: 
