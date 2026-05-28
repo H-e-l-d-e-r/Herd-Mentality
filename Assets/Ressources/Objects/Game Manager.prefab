@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4f8e3d3918ffc2c84f18e0e5f93130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  QuestObjects: []
   Statistics:
     Money: 0
     GlobalAppreciation: 0
@@ -51,9 +52,14 @@ MonoBehaviour:
     AprSquatRoskoff: 0
     AprYoungLetterists: 0
     AprScilas: 0
+    NarrativeDone:
+      YoungLetterists: 0
+      SquatRoskoff: 0
+      Scilas: 0
   m_unlockedCollectibles:
   - {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
   - {fileID: 11400000, guid: 6e8e57b8b2e523f1aae93211217541f4, type: 2}
-  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
   - {fileID: 11400000, guid: 27a601cb7564b9145ae5d7e2d75e97bf, type: 2}
+  - {fileID: 11400000, guid: 452fcfe7764c07959b046ca13c0d6b3f, type: 2}
+  - {fileID: 11400000, guid: 038e32f7225d8164eace369470351671, type: 2}
   m_currentDay: 0

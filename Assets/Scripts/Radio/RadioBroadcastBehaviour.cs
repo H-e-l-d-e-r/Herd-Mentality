@@ -27,6 +27,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
     [Range(0f, 1f)]
     public float Volume;
     public bool Loop;
+    public bool IsHerd;
 
     public BroadcastMask Mask;
 
@@ -62,13 +63,11 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         }
     }
 
-    
-
     public void RadioUpdate()
     {
         if (m_source != null && m_source.isPlaying)
         {
-            m_source.volume = Volume * VolumeMultiplicator;
+            m_source.volume = Mathf.Clamp01(Volume * VolumeMultiplicator);
         }
 
         if (m_current != null)

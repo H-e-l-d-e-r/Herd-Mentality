@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        m_unlockedCollectibles = new List<CollectibleObject>();
         ResetAppreciations();
     }
 
@@ -61,4 +61,19 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddCollectible(CollectibleObject collectible) => m_unlockedCollectibles.Add(collectible);
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void End()
+    {
+        LoadScene("EndScreen");
+    }
 }

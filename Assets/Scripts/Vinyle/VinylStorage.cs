@@ -51,8 +51,7 @@ public class VinylStorage : MonoBehaviour
 
             foreach (VinylObject vinyl in GameManager.Instance.UnlockedVinyls)
             {
-                VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
-                instance.Vinyl = vinyl;
+                Add(vinyl);
             }
         }
     }
@@ -77,6 +76,12 @@ public class VinylStorage : MonoBehaviour
             UpdatePickupVinyl();
             UpdateDragBehaviour();
         }
+    }
+
+    public void Add(VinylObject vinylObject)
+    {
+        VinylRecord instance = Storage.Add(VinylStaticInstance).GetComponent<VinylRecord>();
+        instance.Vinyl = vinylObject;
     }
 
     void UpdatePickupVinyl()
