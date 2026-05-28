@@ -20,4 +20,9 @@ public class CollectibleObject : ScriptableObject
         public bool SquatRoskoff;
         public bool Scilas;
     }
+
+    public override string ToString()
+    {
+        return Description;
+    }
 }

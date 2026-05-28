@@ -8,16 +8,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => s_instance;
     public int CurrentDay => m_currentDay;
 
-    // MAGIE LINQ : On trie instantan�ment les Vinyles ET les S�quences sans aucune boucle !
     public VinylObject[] UnlockedVinyls => m_unlockedCollectibles.OfType<VinylObject>().ToArray();
 
-    public CollectibleObject[] UnlockedCollectibles => m_unlockedCollectibles;
+    public CollectibleObject[] UnlockedCollectibles => m_unlockedCollectibles.ToArray();
 
     [ReadOnlyAttribute]
     public GameStatistics Statistics;
 
     [SerializeField]
-    private CollectibleObject[] m_unlockedCollectibles;
+    private List<CollectibleObject> m_unlockedCollectibles;
 
     private static GameManager s_instance;
 
@@ -27,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        m_unlockedCollectibles = new List<CollectibleObject>();
         ResetAppreciations();
     }
 
@@ -59,4 +59,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void AddCollectible(CollectibleObject collectible) => m_unlockedCollectibles.Add(collectible);
 }
