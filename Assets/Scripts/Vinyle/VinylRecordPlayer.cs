@@ -12,7 +12,7 @@ public class VinylRecordPlayer : MonoBehaviour
     public VinylObject CurrentVinyl => m_vinyl;
 
     public RadioKnobComponent KnobComponent;
-    public Slider Slider;
+    public AntennaTunerBehaviour Slider;
     public VinylStorage Storage;
     public RadioBroadcastBehaviour Broadcast;
 
@@ -34,15 +34,16 @@ public class VinylRecordPlayer : MonoBehaviour
         NullComponents.ThrowIfNull(KnobComponent);
         
         Broadcast.Mask.Frequence = KnobComponent.Value;
-        Broadcast.Mask.Orientation = Slider.value;
+        Broadcast.Mask.Orientation = Slider.Value;
 
         KnobComponent.OnValueChange.AddListener((float freq) =>
         {
             Broadcast.Mask.Frequence = freq;
         });
 
-        Slider.onValueChanged.AddListener((float orientation) =>
+        Slider.OnValueChange.AddListener((float orientation) =>
         {
+            Debug.Log(orientation);
             Broadcast.Mask.Orientation = orientation; 
         });
 
