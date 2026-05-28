@@ -40,6 +40,6 @@ MonoBehaviour:
   Title: Talking to the Wind
   Author: Ernest & Friends
   Color: {r: 0.836478, g: 0.48136935, b: 0.731959, a: 1}
-  BackgroundImage: {fileID: 21300000, guid: 716dea86d0598324380dc1bc863ec779, type: 3}
+  BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
   Clip: {fileID: 8300000, guid: 1d5f47dc39e9fd34f8b195b5bf3dec26, type: 3}
   Volume: 0.7

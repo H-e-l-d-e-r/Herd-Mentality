@@ -34,7 +34,7 @@ MonoBehaviour:
     Orientation: -52
   RadioPlayTime: 4.5
   LerpStrengh: 0.25
-  FrequenceTreshold: 10
+  FrequenceTreshold: 100
   OrientationTreshold: 10
   AppreciationIncreaseMusic: 0.5
   AppreciationDecreaseMusic: 0.5

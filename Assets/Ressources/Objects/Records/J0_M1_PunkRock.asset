@@ -26,5 +26,5 @@ MonoBehaviour:
   Author: Grim Metals
   Color: {r: 0.6037736, g: 0.024682458, b: 0.024682458, a: 1}
   BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
-  Clip: {fileID: 8300000, guid: 5b11268aa1d13064195bf8a3d1f31042, type: 3}
+  Clip: {fileID: 8300000, guid: 5bdf7eb07c12a5f4682427f7ea056edb, type: 3}
   Volume: 0.7

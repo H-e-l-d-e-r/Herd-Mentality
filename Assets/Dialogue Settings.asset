@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue Settings
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueSettings
   CharacterDelay: 0.02
-  CharacterIncrement: 1
+  CharacterIncrement: 5
   DelayHashmap:
     m_keys: 2c002e0021003f00
     m_values:

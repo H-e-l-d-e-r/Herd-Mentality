@@ -30,6 +30,6 @@ MonoBehaviour:
   Title: Won't Remember?
   Author: Tiny Hands
   Color: {r: 0.836478, g: 0.26041287, b: 0.26041287, a: 1}
-  BackgroundImage: {fileID: 21300000, guid: 0ad0064b2df9c5d429f91c77ce651d66, type: 3}
+  BackgroundImage: {fileID: 21300000, guid: 4cab12b9360a5be4a84a314ee5339835, type: 3}
   Clip: {fileID: 8300000, guid: d028b7d9fb4d62044b4f03025d5e07de, type: 3}
   Volume: 0.7
