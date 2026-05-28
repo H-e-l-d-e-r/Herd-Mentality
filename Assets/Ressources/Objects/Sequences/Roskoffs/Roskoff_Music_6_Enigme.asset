@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: Roskoff_Music_6_Enigme
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: 5e64142f1bd2ad04ab28806c4e758ae2, type: 3}
+  Duration: 7
+  Translations:
+  - Mode: 0
+    p_content: "Quand tu scelleras l'union des nombres fr\xE8res, li\xE9s par le
+      m\xEAme instrument, le secret d\xE9sir\xE9 te sera r\xE9v\xE9l\xE9. (Blah blah
+      blah....Vraiment barbant comme \xE9nigme. -_- )"
+  - Mode: 1
+    p_content: ETIheg klhkhETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET
+      GBEEHI TEG igi gieh gheeghe g
+  - Mode: 2
+    p_content: ' khETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET GBE e
+      ghklhk ikgh tbKG ECW gieh gheeghe g'
+  - Mode: 3
+    p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
+      tbeTGEI HLKM ghklhk DCIZH EGHIK '

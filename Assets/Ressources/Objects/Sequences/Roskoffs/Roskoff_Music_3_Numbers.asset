@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: Roskoff_Music_3_Numbers
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: 079a8657e55a4e5488de101064f08dc0, type: 3}
+  Duration: 22
+  Translations:
+  - Mode: 0
+    p_content: "Do = 0\nRe = 1\nMi = 2\nFa = 3\nSol = 4\nLa = 5\nSi = 6\n\nPas trop
+      fan des nombres chez les Roskoffs mais le p'tit nous \xE0 dit de laisser ca
+      ici! Les fr\xE9quences sont juste apr\xE8s. "
+  - Mode: 1
+    p_content: eghegh klhkikghtbe TGEIHLKMH KGECWDCIZH EGHIK   GHKEIET GBEE HI TEGETIheg
+      hklhkhi gieh egheg ihetghe
+  - Mode: 2
+    p_content: eghe ghklhk ikgh tbeTGEI HLKMHKG ECWDCIZH EGHIKGN IHOGET GHK EIET
+      GBEEHI TEG ETIheg klhkhigieh eghegi het ghe
+  - Mode: 3
+    p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
+      tbeTGEI HLKM ghklhk DCIZH EGHIK '

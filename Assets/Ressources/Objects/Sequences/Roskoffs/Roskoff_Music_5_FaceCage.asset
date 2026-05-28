@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: Roskoff_Music_5_FaceCage
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: 
+  Description: 
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: d76d9670377b8534095d82a8bd0378ca, type: 3}
+  Duration: 9
+  Translations:
+  - Mode: 0
+    p_content: 'FACE CAGE PIANO 1434,
+
+      
+
+      
+
+      
+
+      FACE CAGE
+      Xylophone 2036,
+
+      
+
+      
+
+      FACE CAGE GUITARE 534,
+
+      
+
+      
+
+      
+
+      FACE
+      CAGE Tambour 6789.'
+  - Mode: 1
+    p_content: ETIheg klhkhETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET
+      GBEEHI TEG igi gieh gheeghe g
+  - Mode: 2
+    p_content: ' khETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET GBE e
+      ghklhk ikgh tbKG ECW gieh gheeghe g'
+  - Mode: 3
+    p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
+      tbeTGEI HLKM ghklhk DCIZH EGHIK '
