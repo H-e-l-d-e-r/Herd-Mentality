@@ -805,7 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 11000
     Bandwidth: 75
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 6012
     Bandwidth: 50
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 4053
     Bandwidth: 50
@@ -1783,7 +1783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 5067
     Bandwidth: 45
@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 6098
     Bandwidth: 50
@@ -3627,7 +3627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 11094
     Bandwidth: 4
@@ -4152,7 +4152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 3057
     Bandwidth: 50
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
-  Loop: 0
+  Loop: 1
   Mask:
     Frequence: 5067
     Bandwidth: 45
