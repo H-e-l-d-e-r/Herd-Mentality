@@ -5,33 +5,39 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Debug.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City/MapScene.unity
     guid: 0c4a4751e06046946a60a7296ca72888
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City/CoffeShopScene.unity
     guid: 1e9297d22fc5cbc47889b29d76f7da01
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City/ConcertScene.unity
     guid: 4fb23a283f38a31458ea07cf325f852a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City/FriterieScene.unity
     guid: f373c387358908f4ebe0d072d6a0d0b1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City/VinyleShopScene.unity
     guid: ebdd243f16d455d45bbef3aaccc6c717
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 88c3824466b96aa6ea7dff93baa92767
+  - enabled: 1
     path: Assets/Scenes/Radio/RadioScene.unity
     guid: 35702859183152e428e8191a66327191
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/UIGeneralScene.unity
     guid: f631a655360b47646aa2d56358be15c9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/NoteScene.unity
     guid: eb434c27217d13b41bcc089c87e592c4
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 15cdaf624ac6013e8a0f33012f2cfe6b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 23e9a9a07241396c585a83f5229d172c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

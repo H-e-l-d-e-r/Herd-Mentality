@@ -114,7 +114,6 @@ public class RadioDecrypter : MonoBehaviour
         RadioBroadcastBehaviour behaviour = RadioManager.Instance.RadioBehaviour.GetCurrentBroadcast();
 
         // if something worked
-        print(behaviour);
         if (behaviour == null || behaviour.Current == null)
         {
             Typewritter.Clear();

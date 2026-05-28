@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
@@ -10,6 +11,9 @@ public class VinylRecordPlayer : MonoBehaviour
     public bool IsPlaying { get; private set; }
     public VinylObject CurrentVinyl => m_vinyl;
 
+    public RadioKnobComponent KnobComponent;
+    public AntennaTunerBehaviour Slider;
+    public VinylStorage Storage;
     public RadioBroadcastBehaviour Broadcast;
 
     [Header("Visual")]
@@ -27,7 +31,22 @@ public class VinylRecordPlayer : MonoBehaviour
     void Start()
     {
         NullComponents.ThrowIfNull(Broadcast);
+        NullComponents.ThrowIfNull(KnobComponent);
         
+        Broadcast.Mask.Frequence = KnobComponent.Value;
+        Broadcast.Mask.Orientation = Slider.Value;
+
+        KnobComponent.OnValueChange.AddListener((float freq) =>
+        {
+            Broadcast.Mask.Frequence = freq;
+        });
+
+        Slider.OnValueChange.AddListener((float orientation) =>
+        {
+            Debug.Log(orientation);
+            Broadcast.Mask.Orientation = orientation; 
+        });
+
         // au cas ou
         Stop();
     }
@@ -89,14 +108,23 @@ public class VinylRecordPlayer : MonoBehaviour
 
         m_musicRemaining = m_vinyl.Clip.length;
         IsPlaying = true;
+
+        RadioManager.Instance.EnqueueVinyl(m_vinyl, Broadcast.Mask.Frequence, Broadcast.Mask.Orientation);
     }
 
     void Stop()
     {
+        if(m_vinyl == null)
+        {
+            return;
+        }
+
         Broadcast.Stop();
         OnStopMusic.Invoke(m_vinyl);
         
         Record.gameObject.SetActive(false);
+
+        Storage.Add(m_vinyl);
 
         IsPlaying = false;
     }
