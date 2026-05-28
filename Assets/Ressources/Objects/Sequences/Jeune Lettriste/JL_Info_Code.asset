@@ -26,8 +26,9 @@ MonoBehaviour:
   Duration: 25
   Translations:
   - Mode: 0
-    p_content: "-45\nDan tu m'avais promis que tu m'offrirais des fleurs.\nOh, c'est
-      bon je suis au fleuriste.\nRam\xE8ne toi ici tout de suite. Je rigole pas avec
-      toi.\nMon cher je ne rigole point, mon travail fut plus long que d'habitude.\nInsolent
-      va, je suis sur tu mens.\nRaclette ce soir ? Pour me faire pardonner ca te
-      vas ?\n3057"
+    p_content: "3057\n<u><b>D</b></u>an tu m'avais promis que tu m'offrirais des
+      fleurs.\n<u><b>O</b></u>h, c'est bon je suis au fleuriste.\n<u><b>R</b></u>am\xE8ne
+      toi ici tout de suite. Je rigole pas avec toi.\n<u><b>M</b></u>on cher je ne
+      rigole point, mon travail fut plus long que d'habitude.\n<u><b>I</b></u>nsolent
+      va, je suis sur tu mens.\n<u><b>R</b></u>aclette ce soir ? Pour me faire pardonner
+      ca te vas ?\n3057"
