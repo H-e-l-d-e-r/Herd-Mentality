@@ -809,7 +809,7 @@ MonoBehaviour:
   Mask:
     Frequence: 11000
     Bandwidth: 75
-    Orientation: 210
+    Orientation: -32
     OrientationTresh: 1
   Messages:
   - Time: 5
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   Mask:
     Frequence: 5067
     Bandwidth: 45
-    Orientation: 140
+    Orientation: 50
     OrientationTresh: 10
   Messages:
   - Time: 5

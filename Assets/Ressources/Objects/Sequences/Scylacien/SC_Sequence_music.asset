@@ -22,8 +22,8 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 0}
-  Duration: 4
+  Clip: {fileID: 8300000, guid: 5b0490021fe7bbd4885c9fca6e33cdd9, type: 3}
+  Duration: 25
   Translations:
   - Mode: 0
     p_content: "Bonsoir tout le monde, on se retrouve pour la tier list des 4 sons

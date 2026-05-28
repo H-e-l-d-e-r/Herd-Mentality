@@ -23,7 +23,7 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 0}
-  Duration: 2
+  Duration: 25
   Translations:
   - Mode: 0
     p_content: 'JEUNES LETTRISTE
