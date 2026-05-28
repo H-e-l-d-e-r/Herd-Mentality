@@ -135,40 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37e11ba1625d9648b92d2a006a6e7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UINotify
---- !u!1 &92812545
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 92812546}
-  m_Layer: 0
-  m_Name: Scylaciens
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &92812546
+--- !u!4 &92812546 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+  m_PrefabInstance: {fileID: 7248643429416460325}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92812545}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1927803752}
-  - {fileID: 1051035273}
-  - {fileID: 307637056}
-  m_Father: {fileID: 7056056149930756967}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147310026
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,118 +730,6 @@ MonoBehaviour:
   - Time: 0
     Object: {fileID: 11400000, guid: e23d76a73535366de94e0078d352a781, type: 2}
   VolumeMultiplicator: 3.7802627e-27
---- !u!1 &307637055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 307637056}
-  - component: {fileID: 307637057}
-  m_Layer: 0
-  m_Name: 11FM Scyalciens sequence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &307637056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307637055}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 92812546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &307637057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307637055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 11000
-    Bandwidth: 75
-    Orientation: -32
-    OrientationTresh: 1
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: cd90ab22a4b687444b0417539fc8238f, type: 2}
-  VolumeMultiplicator: 1
---- !u!1 &323696729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 323696730}
-  - component: {fileID: 323696731}
-  m_Layer: 0
-  m_Name: 6.12MF JL Orientation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &323696730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323696729}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 723226747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &323696731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323696729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 6012
-    Bandwidth: 50
-    Orientation: 45
-    OrientationTresh: 5
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 8c5c3d96735e6d6409f7081cc349d402, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &536693746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,62 +1009,6 @@ Transform:
   - {fileID: 695914197704602469}
   m_Father: {fileID: 6747454719012529716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &715969623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 715969624}
-  - component: {fileID: 715969625}
-  m_Layer: 0
-  m_Name: 4.53MF JL Indice Code
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &715969624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715969623}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 723226747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &715969625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715969623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 4053
-    Bandwidth: 50
-    Orientation: 45
-    OrientationTresh: 10
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 0d6598c6513c5ee47a0992d3112cd41a, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &718196064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,42 +1129,11 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &723226746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 723226747}
-  m_Layer: 0
-  m_Name: Jeune Lettriste
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &723226747
+--- !u!4 &723226747 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+  m_PrefabInstance: {fileID: 6661338383414333340}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723226746}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 715969624}
-  - {fileID: 1896884429}
-  - {fileID: 323696730}
-  - {fileID: 1518168201}
-  - {fileID: 1708425525}
-  m_Father: {fileID: 7056056149930756967}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890322311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,62 +1509,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1051035272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051035273}
-  - component: {fileID: 1051035274}
-  m_Layer: 0
-  m_Name: 5.67FM Scyalciens Orientation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1051035273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051035272}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 92812546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051035274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051035272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 5067
-    Bandwidth: 45
-    Orientation: 50
-    OrientationTresh: 10
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: d71a0e2efd9e4ec43a076d578e45b731, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &1052088286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,62 +2725,6 @@ RectTransform:
   m_AnchoredPosition: {x: -30.49, y: -0}
   m_SizeDelta: {x: 199.67, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1518168200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1518168201}
-  - component: {fileID: 1518168202}
-  m_Layer: 0
-  m_Name: 6.98MF JL Frequence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1518168201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518168200}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 723226747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1518168202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518168200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 6098
-    Bandwidth: 50
-    Orientation: 45
-    OrientationTresh: 5
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 51ba73d6a03d6ec429544aa5d5ed6089, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &1541742018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,62 +3241,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643076918}
   m_CullTransparentMesh: 1
---- !u!1 &1708425524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1708425525}
-  - component: {fileID: 1708425526}
-  m_Layer: 0
-  m_Name: 11.94MF Sequence orientaion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1708425525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708425524}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 723226747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1708425526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708425524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 11094
-    Bandwidth: 4
-    Orientation: 12
-    OrientationTresh: 4
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 642f5202d1af3a043926f9c31de719d5, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &1755390128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,118 +3710,6 @@ MonoBehaviour:
     OrientationTresh: 0
   Messages: []
   VolumeMultiplicator: 3.7802627e-27
---- !u!1 &1896884428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1896884429}
-  - component: {fileID: 1896884430}
-  m_Layer: 0
-  m_Name: 3.57MF Liste Code
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1896884429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896884428}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 723226747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1896884430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896884428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 3057
-    Bandwidth: 50
-    Orientation: 45
-    OrientationTresh: 10
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 4f33eefa0ae12494da473d0be7134cc3, type: 2}
-  VolumeMultiplicator: 1
---- !u!1 &1927803751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1927803752}
-  - component: {fileID: 1927803753}
-  m_Layer: 0
-  m_Name: 5.67FM Scyalciens frequence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1927803752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927803751}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 92812546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1927803753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927803751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  Mask:
-    Frequence: 5067
-    Bandwidth: 45
-    Orientation: 20
-    OrientationTresh: 10
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: 56dbb4a79bc8704488c1b712ae38344e, type: 2}
-  VolumeMultiplicator: 1
 --- !u!1 &1985127564
 GameObject:
   m_ObjectHideFlags: 0
@@ -11545,6 +11037,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7228934307918621899}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6661338383414333340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7056056149930756967}
+    m_Modifications:
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690561908693813781, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549266787775697085, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
+      propertyPath: m_Name
+      value: Jeune Lettriste
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5fa9f6e5f20ee4442ba93e47c860a76d, type: 3}
 --- !u!224 &6674840864651970489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12194,6 +11743,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &7248643429416460325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7056056149930756967}
+    m_Modifications:
+    - target: {fileID: 4554137544819864229, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_Name
+      value: Scylaciens
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163036628422501836, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a92044f29e40e54aa8726de4ba7b3df, type: 3}
 --- !u!1001 &7276797623218397008
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  Clip: {fileID: 8300000, guid: c2274232e1136b745bb49a16a3e931b3, type: 3}
+  Clip: {fileID: 8300000, guid: da95f7966c1ec3847a63bb1ec321bc47, type: 3}
   Duration: 25
   Translations:
   - Mode: 0
