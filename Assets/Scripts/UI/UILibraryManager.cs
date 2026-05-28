@@ -87,10 +87,10 @@ public class UILibraryManager : MonoBehaviour
         UIToolkit.CloseCanvas(PreparationCanvas);
         
         // on enqueue dans le manager toutes les sequences validee
-        //foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
-        //{
-        //    Manager.EnqueueSequence(seq);
-        //}
+        foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
+        {
+            Manager.EnqueueSequence(seq);
+        }
         
         foreach (VinylObject vinyle in m_targetVinyls)
         {
@@ -132,10 +132,10 @@ public class UILibraryManager : MonoBehaviour
         }
 
         // update found sequences
-        //foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
-        //{
-        //    AddSequence(seq);
-        //}
+        foreach (SequenceObject seq in Manager.FindSequences(m_targetVinyls.ToArray()))
+        {
+            AddSequence(seq);
+        }
     }
 
     // create a new ui vinyl item

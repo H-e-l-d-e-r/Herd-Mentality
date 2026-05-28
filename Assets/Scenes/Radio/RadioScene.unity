@@ -1845,7 +1845,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 12700
     Bandwidth: 120
@@ -2893,7 +2892,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 6500
     Bandwidth: 120
@@ -3250,6 +3248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270182521}
   - component: {fileID: 1270182523}
+  - component: {fileID: 1270182522}
   m_Layer: 0
   m_Name: 23.7FM Herd Mentality
   m_TagString: Untagged
@@ -3272,6 +3271,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7056056149930756967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1270182522
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270182520}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8299f7b370d295027a54d4afb9f86d34, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 3.7802627e-27
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1270182523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,12 +3383,11 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.7
   Loop: 0
-  IsHerd: 1
   Mask:
     Frequence: 0
-    Bandwidth: 50
+    Bandwidth: 0
     Orientation: 0
-    OrientationTresh: 120
+    OrientationTresh: 0
   Messages: []
   VolumeMultiplicator: 3.7802627e-27
 --- !u!1 &1275729524
@@ -3342,7 +3437,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 12700
     Bandwidth: 120
@@ -5446,7 +5540,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.504
   Loop: 0
-  IsHerd: 0
   Mask:
     Frequence: 0
     Bandwidth: 0
@@ -5986,7 +6079,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 4053
     Bandwidth: 50
@@ -6372,7 +6464,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 1968
     Bandwidth: 120
@@ -6537,7 +6628,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 3622
     Bandwidth: 120
@@ -7229,7 +7319,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 11094
     Bandwidth: 4
@@ -7650,7 +7739,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 5067
     Bandwidth: 45
@@ -8151,7 +8239,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 6600
     Bandwidth: 120
@@ -8310,7 +8397,7 @@ GameObject:
   - component: {fileID: 8402754541169266289}
   - component: {fileID: 8563815686130155030}
   m_Layer: 5
-  m_Name: Orientation Slider
+  m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8739,7 +8826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3022795394826713678
 Transform:
   m_ObjectHideFlags: 0
@@ -8794,7 +8881,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 3057
     Bandwidth: 50
@@ -9205,7 +9291,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 5067
     Bandwidth: 45
@@ -9518,7 +9603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &3622975285687907546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10597,9 +10682,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c3fbd57341dec48a9b20d8fb357406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VinylRecord
-  KnobComponent: {fileID: 0}
-  Slider: {fileID: 0}
-  Storage: {fileID: 0}
   Broadcast: {fileID: 0}
   Record: {fileID: 0}
   RecordRotation: 0
@@ -10704,7 +10786,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 6012
     Bandwidth: 50
@@ -10797,9 +10878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c3fbd57341dec48a9b20d8fb357406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VinylRecord
-  KnobComponent: {fileID: 3924604024226767123}
-  Slider: {fileID: 395166788287936079}
-  Storage: {fileID: 5195923078844700384}
   Broadcast: {fileID: 1270182523}
   Record: {fileID: 4449780052399779100}
   RecordRotation: 50
@@ -11192,29 +11270,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.size
-      value: 2
+      propertyPath: m_unlockedCollectibles.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.data[0].Vinyl
+      propertyPath: 'm_unlockedCollectibles.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8d7738a64d562ec6f8437d6c343c5192, type: 2}
+      objectReference: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.data[1].Vinyl
+      propertyPath: 'm_unlockedCollectibles.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 27a601cb7564b9145ae5d7e2d75e97bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.data[0].Frequence
-      value: 3000
-      objectReference: {fileID: 0}
+      propertyPath: 'm_unlockedCollectibles.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.data[1].Frequence
-      value: 3000
-      objectReference: {fileID: 0}
+      propertyPath: 'm_unlockedCollectibles.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
-      propertyPath: QuestObjects.Array.data[2].Frequence
-      value: 3000
-      objectReference: {fileID: 0}
+      propertyPath: 'm_unlockedCollectibles.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
     - target: {fileID: 5113427718379902906, guid: 9092c9df7da405205b10eaf2ba2bf20c, type: 3}
       propertyPath: 'm_unlockedCollectibles.Array.data[5]'
       value: 
@@ -12584,7 +12662,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 3000
     Bandwidth: 50
@@ -12650,7 +12727,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 6767
     Bandwidth: 120
@@ -12972,7 +13048,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 4400
     Bandwidth: 120
@@ -13910,7 +13985,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 3000
     Bandwidth: 120
@@ -14084,7 +14158,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 6098
     Bandwidth: 50
@@ -14642,7 +14715,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.5
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 8825
     Bandwidth: 120
@@ -15545,7 +15617,6 @@ MonoBehaviour:
   Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   Volume: 0.383
   Loop: 1
-  IsHerd: 0
   Mask:
     Frequence: 11000
     Bandwidth: 75

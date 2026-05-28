@@ -45,13 +45,13 @@ public class RadioManager : MonoBehaviour
     private bool m_overwriteRadioTicks = false;
 
     // les vinyles qui ont deja ete joues
-    private Queue<QuestObject> m_playedVinyls;
+    private Queue<VinylObject> m_playedVinyls;
 
     // les sequences que le joueur doit jouer
     private Queue<SequenceObject> m_discoverd;
 
     // les sequences qui ont ete valides
-    private List<QuestObject> m_validatedQuests;
+    private List<SequenceObject> m_validatedSequences;
 
     private void Awake()
     {
@@ -65,9 +65,9 @@ public class RadioManager : MonoBehaviour
         
         GameClock = new Clock();
 
-        m_playedVinyls = new Queue<QuestObject>();
+        m_playedVinyls = new Queue<VinylObject>();
         m_discoverd = new Queue<SequenceObject>();
-        m_validatedQuests = new List<QuestObject>();
+        m_validatedSequences = new List<SequenceObject>();
 
         // register targets
         if (m_selectedSequences.Length > 0)
@@ -196,19 +196,33 @@ public class RadioManager : MonoBehaviour
     /// Vinyl enqueue wrapper.
     /// </summary>
     /// <param name="vinyl"></param>
-    public void EnqueueVinyl(VinylObject vinyl, float frequence, float orientation)
+    public void EnqueueVinyl(VinylObject vinyl)
     {
         if (m_playedVinyls == null)
         {
             return;
         }
 
-        m_playedVinyls.Enqueue(new QuestObject(vinyl, frequence, orientation));
+        int countBefore = m_validatedSequences.Count;
 
-        if (FindSequences()) 
+
+        m_playedVinyls.Enqueue(vinyl);
+
+
+        FindSequences();
+
+
+        if (m_validatedSequences.Count > countBefore)
         {
-            Debug.Log("fin?");
-            GameManager.Instance.End();
+            SequenceObject lastSeq = m_validatedSequences[m_validatedSequences.Count - 1];
+
+            //if (QuestCompletedCanvas != null)
+            //{
+            //    UIToolkit.SetText(QuestCompletedText, lastSeq.name + " Complete !");
+//
+//
+            //    StartCoroutine(ShowAndFadeQuestPopup());
+            //}
         }
     }
 
@@ -263,11 +277,45 @@ public class RadioManager : MonoBehaviour
     }
 
 
-    public bool FindSequences() => FindSequences(m_playedVinyls.ToArray());
+    public SequenceObject[] FindSequences() => FindSequences(m_playedVinyls.ToArray());
 
-    public bool FindSequences(QuestObject[] vinyls)
+    public SequenceObject[] FindSequences(VinylObject[] vinyls)
     {
-        return vinyls.ContainsSubSequence(GlobalGameSettings.Instance.QuestObjects);
+        // avoid concurrency race 
+        if(m_discoverd == null || m_validatedSequences == null)
+        {
+            return new SequenceObject[0];
+        }
+
+        List<SequenceObject> list = new List<SequenceObject>();
+
+        /*foreach (SequenceObject seq in m_targetSequences)
+        {
+            if (vinyls.ContainsSubSequence(seq.Blocs))
+            {
+                // for sequences that contains for than one element
+                // theses are always added
+                if(seq.Blocs.Length > 1)
+                {
+                    list.Add(seq);                
+                }
+
+                // when the sequence only contains one vinyl
+                // we only add it if it's the current quest 
+                // else if (seq.Blocs.Length == 1 && EnableQuests)
+                // {
+                //     if (QuestManager.Quest.ConstraintVinyles.ContainsSubSequence(seq.Blocs))
+                //     {
+                //         list.Add(seq);                                    
+                //     }
+                // }
+            }
+        }*/
+
+        m_validatedSequences.Clear();
+        m_validatedSequences.AddRange(list);
+
+        return list.ToArray();
     }
 
     [Serializable]

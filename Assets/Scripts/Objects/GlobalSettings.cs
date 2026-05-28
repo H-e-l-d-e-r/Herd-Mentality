@@ -12,15 +12,10 @@ public class GlobalGameSettings : SingletonScriptableObject<GlobalGameSettings>
     public InputActionReference InteractInputAction;
     public InputActionReference MousePositionInputAction;
 
-    [Header("Quests")]
-    public QuestObject[] QuestObjects;
-
     [Header("Atomization")]
     [Tooltip("En minutes")]
     public float RadioPlayTime = 4.5f;
     public float LerpStrengh = 0.5f;
-    public float FrequenceTreshold = 10.0f;
-    public float OrientationTreshold = 10.0f;
 
     [Range(0.0f, 1.0f)]
     [Tooltip("Accroissement de l'appreciation pour la musique par secondes")]

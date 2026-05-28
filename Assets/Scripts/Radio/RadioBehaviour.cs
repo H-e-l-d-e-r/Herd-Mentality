@@ -236,10 +236,11 @@ public class RadioBehaviour : MonoBehaviour
 
         float freq = Mathf.Clamp(m_freq, k_minFreq, k_maxFreq);
 
-        float ori = Antenna.Value; 
+        float ori = Antenna.Value;
+        print(ori);
 
         // minimum captable signal
-        float maxSignal = 0.1f;
+        float maxSignal = 0f;
         RadioBroadcastBehaviour radio = null;
         
         foreach (var be in m_broadcasts)
