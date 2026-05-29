@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8253235ec52c6eca5bc20f5c10b9e1a5, type: 3}
   m_Name: Global Settings
   m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
-  GenericInputCooldown: 0.2
+  GenericInputCooldown: 0.1
   NextCameraInputAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   InteractInputAction: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   MousePositionInputAction: {fileID: 6564999863303420839, guid: 052faaac586de48259a63d0c4782560b, type: 3}

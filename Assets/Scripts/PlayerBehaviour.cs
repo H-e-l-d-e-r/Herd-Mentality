@@ -45,6 +45,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    public void SetCamera(int index)
+    {
+        Anchors[Mathf.Clamp(index, 0, Anchors.Length - 1)].Focus(Camera);
+    }
+
     void UpdateCamera()
     {
         if (!CanSwitchCamera)
