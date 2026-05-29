@@ -66,6 +66,7 @@ public class RadioManager : MonoBehaviour
         GameClock = new Clock();
 
         m_playedVinyls = new Queue<QuestObject>();
+
         m_discoverd = new Queue<SequenceObject>();
         m_validatedQuests = new List<QuestObject>();
 
@@ -91,18 +92,6 @@ public class RadioManager : MonoBehaviour
         RadioBehaviour.OnRadioDisable.AddListener(() => { BackgroundMusicSource.volume = BackgroundMusicVolume; });
 
         Debug.Log($"<color=magenta>[DEBUG] {m_discoverd.Count()} sequences chargees depuis le GameManager !</color>");
-    }
-
-    void OnEnable()
-    {
-        // reset
-        ClearVinylQueue();
-    }
-
-    void OnDisable()
-    {
-        // reset
-        ClearVinylQueue();
     }
 
     void Update()
@@ -205,6 +194,12 @@ public class RadioManager : MonoBehaviour
 
         m_playedVinyls.Enqueue(new QuestObject(vinyl, frequence, orientation));
 
+        int maxSize = GlobalGameSettings.Instance.QuestObjects.Length;
+        while (m_playedVinyls.Count > maxSize)
+            m_playedVinyls.Dequeue();
+
+        Debug.Log($"{vinyl.Name} {frequence} {orientation}");
+
         if (FindSequences()) 
         {
             Debug.Log("fin?");
@@ -267,7 +262,15 @@ public class RadioManager : MonoBehaviour
 
     public bool FindSequences(QuestObject[] vinyls)
     {
-        return vinyls.ContainsSubSequence(GlobalGameSettings.Instance.QuestObjects);
+        QuestObject[] targets = GlobalGameSettings.Instance.QuestObjects;
+        if (vinyls.Length != targets.Length) return false;
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            if (!vinyls[i].Equals(targets[i])) return false;
+        }
+
+        return true;
     }
 
     [Serializable]

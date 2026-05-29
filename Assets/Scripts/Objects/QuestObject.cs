@@ -28,21 +28,32 @@ public class QuestObject
         Orientation = orientation;
     }
 
+    public static bool operator ==(QuestObject a, QuestObject b)
+    {
+        if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
+        if (ReferenceEquals(a, null) || ReferenceEquals(b, null)) return false;
+        return a.Equals(b);
+    }   
+
+    public static bool operator !=(QuestObject a, QuestObject b) => !(a == b);
+
     public override bool Equals(object obj)
     {
-        if(obj.GetType() != typeof(QuestObject)) return false;
-        if(Vinyl != (obj as QuestObject).Vinyl) return false;
-        if(!(Frequence > (obj as QuestObject).Frequence - GlobalGameSettings.Instance.FrequenceTreshold &&
-            Frequence < (obj as QuestObject).Frequence + GlobalGameSettings.Instance.FrequenceTreshold)) return false;
+        Debug.Log("Check quest"); 
 
-        if(!(Orientation > (obj as QuestObject).Orientation - GlobalGameSettings.Instance.OrientationTreshold &&
-            Orientation < (obj as QuestObject).Orientation + GlobalGameSettings.Instance.OrientationTreshold)) return false;
+        if(obj == null || (obj as QuestObject).Vinyl == null || Vinyl == null) return false;
+        if(obj.GetType() != typeof(QuestObject)) return false;
+        if(Vinyl.Name != (obj as QuestObject).Vinyl.Name) return false;
+
+        if (Mathf.Abs(Frequence - (obj as QuestObject).Frequence) > GlobalGameSettings.Instance.FrequenceTreshold) return false;
+        if (Mathf.Abs(Orientation - (obj as QuestObject).Orientation) > GlobalGameSettings.Instance.OrientationTreshold) return false;
+
         Debug.Log("validate quest"); 
         return true;
     }
 
     public override int GetHashCode()
     {
-        return base.GetHashCode();
+        return Vinyl != null ? Vinyl.GetHashCode() : 0;
     }
 }
