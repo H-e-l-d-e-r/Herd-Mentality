@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: Indice Roskoff
   Description: "Quand tu scelleras l'union des nombres fr\xE8res, li\xE9s par le
-    m\xEAme instrument, le secret d\xE9sir\xE9 te sera r\xE9v\xE9l\xE9. (Blah blah
-    blah....Vraiment barbant comme \xE9nigme. -_- )"
+    m\xEAme  type d'instrument, le secret d\xE9sir\xE9 te sera r\xE9v\xE9l\xE9.\n\n
+    Un type d'instrument? Des nombres fr\xE8res? Il y a t il un lien entre les 2? "
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -29,8 +29,8 @@ MonoBehaviour:
   Translations:
   - Mode: 0
     p_content: "Quand tu scelleras l'union des nombres fr\xE8res, li\xE9s par le
-      m\xEAme instrument, le secret d\xE9sir\xE9 te sera r\xE9v\xE9l\xE9. (Blah blah
-      blah....Vraiment barbant comme \xE9nigme. -_- )"
+      m\xEAme type d'instrument, le secret d\xE9sir\xE9 te sera r\xE9v\xE9l\xE9.
+      (Blah blah blah....Vraiment barbant comme \xE9nigme. -_- )"
   - Mode: 1
     p_content: ETIheg klhkhETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET
       GBEEHI TEG igi gieh gheeghe g

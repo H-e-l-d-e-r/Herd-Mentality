@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Roskoff_Music_7_Orientation_CesarCode
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: Orientation finale
-  Description: "40\xB0 "
+  Name: Orientation d'une station Roskoff
+  Description: "Orientation 40\xB0? Mais de quelle fr\xE9quence? "
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
