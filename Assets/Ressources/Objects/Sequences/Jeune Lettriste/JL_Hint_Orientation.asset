@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: JL_Hint_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Hint_Orientation
+  Name: L'orientation des Jeunes Lettristes
   Description: "On change l'orientation de l'antenne en raison de d\xE9gradations
     caus\xE9es par de petits garnements qui n'ont rien d'autre \xE0 faire de leur
     journ\xE9e. \xC0 la place de moins douze , on passe \xE0 douze."
@@ -35,3 +35,7 @@ MonoBehaviour:
     p_content: Kj ydwjca h'kneajpwpekj za h'wjpajja aj nweokj za zacnwzwpekjo ywqoaao
       lwn za lapepo cwnjaiajpo mqe j'kjp neaj z'wqpna w bwena za haqn fkqnjaa. W
       hw lhwya za ikejo zkqva , kj lwooa w zkqva.
+  - Mode: 2
+    p_content: .avqkz w aoowl jk , avqkz ojeki az aywhl wh W .aajnqkf nqah az anewb
+      w anpqw'z jaen pjk'j eqm opjaiajnwc opepal az nwl oaaoqwy ojkepwzwncaz az jkoewn
+      ja ajjapjw'h az jkepwpjaenk'h acjwdy jK

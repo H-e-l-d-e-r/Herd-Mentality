@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Au_Diag_6_Lei_Audio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: Les fondations
+  Description: "Gr\xE2ce \xE0 un audio, vous savez qu'il faut utiliser le code c\xE9sar.
+    Lei vous donne un indice \"un chat retombe toujours sur ses pattes\"."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -33,8 +34,7 @@ MonoBehaviour:
   - Mode: 0
     p_content: "Voil\xE0 ! Les chiffres que tu as trouv\xE9s en d\xE9codant forment
       une cl\xE9 de code C\xE9sar. Tu peux maintenant chercher o\xF9 est-ce que j'ai
-      cach\xE9 ce code, hiiiihiiiii. Indice : la premi\xE8re part de g\xE2teau est
-      toujours la meilleure !"
+      cach\xE9 ce code. Un indice : un chat retombe toujours sur ses pattes !"
   - Mode: 3
     p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
       pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s

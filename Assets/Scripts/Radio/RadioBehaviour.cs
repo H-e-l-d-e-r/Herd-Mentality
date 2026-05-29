@@ -5,6 +5,18 @@ using UnityEngine.Events;
 
 public class RadioBehaviour : MonoBehaviour
 {
+    public float Frequence
+    {
+        get => FreqKnob.Value;
+        set => FreqKnob.SetValue(value);
+    }
+
+    public float Orientation
+    {
+        get => Antenna.Value;
+        set => Antenna.SetValue(value);
+    }
+
     public AudioListener Listener;
     public RadioManager Manager;
 

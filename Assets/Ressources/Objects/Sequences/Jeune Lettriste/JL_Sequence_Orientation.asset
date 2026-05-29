@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: JL_Sequence_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Sequence_Orientation
+  Name: La battaille des Jeunes Lettristes
   Description: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
     de diffusion, bataille pour r\xE9cup\xE9rer l'audience installer anouvelle anttenne
     en moins cinquante deux pour r\xE9cuper la zone grise de diffusion."
@@ -35,3 +35,7 @@ MonoBehaviour:
     p_content: 'Lnkxhaia wray Nkomqkb ap Oyuhwyeaj : jkj-naolayp zao kneajpwpekjo
       za zebbqoekj, xwpwehha lkqn nayqlanan h''wqzeajya ejopwhhan qja jkqrahha wjppajja
       aj ikejo yejmqwjpa zaqt lkqn nayqlan hw vkja cneoa za zebbqoekj.'
+  - Mode: 3
+    p_content: '.jkeoqbbez az aoenc ajkv wh nalqyan nqkl tqaz apjwqmjey ojeki ja
+      ajjappjw ahharqkj ajq nahhwpoje ayjaezqw''h nanalqyan nqkl ahhewpwx ,jkeoqbbez
+      az ojkepwpjaenk oaz pyaloan-jkj : jaeywhuyO pa bkqmokN yarw aiahxknL'

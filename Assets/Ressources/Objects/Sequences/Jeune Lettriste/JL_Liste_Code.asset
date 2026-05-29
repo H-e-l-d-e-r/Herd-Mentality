@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: JL_Liste_Code
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Liste_Code
+  Name: "Un code chifr\xE9 des Jeunes Lettristes"
   Description: 12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard
   Like:
     YoungLetterists: 0
@@ -27,3 +27,5 @@ MonoBehaviour:
   Translations:
   - Mode: 0
     p_content: 12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard
+  - Mode: 2
+    p_content: drammoh11dramehcuac9eliuh2eliut5eriop43etruot1rimrod4neil89ref43emmop21

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: SC_Hint_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: SC_Hint_Orientation
+  Name: Indice d'orientation Scilacien
   Description: "Pitch \xAB ollA ! Il y a nuqleuq ? Je suis udreP \xE0 \xE9t\xF4c
     de al ecalp principale. nueleuQ pourrait redia'm ? \xBB\nPitch \xAB ueH, ouais\u2026
     seT qui iot , ? Tu xuev iouq ? \xBB\nPitch \xAB J'ai \xE9cnemmoc \xE0 \xE9couter
@@ -48,8 +48,6 @@ MonoBehaviour:
       \xE0 rentrer zeHc moi. \xBB\nPitch \xAB Ouais, yako\u2026 ueH, si seT \xE0
       la ecalp, normalement ut suis noit\u0430\u0442neiro'd de ton ennetnA, du puoc
       sniom etnert-deux, un curt snad le style. \xBB"
-  - Mode: 1
-    p_content: 
   - Mode: 2
     p_content: "hctiP \xAB ollA ! lI y a nuqleuq ? eJ suis udreP \xE0 \xE9t\xF4c
       ed la ecalp .elapicnirp nueleuQ pourrait ?\xBBredia'm \xBB\nhctiP \xAB ueH,

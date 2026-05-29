@@ -15,10 +15,13 @@ public class RadioDecrypter : MonoBehaviour
     public Button RecordButton;
     public Button TranslateButton;
     public Slider ProgressBar;
+    public ScrollRect ScrollView;
     public UISelectNumber[] NumberSelectors;
+    public AudioSource RecordingAudio;
 
     [Header("Behaviours")]
     public UISelectDecryptionMode DecryptionModeSelector;
+    public DialogueActor DialogueActor;
     public DialogueTypewritter Typewritter;
 
     [Header("Buttons")]
@@ -50,12 +53,15 @@ public class RadioDecrypter : MonoBehaviour
         DecryptionModeSelector.OnChange.AddListener((_) => { InteruptTranslating(); StartTranslating(); });
 
         Groups.CurrentGroup = 0; 
+
+        InteruptRecoding();
     }
 
     void Update()
     {
         // update state
         ProgressBar.gameObject.SetActive(m_isRecordRunning);
+        ScrollView.normalizedPosition = new Vector2(0, 0);
     }
 
     public void StartRecording() => m_recordRoutine = StartCoroutine(Record());
@@ -63,6 +69,8 @@ public class RadioDecrypter : MonoBehaviour
 
     public void InteruptRecoding()
     {
+        RecordingAudio.volume = 0.0f;
+
         if (!m_isRecordRunning)
         {
             return;
@@ -71,10 +79,10 @@ public class RadioDecrypter : MonoBehaviour
         StopCoroutine(m_recordRoutine);
 
         Typewritter.Clear();
-        Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording faild!"));
-
+        Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Recording faild!"));
 
         m_isRecordRunning = false;
+        Groups.CurrentGroup = 0;
     }
 
     public void InteruptTranslating()
@@ -109,7 +117,7 @@ public class RadioDecrypter : MonoBehaviour
         if (behaviour == null || behaviour.Current == null)
         {
             Typewritter.Clear();
-            Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Signal not found!"));
+            Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Signal not found!"));
 
             m_recordObject = null;
             m_isRecordRunning = false;
@@ -122,9 +130,10 @@ public class RadioDecrypter : MonoBehaviour
         m_recordDuration = (float)remainingTime;
 
         Typewritter.Clear();
-        Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording..."));
+        Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Recording..."));
 
         m_recordObject = behaviour.Current;
+        RecordingAudio.volume = 1.0f;
 
         while (behaviour.GetTimeToNext() > Mathf.Epsilon)
         {
@@ -133,9 +142,10 @@ public class RadioDecrypter : MonoBehaviour
         }
 
         Typewritter.Clear();
-        Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording done!"));
+        Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Recording done!"));
 
         RadioManager.Instance.EnqueueSequence(m_recordObject);
+        RecordingAudio.volume = 0.0f;
 
         m_isRecordRunning = false;
     }
@@ -156,7 +166,7 @@ public class RadioDecrypter : MonoBehaviour
         // if nothing is recorded
         if (m_recordObject == null)
         {
-            Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Recording not found"));
+            Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Recording not found"));
             m_isTranslateRunning = false;
             m_isTranslateRunningTwice = false;
             yield break;
@@ -188,12 +198,12 @@ public class RadioDecrypter : MonoBehaviour
             if (!result.DoesAskModifier)
             {
                 // when there is nothing to ask
-                Typewritter.TryEnqueueCommand(new DialogueCommand("", null, result.GetContent()));            
+                Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, result.GetContent()));            
             }
             else
             {
                 Typewritter.Clear();
-                Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Waiting for modifier"));
+                Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Waiting for modifier"));
 
                 // select the second group
                 Groups.CurrentGroup = 1;
@@ -211,7 +221,7 @@ public class RadioDecrypter : MonoBehaviour
                 }
 
                 Typewritter.Clear();
-                Typewritter.TryEnqueueCommand(new DialogueCommand("", null, result.GetContent(modifier)));            
+                Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, result.GetContent(modifier)));            
 
                 Groups.CurrentGroup = 0;
             }
@@ -223,7 +233,7 @@ public class RadioDecrypter : MonoBehaviour
         else
         {
             Typewritter.Clear();
-            Typewritter.TryEnqueueCommand(new DialogueCommand("", null, "Translation not found"));
+            Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, "Translation not found"));
             
             m_isTranslateRunning = false;
             m_isTranslateRunningTwice = false;

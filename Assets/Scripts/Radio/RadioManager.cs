@@ -214,9 +214,17 @@ public class RadioManager : MonoBehaviour
 
     public void EnqueueSequence(SequenceObject seq)
     {
+        if (m_discoverd.Contains(seq))
+        {
+            return;
+        }
+
+        // register
         m_discoverd.Enqueue(seq);
         GameManager.Instance.AddCollectible(seq);
-        UI.Notify.Notify($"New Message registerd!", 2f);
+        
+        // callback
+        UI.Notify.Notify($"Nouvelle entrée!", 2f);
     }
 
     /// <summary>

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Au_Diag_7_Lei_6500HMz
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: Lei parle (encore)
+  Description: Lei parle encore et toujours.
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

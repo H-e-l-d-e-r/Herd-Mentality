@@ -8,7 +8,7 @@ public class DialogueTutorial : MonoBehaviour
     public DialogueTable Diag_Lei_3;
     public DialogueTypewritter TypeWritter;
 
-    [Header("Diag 2 - Fréquence")]
+    [Header("Diag 2 - Frequence")]
     public float FreqTuto;
     public float Bandwidth = 500f;
     [Range(0f, 1f)]
@@ -16,7 +16,7 @@ public class DialogueTutorial : MonoBehaviour
 
     [Header("Diag 3 - Antenne")]
     public float AngleTuto = 30f;
-    public float AngleThreshold = 5f; // ± degrés de tolérance
+    public float AngleThreshold = 5f; // ï¿½ degrï¿½s de tolï¿½rance
 
     private DialoguePtr Lei_Diag;
     private DialoguePtr Lei_Diag2;
@@ -51,8 +51,12 @@ public class DialogueTutorial : MonoBehaviour
 
         if (signal >= SignalThreshold)
         {
-            Dialogue.PlayDialogue(Lei_Diag2);
             m_diag2Played = true;
+
+            //force the player to be at a special frequence
+            RadioManager.Instance.RadioBehaviour.Frequence = 12700;
+
+            Dialogue.PlayDialogue(Lei_Diag2);
         }
     }
 
@@ -63,7 +67,7 @@ public class DialogueTutorial : MonoBehaviour
         if (TypeWritter.HasCommand) return;
         if (Dialogue.Instance.HasCommand) return;
 
-        // Vérifie la fréquence ET l'angle en même temps
+        // Vï¿½rifie la frï¿½quence ET l'angle en mï¿½me temps
         float currentFreq = RadioManager.Instance.RadioBehaviour.FreqKnob.Value;
         float deltaFreq = Mathf.Abs(currentFreq - FreqTuto);
         float signal = Mathf.Exp(-Mathf.Pow(deltaFreq / (Bandwidth / 2f), 2));
@@ -73,8 +77,12 @@ public class DialogueTutorial : MonoBehaviour
 
         if (freqOk && angleOk)
         {
-            Dialogue.PlayDialogue(Lei_Diag3);
             m_diag3Played = true;
+
+            RadioManager.Instance.RadioBehaviour.Frequence = 12700;
+            RadioManager.Instance.RadioBehaviour.Orientation = 30; 
+
+            Dialogue.PlayDialogue(Lei_Diag3);
         }
     }
 }

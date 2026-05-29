@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: SC_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: SC_Hint_Frequence
-  Description: "Pchit : \xAB Hey mec, tu te rappelles de la fr\xE9quence du truc
-    de fou qu'on avait entendu \xE0 la radio ? \xBB\n\nPchit : \xAB Que le chanteur
-    des Scylaciens, est le g\xE9rant de la baraque \xE0 frites ? Je pense que c'\xE9tait
-    deux mille cent ou deux mille trois cent un truc comme \xE7a.\xBB"
+  Name: "Indice de fr\xE9quence Scilacien"
+  Description: "Hey mec, tu te rappelles de la fr\xE9quence du truc de fou qu'on
+    avait entendu \xE0 la radio ?\n\nPchit : \xAB Que le chanteur des Scylaciens,
+    est le g\xE9rant de la baraque \xE0 frites ? Je pense que c'\xE9tait deux mille
+    cent ou deux mille trois cent un truc comme \xE7a.\xBB"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -29,13 +29,11 @@ MonoBehaviour:
   Duration: 25
   Translations:
   - Mode: 0
-    p_content: "Tihcp \"yeH cem ut et leppar ed al ecneuq\xE9rf ud curt ed uof no'uq
-      siva udnetne a al oidar ? \"\nTihcp \" ueH non tuotud ed leqeu curt ? Tihcp
-      \"siaM is, euq el retnahc sed\" snecilayS tse'c iul el tnar\xE9d ed al euqarab
-      a etirf.\"\nTihcp \"siam iuo, a siva'j \xE9ilbuo ej esnep siat\xE9'c xued ellim
-      tnec uo xued ellim tnec ior\u0442 nu curt emmoc ac."
-  - Mode: 1
-    p_content: 
+    p_content: "Pchit : \"yeH cem ut et leppar ed al ecneuq\xE9rf ud curt ed uof
+      no'uq siva udnetne a al oidar ? \"\nTihcp \" ueH non tuotud ed leqeu curt ?
+      Tihcp \"siaM is, euq el retnahc sed\" snecilayS tse'c iul el tnar\xE9d ed al
+      euqarab a etirf.\"\nTihcp \"siam iuo, a siva'j \xE9ilbuo ej esnep siat\xE9'c
+      xued ellim tnec uo xued ellim tnec ior\u0442 nu curt emmoc ac."
   - Mode: 2
     p_content: "Pchit : \xAB Hey mec, tu te rappelles de la fr\xE9quence du truc
       de fou qu'on avait entendu \xE0 la radio ? \xBB\n\nPchit : \xAB Que le chanteur

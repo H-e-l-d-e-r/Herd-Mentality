@@ -244,6 +244,11 @@ namespace DialogueSystem
         private void UpdateTypewritter()
         {
             m_lastTime -= Time.deltaTime;
+
+            if(m_command.Text == null)
+            {
+                return;
+            }
  
             // cooldown has exceed.
             if(m_lastTime <= double.Epsilon)

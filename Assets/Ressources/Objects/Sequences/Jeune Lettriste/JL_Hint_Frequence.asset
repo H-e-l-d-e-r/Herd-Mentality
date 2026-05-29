@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: JL_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Hint_Frequence
+  Name: "La fr\xE9quences des Jeunes Lettristes"
   Description: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
     douze mille un. Essayez onze mille nonante quatre ; si cela ne fonctionne pas,
     essayez neuf mille cinquante quatre. Je r\xE9p\xE8te : \xE9vitez de trop diffuser"
@@ -35,3 +35,7 @@ MonoBehaviour:
     p_content: 'Pajoekj wray hao ajoaecjwjpo, arepav za zebbqoan oqn hw bnamqajya
       zkqva iehha qj. Aoowuav kjva iehha jkjwjpa mqwpna ; oe yahw ja bkjypekjja lwo,
       aoowuav jaqb iehha yejmqwjpa mqwpna. Fa nalapa : arepav za pnkl zebbqoan.'
+  - Mode: 2
+    p_content: '.naoqbbez lknp az vapera : apalan aF .anpwqm apjwqmjey ahhei bqaj
+      vauwooa ,owl ajjkepyjkb aj whay eo ; anpwqm apjwjkj ahhei avjk vauwooA .jq
+      ahhei avqkz ayjaqmanb wh nqo naoqbbez az vapera ,opjwjceaoja oah yarw jkeojaP'

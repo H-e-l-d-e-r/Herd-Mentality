@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: SC_Info_Radio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: SC_Info_Radio
+  Name: Les infos des Scilas
   Description: 'SCYLACIENS
 
     5.67HM.
@@ -35,7 +35,9 @@ MonoBehaviour:
       5.67HM.
 
       Orientation 20 / -22'
-  - Mode: 1
-    p_content: 
   - Mode: 2
-    p_content: 
+    p_content: 'SNEICALYCS
+
+      .MH76.5
+
+      22- / 02 noitatneirO'

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: SC_Sequence_music
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: SC_Sequence_music
+  Name: Ordre final
   Description: "Bonsoir tout le monde, on se retrouve pour la tier list des 5 sons
     les plus \xE9cout\xE9s de ce mois. Tout en bas, en E on a \"talking to the wind\".
     Pour continuer, en D on a \"Won't Remember\", puis en C \"Coolgirl\", la num\xE9ro
@@ -37,7 +37,10 @@ MonoBehaviour:
       la num\xE9ro 1 des jeunes lettristes, mais  elle ne fait pas le poids. En haut
       du panier en B on a \"Waters\". Finalement en A...\"Mercury\"!!! F\xE9licitations
       \xE0 eux, merci de nous avoir \xE9cout\xE9 et a la prochaine."
-  - Mode: 1
-    p_content: 
   - Mode: 2
-    p_content: 
+    p_content: .eniahcorp al a te etuoce riova suon ed icrem ,xue a snoitaticileF
+      !!!"yrucreM"...A ne tnemelaniF ."sretaW" a no B ne reinap ud tuah nE .sdiop
+      el sap tiaf en elle  siam ,setsirttel senuej sed 1 oremun al ,"lriglooC" C
+      ne siup ,"rebmemeR t'noW" a no D ne ,reunitnoc ruoP ."dniw eht ot gniklat"
+      a no E ne ,sab ne tuoT .siom ec ed setuoce sulp sel snos 5 sed tsil reit al
+      ruop evuorter es no ,ednom el tuot riosnoB

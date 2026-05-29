@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: JL_Info_Radio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: JL_Info_Radio
+  Name: "Les fr\xE9quences des Jeunes Lettristes"
   Description: 'JEUNES LETTRISTE
 
     4.53MF
@@ -45,3 +45,14 @@ MonoBehaviour:
 
       Orientation
       45'
+  - Mode: 2
+    p_content: 'ETSIRTTEL SENUEJ
+
+      FM35.4
+
+      FM21.6
+
+      FM89.6
+
+      54
+      noitatneirO'

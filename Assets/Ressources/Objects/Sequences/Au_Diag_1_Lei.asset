@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Au_Diag_1_Lei
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: Coucou
-  Description: c'est coucou
+  Name: "Lei \xE0 besoin d'aide"
+  Description: Le joueur passe vers la station 12700Hmz.
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

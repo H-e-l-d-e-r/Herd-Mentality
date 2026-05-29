@@ -12,8 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Roskoff_Music_3_Numbers
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: "Cl\xE9e des Roskoff"
+  Description: 'Do = 0
+
+    Re = 1
+
+    Mi = 2
+
+    Fa = 3
+
+    Sol = 4
+
+    La =
+    5
+
+    Si = 6
+
+'
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

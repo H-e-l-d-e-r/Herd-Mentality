@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Au_Diag_8_Lei_6500HMz
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: Orientations des factions
+  Description: "Scylaciens : 5067HMz Orientation 20\xB0/ 6098HMz Orientation 45\xB0
+    / 11094HMz Orientation 12\xB0, \nJeunes Lettristes : 6012HMz Orientation 45\xB0,
+    \nRoskoff :  6767HMz Orientation -60\xB0"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

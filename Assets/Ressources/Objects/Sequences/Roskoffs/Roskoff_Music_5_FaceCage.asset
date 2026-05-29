@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Roskoff_Music_5_FaceCage
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: "Un autre d\xE9fi du Squat"
+  Description: FACE CAGE PIANO 1434,
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -28,29 +28,28 @@ MonoBehaviour:
   - Mode: 0
     p_content: 'FACE CAGE PIANO 1434,
 
-      
 
-      
 
-      
 
-      FACE CAGE
-      Xylophone 2036,
 
-      
 
-      
 
-      FACE CAGE GUITARE 534,
+      FACE CAGE Xylophone 2036,
 
-      
 
-      
 
-      
+
 
       FACE
-      CAGE Tambour 6789.'
+      CAGE GUITARE 534,
+
+
+
+
+
+
+
+      FACE CAGE Tambour 6789.'
   - Mode: 1
     p_content: ETIheg klhkhETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET
       GBEEHI TEG igi gieh gheeghe g

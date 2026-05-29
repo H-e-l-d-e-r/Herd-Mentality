@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Roskoff_Music_4_Frequences
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: 
-  Description: 
+  Name: "La fr\xE9quence des Roskoff"
+  Description: Sol Sol Do Do HMz / Si Si Do Do HMz
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   Duration: 9
   Translations:
   - Mode: 0
-    p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvaise d\xE9cryptage
+    p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage,
       LOSER! "
   - Mode: 1
     p_content: "Sol Sol Do Do HMz / Si Si Do Do HMz\n\nOkay. Bien jou\xE9...Ou pas!
