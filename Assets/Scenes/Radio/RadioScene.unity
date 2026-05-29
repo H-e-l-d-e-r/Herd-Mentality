@@ -10007,8 +10007,8 @@ MonoBehaviour:
   IsInfinite: 0
   MinValue: 0
   MaxValue: 13000
-  UseAngle: 0
-  UseDistance: 1
+  UseAngle: 1
+  UseDistance: 0
   Sensitivity: 1
   Exponential: 50
   Borehole: {fileID: 6634072528525635146}
