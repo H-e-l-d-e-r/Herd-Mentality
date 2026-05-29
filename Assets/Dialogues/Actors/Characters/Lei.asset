@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Lei
   Description: 
   Sprites:
-  - {fileID: 923943893, guid: 0f50c7b4496585a4885873d05b5b1318, type: 3}
+  - {fileID: 1685022772, guid: 74546049d1ceb244e89ba33490e70897, type: 3}
   SpriteSide: 0
   CharacterAudio: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
   AudioProbability: 0.5
