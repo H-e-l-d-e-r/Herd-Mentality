@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Au_Diag_8_Lei_6500HMz
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: Orientations des factions
-  Description: "Scylaciens : 5067HMz Orientation 20\xB0/ 6098HMz Orientation 45\xB0
-    / 11094HMz Orientation 12\xB0, \nJeunes Lettristes : 6012HMz Orientation 45\xB0,
-    \nRoskoff :  6767HMz Orientation -60\xB0"
+  Description: "SCYLACIENS\n5.67HM.\nOrientation 20 / -22\nJEUNES LETTRISTE :\n4.53MF
+    / 6.12MF / 6.98MF\nOrientation 45\nROSKOFF :\n6767HMz Orientation -60\xB0"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -28,18 +27,18 @@ MonoBehaviour:
   Duration: 3
   Translations:
   - Mode: 2
-    p_content: "xrxdK hta 3 .httccdsgddr hctxrpanrH : oBW7605 cdxipictxgD ,\xB002
-      htcjtY htihxgiitA : oBW2106 cdxipictxgD ,\xB054 uudzhdG : oBW7676 cdxipictxgD
-      \xB006-"
+    p_content: 'Fysms voc 3 myybnyxxooc. Cmivkmsoxc : 5067RWj Ybsoxdkdsyx 20; -22
+      Toexoc Voddbscdoc: 6012RWj 6098RWj 4.53 RWJ Ybsoxdkdsyx 45, Bycuypp :  6767RWj
+      Ybsoxdkdsyx -60'
   - Mode: 0
-    p_content: "Kdxrx ath 3 rddgsdcctth. Hrnaprxtch : 5067WBo Dgxtcipixdc 20\xB0,
-      Ytjcth Atiigxhith : 6012WBo Dgxtcipixdc 45\xB0, Gdhzduu :  6767WBo Dgxtcipixdc
-      -60\xB0"
+    p_content: 'Fysms voc 3 myybnyxxooc. Cmivkmsoxc : 5067RWj Ybsoxdkdsyx 20; -22
+      Toexoc Voddbscdoc: 6012RWj 6098RWj 4.53 RWJ Ybsoxdkdsyx 45, Bycuypp :  6767RWj
+      Ybsoxdkdsyx -60'
   - Mode: 3
-    p_content: "Fysms voc 3 myybnyxxooc. Cmivkmsoxc : 5067RWj Ybsoxdkdsyx 20\xB0/
-      6098RWj Ybsoxdkdsyx 45\xB0 / 11094RWj Ybsoxdkdsyx 12\xB0, Toexoc Voddbscdoc
-      : 6012RWj Ybsoxdkdsyx 45\xB0, Bycuypp :  6767RWj Ybsoxdkdsyx -60\xB0"
+    p_content: 'Fysms voc 3 myybnyxxooc. Cmivkmsoxc : 5067RWj Ybsoxdkdsyx 20; -22
+      Toexoc Voddbscdoc: 6012RWj 6098RWj 4.53 RWJ Ybsoxdkdsyx 45, Bycuypp :  6767RWj
+      Ybsoxdkdsyx -60'
   - Mode: 1
-    p_content: "Leysy bui 3 seehtedduui. Isobqsyudi : 5067XCp Ehyudjqjyed 20\xB0,
-      Zukdui Bujjhyijui : 6012XCp Ehyudjqjyed 45\xB0, Heiaevv :  6767XCp Ehyudjqjyed
-      -60\xB0"
+    p_content: 'Fysms voc 3 myybnyxxooc. Cmivkmsoxc : 5067RWj Ybsoxdkdsyx 20; -22
+      Toexoc Voddbscdoc: 6012RWj 6098RWj 4.53 RWJ Ybsoxdkdsyx 45, Bycuypp :  6767RWj
+      Ybsoxdkdsyx -60'

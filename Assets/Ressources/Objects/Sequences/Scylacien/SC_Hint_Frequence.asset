@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: SC_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Indice de fr\xE9quence Scilacien"
-  Description: "Hey mec, tu te rappelles de la fr\xE9quence du truc de fou qu'on
-    avait entendu \xE0 la radio ?\n\nPchit : \xAB Que le chanteur des Scylaciens,
-    est le g\xE9rant de la baraque \xE0 frites ? Je pense que c'\xE9tait deux mille
-    cent ou deux mille trois cent un truc comme \xE7a.\xBB"
+  Description: "Pchit (bruit de talkie-walkie / truc de camionneur) : \xAB Hey mec,
+    tu te rappelles de la fr\xE9quence du truc de fou qu'on avait entendu \xE0 la
+    radio ? \xBB\n\nPchit : \xAB Que le chanteur des Scylaciens, est le g\xE9rant
+    de la baraque \xE0 frites ? Je pense que c'\xE9tait onze mille cent ou onze mille
+    un truc comme \xE7a.\xBB"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -35,7 +36,8 @@ MonoBehaviour:
       euqarab a etirf.\"\nTihcp \"siam iuo, a siva'j \xE9ilbuo ej esnep siat\xE9'c
       xued ellim tnec uo xued ellim tnec ior\u0442 nu curt emmoc ac."
   - Mode: 2
-    p_content: "Pchit : \xAB Hey mec, tu te rappelles de la fr\xE9quence du truc
-      de fou qu'on avait entendu \xE0 la radio ? \xBB\n\nPchit : \xAB Que le chanteur
-      des Scylaciens, est le g\xE9rant de la baraque \xE0 frites ? Je pense que c'\xE9tait
-      deux mille cent ou deux mille trois cent un truc comme \xE7a.\xBB\n"
+    p_content: "Pchit (bruit de talkie-walkie / truc de camionneur) : \xAB Hey mec,
+      tu te rappelles de la fr\xE9quence du truc de fou qu'on avait entendu \xE0
+      la radio ? \xBB\n\nPchit : \xAB Que le chanteur des Scylaciens, est le g\xE9rant
+      de la baraque \xE0 frites ? Je pense que c'\xE9tait onze mille cent ou onze
+      mille un truc comme \xE7a.\xBB"

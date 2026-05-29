@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Roskoff_Music_8_Frequence_CesarCode
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: "Fr\xE9quence finale"
+  Name: "Fr\xE9quence PRESQUE FINALE"
   Description: 3622MhZ
   Like:
     YoungLetterists: 0
