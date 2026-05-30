@@ -158,7 +158,13 @@ namespace DialogueSystem
                 m_doubleInputCooldown -= Time.deltaTime;
                 return;
             }
-            
+
+            if (!m_hasRelease)
+            {
+                m_hasRelease = m_inputNext.ReadValue<float>() < 0.5f;
+                return;
+            }
+
             if(cmd == null)
             {
                 return;
@@ -183,6 +189,8 @@ namespace DialogueSystem
                     m_system.MoveNext();
                     m_nextCooldown = k_NEXT_COOLDOWN;
                     m_doubleInputCooldown = k_DOUBLE_INPUT_COOLDOWN;
+
+                    m_hasRelease = false;
 
                     //m_system.Next();
                 } 

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI; 
 
-public class FrequencyBehaviour : RadioComponentBehaviour<float>
+public class FrequencyBehaviour : RadioComponentBehaviour<float>, IScrollHandler
 {
     [Header("Components")]
     public Slider Slider;
@@ -35,6 +35,11 @@ public class FrequencyBehaviour : RadioComponentBehaviour<float>
         SetValue(Default);
     }
 
+    public void OnScroll(PointerEventData eventData)
+    {
+        Slider.value += eventData.scrollDelta.y * (Increment / MaxFrequency);
+    }
+
     public override void SetValue(float value)
     {
         value = Mathf.Lerp(MinFrequency, MaxFrequency, value);
@@ -43,4 +48,6 @@ public class FrequencyBehaviour : RadioComponentBehaviour<float>
 
         OnValueChangeAsString.Invoke(((int)Value).ToString());
     }
+
+    
 }
