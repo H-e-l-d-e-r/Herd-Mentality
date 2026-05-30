@@ -1504,7 +1504,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.6, y: -0.57}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369486330
 MonoBehaviour:
@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrequencyBehaviour
   Default: 0
-  Increment: 1
+  Increment: 2
   OnValueChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1592,7 +1592,7 @@ MonoBehaviour:
   Slider: {fileID: 369486330}
   MinFrequency: 0
   MaxFrequency: 13000
-  Smoothing: 0.5
+  Smoothing: 0
 --- !u!1 &370100231
 GameObject:
   m_ObjectHideFlags: 0
@@ -12862,7 +12862,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7022665, y: -0, z: -0, w: 0.7119142}
   m_LocalPosition: {x: -0.74998665, y: 0.01, z: -2.9}
-  m_LocalScale: {x: -4.109063, y: 1.9260635, z: 2.5888114}
+  m_LocalScale: {x: -6.0867553, y: 1.9260635, z: 2.5888114}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6221367208166317513}
