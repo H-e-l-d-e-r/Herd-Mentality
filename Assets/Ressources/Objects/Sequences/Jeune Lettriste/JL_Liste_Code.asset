@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: JL_Liste_Code
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Un code chifr\xE9 des Jeunes Lettristes"
-  Description: 12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard
+  Description: "Une petite \xE9nigme: 8 est dormir, 12 est fer, 51est hommard, 47
+    est fromage... Lisez le po\xE8me en 4100HM pour avoir la cl\xE9.\nUtilsez C\xE9sar
+    pour les fr\xE9quence suivante 6000HM et orientation 0\xB0"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -26,6 +28,10 @@ MonoBehaviour:
   Duration: 10
   Translations:
   - Mode: 0
-    p_content: 12pomme34fer98lien4dormir1tourte34poire5tuile2huile9cauchemard11hommard
+    p_content: "Une petite \xE9nigme: 8 est dormir, 12 est fer, 51est hommard, 47
+      est fromage... Lisez le po\xE8me en 4100HM pour avoir la cl\xE9.\nUtilsez C\xE9sar
+      pour les fr\xE9quence suivante 6000HM et orientation 0\xB0"
   - Mode: 2
-    p_content: drammoh11dramehcuac9eliuh2eliut5eriop43etruot1rimrod4neil89ref43emmop21
+    p_content: "Une petite \xE9nigme: 8 est dormir, 12 est fer, 51est hommard, 47
+      est fromage... Lisez le po\xE8me en 4100HM pour avoir la cl\xE9.\nUtilsez C\xE9sar
+      pour les fr\xE9quence suivante 6000HM et orientation 0\xB0"

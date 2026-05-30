@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: La battaille des Jeunes Lettristes
   Description: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
-    de diffusion, bataille pour r\xE9cup\xE9rer l'audience installer anouvelle anttenne
-    en moins cinquante deux pour r\xE9cuper la zone grise de diffusion."
+    de diffusion, bataille pour r\xE9cup\xE9rer l'audience installer une nouvelle
+    anttenne en -52 pour r\xE9cuper la zone grise de diffusion."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -28,14 +28,14 @@ MonoBehaviour:
   Duration: 25
   Translations:
   - Mode: 0
-    p_content: 'Lnkxhaia wray Nkomqkb ap Oyuhwyeaj : jkj-naolayp zao kneajpwpekjo
-      za zebbqoekj, xwpwehha lkqn nayqlanan h''wqzeajya ejopwhhan qja jkqrahha wjppajja
-      aj ikejo yejmqwjpa zaqt lkqn nayqlan hw vkja cneoa za zebbqoekj.'
+    p_content: '        Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
+      vw vaxxmkagf, tslsaddw hgmj jwuHMwjwj d''smvawfuw afklsddwj sfgmnwddw sfllwffw
+      wf egafk uafimsflw vwmp hgmj jwuHMwj ds rgfw yjakw vw vaxxmkagf.'
   - Mode: 3
-    p_content: 'Lnkxhaia wray Nkomqkb ap Oyuhwyeaj : jkj-naolayp zao kneajpwpekjo
-      za zebbqoekj, xwpwehha lkqn nayqlanan h''wqzeajya ejopwhhan qja jkqrahha wjppajja
-      aj ikejo yejmqwjpa zaqt lkqn nayqlan hw vkja cneoa za zebbqoekj.'
+    p_content: '        Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
+      vw vaxxmkagf, tslsaddw hgmj jwuHMwjwj d''smvawfuw afklsddwj sfgmnwddw sfllwffw
+      wf egafk uafimsflw vwmp hgmj jwuHMwj ds rgfw yjakw vw vaxxmkagf.'
   - Mode: 3
-    p_content: '.jkeoqbbez az aoenc ajkv wh nalqyan nqkl tqaz apjwqmjey ojeki ja
-      ajjappjw ahharqkj ajq nahhwpoje ayjaezqw''h nanalqyan nqkl ahhewpwx ,jkeoqbbez
-      az ojkepwpjaenk oaz pyaloan-jkj : jaeywhuyO pa bkqmokN yarw aiahxknL'
+    p_content: '        Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
+      vw vaxxmkagf, tslsaddw hgmj jwuHMwjwj d''smvawfuw afklsddwj sfgmnwddw sfllwffw
+      wf egafk uafimsflw vwmp hgmj jwuHMwj ds rgfw yjakw vw vaxxmkagf.'
