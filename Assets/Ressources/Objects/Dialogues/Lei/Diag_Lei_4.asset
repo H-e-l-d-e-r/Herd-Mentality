@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Diag_Lei_4
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: "Des-cryptes \xE0 d\xE9couvrir."
+  Description: "J'ai toujours d\xE9test\xE9 le Morse, c'est long, c'est dur et \xE7a
+    prends une plombe \xE0 se d\xE9coder. Heureusement que j'ai cette machine. "
+  m_nodes:
+  - Name: Lei
+    Text: "L'invert n'\xE9tait pas trop dur? "
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Je commence \xE0 reprendre la main, c'est plus facile que je l'imaginais."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Bien s\xFBr que c'est facile ! Tu crois que je suis Nene pour torturer
+      un oisillon qui apprend \xE0 voler ? Mais c'est vrai qu'on devrait augmenter
+      la cadence."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Attention, le prochain code risque d'\xEAtre morsifiant ! Et ram\xE8ne
+      toi vite en -60\xB0."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0

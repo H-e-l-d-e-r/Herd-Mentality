@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Diag_Lei_6
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: 'Radio Shenron '
+  Description: "Apr\xE8s ce p\xE9riple, je suis enfin pr\xEAte \xE0 retrouver son
+    amie parmis les ondes!"
+  m_nodes:
+  - Name: 'Radio Shenron '
+    Text: "J'aurais pas cru dire \xE7a si t\xF4t, mais tu m'impressionnes, Ma\xE9
+      ! Tu es s\xFBrement la meilleure \xE9l\xE8ve que j'ai eue."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Pas la peine de me flatter, surtout qu'on a encore notre amie \xE0 retrouver."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Oui... Pour \xEAtre honn\xEAte, on s'est disput\xE9s violemment \xE0 cause
+      de la scission de la bande. Et maintenant, ils se battent pour des fr\xE9quences
+      ! J'aurais tellement aim\xE9 qu'on redevienne tous amis..."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Je sais, Lei, moi aussi l'ambiance de l'ann\xE9e pass\xE9e me manque,
+      mais je pense qu'avec un peu d'espoir, on r\xE9ussira \xE0 rassembler tout
+      le monde."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Je sais pas, Ma\xE9, honn\xEAtement, tout ce que je veux pour l'instant,
+      c'est me r\xE9concilier avec Nene. La suite m'importe peu pour l'instant..."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Bref ! Revenons \xE0 Nene, elle m'a laiss\xE9 les coordonn\xE9es de la
+      radio des diff\xE9rents groupes. Je pense qu'ils auront des informations int\xE9ressantes
+      \xE0 nous donner."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Tu peux tout retrouver sur cette fr\xE9quence ! Encore merci de me donner
+      un coup de main, je ne sais vraiment pas ce que j'aurais fait sans toi."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Pas de probl\xE8me, tu me remercieras quand je l'aurai retrouv\xE9e. \xC0
+      plus, Lei !"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0

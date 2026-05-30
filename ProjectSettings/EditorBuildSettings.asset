@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 15cdaf624ac6013e8a0f33012f2cfe6b
+  - enabled: 1
+    path: Assets/Scenes/Radio/Introduction.unity
+    guid: 6d707662e16f02a4195ca7d5e3b851e9
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 23e9a9a07241396c585a83f5229d172c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

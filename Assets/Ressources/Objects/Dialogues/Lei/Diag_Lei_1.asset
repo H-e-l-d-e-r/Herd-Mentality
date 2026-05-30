@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
-  m_Name: Dialogue Table
+  m_Name: Diag_Lei_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Lei
-  Description: 
+  Name: "Toujours l\xE0 pour un ami."
+  Description: "Lei m'a demand\xE9 de l'aider \xE0 retrouver N\xE9n\xE9, il faut
+    que je me d\xE9p\xEAche de le rejoindre \xE0 la fr\xE9quence 12 700 MHz."
   m_nodes:
   - Name: Lei
     Text: "Allo ? Ici Charlie Uniform Zulu November, quelqu'un me re\xE7oit ?"
@@ -21,8 +22,13 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Mon amie est port\xE9e disparue depuis quelque temps et je n'arrive plus
-      \xE0 la joindre."
+    Text: "Ma\xE9 c'est toi? "
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Lei
+    Text: "Mon amie Nene est port\xE9e disparue depuis quelque temps et je n'arrive
+      plus \xE0 la joindre."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
@@ -40,13 +46,14 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: "Tous ceux qui me re\xE7oivent et poss\xE8dent une station, passez sur
-      la fr\xE9quence 12,7 MHz."
+    Text: "Mais t'en \xE0 une toi, non? C'est ce que Eric m'avait dit. Ma\xE9 aide
+      moi s'il te plait."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
   - Name: Lei
-    Text: Mon amie a besoin de moi et je ne pourrai pas la retrouver toute seule.
+    Text: "Mon amie a besoin de moi et je ne pourrai pas la retrouver toute seule.
+      Rejoins moi \xE0 la station 12700 MHZ."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0

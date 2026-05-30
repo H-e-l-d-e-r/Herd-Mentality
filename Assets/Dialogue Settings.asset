@@ -25,8 +25,8 @@ MonoBehaviour:
   EnableCharacterSounds: 1
   Volume: 1
   EndDialogueBehaviour: 0
-  DoubleInputCooldown: 0.5
+  DoubleInputCooldown: 0.1
   InputActionNext: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  InputNextCooldown: 0.5
+  InputNextCooldown: 0.1
   InputActionSkip: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  InputSkipCooldown: 0.5
+  InputSkipCooldown: 0.1

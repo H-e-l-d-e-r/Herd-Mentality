@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Diag_Lei_5
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Le son m'emporte toujours
+  Description: "Entre la musique et la radio, je ne sais pas trop quoi choisir. J'ai
+    d\xE9j\xE0 essay\xE9 de lier les deux en animant une \xE9mission, mais \xE7a
+    n'a jamais eu l'impact voulu..."
+  m_nodes:
+  - Name: Le son m'emporte toujours
+    Text: "Toujours avec moi Ma\xE9?"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Le son m'emporte toujours
+    Text: "Oui, oui, ne t'inqui\xE8te pas, c'est pas tes enigmes qui vont me mettre
+      en d\xE9route."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Le son m'emporte toujours
+    Text: "On a vite repris confiance, dis donc ! Attends de voir, celle-l\xE0, je
+      ne crois pas que tu vas en croire tes oreilles ! \n"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Le son m'emporte toujours
+    Text: "Okay! J'ai h\xE2te de voir ce que tu me r\xE9serve."
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Le son m'emporte toujours
+    Text: "C'est ce que j'aime chez toi, Ma\xE9, toujours enthousiaste !\nPS : Aucun
+      gr\xE9sillement n'est laiss\xE9 au hasard dans les stations de Dalheim. \xC0
+      plus, Ma\xE9."
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0

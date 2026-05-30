@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   Sprites:
   - {fileID: 1685022772, guid: 74546049d1ceb244e89ba33490e70897, type: 3}
-  SpriteSide: 0
+  SpriteSide: 1
   CharacterAudio: {fileID: 8300000, guid: 2bca8ca505d52b1449686c56a9389e87, type: 3}
   AudioProbability: 0.5
   PitchRandomness: {x: 0.6, y: 1.5}
