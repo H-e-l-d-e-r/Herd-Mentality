@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
+  m_Name: "JL_Hint_Orientation_Fr\xE9quence"
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
+  Name: "L'orientation + fr\xE9quence des Jeunes Lettristes"
+  Description: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+    douze mille un. Essayez 11400HM. Je r\xE9p\xE8te : \xE9vitez de trop diffuser.
+    Ah et\nOn change l'orientation de l'antenne en raison de d\xE9gradations caus\xE9es
+    par de petits garnements qui n'ont rien d'autre \xE0 faire de leur journ\xE9e.
+    \xC0 la place de -12 , on passe \xE0 12."
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Clip: {fileID: 8300000, guid: 51ebe5a2c01ff3c48a0c6a61bd76b801, type: 3}
+  Duration: 25
+  Translations:
+  - Mode: 0
+    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
+      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12."
+  - Mode: 3
+    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
+      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12."
+  - Mode: 2
+    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
+      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12."

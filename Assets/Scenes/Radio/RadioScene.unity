@@ -7518,8 +7518,8 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 4053
-    Bandwidth: 50
+    Frequence: 4100
+    Bandwidth: 100
     Orientation: 45
     OrientationTresh: 10
   Messages:
@@ -8553,7 +8553,7 @@ GameObject:
   - component: {fileID: 3974226282827791946}
   - component: {fileID: 1889297001022462137}
   m_Layer: 0
-  m_Name: 5.67FM Scyalciens frequence
+  m_Name: 5100HM Scyalciens frequence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8616,10 +8616,10 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 11094
-    Bandwidth: 4
+    Frequence: 11400
+    Bandwidth: 100
     Orientation: 12
-    OrientationTresh: 4
+    OrientationTresh: 12
   Messages:
   - Time: 5
     Object: {fileID: 11400000, guid: 642f5202d1af3a043926f9c31de719d5, type: 2}
@@ -9037,8 +9037,8 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 5067
-    Bandwidth: 45
+    Frequence: 5100
+    Bandwidth: 100
     Orientation: 20
     OrientationTresh: 10
   Messages:
@@ -10005,21 +10005,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2216676855429977331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2792975222901828198
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4996405862713776347}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6847285011754506147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2839386808015176574
 Transform:
   m_ObjectHideFlags: 0
@@ -10180,10 +10165,10 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 3057
-    Bandwidth: 50
+    Frequence: 3000
+    Bandwidth: 100
     Orientation: 45
-    OrientationTresh: 10
+    OrientationTresh: 15
   Messages:
   - Time: 5
     Object: {fileID: 11400000, guid: 4f33eefa0ae12494da473d0be7134cc3, type: 2}
@@ -10574,31 +10559,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3265629290013411461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4996405862713776347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d0bdebdaa50684f80d6b4f64f4ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadioBroadcastBehaviour
-  Group: {fileID: -5487019301756537249, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
-  Volume: 0.383
-  Loop: 1
-  IsHerd: 0
-  Mask:
-    Frequence: 5067
-    Bandwidth: 45
-    Orientation: -22
-    OrientationTresh: 10
-  Messages:
-  - Time: 5
-    Object: {fileID: 11400000, guid: d71a0e2efd9e4ec43a076d578e45b731, type: 2}
-  VolumeMultiplicator: 1
 --- !u!4 &3310541271056544534
 Transform:
   m_ObjectHideFlags: 0
@@ -10838,7 +10798,7 @@ GameObject:
   - component: {fileID: 9177387591919939095}
   - component: {fileID: 8418470049690012951}
   m_Layer: 0
-  m_Name: 11FM Scyalciens sequence
+  m_Name: 11000HM Scyalciens sequence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12049,10 +12009,10 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 6012
-    Bandwidth: 50
+    Frequence: 6000
+    Bandwidth: 100
     Orientation: 45
-    OrientationTresh: 5
+    OrientationTresh: 15
   Messages:
   - Time: 5
     Object: {fileID: 11400000, guid: 8c5c3d96735e6d6409f7081cc349d402, type: 2}
@@ -12596,23 +12556,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3100183154061756222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4996405862713776347
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2792975222901828198}
-  - component: {fileID: 3265629290013411461}
-  m_Layer: 0
-  m_Name: 5.67FM Scyalciens Orientation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &5002168934023243683
 Transform:
   m_ObjectHideFlags: 0
@@ -15165,7 +15108,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3974226282827791946}
-  - {fileID: 2792975222901828198}
   - {fileID: 9177387591919939095}
   m_Father: {fileID: 7056056149930756967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15400,10 +15342,10 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 6098
-    Bandwidth: 50
+    Frequence: 6000
+    Bandwidth: 100
     Orientation: 45
-    OrientationTresh: 5
+    OrientationTresh: 15
   Messages:
   - Time: 5
     Object: {fileID: 11400000, guid: 51ba73d6a03d6ec429544aa5d5ed6089, type: 2}
@@ -16862,8 +16804,8 @@ MonoBehaviour:
   IsHerd: 0
   Mask:
     Frequence: 11000
-    Bandwidth: 75
-    Orientation: -32
+    Bandwidth: 100
+    Orientation: -20
     OrientationTresh: 4
   Messages:
   - Time: 5
