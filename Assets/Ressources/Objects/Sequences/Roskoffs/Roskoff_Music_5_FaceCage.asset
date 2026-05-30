@@ -13,28 +13,9 @@ MonoBehaviour:
   m_Name: Roskoff_Music_5_FaceCage
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Un autre d\xE9fi du Squat"
-  Description: 'FACE CAGE Piano 1434,
-
-    DOS MUR Flute 102,
-
-    FACE CAGE Xylophone
-    2036,
-
-    DOS MUR Hautbois 210,
-
-    MAIN FER Ocarina 80,
-
-    FACE CAGE
-    Guitare 534,
-
-    FACE CACHEE Luth 777,
-
-    CAGE OISEAU Sifflet 304,
-
-    OEIL
-    VERRE Triangle 890,
-
-    FACE CAGE Tambour 6789.'
+  Description: "Mais que veulent dire ces mots ? Est-ce que j'en aurais d\xE9j\xE0
+    vu quelque part ?\n\nDOS MUR Flute 102,\nFACE CAGE Piano 8800,\nCAGE OISEAU Sifflet
+    304,\nOEIL VERRE Triangle 890.\n\nPS : C\xE9sar aime bien le chiffre 4."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -47,34 +28,15 @@ MonoBehaviour:
   Duration: 9
   Translations:
   - Mode: 0
-    p_content: 'FACE CAGE Piano 1434,
-
-      DOS MUR Flute 102,
-
-      FACE CAGE
-      Xylophone 2036,
-
-      DOS MUR Hautbois 210,
-
-      MAIN FER Ocarina 80,
-
-      FACE
-      CAGE Guitare 534,
-
-      FACE CACHEE Luth 777,
-
-      CAGE OISEAU Sifflet
-      304,
-
-      OEIL VERRE Triangle 890,
-
-      FACE CAGE Tambour 6789.'
+    p_content: "\"Round Final!\n\nDOS MUR Flute 102,\nFACE CAGE Piano 8800,\nCAGE
+      OISEAU Sifflet 304,\nOEIL VERRE Triangle 890.\n\nPS : C\xE9sar aime bien le
+      chiffre 4.\""
   - Mode: 1
-    p_content: ETIheg klhkhETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET
-      GBEEHI TEG igi gieh gheeghe g
+    p_content: "\".4 Erffihc El Neib Emia Ras\xE9c : Sp\n\n.098 Elgnairt Errev Lieo\n,403
+      Telffis Uaesio Egac\n,0088 Onaip Egac Ecaf\n,201 Etulf Rum Sod\n\n!Lanif Dnuor\""
   - Mode: 2
-    p_content: ' khETIheg klhkh eghe ghklhk ikgh tbKG ECWDCIZH EGHIKK EIET GBE e
-      ghklhk ikgh tbKG ECW gieh gheeghe g'
+    p_content: "\".4 Erffihc El Neib Emia Ras\xE9c : Sp\n\n.098 Elgnairt Errev Lieo\n,403
+      Telffis Uaesio Egac\n,0088 Onaip Egac Ecaf\n,201 Etulf Rum Sod\n\n!Lanif Dnuor\""
   - Mode: 3
     p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
       tbeTGEI HLKM ghklhk DCIZH EGHIK '

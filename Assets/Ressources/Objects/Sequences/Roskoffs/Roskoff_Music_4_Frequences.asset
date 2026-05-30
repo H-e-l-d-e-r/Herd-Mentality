@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Roskoff_Music_4_Frequences
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "La fr\xE9quence des Roskoff"
-  Description: Sol Sol Do Do HMz / Si Si Do Do HMz
+  Description: "\"Sol Sol Do Do HMz \n\nPlus qu'\xE0 d\xE9crypter tout \xE7a !\""
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -26,14 +26,12 @@ MonoBehaviour:
   Duration: 9
   Translations:
   - Mode: 0
-    p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage,
-      LOSER! "
+    p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage! "
   - Mode: 1
-    p_content: "Sol Sol Do Do HMz / Si Si Do Do HMz\n\nOkay. Bien jou\xE9...Ou pas!
-      D\xE9crypte et vois ce qui t'attends l\xE0-bas!\n\nPS : C\xE9sar aime bien
-      le chiffre 4."
+    p_content: "\"Sol Sol Do Do HMz \nOkay. Bien jou\xE9...Ou pas! D\xE9crypte et
+      vois ce qui t'attends l\xE0-bas!\n\""
   - Mode: 2
-    p_content: "Toujours le mauvais d\xE9cryptage...D\xE9\xE7u."
+    p_content: " !Egatpyrc\xE9d Siavuam ?Elpmis Issua Ert\xEA Tialla A\xE7 Euq Siayorc
+      Ut"
   - Mode: 3
-    p_content: "Ta trouv\xE9 le decryptage secret skibidi 67. Mtn vas manger ton
-      tasty crousty! "
+    p_content: "\"Sol Sol Do Do HMz \n\nPlus qu'a decrypter tout ca !\""

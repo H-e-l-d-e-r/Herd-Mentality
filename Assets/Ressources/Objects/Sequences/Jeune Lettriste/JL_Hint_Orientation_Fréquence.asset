@@ -30,20 +30,26 @@ MonoBehaviour:
   Duration: 25
   Translations:
   - Mode: 0
-    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
-      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12."
+    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
+      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12.'
   - Mode: 3
-    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
-      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12."
+    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl Gf
+      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12.'
   - Mode: 2
-    p_content: "Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl\LGf
-      uzsfyw d'gjawflslagf vw d'sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f'gfl jawf v'smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12."
+    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
+      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12.'
+  - Mode: 1
+    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
+      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
+      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
+      vw egafk vgmrw , gf hskkw s 12.'

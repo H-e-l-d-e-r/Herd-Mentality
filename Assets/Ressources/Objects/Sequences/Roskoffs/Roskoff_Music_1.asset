@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Roskoff_Music_1
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Cl\xE9e des Roskoff"
-  Description: "La cl\xE9e de d\xE9cryption des Roskoff."
+  Description: "Les Roskoff m'ont donn\xE9 cette liste de d\xE9codage :\n\nDo = A\nRe
+    = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -27,13 +28,29 @@ MonoBehaviour:
   Translations:
   - Mode: 0
     p_content: "Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code
-      et trouve le mot cach\xE9 parmis les fr\xE9quences Rockstar! "
+      et trouve le mot cach\xE9 dans cette fr\xE9quence Rockstar! "
   - Mode: 1
-    p_content: eghegh klhkikghtbe TGEIHLKMH KGECWDCIZH EGHIK   GHKEIET GBEE HI TEGETIheg
-      hklhkhi gieh egheg ihetghe
+    p_content: "\"Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code
+      Et Trouve Le Mot Cach\xE9 Dans Cette Fr\xE9quence Rockstar! \""
   - Mode: 2
-    p_content: eghe ghklhk ikgh tbeTGEI HLKMHKG ECWDCIZH EGHIKGN IHOGET GHK EIET
-      GBEEHI TEG ETIheg klhkhigieh eghegi het ghe
+    p_content: "\" !Ratskcor Ecneuq\xE9rf Ettec Snad \xC9hcac Tom El Evuort Te Edoc\xE9d\n\nG
+      = Is\nF = Al\nE = Los\nD = Af\nC = Im\nB = Er\nA = Od\""
   - Mode: 3
-    p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
-      tbeTGEI HLKM ghklhk DCIZH EGHIK '
+    p_content: '"Les Roskoff m''ont donne cette liste de decodage :
+
+
+      Do =
+      A
+
+      Re = B
+
+      Mi = C
+
+      Fa = D
+
+      Sol = E
+
+      La = F
+
+      Si
+      = G"'

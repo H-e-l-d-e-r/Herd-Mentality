@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Roskoff_FIN
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Fr\xE9quence finale"
-  Description: 'Bravo ! Tu en as mis du temps quand meme ! Tiens, voici la frequence
-    finale : 3912 MHz. J''espere vraiment qu''ils pourront se reconcilier, ces deux-la.
-    A toi de jouer !'
+  Description: "J'ai enfin la fr\xE9quence finale ! N\xE9n\xE9 se trouve s\xFBrement
+    sur 3900 HM."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -29,5 +28,5 @@ MonoBehaviour:
   Translations:
   - Mode: 3
     p_content: 'Xnwrk ! Pq aj wo ieo zq pailo mqwjz iaia ! Peajo, rkeye hw bnamqajya
-      bejwha : 3912 IDv. F''aolana rnweiajp mq''eho lkqnnkjp oa naykjyehean, yao
+      bejwha : 3900 IDv. F''aolana rnweiajp mq''eho lkqnnkjp oa naykjyehean, yao
       zaqt-hw. W pke za fkqan !'

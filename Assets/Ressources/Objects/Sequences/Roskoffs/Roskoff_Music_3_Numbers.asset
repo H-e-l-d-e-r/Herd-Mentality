@@ -41,15 +41,33 @@ MonoBehaviour:
   Duration: 22
   Translations:
   - Mode: 0
-    p_content: "Do = 0\nRe = 1\nMi = 2\nFa = 3\nSol = 4\nLa = 5\nSi = 6\n\nPas trop
-      fan des nombres chez les Roskoffs mais le p'tit nous \xE0 dit de laisser ca
-      ici! Les fr\xE9quences sont juste apr\xE8s. "
+    p_content: "\"Encore une liste de d\xE9codage, mais cette fois avec des nombres.\n\nDo
+      = 0\nRe = 1\nMi = 2\nFa = 3\nSol = 4\nLa = 5\nSi = 6\""
   - Mode: 1
-    p_content: eghegh klhkikghtbe TGEIHLKMH KGECWDCIZH EGHIK   GHKEIET GBEE HI TEGETIheg
-      hklhkhi gieh egheg ihetghe
+    p_content: "\" .S\xE8rpa Etsuj Tse Ecneuq\xE9rf Al !Ici Ac Ressial Ed Tid \xC0
+      Suon Tit'P El Siam Sffoksor Sel Zehc Serbmon Sed Naf Port Sap\n\n6 = Is\n5
+      = Al\n4 = Los\n3 = Af\n2 = Im\n1 = Er\n0 = Od\""
   - Mode: 2
-    p_content: eghe ghklhk ikgh tbeTGEI HLKMHKG ECWDCIZH EGHIKGN IHOGET GHK EIET
-      GBEEHI TEG ETIheg klhkhigieh eghegi het ghe
+    p_content: "eghe ghklhk ikgh tbeTGEI HLKMHKG ECWDCIZH EGHIKGN IHOGET GHK EIET
+      Do = 0\nRe = 1\nMi = 2\nFa = 3\nSol = 4\nLa = 5\nSi = 6\n\nPas trop fan des
+      nombres chez les Roskoffs mais le p'tit nous \xE0 dit de laisser ca ici! La
+      fr\xE9quence est juste apr\xE8s.  TEG ETIheg klhkhigieh eghegi het ghe"
   - Mode: 3
-    p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
-      tbeTGEI HLKM ghklhk DCIZH EGHIK '
+    p_content: '"Encore une liste de decodage, mais cette fois avec des nombres.
+
+
+      Do
+      = 0
+
+      Re = 1
+
+      Mi = 2
+
+      Fa = 3
+
+      Sol = 4
+
+      La = 5
+
+      Si
+      = 6"'

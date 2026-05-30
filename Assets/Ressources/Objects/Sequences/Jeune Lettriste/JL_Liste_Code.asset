@@ -31,3 +31,11 @@ MonoBehaviour:
     p_content: "Une petite \xE9nigme: 8 est dormir, 12 est fer, 51est hommard, 47
       est fromage... Lisez le po\xE8me en 4100HM pour avoir la cl\xE9.\nUtilsez C\xE9sar
       pour les fr\xE9quence suivante 6000HM et orientation 0\xB0"
+  - Mode: 2
+    p_content: "\"\xB00 Noitatneiro Te Mh0006 Etnavius Ecneuq\xE9rf Sel Ruop Ras\xE9c
+      Zeslitu\n.\xC9lc Al Riova Ruop Mh0014 Ne Em\xE8op El Zesil ...Egamorf Tse 74
+      ,Drammoh Tse15 ,Ref Tse 21 ,Rimrod Tse 8 :Emgin\xE9 Etitep Enu\""
+  - Mode: 1
+    p_content: "Une petite \xE9nigme: 8 est dormir, 12 est fer, 51est hommard, 47
+      est fromage... Lisez le po\xE8me en 4100HM pour avoir la cl\xE9.\nUtilsez C\xE9sar
+      pour les fr\xE9quence suivante 6000HM et orientation 0\xB0"
