@@ -13,6 +13,7 @@ namespace DialogueSystem
         public CanvasGroup PanelGroup;
         public RectTransform CharacterNamePanel;
         public AudioSource AudioSource;
+        public DialogueSettings Settings;
 
         [Header("Dynamics")]
         public TMP_Text DialogueText; 
@@ -79,6 +80,11 @@ namespace DialogueSystem
         void Awake()
         {
             NullComponents.ThrowIfNull(PanelGroup);
+
+            if(Settings == null)
+            {
+                Settings = Dialogue.Instance.Settings;
+            }
 
             // constructor
             m_string = new StringBuilder();
@@ -202,13 +208,13 @@ namespace DialogueSystem
 
         private void ClearTypewritterCooldowns()
         {
-            if (HasCommand && Dialogue.Instance.Settings.DelayHashmap.TryGetValue(m_lastCharacter, out float delay))
+            if (HasCommand && Settings.DelayHashmap.TryGetValue(m_lastCharacter, out float delay))
             {
                 m_lastTime = delay;
             }
             else
             {
-                m_lastTime = Dialogue.Instance.Settings.CharacterDelay;
+                m_lastTime = Settings.CharacterDelay;
             }
         }
 
@@ -219,7 +225,7 @@ namespace DialogueSystem
                 return;
             }
 
-            if (Dialogue.Instance.Settings.EnableRichText)
+            if (Settings.EnableRichText)
             {
                 int richTextTagStart = value.IndexOfAny("<"); 
                 int richTextTagEnd = value.IndexOfAny(">"); 
@@ -255,7 +261,7 @@ namespace DialogueSystem
             {
                 AddStringToBuffers(
                     m_command.Text.Substring(m_characterIndex), 
-                    Dialogue.Instance.Settings.CharacterIncrement
+                    Settings.CharacterIncrement
                 );
 
                 ClearTypewritterCooldowns();
@@ -311,7 +317,7 @@ namespace DialogueSystem
 
         void PlayCharacterSound()
         {
-            if (!Dialogue.Instance.Settings.EnableCharacterSounds)
+            if (!Settings.EnableCharacterSounds)
             {
                 return;
             }
@@ -327,7 +333,7 @@ namespace DialogueSystem
                 float pitch = (float)UnityEngine.Random.Range(m_command.Actor.PitchRandomness.x, m_command.Actor.PitchRandomness.y);
                 
                 AudioSource.pitch = pitch;
-                AudioSource.volume = volume * Dialogue.Instance.Settings.Volume;
+                AudioSource.volume = volume * Settings.Volume;
                 AudioSource.PlayOneShot(m_command.Actor.CharacterAudio);
             }
             

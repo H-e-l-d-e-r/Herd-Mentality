@@ -27,6 +27,7 @@ namespace DialogueSystem
         private float k_NEXT_COOLDOWN;
         private float k_SKIP_COOLDOWN;
 
+        private bool m_hasRelease;
         private float m_nextCooldown = 0.0f;
         private float m_skipCooldown = 0.0f;
         private float m_doubleInputCooldown = 0.0f;
@@ -43,6 +44,7 @@ namespace DialogueSystem
             k_SKIP_COOLDOWN = Settings.InputSkipCooldown;
             k_DOUBLE_INPUT_COOLDOWN = Settings.DoubleInputCooldown * 2.0f;
             
+            m_hasRelease = false;
             m_nextCooldown = k_NEXT_COOLDOWN;
             m_skipCooldown = k_SKIP_COOLDOWN;
             m_doubleInputCooldown = k_DOUBLE_INPUT_COOLDOWN;

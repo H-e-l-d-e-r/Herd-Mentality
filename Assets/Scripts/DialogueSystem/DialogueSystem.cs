@@ -48,6 +48,7 @@ namespace DialogueSystem
         private static Dialogue s_instance = null;
 
         private List<DialogueCommand> m_registerdCommands;
+        private Queue<DialogueTable> m_registerdTables;
         private Queue<DialoguePtr> m_dialogueQueue;
         
         private DialogueSystemBehaviour m_behaviour;
@@ -63,6 +64,7 @@ namespace DialogueSystem
             Settings = behaviour.Settings;
 
             m_registerdCommands = new List<DialogueCommand>();
+            m_registerdTables = new Queue<DialogueTable>();
             m_dialogueQueue = new Queue<DialoguePtr>();
             m_current = null;
 
@@ -202,8 +204,15 @@ namespace DialogueSystem
         /// <returns></returns>
         public static DialoguePtr RegisterDialogue(DialogueTable table)
         {
+            if(s_instance == null)
+            {
+                Debug.LogError(new Exception("no instance exists!"));
+                return DialoguePtr.k_INVALID;
+            }
+
             table.TryRelink();
-            return RegisterDialogue(table.ToArray().First());
+            s_instance.m_registerdTables.Enqueue(table);            
+            return new DialoguePtr(RegisterDialogue(table.ToArray().First()), table);
         }
 
         /// <summary>
@@ -322,6 +331,29 @@ namespace DialogueSystem
             //DestroyDialogue(ptr);
 
             return true;
+        }
+
+        public static DialoguePtr FindDialoguePtr(DialogueCommand command)
+        {
+            if(s_instance == null)
+            {
+                Debug.LogError(new Exception("no instance exists!"));
+                return DialoguePtr.k_INVALID;
+            }
+
+            return new DialoguePtr(s_instance.m_registerdCommands.IndexOf(command));
+        }
+
+        public static DialogueTable FindDialogueTable(DialogueCommand command)
+        {
+            if(s_instance == null)
+            {
+                Debug.LogError(new Exception("no instance exists!"));
+                return null;
+            }
+
+            //AssetDatabase.Find(“t: ScriptableObject”)
+            return s_instance.m_registerdTables.First(t => command != null && t != null && t.Name == command.Name);
         }
     }   
 }

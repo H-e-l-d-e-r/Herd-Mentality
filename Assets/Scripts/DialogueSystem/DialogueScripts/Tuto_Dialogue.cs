@@ -216,13 +216,13 @@ public class DialogueTutorial : MonoBehaviour
     // --- VERROUILLAGE PHYSIQUE UI ---
     private void LockKnobInteraction(bool isLocked)
     {
-        CanvasGroup cg = RadioManager.Instance.RadioBehaviour.FreqKnob.gameObject.GetComponent<CanvasGroup>();
+        /*CanvasGroup cg = RadioManager.Instance.RadioBehaviour.FreqKnob.gameObject.GetComponent<CanvasGroup>();
         if (cg == null)
         {
             cg = RadioManager.Instance.RadioBehaviour.FreqKnob.gameObject.AddComponent<CanvasGroup>();
         }
         cg.blocksRaycasts = !isLocked;
-        cg.interactable = !isLocked; // Stoppe net le clic/drag en cours !
+        cg.interactable = !isLocked; // Stoppe net le clic/drag en cours !*/
     }
 
     private void RefreshRadioSignal()
@@ -248,34 +248,34 @@ public class DialogueTutorial : MonoBehaviour
     // --- SNAPS ---
     private void SnapFreq(float target)
     {
-        m_isSnapping = true;
+        /*m_isSnapping = true;
         RadioManager.Instance.RadioBehaviour.Frequence = target;
         RadioManager.Instance.RadioBehaviour.FreqKnob.SetValue(target);
 
         // PING AUDIO (Utilisé SEULEMENT quand on trouve la fréquence la première fois)
         RadioManager.Instance.RadioBehaviour.FreqKnob.OnValueChange?.Invoke(target);
 
-        m_isSnapping = false;
+        m_isSnapping = false;*/
     }
 
     // --- NOUVEAU : DEFENSE SILENCIEUSE POUR LE HARD LOCK ---
     private void DefendFreq(float target)
     {
-        m_isSnapping = true;
+        /*m_isSnapping = true;
         RadioManager.Instance.RadioBehaviour.Frequence = target;
         RadioManager.Instance.RadioBehaviour.FreqKnob.SetValue(target);
 
         // AUCUN PING AUDIO ICI ! On repousse juste la molette silencieusement sans couper le son.
 
-        m_isSnapping = false;
+        m_isSnapping = false;*/
     }
 
     private void SnapAngle(float target)
     {
-        m_isSnapping = true;
+        /*m_isSnapping = true;
         RadioManager.Instance.RadioBehaviour.Orientation = target;
         RadioManager.Instance.RadioBehaviour.Antenna.SetValue(target);
         RadioManager.Instance.RadioBehaviour.Antenna.OnValueChange?.Invoke(target);
-        m_isSnapping = false;
+        m_isSnapping = false;*/
     }
 }

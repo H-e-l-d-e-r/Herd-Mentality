@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 
 using UnityEngine;
@@ -7,6 +9,7 @@ using UnityEngine.UI;
 public class UiNoteManager : MonoBehaviour
 {
     public CanvasGroup Self;
+    public InternalCollectibleType Mode;
 
     [Header("Carnet Elements")]
     public TMP_Text TitleLeft;
@@ -18,9 +21,23 @@ public class UiNoteManager : MonoBehaviour
     public Button ButtonLeft;
     public Button ButtonRight;
 
+    public CollectibleObject[] Objects
+    {
+        get
+        {
+            return Mode switch {
+                InternalCollectibleType.Collectible => GameManager.Instance.UnlockedCollectibles,
+                InternalCollectibleType.Dialogue => GameManager.Instance.UnlockedDialogues,
+                InternalCollectibleType.Vinyl => GameManager.Instance.UnlockedVinyls,
+                InternalCollectibleType.Sequence => GameManager.Instance.UnlockedSequences,
+                _ => GameManager.Instance.UnlockedCollectibles
+            };
+        }
+    }
+
     public bool HasNext
     {
-        get => m_currentElement + 2 < GameManager.Instance.UnlockedCollectibles.Length;
+        get => m_currentElement + 2 < Objects.Length;
     }
 
     public bool HasPrevious
@@ -35,7 +52,7 @@ public class UiNoteManager : MonoBehaviour
         get => m_currentElement;
         set
         {
-            m_currentElement = Mathf.Max(0, Mathf.Min(value, GameManager.Instance.UnlockedCollectibles.Length));
+            m_currentElement = Mathf.Max(0, Mathf.Min(value, Objects.Length));
         }
     }
 
@@ -70,8 +87,6 @@ public class UiNoteManager : MonoBehaviour
     {
         DisplayCollectibles();
         DisplayArrows();
-
-        Debug.Log($"switch to {CurrentElement}");
     }
 
     public void Show()
@@ -87,6 +102,14 @@ public class UiNoteManager : MonoBehaviour
         Self.alpha = 0.0f;
         Self.blocksRaycasts = false;
     }
+
+    public void SetMode(InternalCollectibleType mode)
+    {
+        Mode = mode;
+        Poll();
+    }
+
+    public void SetMode(int id) => SetMode((InternalCollectibleType)id);
 
     // creer le texte a afichier depuis l'instance 
     void DisplayCollectibles()
@@ -124,18 +147,24 @@ public class UiNoteManager : MonoBehaviour
 
     bool TryGetCollectible(int index, out CollectibleObject collectible)
     {
-        // we save it so that we don't need to calculate it two times!
-        CollectibleObject[] collectibles = GameManager.Instance.UnlockedCollectibles;
-        
         // if it is available
-        if(index < collectibles.Length)
+        if(index < Objects.Length)
         {
-            collectible = collectibles[index];
+            collectible = Objects[index];
             return true;
         }
 
         collectible = null;
         return false;
+    }
+
+    [Serializable]
+    public enum InternalCollectibleType
+    {
+        Collectible = 0,
+        Vinyl = 1,
+        Dialogue = 2,
+        Sequence =3    
     }
 
 }

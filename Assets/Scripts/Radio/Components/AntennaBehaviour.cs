@@ -1,5 +1,7 @@
 using System.Collections;
+using DialogueSystem;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI; 
 
 public class AntennaTunerBehaviour : RadioComponentBehaviour<float>
@@ -17,6 +19,13 @@ public class AntennaTunerBehaviour : RadioComponentBehaviour<float>
     void Start()
     {
         Slider.onValueChanged.AddListener((value) => SetValue(value));
+
+        Dialogue.Instance.OnDialogueStartEvent += () =>
+        {
+            ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
+            ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.endDragHandler);
+            EventSystem.current.SetSelectedGameObject(null);
+        };
 
         SetValue(Default);
         Slider.value = 0.5f + (Default / MaxAngle);

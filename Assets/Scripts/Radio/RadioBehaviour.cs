@@ -20,7 +20,7 @@ public class RadioBehaviour : MonoBehaviour
     public AudioListener Listener;
     public RadioManager Manager;
 
-    public RadioKnobComponent FreqKnob;
+    public FrequencyBehaviour FreqKnob;
     public AntennaTunerBehaviour Antenna;
     public RadioDecrypter Decrypter;
 

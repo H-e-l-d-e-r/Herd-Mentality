@@ -11,7 +11,7 @@ public class VinylRecordPlayer : MonoBehaviour
     public bool IsPlaying { get; private set; }
     public VinylObject CurrentVinyl => m_vinyl;
 
-    public RadioKnobComponent KnobComponent;
+    public FrequencyBehaviour KnobComponent;
     public AntennaTunerBehaviour Slider;
     public VinylStorage Storage;
     public RadioBroadcastBehaviour Broadcast;
@@ -96,7 +96,7 @@ public class VinylRecordPlayer : MonoBehaviour
         }
     }
 
-    void Play()
+    public void Play()
     {
         Broadcast.Play(m_vinyl.Clip);
         Broadcast.Volume = m_vinyl.Volume;
@@ -112,10 +112,10 @@ public class VinylRecordPlayer : MonoBehaviour
         RadioManager.Instance.EnqueueVinyl(m_vinyl, Broadcast.Mask.Frequence, Broadcast.Mask.Orientation);
     }
 
-    void Stop()
+    public void Stop()
     {
         if(m_vinyl == null)
-        {
+        { 
             return;
         }
 

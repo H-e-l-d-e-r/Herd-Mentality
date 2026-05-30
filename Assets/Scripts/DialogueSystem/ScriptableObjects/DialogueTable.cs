@@ -9,7 +9,7 @@ namespace DialogueSystem
 {
     [Serializable]
     [CreateAssetMenu(fileName = "Dialogue Table", menuName = "Dialogue/Dialogue Table")]
-    public class DialogueTable : ScriptableObject, IEnumerable<DialogueCommand>
+    public class DialogueTable : CollectibleObject, IEnumerable<DialogueCommand>
     {
         public DialogueCommand Root => m_root;
 
@@ -27,12 +27,12 @@ namespace DialogueSystem
             }
         }
         
-        [Header("Name")]
-        public string Name;
-        
-        [TextArea]
-        [Tooltip("A reminder. Not used in the dialogue system.")]
-        public string Description;
+        // [Header("Name")]
+        // public string Name;
+        // 
+        // [TextArea]
+        // [Tooltip("A reminder. Not used in the dialogue system.")]
+        // public string Description;
 
         [Space]
         [SerializeField]

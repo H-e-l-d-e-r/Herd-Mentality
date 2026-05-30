@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using DialogueSystem;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +13,8 @@ public class GameManager : MonoBehaviour
     public int CurrentDay => m_currentDay;
 
     public VinylObject[] UnlockedVinyls => m_unlockedCollectibles.OfType<VinylObject>().ToArray();
+    public SequenceObject[] UnlockedSequences => m_unlockedCollectibles.OfType<SequenceObject>().ToArray();
+    public DialogueTable[] UnlockedDialogues => m_unlockedCollectibles.OfType<DialogueTable>().ToArray();
 
     public CollectibleObject[] UnlockedCollectibles => m_unlockedCollectibles.ToArray();
 
@@ -28,6 +33,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ResetAppreciations();
+
+        Dialogue.Instance.OnDialogueStartEvent += () =>
+        {
+            AddCollectible(Dialogue.FindDialogueTable(Dialogue.Instance.Current));
+        };
     }
 
     void OnEnable()
@@ -60,7 +70,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCollectible(CollectibleObject collectible) => m_unlockedCollectibles.Add(collectible);
+    public void AddCollectible(CollectibleObject collectible)
+    {
+        if (m_unlockedCollectibles.Contains(collectible))
+        {
+            return;
+        }
+
+        m_unlockedCollectibles.Add(collectible);
+    }
 
     public void LoadScene(string name)
     {

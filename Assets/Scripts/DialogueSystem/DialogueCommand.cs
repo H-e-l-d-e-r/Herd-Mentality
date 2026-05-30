@@ -150,7 +150,9 @@ namespace DialogueSystem
 
         public bool Equals(DialogueCommand other)
         {
-            return m_guid == other.m_guid;
+            if(other == null) return false;
+            if(other.GetType() != typeof(DialogueCommand)) return false;
+            return Name == other.Name;
         }
     }
 }
