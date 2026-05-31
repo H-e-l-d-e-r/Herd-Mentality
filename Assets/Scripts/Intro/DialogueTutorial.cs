@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DialogueTutorial : MonoBehaviour
 {
+    public bool DisableMendatoryTuto;
+
     [Header("Dialogues Existants")]
     public DialogueTable DialogueTableTut;
     public DialogueTable Diag_Lei_2;
@@ -31,13 +33,22 @@ public class DialogueTutorial : MonoBehaviour
     [Range(0f, 1f)]
     public float SignalThreshold = 0.7f;
     public float AngleThreshold = 5f;
+    public float FristAngleThreshold = 25f;
 
     [Header("Angles Cibles (Tuto de base)")]
+    public float AngleTuto0 = 00f;
     public float AngleTuto1 = 30f;
     public float AngleTuto2 = 60f;
     public float AngleTuto3 = -60f;
 
     [Header("Cibles Décodage (Dialogues Évolutifs)")]
+    public float TargetFreqDiag9 = 5100f;
+    public float TargetFreqDiag11 = 4100f;
+    public float TargetFreqDiag13 = 6700f;
+    public float TargetAngleDiag9 = 20f;
+    public float TargetAngleDiag11 = 45f;
+    public float TargetAngleDiag13 = -60f;
+
     public float TargetFreqDiag8 = 11000f;
     public float TargetAngleDiag8 = 0f;
     public DecryptionModes ModeRequiredForDiag8; // À configurer sur "FromAudio" dans l'Inspector
@@ -49,6 +60,9 @@ public class DialogueTutorial : MonoBehaviour
     public float TargetFreqDiag12 = 8800f;
     public float TargetAngleDiag12 = -60f;
     public DecryptionModes ModeRequiredForDiag12; // À configurer sur "FromCaesar" dans l'Inspector
+
+    public float FinalFreq = 3900;
+    public float FinalAngle = -52;
 
     [Header("Modes de Décryptage Attendus (Tuto)")]
     public DecryptionModes ModeRequiredFor30;
@@ -76,6 +90,7 @@ public class DialogueTutorial : MonoBehaviour
     private DialoguePtr Lei_Diag12;
     private DialoguePtr Lei_Diag13;
 
+    [SerializeField]
     private int m_currentStep = 0;
     private bool m_isSnapping = false;
 
@@ -130,7 +145,7 @@ public class DialogueTutorial : MonoBehaviour
         if (m_isSnapping) return;
 
         // Désactive la vérification par molette dès que le tuto est fini (les étapes suivantes utilisent OnDecodeSuccess)
-        if (m_currentStep == 2 || m_currentStep >= 9) return;
+        //if (m_currentStep == 2 || m_currentStep >= 9) return;
 
         VerifyProgress();
     }
@@ -138,7 +153,6 @@ public class DialogueTutorial : MonoBehaviour
     void OnAngleChanged(float _)
     {
         if (m_isSnapping) return;
-        if (m_currentStep >= 9) return;
 
         VerifyProgress();
     }
@@ -153,11 +167,11 @@ public class DialogueTutorial : MonoBehaviour
 
         if (m_currentStep == 1)
         {
-            if (IsFreqOk(currentFreq, FreqTuto))
+            if (IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto0, FristAngleThreshold))
             {
                 Dialogue.PlayDialogue(Lei_Diag2);
                 m_currentStep = 2;
-            }
+            } 
         }
         else if (m_currentStep == 2)
         {
@@ -173,7 +187,7 @@ public class DialogueTutorial : MonoBehaviour
             {
                 Dialogue.PlayDialogue(Lei_Diag4);
                 m_currentStep = 5;
-            }
+            } 
         }
         else if (m_currentStep == 6)
         {
@@ -189,6 +203,39 @@ public class DialogueTutorial : MonoBehaviour
             {
                 Dialogue.PlayDialogue(Lei_Diag6);
                 m_currentStep = 9;
+            }
+        }
+        else if (m_currentStep == 9)
+        {
+            if(IsFreqOk(currentFreq, TargetFreqDiag9) && IsAngleOk(currentAngle, TargetAngleDiag9, FristAngleThreshold))
+            {
+                Dialogue.PlayDialogue(Lei_Diag7);
+                m_currentStep = 10;
+            }
+        }
+        else if (m_currentStep == 11)
+        {
+            if(IsFreqOk(currentFreq, TargetFreqDiag11) && IsAngleOk(currentAngle, TargetAngleDiag11, FristAngleThreshold))
+            {
+                Dialogue.PlayDialogue(Lei_Diag9);
+                m_currentStep = 12;
+            }
+            
+        }
+        else if (m_currentStep == 13)
+        {
+            if(IsFreqOk(currentFreq, TargetFreqDiag13) && IsAngleOk(currentAngle, TargetAngleDiag13, FristAngleThreshold))
+            {
+                Dialogue.PlayDialogue(Lei_Diag11);
+                m_currentStep = 14;
+            }
+        }
+        else if(m_currentStep == 15)
+        { 
+            if(IsFreqOk(currentFreq, FinalFreq) && IsAngleOk(currentAngle, FinalAngle, FristAngleThreshold))
+            {
+                Dialogue.PlayDialogue(Lei_Diag13);
+                m_currentStep = 17;
             }
         }
     }
@@ -220,28 +267,32 @@ public class DialogueTutorial : MonoBehaviour
         }
 
         // --- NOUVEAUX DIALOGUES ---
+        
+
         // Dialogue 8 : Débloqué après décodage Audio (11000 Hz / 0°)
-        else if (m_currentStep == 10 && modeUsed == ModeRequiredForDiag8)
+        else if (m_currentStep == 10)
         {
-            if (IsFreqOk(currentFreq, TargetFreqDiag8) && IsAngleOk(currentAngle, TargetAngleDiag8))
+            if (true)
             {
                 Dialogue.PlayDialogue(Lei_Diag8);
                 m_currentStep = 11;
             }
         }
+        
         // Dialogue 10 : Débloqué après décodage César (11400 Hz / 12°)
         else if (m_currentStep == 12 && modeUsed == ModeRequiredForDiag10)
         {
-            if (IsFreqOk(currentFreq, TargetFreqDiag10) && IsAngleOk(currentAngle, TargetAngleDiag10))
+            if (true)
             {
                 Dialogue.PlayDialogue(Lei_Diag10);
                 m_currentStep = 13;
             }
         }
+        
         // Dialogue 12 : Débloqué après décodage César (8800 Hz / -60°)
         else if (m_currentStep == 14 && modeUsed == ModeRequiredForDiag12)
         {
-            if (IsFreqOk(currentFreq, TargetFreqDiag12) && IsAngleOk(currentAngle, TargetAngleDiag12))
+            if (true)
             {
                 Dialogue.PlayDialogue(Lei_Diag12);
                 m_currentStep = 15;
@@ -258,30 +309,18 @@ public class DialogueTutorial : MonoBehaviour
             RefreshRadioSignal();
         }
         // Dialogue 7 : Se lance dès que le tuto (Dialogue 6) est fini
-        else if (m_currentStep == 9)
-        {
-            Dialogue.PlayDialogue(Lei_Diag7);
-            m_currentStep = 10;
-        }
+        
         // Dialogue 9 : Se lance dès que le Dialogue 8 se ferme
-        else if (m_currentStep == 11)
-        {
-            Dialogue.PlayDialogue(Lei_Diag9);
-            m_currentStep = 12;
-        }
+        
         // Dialogue 11 : Se lance dès que le Dialogue 10 se ferme
-        else if (m_currentStep == 13)
-        {
-            Dialogue.PlayDialogue(Lei_Diag11);
-            m_currentStep = 14;
-        }
+        
         // Étape après le Dialogue 12
-        else if (m_currentStep == 15)
-        {
-            m_currentStep = 16;
-            // ÉTAPE 16 (DIALOGUE 13) LAISSÉE VIDE COMME DEMANDÉ.
-            // Tu pourras implémenter ta propre condition ici ou ailleurs.
-        }
+        //else if (m_currentStep == 15)
+        //{
+        //    m_currentStep = 16;
+        //    // ÉTAPE 16 (DIALOGUE 13) LAISSÉE VIDE COMME DEMANDÉ.
+        //    // Tu pourras implémenter ta propre condition ici ou ailleurs.
+        //}
     }
 
     private void RefreshRadioSignal()
@@ -299,8 +338,10 @@ public class DialogueTutorial : MonoBehaviour
         return signal >= SignalThreshold;
     }
 
-    private bool IsAngleOk(float angle, float target)
+    private bool IsAngleOk(float angle, float target) => IsAngleOk(angle, target, AngleThreshold);
+
+    private bool IsAngleOk(float angle, float target, float treshold)
     {
-        return Mathf.Abs(angle - target) <= AngleThreshold;
+        return Mathf.Abs(angle - target) <= treshold;
     }
 }

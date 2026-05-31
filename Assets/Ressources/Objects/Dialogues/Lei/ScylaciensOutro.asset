@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: ScylaciensOutro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Radio Scylas
+  Name: Vers les lettristes
   Description: "Bonne chance chez les lettristes! en 4100 HM et 45\xB0!"
   Like:
     YoungLetterists: 0
@@ -23,18 +23,18 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   m_nodes:
-  - Name: 'Radio Shenron '
+  - Name: Vers les lettristes
     Text: "Bien jou\xE9 ! Tu g\xE8res, t'as trouv\xE9 la s\xE9quence de musique. "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 'Radio Shenron '
+  - Name: Vers les lettristes
     Text: "La prochaine \xE9tape se trouve chez les jeunes lettristes en 4100 HM
       et 45\xB0. "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 'Radio Shenron '
+  - Name: Vers les lettristes
     Text: "Je te laisse, je dois aller chercher ma barbe \xE0 papa. Ah et il y a
       plus de lasagne d\xE9so."
     Actor: {fileID: 0}

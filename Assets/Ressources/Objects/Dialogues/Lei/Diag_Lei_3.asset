@@ -12,47 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: Diag_Lei_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Un code, deux code, DECODE!
+  Name: Un code, deux code, DECODE !
   Description: "\xC7a me rappelle les fois o\xF9 je jouais avec \xC9ric \xE0 cracker
     les diff\xE9rents mots secrets qu'on s'envoyait tous les jours. Dommage que maintenant
     il soit si occup\xE9 \xE0 g\xE9rer les gu\xE9guerres des groupes de Dalheim..."
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   m_nodes:
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Parfait, round 2 ! Si t'es arriv\xE9 jusque l\xE0, c'est d\xE9j\xE0 pas
       mal, mais ce n'est pas assez pour m'\xE9pater."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Je dois encore voir si tu sais d\xE9crypter un message."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Il y a quatre types de chiffrements communs : l'Invert, le C\xE9sar, le
       Morse et l'Audio."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Je m'imagine d\xE9j\xE0 ta t\xEAte en entendant \xE7a, mais ne t'inqui\xE9te
       pas : Tu n'as qu'\xE0 selectionner le mode de decryptage sur ta station et
       elle fait le reste toute seule."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: Pratique, non?
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Le reste est simple : enregistre et traduis d\xE8s que tu penses qu'il
       y a un code cach\xE9 quelque part."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Un code, deux code, DECODE!
+  - Name: Un code, deux code, DECODE !
     Text: "Je te laisse d\xE9coder ton premier code qui te mettra sens dessus dessous.
       Quand tu auras fini, rejoins-moi \xE0 l'orientation 60\xB0. Bonne chance !"
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}

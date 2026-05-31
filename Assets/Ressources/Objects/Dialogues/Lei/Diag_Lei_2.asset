@@ -12,41 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: Diag_Lei_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Retour au monde de la Radiophonie!
+  Name: Retour au monde de la radiophonie
   Description: "Lei a raison. \xC0 cause des cours et du boulot, je n'ai pas touch\xE9
     \xE0 ma station depuis des lustres. Je devrais suivre son conseil et reprendre
     du poil de la b\xEAte !"
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   m_nodes:
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: "Re-salut Ma\xE9! Merci d'avoir r\xE9pondu \xE0 mon appel."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: Je suis sur qu'avec toi on vas pouvoir la retrouver.
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: "Cependant, avant de pouvoir collaborer, je dois m'assurer que tu sais
       utiliser une station de d\xE9cryptage."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: "Pas que je ne te fais pas confiance, mais ca fait longtemps que tu n'as
       pas utilis\xE9 ta station."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: "En premier, on va revoir l'utilisation de l'antenne. C'est s\xFBrement
       chez toi un \xE9cran en haut \xE0 gauche. Tu peux, gr\xE2ce \xE0 elle, balayer
       une zone qui va de 60 \xE0 -60 degr\xE9s."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
     ActorSprite: 0
     Behavior: 0
-  - Name: Retour au monde de la Radiophonie!
+  - Name: Retour au monde de la radiophonie
     Text: "Vas-y, essaie d'orienter ton antenne vers 30\xB0. On se retrouve de l'autre
       cot\xE9."
     Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}

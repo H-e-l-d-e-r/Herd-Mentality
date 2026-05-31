@@ -43,7 +43,6 @@ public class VinylRecordPlayer : MonoBehaviour
 
         Slider.OnValueChange.AddListener((float orientation) =>
         {
-            Debug.Log(orientation);
             Broadcast.Mask.Orientation = orientation; 
         });
 

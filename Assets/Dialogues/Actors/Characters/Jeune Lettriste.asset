@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66412d6a8004e0398aceaf0a3d6aa312, type: 3}
-  m_Name: Reda
+  m_Name: Jeune Lettriste
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueActor
-  Name: "R\xE9da"
+  Name: Jeune Lettriste
   Description: 
-  Sprites:
-  - {fileID: 923943893, guid: 0f50c7b4496585a4885873d05b5b1318, type: 3}
-  - {fileID: -641597858, guid: 0f50c7b4496585a4885873d05b5b1318, type: 3}
-  - {fileID: 866033153, guid: 0f50c7b4496585a4885873d05b5b1318, type: 3}
-  SpriteSide: 0
+  Sprites: []
+  SpriteSide: 1
   CharacterAudio: {fileID: 8300000, guid: d708ca03cd1e93545b7aedc269b974b0, type: 3}
   AudioProbability: 0.5
   PitchRandomness: {x: 0.6, y: 1.5}

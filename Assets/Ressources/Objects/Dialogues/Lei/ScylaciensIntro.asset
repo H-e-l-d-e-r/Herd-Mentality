@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: ScylaciensIntro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Radio Scylas
+  Name: Balise Scylacienne
   Description: "Bienvenue chez les Scylaciens, trouve ton bonheur parmis notre onde! 
     Onde 5100 HM et 20\xB0."
   Like:
@@ -24,24 +24,24 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   m_nodes:
-  - Name: 
+  - Name: Balise Scylacienne
     Text: "Heu, ouais\u2026 Bienvenue sur la balise des Scylaciens ! "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 
-    Text: "Si tu veux nous rejoindre, alors voici l'\xE9nigme : Vas en 5100 HM et
-      20\xB0, et bah bonne chance."
+  - Name: Balise Scylacienne
+    Text: "Si tu veux nous rejoindre, alors voici l'\xE9nigme : Va en 5100 HM et
+      20\xB0, et, euhm, bah, bonne chance..."
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 
-    Text: "Aujourd'hui on squat chez Didier et on se d\xE9fonce une lasagne."
+  - Name: Balise Scylacienne
+    Text: "Aujourd'hui on squat chez Didier et on va se d\xE9foncer une lasagne !"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 
-    Text: "Si t'est assez rapides il en restaras peut-\xEAtre..."
+  - Name: Balise Scylacienne
+    Text: "Si t'es assez rapide, il en resteras peut-\xEAtre..."
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0

@@ -86,12 +86,14 @@ public class RadioBehaviour : MonoBehaviour
         {
             m_freq = value;
             Decrypter.InteruptRecoding();
+            Decrypter.InteruptTranslating();
         });
 
         Antenna.OnValueChange.AddListener((value) =>
         {
             m_orientation = value;
             Decrypter.InteruptRecoding();
+            Decrypter.InteruptTranslating();
         });
 
         RegisterBroadcasts();

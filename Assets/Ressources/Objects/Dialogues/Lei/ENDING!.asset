@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: ENDING!
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: FIN DE DIFFUSION!
+  Name: Des retrouvailles
   Description: "Nene et Lei ce sont reconcili\xE9s!"
   Like:
     YoungLetterists: 0
@@ -22,4 +22,64 @@ MonoBehaviour:
     YoungLetterists: 0
     SquatRoskoff: 0
     Scilas: 0
-  m_nodes: []
+  m_nodes:
+  - Name: 
+    Text: "Je re\xE7ois un appel par code\u2026 qui est-ce ?"
+    Actor: {fileID: 11400000, guid: 7eaacb07d9454e2a2862804019417e48, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Nene? Nene ? C'est moi, Lei ! Je te cherche depuis si longtemps\u2026"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Je voulais te dire que\u2026 JE SUIS VRAIMENT D\xC9SOL\xC9E ! "
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Lei? Tu as enfin trouv\xE9 mon message, je savais que tu y arriverais
+      !"
+    Actor: {fileID: 11400000, guid: 7eaacb07d9454e2a2862804019417e48, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Oui ! J'y suis arriv\xE9e toute seule ! Comme quoi, j'ai bien progress\xE9
+      en radio !"
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Ouais, toute seule\u2026"
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: '*Gresillements*'
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Ahh, que c'est beau l'amour\u2026 mais c'est pas tout \xE7a, mais la lasagne
+      est pr\xEAte !"
+    Actor: {fileID: 11400000, guid: e6299d02b7ee1f24d9bb16266e7fcfc4, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Mais laisse les jeunes profiter un peu, c'est pas tous les jours qu'on
+      assiste \xE0 une pi\xE8ce de Samuel Beckett, Godot en a pris du temps\u2026"
+    Actor: {fileID: 11400000, guid: 626a94a329283af65bd51154e121e2cf, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "On aurait d\xFB faire \xE7a depuis si longtemps\u2026 On va chercher une
+      frite pour accompagner la lasagne ?"
+    Actor: {fileID: 11400000, guid: e64e180b2aaeed8e792afb5c2547f615, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: Et c'est ainsi que les factions autour d'un bon repas...
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0

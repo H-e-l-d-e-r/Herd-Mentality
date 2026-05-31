@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: Diag_Lei_7
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: "Sur la fr\xE9quence de Nene"
+  Description: "3900HM, -52 d'angle... je crois que tout est parfait. Il ne reste
+    plus qu'\xE0 mettre les musiques..."
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: "Sur la fr\xE9quence de Nene"
+    Text: Je crois qu'on est enfin sur la bonne piste pour retrouver Nene !
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: "Sur la fr\xE9quence de Nene"
+    Text: "On semble \xEAtre sur la bonne fr\xE9quence et la bonne orientation... "
+    Actor: {fileID: 11400000, guid: 30a2f09a16aaa7e47896431ec5d6b13e, type: 2}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: "Sur la fr\xE9quence de Nene"
+    Text: 'N''oublie pas l''ordre des musiques : "Talking to the wind", "Won''t Remember",
+      "Coolman", "Waters", "Mercury Solution"'
+    Actor: {fileID: 11400000, guid: 7378c8590a27aef4782b1afed2dcc6c8, type: 2}
+    ActorSprite: 0
+    Behavior: 0

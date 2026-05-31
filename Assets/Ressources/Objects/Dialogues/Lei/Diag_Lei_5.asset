@@ -16,6 +16,14 @@ MonoBehaviour:
   Description: "Entre la musique et la radio, je ne sais pas trop quoi choisir. J'ai
     d\xE9j\xE0 essay\xE9 de lier les deux en animant une \xE9mission, mais \xE7a
     n'a jamais eu l'impact voulu..."
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
   m_nodes:
   - Name: Le son m'emporte toujours
     Text: "Toujours avec moi Ma\xE9?"

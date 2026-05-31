@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: JeunesLettristesOutro 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Radio JL
+  Name: Jeunes Lettristes et les Roskoffs
   Description: "Vas et continue chez les Roskoff : 6700 HM et -60\xB0."
   Like:
     YoungLetterists: 0
@@ -23,18 +23,18 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   m_nodes:
-  - Name: 'Radio Shenron '
+  - Name: Jeunes Lettristes et les Roskoffs
     Text: "Mes f\xE9licitations, vous avez r\xE9ussi. Vous avez entre vos mains l'orientation,
       il ne vous reste plus qu'\xE0 trouver la derni\xE8re pi\xE8ce du puzzle\u2026"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 'Radio Shenron '
+  - Name: Jeunes Lettristes et les Roskoffs
     Text: "La fr\xE9quence. Elle se trouve chez les Roskoff en : 6700 HM et -60\xB0. "
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
-  - Name: 'Radio Shenron '
+  - Name: Jeunes Lettristes et les Roskoffs
     Text: Bonne chance avec eux, ils ne sont pas des plus commodes.
     Actor: {fileID: 0}
     ActorSprite: 0

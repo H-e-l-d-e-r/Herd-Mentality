@@ -26,7 +26,6 @@ public class FrequencyBehaviour : RadioComponentBehaviour<float>, IScrollHandler
             Slider.enabled = false;
         };
 
-
         Dialogue.Instance.OnDialogueCloseEvent += () =>
         {
             Slider.enabled = true;
