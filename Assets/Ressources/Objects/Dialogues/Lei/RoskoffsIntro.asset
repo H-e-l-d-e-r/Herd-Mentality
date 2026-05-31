@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: RoskoffsIntro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Radio Roskoff
+  Description: ROSKOFF ON FIRE!
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: 
+    Text: "On est peut-\xEAtre des ROSKOFF, mais on est ON FIRE !\nBienvenue dans
+      notre station d'enfer ! "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Les \xE9nigmes et les m\xE9ninges, on n'aime pas \xE7a !\n"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Mais bon, pour une vieille connaissance, on vous r\xE9serve plein de d\xE9fis
+      bien d\xE9rang\xE9s. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Ne venez pas vous plaindre apr\xE8s !"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

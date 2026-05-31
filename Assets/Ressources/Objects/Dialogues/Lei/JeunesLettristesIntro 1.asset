@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: JeunesLettristesIntro 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Radio JL
+  Description: Bienvenue chez les Jeunes Lettristes.
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: 
+    Text: 'Bonjour, vous vous trouvez actuellement sur la balise des Jeunes Lettristes. '
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Si vous comptez acc\xE9der \xE0 la suite, veuillez r\xE9soudre nos \xE9nigmes
+      en : 4100 HM et avec une orientation de 45\xB0. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Radio JL
+    Text: "Si vous avez trop de soucis, n'h\xE9sitez pas \xE0 venir nous saluer \xE0
+      l'universit\xE9, mais attention aux profs, ils n'aiment pas que l'on squatte
+      l'\xE9cole, je ne sais pas pourquoi ! "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: Radio JL
+    Text: "Bonne chance \xE0 vous. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

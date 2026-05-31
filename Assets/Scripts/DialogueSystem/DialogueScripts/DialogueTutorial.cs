@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueTutorial : MonoBehaviour
 {
+    [Header("Dialogues Existants")]
     public DialogueTable DialogueTableTut;
     public DialogueTable Diag_Lei_2;
     public DialogueTable Diag_Lei_3;
@@ -11,27 +12,64 @@ public class DialogueTutorial : MonoBehaviour
     public DialogueTable Diag_Lei_5;
     public DialogueTable Diag_Lei_6;
 
+    [Header("Nouveaux Dialogues (7 à 13)")]
+    public DialogueTable Diag_Lei_7;
+    public DialogueTable Diag_Lei_8;
+    public DialogueTable Diag_Lei_9;
+    public DialogueTable Diag_Lei_10;
+    public DialogueTable Diag_Lei_11;
+    public DialogueTable Diag_Lei_12;
+    public DialogueTable Diag_Lei_13;
+
     public DialogueTypewritter TypeWritter;
     public RadioDecrypter Decrypter;
 
     [Header("Paramètres Fréquence et Tolérance")]
     public float FreqTuto = 12700f;
-    public float FreqTutoEnd = 6500f;
+    public float FreqTutoEnd = 7500f;
     public float Bandwidth = 500f;
     [Range(0f, 1f)]
     public float SignalThreshold = 0.7f;
     public float AngleThreshold = 5f;
 
-    [Header("Angles Cibles")]
+    [Header("Angles Cibles (Tuto de base)")]
     public float AngleTuto1 = 30f;
     public float AngleTuto2 = 60f;
     public float AngleTuto3 = -60f;
+
+    // NOUVEAU : Fréquences et Angles cibles pour les dialogues 7 à 13
+    [Header("Cibles Nouveaux Dialogues (Fréquence & Angle)")]
+    public float TargetFreq7 = 8000f;
+    public float TargetAngle7 = 45f;
+
+    public float TargetFreq8 = 8500f;
+    public float TargetAngle8 = -45f;
+
+    public float TargetFreq9 = 9000f;
+    public float TargetAngle9 = 90f;
+
+    public float TargetFreq10 = 9500f;
+    public float TargetAngle10 = -90f;
+
+    public float TargetFreq11 = 10000f;
+    public float TargetAngle11 = 120f;
+
+    public float TargetFreq12 = 10500f;
+    public float TargetAngle12 = -120f;
+
+    public float TargetFreq13 = 11000f;
+    public float TargetAngle13 = 180f;
+
+    [Header("Modes de Décryptage Attendus")]
+    public DecryptionModes ModeRequiredFor30;
+    public DecryptionModes ModeRequiredFor60;
+    public DecryptionModes ModeRequiredForMinus60;
 
     [Header("Broadcasts Audio à débloquer")]
     public RadioBroadcastBehaviour Broadcast30;
     public RadioBroadcastBehaviour Broadcast60;
     public RadioBroadcastBehaviour BroadcastMinus60;
-    public RadioBroadcastBehaviour Broadcast6500;
+    public RadioBroadcastBehaviour Broadcast7500;
 
     private DialoguePtr Lei_Diag;
     private DialoguePtr Lei_Diag2;
@@ -40,14 +78,21 @@ public class DialogueTutorial : MonoBehaviour
     private DialoguePtr Lei_Diag5;
     private DialoguePtr Lei_Diag6;
 
+    private DialoguePtr Lei_Diag7;
+    private DialoguePtr Lei_Diag8;
+    private DialoguePtr Lei_Diag9;
+    private DialoguePtr Lei_Diag10;
+    private DialoguePtr Lei_Diag11;
+    private DialoguePtr Lei_Diag12;
+    private DialoguePtr Lei_Diag13;
+
     private int m_currentStep = 0;
     private bool m_isSnapping = false;
 
-    // Pour sauvegarder le vrai volume
     private float m_vol30;
     private float m_vol60;
     private float m_volMinus60;
-    private float m_vol6500;
+    private float m_vol7500;
 
     void Start()
     {
@@ -58,11 +103,18 @@ public class DialogueTutorial : MonoBehaviour
         Lei_Diag5 = Dialogue.RegisterDialogue(Diag_Lei_5);
         Lei_Diag6 = Dialogue.RegisterDialogue(Diag_Lei_6);
 
-        // On sauvegarde le vrai volume et on force le volume à 0 au démarrage
+        Lei_Diag7 = Dialogue.RegisterDialogue(Diag_Lei_7);
+        Lei_Diag8 = Dialogue.RegisterDialogue(Diag_Lei_8);
+        Lei_Diag9 = Dialogue.RegisterDialogue(Diag_Lei_9);
+        Lei_Diag10 = Dialogue.RegisterDialogue(Diag_Lei_10);
+        Lei_Diag11 = Dialogue.RegisterDialogue(Diag_Lei_11);
+        Lei_Diag12 = Dialogue.RegisterDialogue(Diag_Lei_12);
+        Lei_Diag13 = Dialogue.RegisterDialogue(Diag_Lei_13);
+
         if (Broadcast30 != null) { m_vol30 = Broadcast30.Volume; Broadcast30.Volume = 0f; }
         if (Broadcast60 != null) { m_vol60 = Broadcast60.Volume; Broadcast60.Volume = 0f; }
         if (BroadcastMinus60 != null) { m_volMinus60 = BroadcastMinus60.Volume; BroadcastMinus60.Volume = 0f; }
-        if (Broadcast6500 != null) { m_vol6500 = Broadcast6500.Volume; Broadcast6500.Volume = 0f; }
+        if (Broadcast7500 != null) { m_vol7500 = Broadcast7500.Volume; Broadcast7500.Volume = 0f; }
 
         Dialogue.Instance.OnDialogueCloseEvent += OnDialogueClosed;
         if (Decrypter != null) Decrypter.OnDecodeSuccess += OnDecodeSuccess;
@@ -87,19 +139,9 @@ public class DialogueTutorial : MonoBehaviour
     {
         if (m_isSnapping) return;
 
-        // Hard Lock : Bloqué sur 12700 pendant la recherche de l'antenne
-        if (m_currentStep == 2)
-        {
-            DefendFreq(FreqTuto); // Utilisation du verrouillage SILENCIEUX
-            return;
-        }
+        if (m_currentStep == 2) return;
 
-        // Hard Lock : Bloqué sur 6500 pendant le tout dernier dialogue
-        if (m_currentStep == 9)
-        {
-            DefendFreq(FreqTutoEnd); // Utilisation du verrouillage SILENCIEUX
-            return;
-        }
+        if (m_currentStep == 9 || m_currentStep == 17) return;
 
         VerifyProgress();
     }
@@ -117,88 +159,128 @@ public class DialogueTutorial : MonoBehaviour
         float currentFreq = RadioManager.Instance.RadioBehaviour.FreqKnob.Value;
         float currentAngle = RadioManager.Instance.RadioBehaviour.Antenna.Value;
 
-        // ETAPE 1 : Trouver la fréquence (12700)
+        // --- ANCIENNES ÉTAPES (1 à 8) ---
         if (m_currentStep == 1)
         {
             if (IsFreqOk(currentFreq, FreqTuto))
             {
-                SnapFreq(FreqTuto);
-                LockKnobInteraction(true);
-
                 Dialogue.PlayDialogue(Lei_Diag2);
                 m_currentStep = 2;
             }
         }
-        // ETAPE 2 : Trouver 30° -> Dialogue 3 immédiat
         else if (m_currentStep == 2)
         {
-            if (Broadcast30 != null && Broadcast30.Volume > 0f && IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto1))
+            if (IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto1))
             {
-                SnapAngle(AngleTuto1);
-                LockKnobInteraction(false);
-
                 Dialogue.PlayDialogue(Lei_Diag3);
                 m_currentStep = 3;
             }
         }
-        // ETAPE 4 : Trouver 60° -> Dialogue 4 immédiat
         else if (m_currentStep == 4)
         {
-            if (Broadcast60 != null && Broadcast60.Volume > 0f && IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto2))
+            if (IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto2))
             {
-                SnapAngle(AngleTuto2);
                 Dialogue.PlayDialogue(Lei_Diag4);
                 m_currentStep = 5;
             }
         }
-        // ETAPE 6 : Trouver -60° -> Dialogue 5 immédiat
         else if (m_currentStep == 6)
         {
-            if (BroadcastMinus60 != null && BroadcastMinus60.Volume > 0f && IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto3))
+            if (IsFreqOk(currentFreq, FreqTuto) && IsAngleOk(currentAngle, AngleTuto3))
             {
-                SnapAngle(AngleTuto3);
                 Dialogue.PlayDialogue(Lei_Diag5);
                 m_currentStep = 7;
             }
         }
-        // ETAPE 8 : Trouver la fréquence finale (6500) -> Dialogue 6 immédiat
         else if (m_currentStep == 8)
         {
-            if (Broadcast6500 != null && Broadcast6500.Volume > 0f && IsFreqOk(currentFreq, FreqTutoEnd))
+            if (IsFreqOk(currentFreq, FreqTutoEnd))
             {
-                SnapFreq(FreqTutoEnd);
-                LockKnobInteraction(true);
-
                 Dialogue.PlayDialogue(Lei_Diag6);
                 m_currentStep = 9;
             }
         }
+        // --- NOUVELLES ÉTAPES (10 à 16) : Combo Fréquence + Angle ---
+        else if (m_currentStep == 10)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq7) && IsAngleOk(currentAngle, TargetAngle7))
+            {
+                Dialogue.PlayDialogue(Lei_Diag7);
+                m_currentStep = 11;
+            }
+        }
+        else if (m_currentStep == 11)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq8) && IsAngleOk(currentAngle, TargetAngle8))
+            {
+                Dialogue.PlayDialogue(Lei_Diag8);
+                m_currentStep = 12;
+            }
+        }
+        else if (m_currentStep == 12)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq9) && IsAngleOk(currentAngle, TargetAngle9))
+            {
+                Dialogue.PlayDialogue(Lei_Diag9);
+                m_currentStep = 13;
+            }
+        }
+        else if (m_currentStep == 13)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq10) && IsAngleOk(currentAngle, TargetAngle10))
+            {
+                Dialogue.PlayDialogue(Lei_Diag10);
+                m_currentStep = 14;
+            }
+        }
+        else if (m_currentStep == 14)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq11) && IsAngleOk(currentAngle, TargetAngle11))
+            {
+                Dialogue.PlayDialogue(Lei_Diag11);
+                m_currentStep = 15;
+            }
+        }
+        else if (m_currentStep == 15)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq12) && IsAngleOk(currentAngle, TargetAngle12))
+            {
+                Dialogue.PlayDialogue(Lei_Diag12);
+                m_currentStep = 16;
+            }
+        }
+        else if (m_currentStep == 16)
+        {
+            if (IsFreqOk(currentFreq, TargetFreq13) && IsAngleOk(currentAngle, TargetAngle13))
+            {
+                Dialogue.PlayDialogue(Lei_Diag13);
+                m_currentStep = 17;
+            }
+        }
     }
 
-    // --- REPONSE AU DECODAGE ---
-    private void OnDecodeSuccess()
+    private void OnDecodeSuccess(DecryptionModes modeUsed)
     {
-        if (m_currentStep == 3)
+        if (m_currentStep == 3 && modeUsed == ModeRequiredFor30)
         {
             if (Broadcast60 != null) Broadcast60.Volume = m_vol60;
             RefreshRadioSignal();
             m_currentStep = 4;
         }
-        else if (m_currentStep == 5)
+        else if (m_currentStep == 5 && modeUsed == ModeRequiredFor60)
         {
             if (BroadcastMinus60 != null) BroadcastMinus60.Volume = m_volMinus60;
             RefreshRadioSignal();
             m_currentStep = 6;
         }
-        else if (m_currentStep == 7)
+        else if (m_currentStep == 7 && modeUsed == ModeRequiredForMinus60)
         {
-            if (Broadcast6500 != null) Broadcast6500.Volume = m_vol6500;
+            if (Broadcast7500 != null) Broadcast7500.Volume = m_vol7500;
             RefreshRadioSignal();
             m_currentStep = 8;
         }
     }
 
-    // --- FIN DE DIALOGUE ---
     private void OnDialogueClosed()
     {
         if (m_currentStep == 1)
@@ -208,21 +290,12 @@ public class DialogueTutorial : MonoBehaviour
         }
         else if (m_currentStep == 9)
         {
-            LockKnobInteraction(false);
-            m_currentStep = 10; // Libération totale du joueur
+            m_currentStep = 10;
         }
-    }
-
-    // --- VERROUILLAGE PHYSIQUE UI ---
-    private void LockKnobInteraction(bool isLocked)
-    {
-        /*CanvasGroup cg = RadioManager.Instance.RadioBehaviour.FreqKnob.gameObject.GetComponent<CanvasGroup>();
-        if (cg == null)
+        else if (m_currentStep == 17)
         {
-            cg = RadioManager.Instance.RadioBehaviour.FreqKnob.gameObject.AddComponent<CanvasGroup>();
+            m_currentStep = 18;
         }
-        cg.blocksRaycasts = !isLocked;
-        cg.interactable = !isLocked; // Stoppe net le clic/drag en cours !*/
     }
 
     private void RefreshRadioSignal()
@@ -243,39 +316,5 @@ public class DialogueTutorial : MonoBehaviour
     private bool IsAngleOk(float angle, float target)
     {
         return Mathf.Abs(angle - target) <= AngleThreshold;
-    }
-
-    // --- SNAPS ---
-    private void SnapFreq(float target)
-    {
-        /*m_isSnapping = true;
-        RadioManager.Instance.RadioBehaviour.Frequence = target;
-        RadioManager.Instance.RadioBehaviour.FreqKnob.SetValue(target);
-
-        // PING AUDIO (Utilisé SEULEMENT quand on trouve la fréquence la première fois)
-        RadioManager.Instance.RadioBehaviour.FreqKnob.OnValueChange?.Invoke(target);
-
-        m_isSnapping = false;*/
-    }
-
-    // --- NOUVEAU : DEFENSE SILENCIEUSE POUR LE HARD LOCK ---
-    private void DefendFreq(float target)
-    {
-        /*m_isSnapping = true;
-        RadioManager.Instance.RadioBehaviour.Frequence = target;
-        RadioManager.Instance.RadioBehaviour.FreqKnob.SetValue(target);
-
-        // AUCUN PING AUDIO ICI ! On repousse juste la molette silencieusement sans couper le son.
-
-        m_isSnapping = false;*/
-    }
-
-    private void SnapAngle(float target)
-    {
-        /*m_isSnapping = true;
-        RadioManager.Instance.RadioBehaviour.Orientation = target;
-        RadioManager.Instance.RadioBehaviour.Antenna.SetValue(target);
-        RadioManager.Instance.RadioBehaviour.Antenna.OnValueChange?.Invoke(target);
-        m_isSnapping = false;*/
     }
 }

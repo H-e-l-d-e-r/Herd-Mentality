@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: ScylaciensOutro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Radio Scylas
+  Description: "Bonne chance chez les lettristes! en 4100 HM et 45\xB0!"
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: 'Radio Shenron '
+    Text: "Bien jou\xE9 ! Tu g\xE8res, t'as trouv\xE9 la s\xE9quence de musique. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "La prochaine \xE9tape se trouve chez les jeunes lettristes en 4100 HM
+      et 45\xB0. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "Je te laisse, je dois aller chercher ma barbe \xE0 papa. Ah et il y a
+      plus de lasagne d\xE9so."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

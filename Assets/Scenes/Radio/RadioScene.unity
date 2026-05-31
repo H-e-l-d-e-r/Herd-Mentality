@@ -2891,7 +2891,7 @@ GameObject:
   - component: {fileID: 828183176}
   - component: {fileID: 828183177}
   m_Layer: 0
-  m_Name: Lei_Tuto_1.3
+  m_Name: Lei_Tuto_1.3 12700HM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3879,14 +3879,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1072587955}
+      addedObject: {fileID: 1072587957}
   m_SourcePrefab: {fileID: 100100000, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
 --- !u!224 &1072587953 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5387149724599841770, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
   m_PrefabInstance: {fileID: 1072587952}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1072587955
+--- !u!114 &1072587957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3904,20 +3904,44 @@ MonoBehaviour:
   Diag_Lei_4: {fileID: 11400000, guid: 68aadfa2f579b28449e6d476bdbe83bb, type: 2}
   Diag_Lei_5: {fileID: 11400000, guid: f9fb49ddca75e3142b148a3b5edab8b2, type: 2}
   Diag_Lei_6: {fileID: 11400000, guid: cbae8da75c0f0b340935c869951b25e0, type: 2}
+  Diag_Lei_7: {fileID: 11400000, guid: 73f381cec1bf95a478c226a7fe214dc5, type: 2}
+  Diag_Lei_8: {fileID: 11400000, guid: b7bd8e8b9cb99794d8a9a5f9469d4970, type: 2}
+  Diag_Lei_9: {fileID: 11400000, guid: 597b5ff9ca0714e4c8a44e507fdec86c, type: 2}
+  Diag_Lei_10: {fileID: 11400000, guid: c672992cf26d0cb47a8269e76728293e, type: 2}
+  Diag_Lei_11: {fileID: 11400000, guid: e5df5509161d1674fba6d3d4992f6999, type: 2}
+  Diag_Lei_12: {fileID: 11400000, guid: eabb1f5d5b23bf042b8d49c6bc53323a, type: 2}
+  Diag_Lei_13: {fileID: 0}
   TypeWritter: {fileID: 882460163}
   Decrypter: {fileID: 6747454719012529717}
   FreqTuto: 12700
-  FreqTutoEnd: 6500
-  Bandwidth: 500
+  FreqTutoEnd: 7500
+  Bandwidth: 100
   SignalThreshold: 0.7
   AngleThreshold: 5
   AngleTuto1: 30
   AngleTuto2: 60
   AngleTuto3: -60
+  TargetFreq7: 5100
+  TargetAngle7: 0
+  TargetFreq8: 1100
+  TargetAngle8: 0
+  TargetFreq9: 4100
+  TargetAngle9: 0
+  TargetFreq10: 11400
+  TargetAngle10: 0
+  TargetFreq11: 6700
+  TargetAngle11: -20
+  TargetFreq12: 8800
+  TargetAngle12: -60
+  TargetFreq13: 3912
+  TargetAngle13: -52
+  ModeRequiredFor30: 2
+  ModeRequiredFor60: 1
+  ModeRequiredForMinus60: 3
   Broadcast30: {fileID: 1971388649}
   Broadcast60: {fileID: 828183177}
   BroadcastMinus60: {fileID: 1476540179}
-  Broadcast6500: {fileID: 1131244772}
+  Broadcast7500: {fileID: 1131244772}
 --- !u!1 &1125332313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,7 +4073,7 @@ GameObject:
   - component: {fileID: 1131244771}
   - component: {fileID: 1131244772}
   m_Layer: 0
-  m_Name: Lei_Tuto_3
+  m_Name: Lei_Tuto_2 7500HM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4087,13 +4111,15 @@ MonoBehaviour:
   Loop: 1
   IsHerd: 0
   Mask:
-    Frequence: 6500
+    Frequence: 7500
     Bandwidth: 120
     Orientation: 30
     OrientationTresh: 15
   Messages:
   - Time: 0
     Object: {fileID: 11400000, guid: 8ed979cddab7cad4d8709caba7f3d422, type: 2}
+  - Time: 0
+    Object: {fileID: 11400000, guid: 554b98ee855faed408684830d117c173, type: 2}
   - Time: 0
     Object: {fileID: 11400000, guid: 554b98ee855faed408684830d117c173, type: 2}
   VolumeMultiplicator: 3.7802627e-27
@@ -4510,7 +4536,7 @@ GameObject:
   - component: {fileID: 1275729525}
   - component: {fileID: 1275729526}
   m_Layer: 0
-  m_Name: Lei_Tuto_1
+  m_Name: Lei_Tuto_1 12700HM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4555,8 +4581,6 @@ MonoBehaviour:
   Messages:
   - Time: 0
     Object: {fileID: 11400000, guid: 3d27e494a095b284494721543c0e3643, type: 2}
-  - Time: 0
-    Object: {fileID: 11400000, guid: 072c2c9bc6fbd1f4ea91dad08b2302b1, type: 2}
   VolumeMultiplicator: 3.7802627e-27
 --- !u!1 &1278204739
 GameObject:
@@ -5226,7 +5250,7 @@ GameObject:
   - component: {fileID: 1476540178}
   - component: {fileID: 1476540179}
   m_Layer: 0
-  m_Name: Lei_Tuto_1.4
+  m_Name: Lei_Tuto_1.4 12700HM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6938,7 +6962,7 @@ GameObject:
   - component: {fileID: 1971388648}
   - component: {fileID: 1971388649}
   m_Layer: 0
-  m_Name: Lei_Tuto_1.2
+  m_Name: Lei_Tuto_1.2 12700HM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

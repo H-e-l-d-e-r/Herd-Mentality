@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: RoskoffsOutro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Radio Roskoff
+  Description: "Vas diffuser \xE0 la s\xE9quence 3912!"
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: 'Radio Shenron '
+    Text: "Eh bah, on a un inspecteur de g\xE9nie avec nous !\n"
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: Faudrait pas qu'on te laisse inspecter notre planque, ah ah !
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "S\xE9rieux, on n'aime pas les fouines ici. Il ne te reste plus qu'\xE0
+      diffuser tout \xE7a. "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 'Radio Shenron '
+    Text: "C'est la derni\xE8re ligne droite, donne tout, Rockstar ! "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

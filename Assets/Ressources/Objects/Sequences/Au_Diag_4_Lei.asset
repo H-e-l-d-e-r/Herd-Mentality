@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ced562d5c6e2da6ca72eb39be5908ee, type: 3}
   m_Name: Au_Diag_4_Lei
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
-  Name: Lei parle
-  Description: "Vous avez parl\xE9 \xE0 Lei."
+  Name: Les rudiments de la radio
+  Description: "Il existe quatres fa\xE7ons de d\xE9crypter un message radio : Depuis
+    l'Audio brute, via un audio invers\xE9, un code morse ou un code c\xE9sar."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

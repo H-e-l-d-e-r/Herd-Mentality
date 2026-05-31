@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Au_Diag_6_Lei_Audio
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: Les fondations
-  Description: "Gr\xE2ce \xE0 un audio, vous savez qu'il faut utiliser le code c\xE9sar.
-    Lei vous donne un indice \"Retourne \xE0 tes premiers pas, jeune radiophile\"."
+  Description: "Il ne me reste plus qu'\xE0 mettre le code c\xE9sar que j'ai d\xE9couvert
+    sur cette diffusion."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -33,14 +33,14 @@ MonoBehaviour:
       e b\xF4 \xE2 t reae e b"
   - Mode: 0
     p_content: "Voil\xE0 ! Les chiffres que tu as trouv\xE9s en d\xE9codant forment
-      une cl\xE9 de code C\xE9sar. Tu peux maintenant chercher o\xF9 est-ce que j'ai
-      cach\xE9 ce code. Un indice : Retourne \xE0 tes premiers pas, jeune radiophile
-      !"
+      une cl\xE9 de code C\xE9sar. Tu peux maintenant l'utiliser ici pour d\xE9couvrir
+      mon petit mot secret!"
   - Mode: 3
-    p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
-      pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s
-      rhr m ae\xE9\xE9iaahe m l i j r q aao g r u e u u r d o r \xF3\xF4h e p lshm
-      e b\xF4 \xE2 t reae e b"
+    p_content: LBKFY !!!! Cs d'oc kbbsfo tecaeo-vk, m'ocd aeo de pobkc vo zysnc myxdbo
+      voc oxsqwoc no wyx kwso Xoxo. Ovvo w'k nyxxo moc aekdbo ybsoxdkdsyxc, wksc
+      to x'ks zkc boeccs k bocyenbo coc oxsqwoc k vk wksx. To cesc ceb aeo dk cdkdsyx
+      od dys zyebboj w'ksnob k vk bodbyefob od k wo bomyxmsvsob kfom ovvo. Boxnc-dys
+      k vk pboaeoxmo 7500 RW zyeb voc nomyefbsb.
   - Mode: 1
     p_content: "e\xE9Ciias ncl,e uo\xE0 rtrut u\xE9 f:v ncl u\xEArce t\xE9eao! ioi\xE9ei
       pceLsedetom pdt de!iio msc!as r dVtlh m iie s n\xE2 t\xE9ehms ltt d can i s

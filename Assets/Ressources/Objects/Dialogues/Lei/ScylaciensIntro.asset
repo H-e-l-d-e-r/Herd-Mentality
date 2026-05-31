@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
+  m_Name: ScylaciensIntro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
+  Name: Radio Scylas
+  Description: "Bienvenue chez les Scylaciens, trouve ton bonheur parmis notre onde! 
+    Onde 5100 HM et 20\xB0."
+  Like:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  Dislike:
+    YoungLetterists: 0
+    SquatRoskoff: 0
+    Scilas: 0
+  m_nodes:
+  - Name: 
+    Text: "Heu, ouais\u2026 Bienvenue sur la balise des Scylaciens ! "
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Si tu veux nous rejoindre, alors voici l'\xE9nigme : Vas en 5100 HM et
+      20\xB0, et bah bonne chance."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Aujourd'hui on squat chez Didier et on se d\xE9fonce une lasagne."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0
+  - Name: 
+    Text: "Si t'est assez rapides il en restaras peut-\xEAtre..."
+    Actor: {fileID: 0}
+    ActorSprite: 0
+    Behavior: 0

@@ -15,7 +15,7 @@ public class RadioDecrypter : MonoBehaviour
     public Button RecordButton;
     public Button TranslateButton;
     public Slider ProgressBar;
-    public event Action OnDecodeSuccess; // NOUVEAU : L'événement de réussite
+    public event Action<DecryptionModes> OnDecodeSuccess;
     public ScrollRect ScrollView;
     public UISelectNumber[] NumberSelectors;
     public AudioSource RecordingAudio;
@@ -200,7 +200,7 @@ public class RadioDecrypter : MonoBehaviour
             {
                 // when there is nothing to ask
                 Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, result.GetContent()));
-                OnDecodeSuccess?.Invoke(); // NOUVEAU : On prévient le tuto !
+                OnDecodeSuccess?.Invoke(mode); // NOUVEAU : On envoie le mode au tuto !
             }
             else
             {
@@ -226,7 +226,7 @@ public class RadioDecrypter : MonoBehaviour
                 Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, result.GetContent(modifier)));            
 
                 Groups.CurrentGroup = 0;
-                OnDecodeSuccess?.Invoke(); // NOUVEAU : On prévient le tuto !
+                OnDecodeSuccess?.Invoke(mode); // NOUVEAU : On envoie le mode au tuto !
             }
 
             m_isTranslateRunning = false;
