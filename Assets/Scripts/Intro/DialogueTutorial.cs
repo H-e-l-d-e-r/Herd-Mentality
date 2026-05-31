@@ -272,7 +272,7 @@ public class DialogueTutorial : MonoBehaviour
         // Dialogue 8 : Débloqué après décodage Audio (11000 Hz / 0°)
         else if (m_currentStep == 10)
         {
-            if (true)
+            if (IsFreqOk(currentFreq, TargetFreqDiag8))
             {
                 Dialogue.PlayDialogue(Lei_Diag8);
                 m_currentStep = 11;
@@ -282,17 +282,17 @@ public class DialogueTutorial : MonoBehaviour
         // Dialogue 10 : Débloqué après décodage César (11400 Hz / 12°)
         else if (m_currentStep == 12 && modeUsed == ModeRequiredForDiag10)
         {
-            if (true)
+            if (IsFreqOk(currentFreq, TargetFreqDiag10))
             {
                 Dialogue.PlayDialogue(Lei_Diag10);
                 m_currentStep = 13;
             }
         }
-        
+         
         // Dialogue 12 : Débloqué après décodage César (8800 Hz / -60°)
         else if (m_currentStep == 14 && modeUsed == ModeRequiredForDiag12)
         {
-            if (true)
+            if (IsFreqOk(currentFreq, TargetFreqDiag12))
             {
                 Dialogue.PlayDialogue(Lei_Diag12);
                 m_currentStep = 15;

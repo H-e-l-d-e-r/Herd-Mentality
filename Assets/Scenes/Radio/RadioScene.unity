@@ -7584,8 +7584,9 @@ MonoBehaviour:
   NameOverloads:
   - Audio
   - Morse
-  - Invert
-  - Caesar
+  - "Invers\xE9"
+  - "C\xE9sar"
+  - Choisit une traduction
   OnChange:
     m_PersistentCalls:
       m_Calls: []

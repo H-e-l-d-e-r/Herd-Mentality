@@ -40,7 +40,7 @@ public class RadioDecrypter : MonoBehaviour
     private static string k_RecordingFailed = "Enregistrement echoue";
     private static string k_SignalNotFound = "Signal perdu";
     private static string k_RecordingNotFound = "Aucun enregistrement...";
-    private static string k_TraductionNotFound = "Aucune traduction...";
+    private static string k_TraductionNotFound = "Aucune traduction, essayez un autre mode.";
     private static string k_Recording = "Enregistrement...";
     private static string k_RecordingDone = "Enregistrement fini";
     private static string k_WaitingForInput = "Attente d'une action...";
