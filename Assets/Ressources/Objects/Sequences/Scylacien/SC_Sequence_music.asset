@@ -29,6 +29,8 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: 5b0490021fe7bbd4885c9fca6e33cdd9, type: 3}
   Duration: 25
+  Valid: 2
+  ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: .eniahcorp al a te etuoce riova suon ed icrem ,xue a snoitaticileF

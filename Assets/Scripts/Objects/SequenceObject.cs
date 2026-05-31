@@ -13,6 +13,9 @@ public class SequenceObject : CollectibleObject
     [Tooltip("The total length of the message")]
     public float Duration;
 
+    public DecryptionModes Valid;
+    public int ValidModifier = 0;
+
     public DecryptionsResults[] Translations = new DecryptionsResults[]
     {
         new DecryptionsResults(DecryptionModes.FromAudio, ""),

@@ -24,6 +24,8 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: 116050bc65d033a4092bf089454f44fc, type: 3}
   Duration: 9
+  Valid: 1
+  ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage! "

@@ -82,5 +82,6 @@ public enum DecryptionModes
     FromAudio,
     FromMorse,
     FromInvertAudio,
-    FromCaesar
+    FromCaesar,
+    FromAll
 }

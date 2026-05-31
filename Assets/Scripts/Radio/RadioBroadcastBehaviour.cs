@@ -14,12 +14,15 @@ public class RadioBroadcastBehaviour : MonoBehaviour
         get => VolumeMultiplicator * Volume > c_listenTreshold;
     }
 
+    public double LoopOffset => m_loopOffset;
+
     public bool HasNext
     {
         get => m_current != null ? m_current.Next != null : false;
     }
 
     public SequenceObject Current => m_current != null ? m_current.Object : null;
+    public BroadcastMessageObject CurrentMessage => m_current;
 
     [Header("Audio Parameters")]
     public AudioMixerGroup Group;
@@ -42,6 +45,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
     private AudioSource m_source;
     private BroadcastMessageObject m_current;
     private double m_loopOffset = 0;
+    
     private void Start()
     {
         // 
@@ -149,7 +153,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
             return m_current.EndTime - RadioManager.Instance.GameClock.Now;
         }
 
-        return m_current.Next.StartTime - RadioManager.Instance.GameClock.Now;
+        return m_current.EndTime - RadioManager.Instance.GameClock.Now;
     }
 
     [Serializable]
@@ -171,7 +175,7 @@ public class RadioBroadcastBehaviour : MonoBehaviour
 
                 while (self.Prev != null)
                 {
-                    offset += self.Prev.StartTime; // additionne le Time brut, pas StartTime
+                    offset += self.Prev.StartTime;
                     self = self.Prev;
                 }
 

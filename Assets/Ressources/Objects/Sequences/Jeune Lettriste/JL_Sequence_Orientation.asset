@@ -26,6 +26,8 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: 7db1816a088ac8941ae1ab1938994f2f, type: 3}
   Duration: 25
+  Valid: 3
+  ValidModifier: 8
   Translations:
   - Mode: 0
     p_content: 'Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk

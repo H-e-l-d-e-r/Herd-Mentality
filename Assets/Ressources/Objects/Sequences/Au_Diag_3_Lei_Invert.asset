@@ -24,6 +24,8 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: d4207d44482e93140a69af1a9c3e7fa3, type: 3}
   Duration: 8
+  Valid: 2
+  ValidModifier: 0
   Translations:
   - Mode: 2
     p_content: "Voici l'invert, ou le texte \xE0 l'envers simple non? Voici le premier

@@ -24,7 +24,9 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: 2c236da9c7b9e66419396a1bbc5e0026, type: 3}
-  Duration: 22
+  Duration: 21
+  Valid: 0
+  ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: "Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code

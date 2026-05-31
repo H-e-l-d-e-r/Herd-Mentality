@@ -247,7 +247,7 @@ public class RadioBehaviour : MonoBehaviour
         foreach (var be in m_broadcasts)
         {
             // if the broadcast cannot be heard, we skip it
-            if (!be.IsListenable || be.IsHerd )
+            if (!be.IsListenable || be.IsHerd)
             {
                 continue;
             }

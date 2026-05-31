@@ -106,6 +106,7 @@ public class UiNoteManager : MonoBehaviour
     public void SetMode(InternalCollectibleType mode)
     {
         Mode = mode;
+        m_currentElement = 0;
         Poll();
     }
 
