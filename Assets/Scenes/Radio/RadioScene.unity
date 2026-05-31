@@ -7999,7 +7999,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Slider: {fileID: 8563815686130155030}
-  Antenna: {fileID: 3466157396225080742}
+  Antenna: {fileID: 8426709760397439948}
   MaxAngle: 60
   Smoothing: 0.5
 --- !u!1 &396705313640331762
@@ -14495,6 +14495,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 395166788287936079}
+        m_TargetAssemblyTypeName: AntennaTunerBehaviour, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnRadioTick:
     m_PersistentCalls:
       m_Calls:
@@ -16901,14 +16913,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7047823998756426199}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.18017547, y: -0.71490335, z: 0.45594037, w: -0.49856636}
+  m_LocalRotation: {x: -0.0910055, y: -0.7316202, z: 0.51372325, w: -0.43879205}
   m_LocalPosition: {x: 2.404583, y: 5.649349, z: 3.0997581}
   m_LocalScale: {x: 10.913436, y: 1.0272202, z: 11.125517}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2522265498766456841}
   m_Father: {fileID: 3466157396225080742}
-  m_LocalEulerAnglesHint: {x: 56.26, y: 99.022, z: -20.776}
+  m_LocalEulerAnglesHint: {x: 56.26, y: 99.022, z: -34.886}
 --- !u!1 &8456739299872636707
 GameObject:
   m_ObjectHideFlags: 0
@@ -17063,7 +17075,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
