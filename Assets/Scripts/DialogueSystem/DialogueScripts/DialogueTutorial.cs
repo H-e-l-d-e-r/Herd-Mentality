@@ -37,30 +37,20 @@ public class DialogueTutorial : MonoBehaviour
     public float AngleTuto2 = 60f;
     public float AngleTuto3 = -60f;
 
-    // NOUVEAU : Fréquences et Angles cibles pour les dialogues 7 à 13
-    [Header("Cibles Nouveaux Dialogues (Fréquence & Angle)")]
-    public float TargetFreq7 = 8000f;
-    public float TargetAngle7 = 45f;
+    [Header("Cibles Décodage (Dialogues Évolutifs)")]
+    public float TargetFreqDiag8 = 11000f;
+    public float TargetAngleDiag8 = 0f;
+    public DecryptionModes ModeRequiredForDiag8; // À configurer sur "FromAudio" dans l'Inspector
 
-    public float TargetFreq8 = 8500f;
-    public float TargetAngle8 = -45f;
+    public float TargetFreqDiag10 = 11400f;
+    public float TargetAngleDiag10 = 12f;
+    public DecryptionModes ModeRequiredForDiag10; // À configurer sur "FromCaesar" dans l'Inspector
 
-    public float TargetFreq9 = 9000f;
-    public float TargetAngle9 = 90f;
+    public float TargetFreqDiag12 = 8800f;
+    public float TargetAngleDiag12 = -60f;
+    public DecryptionModes ModeRequiredForDiag12; // À configurer sur "FromCaesar" dans l'Inspector
 
-    public float TargetFreq10 = 9500f;
-    public float TargetAngle10 = -90f;
-
-    public float TargetFreq11 = 10000f;
-    public float TargetAngle11 = 120f;
-
-    public float TargetFreq12 = 10500f;
-    public float TargetAngle12 = -120f;
-
-    public float TargetFreq13 = 11000f;
-    public float TargetAngle13 = 180f;
-
-    [Header("Modes de Décryptage Attendus")]
+    [Header("Modes de Décryptage Attendus (Tuto)")]
     public DecryptionModes ModeRequiredFor30;
     public DecryptionModes ModeRequiredFor60;
     public DecryptionModes ModeRequiredForMinus60;
@@ -139,9 +129,8 @@ public class DialogueTutorial : MonoBehaviour
     {
         if (m_isSnapping) return;
 
-        if (m_currentStep == 2) return;
-
-        if (m_currentStep == 9 || m_currentStep == 17) return;
+        // Désactive la vérification par molette dès que le tuto est fini (les étapes suivantes utilisent OnDecodeSuccess)
+        if (m_currentStep == 2 || m_currentStep >= 9) return;
 
         VerifyProgress();
     }
@@ -149,9 +138,12 @@ public class DialogueTutorial : MonoBehaviour
     void OnAngleChanged(float _)
     {
         if (m_isSnapping) return;
+        if (m_currentStep >= 9) return;
+
         VerifyProgress();
     }
 
+    // Uniquement pour le tutoriel de base (Fréquences et Angles simples)
     void VerifyProgress()
     {
         if (TypeWritter.HasCommand || Dialogue.Instance.HasCommand) return;
@@ -159,7 +151,6 @@ public class DialogueTutorial : MonoBehaviour
         float currentFreq = RadioManager.Instance.RadioBehaviour.FreqKnob.Value;
         float currentAngle = RadioManager.Instance.RadioBehaviour.Antenna.Value;
 
-        // --- ANCIENNES ÉTAPES (1 à 8) ---
         if (m_currentStep == 1)
         {
             if (IsFreqOk(currentFreq, FreqTuto))
@@ -200,67 +191,15 @@ public class DialogueTutorial : MonoBehaviour
                 m_currentStep = 9;
             }
         }
-        // --- NOUVELLES ÉTAPES (10 à 16) : Combo Fréquence + Angle ---
-        else if (m_currentStep == 10)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq7) && IsAngleOk(currentAngle, TargetAngle7))
-            {
-                Dialogue.PlayDialogue(Lei_Diag7);
-                m_currentStep = 11;
-            }
-        }
-        else if (m_currentStep == 11)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq8) && IsAngleOk(currentAngle, TargetAngle8))
-            {
-                Dialogue.PlayDialogue(Lei_Diag8);
-                m_currentStep = 12;
-            }
-        }
-        else if (m_currentStep == 12)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq9) && IsAngleOk(currentAngle, TargetAngle9))
-            {
-                Dialogue.PlayDialogue(Lei_Diag9);
-                m_currentStep = 13;
-            }
-        }
-        else if (m_currentStep == 13)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq10) && IsAngleOk(currentAngle, TargetAngle10))
-            {
-                Dialogue.PlayDialogue(Lei_Diag10);
-                m_currentStep = 14;
-            }
-        }
-        else if (m_currentStep == 14)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq11) && IsAngleOk(currentAngle, TargetAngle11))
-            {
-                Dialogue.PlayDialogue(Lei_Diag11);
-                m_currentStep = 15;
-            }
-        }
-        else if (m_currentStep == 15)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq12) && IsAngleOk(currentAngle, TargetAngle12))
-            {
-                Dialogue.PlayDialogue(Lei_Diag12);
-                m_currentStep = 16;
-            }
-        }
-        else if (m_currentStep == 16)
-        {
-            if (IsFreqOk(currentFreq, TargetFreq13) && IsAngleOk(currentAngle, TargetAngle13))
-            {
-                Dialogue.PlayDialogue(Lei_Diag13);
-                m_currentStep = 17;
-            }
-        }
     }
 
+    // Gestion des déblocages par Décryptage (Dialogues 8, 10 et 12)
     private void OnDecodeSuccess(DecryptionModes modeUsed)
     {
+        float currentFreq = RadioManager.Instance.RadioBehaviour.FreqKnob.Value;
+        float currentAngle = RadioManager.Instance.RadioBehaviour.Antenna.Value;
+
+        // --- TUTO BASE ---
         if (m_currentStep == 3 && modeUsed == ModeRequiredFor30)
         {
             if (Broadcast60 != null) Broadcast60.Volume = m_vol60;
@@ -279,8 +218,38 @@ public class DialogueTutorial : MonoBehaviour
             RefreshRadioSignal();
             m_currentStep = 8;
         }
+
+        // --- NOUVEAUX DIALOGUES ---
+        // Dialogue 8 : Débloqué après décodage Audio (11000 Hz / 0°)
+        else if (m_currentStep == 10 && modeUsed == ModeRequiredForDiag8)
+        {
+            if (IsFreqOk(currentFreq, TargetFreqDiag8) && IsAngleOk(currentAngle, TargetAngleDiag8))
+            {
+                Dialogue.PlayDialogue(Lei_Diag8);
+                m_currentStep = 11;
+            }
+        }
+        // Dialogue 10 : Débloqué après décodage César (11400 Hz / 12°)
+        else if (m_currentStep == 12 && modeUsed == ModeRequiredForDiag10)
+        {
+            if (IsFreqOk(currentFreq, TargetFreqDiag10) && IsAngleOk(currentAngle, TargetAngleDiag10))
+            {
+                Dialogue.PlayDialogue(Lei_Diag10);
+                m_currentStep = 13;
+            }
+        }
+        // Dialogue 12 : Débloqué après décodage César (8800 Hz / -60°)
+        else if (m_currentStep == 14 && modeUsed == ModeRequiredForDiag12)
+        {
+            if (IsFreqOk(currentFreq, TargetFreqDiag12) && IsAngleOk(currentAngle, TargetAngleDiag12))
+            {
+                Dialogue.PlayDialogue(Lei_Diag12);
+                m_currentStep = 15;
+            }
+        }
     }
 
+    // Gestion des enchaînements automatiques après lecture (Dialogues 7, 9, 11)
     private void OnDialogueClosed()
     {
         if (m_currentStep == 1)
@@ -288,13 +257,30 @@ public class DialogueTutorial : MonoBehaviour
             if (Broadcast30 != null) Broadcast30.Volume = m_vol30;
             RefreshRadioSignal();
         }
+        // Dialogue 7 : Se lance dès que le tuto (Dialogue 6) est fini
         else if (m_currentStep == 9)
         {
+            Dialogue.PlayDialogue(Lei_Diag7);
             m_currentStep = 10;
         }
-        else if (m_currentStep == 17)
+        // Dialogue 9 : Se lance dès que le Dialogue 8 se ferme
+        else if (m_currentStep == 11)
         {
-            m_currentStep = 18;
+            Dialogue.PlayDialogue(Lei_Diag9);
+            m_currentStep = 12;
+        }
+        // Dialogue 11 : Se lance dès que le Dialogue 10 se ferme
+        else if (m_currentStep == 13)
+        {
+            Dialogue.PlayDialogue(Lei_Diag11);
+            m_currentStep = 14;
+        }
+        // Étape après le Dialogue 12
+        else if (m_currentStep == 15)
+        {
+            m_currentStep = 16;
+            // ÉTAPE 16 (DIALOGUE 13) LAISSÉE VIDE COMME DEMANDÉ.
+            // Tu pourras implémenter ta propre condition ici ou ailleurs.
         }
     }
 

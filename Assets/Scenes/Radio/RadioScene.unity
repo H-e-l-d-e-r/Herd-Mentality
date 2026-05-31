@@ -3910,7 +3910,7 @@ MonoBehaviour:
   Diag_Lei_10: {fileID: 11400000, guid: c672992cf26d0cb47a8269e76728293e, type: 2}
   Diag_Lei_11: {fileID: 11400000, guid: e5df5509161d1674fba6d3d4992f6999, type: 2}
   Diag_Lei_12: {fileID: 11400000, guid: eabb1f5d5b23bf042b8d49c6bc53323a, type: 2}
-  Diag_Lei_13: {fileID: 0}
+  Diag_Lei_13: {fileID: 11400000, guid: 4036ecb480368424bad5e7c4a03e3940, type: 2}
   TypeWritter: {fileID: 882460163}
   Decrypter: {fileID: 6747454719012529717}
   FreqTuto: 12700
@@ -3921,20 +3921,15 @@ MonoBehaviour:
   AngleTuto1: 30
   AngleTuto2: 60
   AngleTuto3: -60
-  TargetFreq7: 5100
-  TargetAngle7: 0
-  TargetFreq8: 1100
-  TargetAngle8: 0
-  TargetFreq9: 4100
-  TargetAngle9: 0
-  TargetFreq10: 11400
-  TargetAngle10: 0
-  TargetFreq11: 6700
-  TargetAngle11: -20
-  TargetFreq12: 8800
-  TargetAngle12: -60
-  TargetFreq13: 3912
-  TargetAngle13: -52
+  TargetFreqDiag8: 11000
+  TargetAngleDiag8: 0
+  ModeRequiredForDiag8: 0
+  TargetFreqDiag10: 11400
+  TargetAngleDiag10: 12
+  ModeRequiredForDiag10: 0
+  TargetFreqDiag12: 8800
+  TargetAngleDiag12: -60
+  ModeRequiredForDiag12: 0
   ModeRequiredFor30: 2
   ModeRequiredFor60: 1
   ModeRequiredForMinus60: 3
