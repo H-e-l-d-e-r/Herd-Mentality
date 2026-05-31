@@ -138,6 +138,8 @@ namespace DialogueSystem
                 return;
             }
 
+            m_hasRelease = false;
+
             Typewritter.Show();
 
             // write

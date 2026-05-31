@@ -3,6 +3,7 @@ using System.Text;
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace DialogueSystem
@@ -143,6 +144,8 @@ namespace DialogueSystem
         /// <returns></returns>
         public bool TryEnqueueCommand(DialogueCommand command)
         {
+            EventSystem.current.SetSelectedGameObject(null);
+
             if(HasCommand)
             {
                 return false;
