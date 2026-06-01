@@ -23,17 +23,17 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: 116050bc65d033a4092bf089454f44fc, type: 3}
-  Duration: 9
+  Duration: 10
   Valid: 1
   ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage! "
   - Mode: 1
-    p_content: "\"Sol Sol Do Do HMz \nOkay. Bien jou\xE9...Ou pas! D\xE9crypte et
-      vois ce qui t'attends l\xE0-bas!\n\""
+    p_content: "Sol Sol Do Do HMz \nOkay. Bien jou\xE9...Ou pas! D\xE9crypte et vois
+      ce qui t'attends l\xE0-bas!"
   - Mode: 2
-    p_content: " !Egatpyrc\xE9d Siavuam ?Elpmis Issua Ert\xEA Tialla A\xE7 Euq Siayorc
+    p_content: "!Egatpyrc\xE9d Siavuam ?Elpmis Issua Ert\xEA Tialla A\xE7 Euq Siayorc
       Ut"
   - Mode: 3
-    p_content: "\"Sol Sol Do Do HMz \n\nPlus qu'a decrypter tout ca !\""
+    p_content: "Tu croyais que \xE7a allait \xEAtre aussi simple? Mauvais d\xE9cryptage!"

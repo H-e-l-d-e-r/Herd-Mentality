@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "JL_Hint_Orientation_Fr\xE9quence"
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "L'orientation + fr\xE9quence des Jeunes Lettristes"
-  Description: "Tension avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
-    douze mille un. Essayez 11400HM. Je r\xE9p\xE8te : \xE9vitez de trop diffuser.
-    Ah et\nOn change l'orientation de l'antenne en raison de d\xE9gradations caus\xE9es
+  Description: "Tensions avec les enseignants, \xE9vitez de diffuser sur la fr\xE9quence
+    douze mille un. Essayez 11 400 HM. Je r\xE9p\xE8te : \xE9vitez de trop diffuser.
+    Ah, et on change l'orientation de l'antenne en raison de d\xE9gradations caus\xE9es
     par de petits garnements qui n'ont rien d'autre \xE0 faire de leur journ\xE9e.
-    \xC0 la place de -12 , on passe \xE0 12."
+    \xC0 la place de moins douze, on passe \xE0 12."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -32,26 +32,24 @@ MonoBehaviour:
   ValidModifier: 8
   Translations:
   - Mode: 0
-    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
-      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12.'
+    p_content: 'Lwfkagfk snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11 400 ZE. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz,
+      wl gf uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk
+      hsj vw hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww.
+      S ds hdsuw vw egafk vgmrw, gf hskkw s 12.'
   - Mode: 3
-    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wl Gf
-      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12.'
+    p_content: 'Lwfkagfk snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
+      vgmrw eaddw mf. Wkksqwr 11 400 ZE. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz,
+      wl gf uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk
+      hsj vw hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww.
+      S ds hdsuw vw egafk vgmrw, gf hskkw s 12.'
   - Mode: 2
-    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
-      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12.'
+    p_content: 'fgakfwL uwns kwd ,klfsfyawkfw rwlanw wv jwkmxxav jmk sd wufwmiwjx
+      wrmgv wddae .fm rwqskkW .00411 wB wlwhwj : rwlanw wv hgjl .jwkmxxav zS fGlw
+      wyfszu fgalslfwajg''d wv wffwlfs''d fw fgkasj wv kfgalsvsjywv kwwkmsu jsh wv
+      klalwh klfwewfjsy ami lfg''f fwaj wjlms''v s wjasx wv jmwd .wwfjmgb S sd wusdh
+      wv kfage wrmgv , fg wkksh s .21'
   - Mode: 1
-    p_content: 'Lwfkagf snwu dwk wfkwayfsflk, wnalwr vw vaxxmkwj kmj ds xjwimwfuw
-      vgmrw eaddw mf. Wkksqwr 11094. Bw jwhwlw : wnalwr vw ljgh vaxxmkwj. Sz wlGf
-      uzsfyw d''gjawflslagf vw d''sflwffw wf jsakgf vw vwyjsvslagfk usmkwwk hsj vw
-      hwlalk ysjfwewflk ima f''gfl jawf v''smljw s xsajw vw dwmj bgmjfww. S ds hdsuw
-      vw egafk vgmrw , gf hskkw s 12.'
+    p_content: ' / .---- ..--- / . ...- -. . / .--. . - .. - . / ..-.. -. .. --.
+      -- . ---... / ---.. / . ... - / -.. --- .-. -- .. .-. - ----..--.. - / ..-.
+      . .-. --..-- / ..... .---- . ... - / .... -- '

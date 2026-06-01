@@ -38,7 +38,9 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: 079a8657e55a4e5488de101064f08dc0, type: 3}
-  Duration: 22
+  Duration: 10
+  Valid: 0
+  ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: "\"Encore une liste de d\xE9codage, mais cette fois avec des nombres.\n\nDo

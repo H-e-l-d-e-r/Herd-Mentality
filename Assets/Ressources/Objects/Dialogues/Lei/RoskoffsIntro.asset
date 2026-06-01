@@ -31,13 +31,15 @@ MonoBehaviour:
     ActorSprite: 0
     Behavior: 0
   - Name: Balise des Roskoffs
-    Text: "Les \xE9nigmes et les m\xE9ninges, on n'aime pas \xE7a !\n"
+    Text: "Les \xE9nigmes et les m\xE9ninges, on n'aime pas \xE7a ! On pr\xE9f\xE8re
+      la musique bien ROCK! \n"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0
   - Name: Balise des Roskoffs
     Text: "Mais bon, pour une vieille connaissance, on vous r\xE9serve plein de d\xE9fis
-      bien d\xE9rang\xE9s. "
+      bien d\xE9rang\xE9s. C'est pour \xE7a qu'on a fusionn\xE9 les 2. Ici la musique
+      est reine.....PIG\xC9?!"
     Actor: {fileID: 0}
     ActorSprite: 0
     Behavior: 0

@@ -24,7 +24,7 @@ MonoBehaviour:
     SquatRoskoff: 0
     Scilas: 0
   Clip: {fileID: 8300000, guid: 2c236da9c7b9e66419396a1bbc5e0026, type: 3}
-  Duration: 21
+  Duration: 10
   Valid: 0
   ValidModifier: 0
   Translations:
@@ -32,19 +32,19 @@ MonoBehaviour:
     p_content: "Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code
       et trouve le mot cach\xE9 dans cette fr\xE9quence Rockstar! "
   - Mode: 1
-    p_content: "\"Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code
-      Et Trouve Le Mot Cach\xE9 Dans Cette Fr\xE9quence Rockstar! \""
+    p_content: "Do = A\nRe = B\nMi = C\nFa = D\nSol = E\nLa = F\nSi = G\n\nD\xE9code
+      Et Trouve Le Mot Cach\xE9 Dans Cette Fr\xE9quence Rockstar! "
   - Mode: 2
-    p_content: "\" !Ratskcor Ecneuq\xE9rf Ettec Snad \xC9hcac Tom El Evuort Te Edoc\xE9d\n\nG
-      = Is\nF = Al\nE = Los\nD = Af\nC = Im\nB = Er\nA = Od\""
+    p_content: "!Ratskcor Ecneuq\xE9rf Ettec Snad \xC9hcac Tom El Evuort Te Edoc\xE9d\n\nG
+      = Is\nF = Al\nE = Los\nD = Af\nC = Im\nB = Er\nA = Od"
   - Mode: 3
-    p_content: '"Les Roskoff m''ont donne cette liste de decodage :
+    p_content: 'Les Roskoff m''ont donne cette liste de decodage :
 
 
-      Do =
-      A
+      Do = A
 
-      Re = B
+      Re
+      = B
 
       Mi = C
 
@@ -54,5 +54,4 @@ MonoBehaviour:
 
       La = F
 
-      Si
-      = G"'
+      Si = G'

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SC_Hint_Frequence
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Indice de fr\xE9quence Scilacien"
-  Description: "Hey mec, tu te rappelles de la fr\xE9quence du truc de fou qu'on
-    avait entendu \xE0 la radio ? Que le chanteur des Scylaciens, est le g\xE9rant
-    de la baraque \xE0 frites ? Je pense que c'\xE9tait 11000HM un truc comme \xE7a.\n"
+  Description: "Hey mec, tu te souviens de la fr\xE9quence du truc de fou qu'on avait
+    entendu \xE0 la radio ? Comme quoi le chanteur des Scylaciens est le g\xE9rant
+    de la baraque \xE0 frites ? Je pense que c'\xE9tait 11 000 HM, un truc comme
+    \xE7a."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -34,9 +35,10 @@ MonoBehaviour:
       tiava udnetne \xE0 al oidar ? euQ el ruetnahc sed sneicelayS, tse el tnar\xE9G
       ed al euqarab \xE0 setirf ? eJ esnep euq tiat\xE9'c 00011MH nu curt emmoc \xE0\xE7."
   - Mode: 2
-    p_content: "Hey mec, tu te rappelles de la fr\xE9quence du truc de fou qu'on
-      avait entendu \xE0 la radio ? Que le chanteur des Scylaciens, est le g\xE9rant
-      de la baraque \xE0 frites ? Je pense que c'\xE9tait 11000HM un truc comme \xE7a.\n"
+    p_content: "Hey mec, tu te souviens de la fr\xE9quence du truc de fou qu'on avait
+      entendu \xE0 la radio ? Comme quoi le chanteur des Scylaciens est le g\xE9rant
+      de la baraque \xE0 frites ? Je pense que c'\xE9tait 11 000 HM, un truc comme
+      \xE7a."
   - Mode: 1
     p_content: -.-- . .... / -.-. . -- --..-- / ..- - / . - / ... . .-.. .-.. . .--.
       .--. .- .-. / . -.. / .- .-.. / . -.-. -. . ..- --.- ..-.. .-. ..-. / ..- -..

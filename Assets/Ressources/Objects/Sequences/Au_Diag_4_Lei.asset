@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Au_Diag_4_Lei
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: Les rudiments de la radio
-  Description: "Il existe quatres fa\xE7ons de d\xE9crypter un message radio : Depuis
+  Description: "Il existe quatre fa\xE7ons de d\xE9crypter un message radio : Depuis
     l'Audio brute, via un audio invers\xE9, un code morse ou un code c\xE9sar."
   Like:
     YoungLetterists: 0

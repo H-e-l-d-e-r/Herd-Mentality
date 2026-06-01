@@ -26,17 +26,21 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: d76d9670377b8534095d82a8bd0378ca, type: 3}
   Duration: 9
+  Valid: 0
+  ValidModifier: 0
   Translations:
   - Mode: 0
-    p_content: "\"Round Final!\n\nDOS MUR Flute 102,\nFACE CAGE Piano 8800,\nCAGE
-      OISEAU Sifflet 304,\nOEIL VERRE Triangle 890.\n\nPS : C\xE9sar aime bien le
-      chiffre 4.\""
+    p_content: "Round Final!\n\nDOS MUR Flute 102,\nFACE CAGE Piano 8800,\nCAGE OISEAU
+      Sifflet 304,\nOEIL VERRE Triangle 890.\n\nPS : C\xE9sar aime bien le chiffre
+      4."
   - Mode: 1
-    p_content: "\".4 Erffihc El Neib Emia Ras\xE9c : Sp\n\n.098 Elgnairt Errev Lieo\n,403
-      Telffis Uaesio Egac\n,0088 Onaip Egac Ecaf\n,201 Etulf Rum Sod\n\n!Lanif Dnuor\""
+    p_content: .- / . .-. ..-. ..-. .. .... -.-. / . .-.. / -. . .. -... / . -- ..
+      .- / .-. .- ... ..-.. -.-. / ---... / ... .--. / .-.-.- ----- ----. ---.. /
+      . .-.. --. -. .- .. .-. - / . .-. .-. . ...- / .-.. .. . --- / --..-- ....-
+      ----
   - Mode: 2
-    p_content: "\".4 Erffihc El Neib Emia Ras\xE9c : Sp\n\n.098 Elgnairt Errev Lieo\n,403
-      Telffis Uaesio Egac\n,0088 Onaip Egac Ecaf\n,201 Etulf Rum Sod\n\n!Lanif Dnuor\""
+    p_content: ".4 Erffihc El Neib Emia Ras\xE9c : Sp\n\n.098 Elgnairt Errev Lieo\n,403
+      Telffis Uaesio Egac\n,0088 Onaip Egac Ecaf\n,201 Etulf Rum Sod\n\n!Lanif Dnuor"
   - Mode: 3
     p_content: 'GN IHeghegi het IET GBEEHI TEG ETIheg klhkhigieh gheeghe ghklhk ikgh
       tbeTGEI HLKM ghklhk DCIZH EGHIK '

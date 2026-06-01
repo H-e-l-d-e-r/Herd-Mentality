@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2167f615945d8c971b26f71484fb9f31, type: 3}
   m_Name: Diag_Lei_6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
-  Name: Radio Shenron
+  Name: Radio Nova
   Description: "Apr\xE8s ce p\xE9riple, je suis enfin pr\xEAte \xE0 retrouver son
-    amie parmis les ondes!"
+    amie parmis les ondes! Mais avant faudrait d\xE9ja que j'utilise le code c\xE9sar
+    sur cette onde."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

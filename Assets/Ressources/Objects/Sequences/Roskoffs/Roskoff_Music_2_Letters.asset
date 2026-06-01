@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: "Le d\xE9fi du Squat"
   Description: "La , Do, Mi, Sol - Mi, Do, Si, Sol\n\n\xC7a a s\xFBrement un lien
-    avec le code pr\xE9c\xE9dent."
+    avec quelque-chose..."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -25,16 +25,19 @@ MonoBehaviour:
     Scilas: 0
   Clip: {fileID: 8300000, guid: 4ba153b760252094aad9cfc9b3044ef5, type: 3}
   Duration: 14
+  Valid: 0
+  ValidModifier: 0
   Translations:
   - Mode: 0
     p_content: "La , Do, Mi, Sol - Mi, Do, Si, Sol\n\nBravo, mais est ce que ta le
       cran de le d\xE9chiffrer?"
   - Mode: 2
-    p_content: "\"?Rerffihc\xE9d El Ed Narc El At Euq Ec Tse Siam ,Ovarb\n\nLos ,Is
+    p_content: "?Rerffihc\xE9d El Ed Narc El At Euq Ec Tse Siam ,Ovarb\n\nLos ,Is
       ,Od ,Im - Los ,Im ,Od , Al\""
   - Mode: 1
-    p_content: "\"?Rerffihc\xE9d El Ed Narc El At Euq Ec Tse Siam ,Ovarb\n\nLos ,Is
-      ,Od ,Im - Los ,Im ,Od , Al\""
+    p_content: ' .- .-. -.-. / . .-.. / .- - / . ..- --.- / . -.-. / - ... . / ...
+      .. .- -- / --..-- --- ...- .- .-. -... / .-.. --- ... / --..-- .. ... / --..--
+      --- -.. / '
   - Mode: 3
     p_content: '"La , Do, Mi, Sol - Mi, Do, Si, Sol
 

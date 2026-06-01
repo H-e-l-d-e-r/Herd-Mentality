@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: JL_Sequence_Orientation
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: La battaille des Jeunes Lettristes
-  Description: "Probl\xE8me avec Rosquof et Scylacien : non-respect des orientations
-    de diffusion, bataille pour r\xE9cup\xE9rer l'audience installer une nouvelle
-    anttenne en -52 pour r\xE9cuper la zone grise de diffusion."
+  Description: "Probl\xE8me avec Roskoff et Scylacien : non-respect des orientations
+    de diffusion, bataille pour r\xE9cup\xE9rer l'audience. Installer une nouvelle
+    antenne en -52 pour r\xE9cup\xE9rer la zone grise de diffusion."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
@@ -38,10 +38,11 @@ MonoBehaviour:
       vw vaxxmkagf, tslsaddw hgmj jwumhwjwj d''smvawfuw afklsddwj sfgmnwddw sflwffw
       wf -52 vwmp hgmj jwumhwj ds rgfw yjakw vw vaxxmkagf.'
   - Mode: 1
-    p_content: 'Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
-      vw vaxxmkagf, tslsaddw hgmj jwumhwjwj d''smvawfuw afklsddwj sfgmnwddw sflwffw
-      wf -52 vwmp hgmj jwumhwj ds rgfw yjakw vw vaxxmkagf.'
+    p_content: '-. - -.. .-- . .-- / ... -. .-- ..- / .--- --. -.- -.-. --. -..-
+      -..- / .-- .-.. / -.- ..- --.- -.. ... ..- .- .-- ..-. / ---... / ..-. --.
+      ..-. -....- .--- .-- -.- .... .-- ..- .-.. / ...- .-- -.- / --. .--- .- .--
+      ..-. .-.. ... .-.. .- --. ..-. -.- / ...- .-- / ...- .- -..- -..- -- '
   - Mode: 3
-    p_content: 'Hjgtdwew snwu Jgkimgx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
-      vw vaxxmkagf, tslsaddw hgmj jwumhwjwj d''smvawfuw afklsddwj sfgmnwddw sflwffw
-      wf -52 vwmp hgmj jwumhwj ds rgfw yjakw vw vaxxmkagf.'
+    p_content: 'Hjgtdwew snwu Jgkcgxx wl Kuqdsuawf : fgf-jwkhwul vwk gjawflslagfk
+      vw vaxxmkagf, tslsaddw hgmj jwumhwjwj d''smvawfuw. Afklsddwj mfw fgmnwddw sflwffw
+      wf -52 hgmj jwumhwjwj ds rgfw yjakw vw vaxxmkagf.'

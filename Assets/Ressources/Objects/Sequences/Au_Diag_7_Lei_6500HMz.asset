@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Au_Diag_7_Lei_6500HMz
   m_EditorClassIdentifier: Assembly-CSharp::SequenceObject
   Name: Lei & Nene
-  Description: "Lei m'as dit d'utiliser le m\xEAme code c\xE9sar."
+  Description: "Lei m'a dit d'utiliser le m\xEAme code c\xE9sar."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

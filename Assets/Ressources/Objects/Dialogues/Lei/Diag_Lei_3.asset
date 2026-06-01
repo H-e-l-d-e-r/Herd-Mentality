@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Diag_Lei_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
   Name: Un code, deux code, DECODE !
-  Description: "\xC7a me rappelle les fois o\xF9 je jouais avec \xC9ric \xE0 cracker
-    les diff\xE9rents mots secrets qu'on s'envoyait tous les jours. Dommage que maintenant
-    il soit si occup\xE9 \xE0 g\xE9rer les gu\xE9guerres des groupes de Dalheim..."
+  Description: "\xC7a me rappelle les fois o\xF9 \xCBric & moi jouions avec cette
+    station. Dommage que maintenant il soit si occup\xE9 \xE0 g\xE9rer les gu\xE9guerres
+    des groupes de Dalheim... Apr\xE8s ce code faut que je me dirige en 60\xB0."
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0

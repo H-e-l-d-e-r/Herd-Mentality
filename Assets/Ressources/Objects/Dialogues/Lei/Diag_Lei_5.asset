@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Diag_Lei_5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueTable
   Name: Le son m'emporte toujours
-  Description: "Entre la musique et la radio, je ne sais pas trop quoi choisir. J'ai
-    d\xE9j\xE0 essay\xE9 de lier les deux en animant une \xE9mission, mais \xE7a
-    n'a jamais eu l'impact voulu..."
+  Description: "Il ne reste plus qu'\xE0 utiliser le code C\xE9sar que Lei avait
+    cach\xE9 dans les deux stations pr\xE9c\xE9dentes (1 et 6) !"
   Like:
     YoungLetterists: 0
     SquatRoskoff: 0
