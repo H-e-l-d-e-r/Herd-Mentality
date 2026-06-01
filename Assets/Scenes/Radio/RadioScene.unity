@@ -927,7 +927,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e63298c16bf08c4fac2b12b2fff6ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6339cb4cbe5644a229dd26020b0924e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1564,6 +1564,98 @@ Transform:
   - {fileID: 113962998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 1.961, y: 0, z: 0}
+--- !u!1 &367878996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367878998}
+  - component: {fileID: 367878997}
+  m_Layer: 0
+  m_Name: Tutoriel Behaviour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &367878997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367878996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f1f0d6e4742054194cf408d1a6717d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTutorial
+  DisableMendatoryTuto: 0
+  DialogueTableTut: {fileID: 11400000, guid: aef1a6640c001564fa60fa59ea9b720c, type: 2}
+  Diag_Lei_2: {fileID: 11400000, guid: 51019beec0900be4588abc1321096b40, type: 2}
+  Diag_Lei_3: {fileID: 11400000, guid: ac7523f9f5d282f4281c568b313d8e4d, type: 2}
+  Diag_Lei_4: {fileID: 11400000, guid: 68aadfa2f579b28449e6d476bdbe83bb, type: 2}
+  Diag_Lei_5: {fileID: 11400000, guid: f9fb49ddca75e3142b148a3b5edab8b2, type: 2}
+  Diag_Lei_6: {fileID: 11400000, guid: cbae8da75c0f0b340935c869951b25e0, type: 2}
+  Diag_Lei_7: {fileID: 11400000, guid: 73f381cec1bf95a478c226a7fe214dc5, type: 2}
+  Diag_Lei_8: {fileID: 11400000, guid: b7bd8e8b9cb99794d8a9a5f9469d4970, type: 2}
+  Diag_Lei_9: {fileID: 11400000, guid: 597b5ff9ca0714e4c8a44e507fdec86c, type: 2}
+  Diag_Lei_10: {fileID: 11400000, guid: c672992cf26d0cb47a8269e76728293e, type: 2}
+  Diag_Lei_11: {fileID: 11400000, guid: e5df5509161d1674fba6d3d4992f6999, type: 2}
+  Diag_Lei_12: {fileID: 11400000, guid: eabb1f5d5b23bf042b8d49c6bc53323a, type: 2}
+  Diag_Lei_13: {fileID: 11400000, guid: 11c0cacd313acd75b8f6f861decedada, type: 2}
+  TypeWritter: {fileID: 882460163}
+  Decrypter: {fileID: 6747454719012529717}
+  FreqTuto: 12700
+  FreqTutoEnd: 7500
+  Bandwidth: 100
+  SignalThreshold: 0.215
+  AngleThreshold: 5
+  FristAngleThreshold: 150
+  AngleTuto0: 0
+  AngleTuto1: 30
+  AngleTuto2: 55
+  AngleTuto3: -55
+  TargetFreqDiag7: 5100
+  TargetFreqDiag9: 4100
+  TargetFreqDiag11: 6700
+  TargetFreqDiag8: 11000
+  TargetAngleDiag8: 20
+  ModeRequiredForDiag8: 0
+  TargetFreqDiag10: 11400
+  TargetAngleDiag10: 12
+  ModeRequiredForDiag10: 3
+  TargetFreqDiag12: 8800
+  TargetAngleDiag12: -55
+  ModeRequiredForDiag12: 3
+  FinalFreq: 3900
+  FinalAngle: -52
+  ModeRequiredFor30: 2
+  ModeRequiredFor60: 1
+  ModeRequiredForMinus60: 3
+  Broadcast30: {fileID: 1971388649}
+  Broadcast60: {fileID: 828183177}
+  BroadcastMinus60: {fileID: 1476540179}
+  Broadcast7500: {fileID: 1131244772}
+  m_currentStep: 0
+--- !u!4 &367878998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367878996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1455.8154, y: 0.00005, z: 418.37784}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369486328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,7 +3143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 328b0cd5bb5652a4990da2068124640d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 667068242b8635570a197a639af0376b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3061,11 +3153,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &795524005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-  m_PrefabInstance: {fileID: 1072587952}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807869193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,7 +3903,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 328b0cd5bb5652a4990da2068124640d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 667068242b8635570a197a639af0376b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3971,18 +4058,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1252749396}
     m_Modifications:
-    - target: {fileID: 1396563158221385851, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: Settings
-      value: 
-      objectReference: {fileID: 11400000, guid: 08c689a51ed4ff5348a2bfcd3a3f19f8, type: 2}
-    - target: {fileID: 4439166953428314172, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439166953428314172, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6674458916631304287, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
     - target: {fileID: 5387149724599841770, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4063,106 +4138,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5753644690966984612, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8583882148252235988, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 8583882148252235988, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 8805636729283125934, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
       propertyPath: m_Name
       value: Dialogue System
       objectReference: {fileID: 0}
-    - target: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9146446136503349843, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1072587957}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
 --- !u!224 &1072587953 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5387149724599841770, guid: d7e9c0a562463b265bf90a3c50b7de79, type: 3}
   m_PrefabInstance: {fileID: 1072587952}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1072587957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795524005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f1f0d6e4742054194cf408d1a6717d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTutorial
-  DisableMendatoryTuto: 0
-  DialogueTableTut: {fileID: 11400000, guid: aef1a6640c001564fa60fa59ea9b720c, type: 2}
-  Diag_Lei_2: {fileID: 11400000, guid: 51019beec0900be4588abc1321096b40, type: 2}
-  Diag_Lei_3: {fileID: 11400000, guid: ac7523f9f5d282f4281c568b313d8e4d, type: 2}
-  Diag_Lei_4: {fileID: 11400000, guid: 68aadfa2f579b28449e6d476bdbe83bb, type: 2}
-  Diag_Lei_5: {fileID: 11400000, guid: f9fb49ddca75e3142b148a3b5edab8b2, type: 2}
-  Diag_Lei_6: {fileID: 11400000, guid: cbae8da75c0f0b340935c869951b25e0, type: 2}
-  Diag_Lei_7: {fileID: 11400000, guid: 73f381cec1bf95a478c226a7fe214dc5, type: 2}
-  Diag_Lei_8: {fileID: 11400000, guid: b7bd8e8b9cb99794d8a9a5f9469d4970, type: 2}
-  Diag_Lei_9: {fileID: 11400000, guid: 597b5ff9ca0714e4c8a44e507fdec86c, type: 2}
-  Diag_Lei_10: {fileID: 11400000, guid: c672992cf26d0cb47a8269e76728293e, type: 2}
-  Diag_Lei_11: {fileID: 11400000, guid: e5df5509161d1674fba6d3d4992f6999, type: 2}
-  Diag_Lei_12: {fileID: 11400000, guid: eabb1f5d5b23bf042b8d49c6bc53323a, type: 2}
-  Diag_Lei_13: {fileID: 11400000, guid: 11c0cacd313acd75b8f6f861decedada, type: 2}
-  TypeWritter: {fileID: 882460163}
-  Decrypter: {fileID: 6747454719012529717}
-  FreqTuto: 12700
-  FreqTutoEnd: 7500
-  Bandwidth: 100
-  SignalThreshold: 0.215
-  AngleThreshold: 5
-  FristAngleThreshold: 150
-  AngleTuto0: 0
-  AngleTuto1: 30
-  AngleTuto2: 55
-  AngleTuto3: -55
-  TargetFreqDiag9: 5100
-  TargetFreqDiag11: 4100
-  TargetFreqDiag13: 6700
-  TargetAngleDiag9: 0
-  TargetAngleDiag11: 0
-  TargetAngleDiag13: 0
-  TargetFreqDiag8: 11000
-  TargetAngleDiag8: 20
-  ModeRequiredForDiag8: 0
-  TargetFreqDiag10: 11000
-  TargetAngleDiag10: 12
-  ModeRequiredForDiag10: 3
-  TargetFreqDiag12: 8800
-  TargetAngleDiag12: -55
-  ModeRequiredForDiag12: 3
-  FinalFreq: 3900
-  FinalAngle: -52
-  ModeRequiredFor30: 2
-  ModeRequiredFor60: 1
-  ModeRequiredForMinus60: 3
-  Broadcast30: {fileID: 1971388649}
-  Broadcast60: {fileID: 828183177}
-  BroadcastMinus60: {fileID: 1476540179}
-  Broadcast7500: {fileID: 1131244772}
-  m_currentStep: 0
 --- !u!1 &1125332313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,7 +4262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e63298c16bf08c4fac2b12b2fff6ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6339cb4cbe5644a229dd26020b0924e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5269,7 +5258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 328b0cd5bb5652a4990da2068124640d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 667068242b8635570a197a639af0376b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5401,7 +5390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e63298c16bf08c4fac2b12b2fff6ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6339cb4cbe5644a229dd26020b0924e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5620,7 +5609,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17814,3 +17803,4 @@ SceneRoots:
   - {fileID: 207092273}
   - {fileID: 1436089823}
   - {fileID: 595579559}
+  - {fileID: 367878998}

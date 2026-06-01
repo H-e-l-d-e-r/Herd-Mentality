@@ -625,7 +625,7 @@ MonoBehaviour:
   PanelGroup: {fileID: 8805636729283125934}
   CharacterNamePanel: {fileID: 464133059655796285}
   AudioSource: {fileID: 4439166953428314172}
-  Settings: {fileID: 0}
+  Settings: {fileID: 11400000, guid: 08c689a51ed4ff5348a2bfcd3a3f19f8, type: 2}
   DialogueText: {fileID: 8583882148252235988}
   CharacterNameText: {fileID: 5753644690966984612}
   NextCallToAction: {fileID: 4783566226435768203}
@@ -640,11 +640,11 @@ AudioSource:
   m_GameObject: {fileID: 6238418304127942780}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6674458916631304287, guid: d16f73fa68c85bb108b6736b665f9c18, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

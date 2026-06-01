@@ -85,7 +85,10 @@ public class RadioDecrypter : MonoBehaviour
             return;
         }
 
-        StopCoroutine(m_recordRoutine);
+        if(m_recordRoutine != null)
+        {
+            StopCoroutine(m_recordRoutine);        
+        }
 
         Typewritter.Clear();
         Typewritter.TryEnqueueCommand(new DialogueCommand("", DialogueActor, k_RecordingFailed));

@@ -2,6 +2,7 @@ using System;
 using DialogueSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -79,6 +80,16 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Anchors[0].Focus(Camera);
         }
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }

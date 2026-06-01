@@ -58,7 +58,8 @@ namespace DialogueSystem
         {
             if (s_instance != null)
             {
-                Debug.LogError(new Exception("a Dialogue System instance already exists!"));
+                s_instance = this; 
+                // Debug.LogError(new Exception("a Dialogue System instance already exists!"));
             }
 
             Settings = behaviour.Settings;

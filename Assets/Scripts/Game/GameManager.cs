@@ -80,18 +80,8 @@ public class GameManager : MonoBehaviour
         m_unlockedCollectibles.Add(collectible);
     }
 
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
     public void End()
     {
-        LoadScene("EndScreen");
+        SceneManager.LoadScene("EndScreen");
     }
 }

@@ -42,12 +42,12 @@ public class DialogueTutorial : MonoBehaviour
     public float AngleTuto3 = -60f;
 
     [Header("Cibles Décodage (Dialogues Évolutifs)")]
-    public float TargetFreqDiag9 = 5100f;
-    public float TargetFreqDiag11 = 4100f;
-    public float TargetFreqDiag13 = 6700f;
-    public float TargetAngleDiag9 = 20f;
-    public float TargetAngleDiag11 = 45f;
-    public float TargetAngleDiag13 = -60f;
+    public float TargetFreqDiag7 = 5100f;
+    public float TargetFreqDiag9 = 4100f;
+    public float TargetFreqDiag11 = 6700f;
+    // public float TargetAngleDiag9 = 20f;
+    // public float TargetAngleDiag11 = 45f;
+    // public float TargetAngleDiag13 = -60f;
 
     public float TargetFreqDiag8 = 11000f;
     public float TargetAngleDiag8 = 0f;
@@ -207,7 +207,7 @@ public class DialogueTutorial : MonoBehaviour
         }
         else if (m_currentStep == 9)
         {
-            if(IsFreqOk(currentFreq, TargetFreqDiag9) && IsAngleOk(currentAngle, TargetAngleDiag9, FristAngleThreshold))
+            if(IsFreqOk(currentFreq, TargetFreqDiag7) && IsAngleOk(currentAngle, 0, FristAngleThreshold))
             {
                 Dialogue.PlayDialogue(Lei_Diag7);
                 m_currentStep = 10;
@@ -215,7 +215,7 @@ public class DialogueTutorial : MonoBehaviour
         }
         else if (m_currentStep == 11)
         {
-            if(IsFreqOk(currentFreq, TargetFreqDiag11) && IsAngleOk(currentAngle, TargetAngleDiag11, FristAngleThreshold))
+            if(IsFreqOk(currentFreq, TargetFreqDiag9) && IsAngleOk(currentAngle, 0, FristAngleThreshold))
             {
                 Dialogue.PlayDialogue(Lei_Diag9);
                 m_currentStep = 12;
@@ -224,7 +224,7 @@ public class DialogueTutorial : MonoBehaviour
         }
         else if (m_currentStep == 13)
         {
-            if(IsFreqOk(currentFreq, TargetFreqDiag13) && IsAngleOk(currentAngle, TargetAngleDiag13, FristAngleThreshold))
+            if(IsFreqOk(currentFreq, TargetFreqDiag11) && IsAngleOk(currentAngle, 0, FristAngleThreshold))
             {
                 Dialogue.PlayDialogue(Lei_Diag11);
                 m_currentStep = 14;
