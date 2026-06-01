@@ -3579,8 +3579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISelectNumber
   Viewport: {fileID: 1795964456}
   Template: {fileID: 1541742018}
-  Left: {fileID: 199307141}
-  Right: {fileID: 718196067}
+  Left: {fileID: 718196067}
+  Right: {fileID: 199307141}
   NameOverloads:
   - 0
   - 1
@@ -6992,8 +6992,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISelectNumber
   Viewport: {fileID: 579013923}
   Template: {fileID: 150443076}
-  Left: {fileID: 1125332316}
-  Right: {fileID: 1412637169}
+  Left: {fileID: 1412637169}
+  Right: {fileID: 1125332316}
   NameOverloads:
   - 0
   - 1
